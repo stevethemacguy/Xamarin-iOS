@@ -13,21 +13,24 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="64" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="home-background.png">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="MenuButton" destination="35" id="name-outlet-35"/>
                     </connections>
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
-                        <barButtonItem style="plain" id="36" key="leftBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35" key="customView">
+                        <barButtonItem style="plain" id="60" key="leftBarButtonItem">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59" key="customView">
                                 <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="31" kind="push" id="37"/>
+                                    <segue destination="31" kind="push" id="61"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -151,5 +154,7 @@
         <image name="appIcon.png" width="120" height="120"/>
         <image name="app-Icon.png" width="120" height="120"/>
         <image name="settings-icon.png" width="80" height="80"/>
+        <image name="menu-background.png" width="106" height="107"/>
+        <image name="home-background.png" width="1280" height="3038"/>
     </resources>
 </document>

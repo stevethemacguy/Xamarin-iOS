@@ -175,6 +175,9 @@
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\app-Icon.png" />
     <BundleResource Include="Resources\settings-icon.png" />
+    <BundleResource Include="Resources\menu-background.png" />
+    <BundleResource Include="Resources\science-background%402x.png" />
+    <BundleResource Include="Resources\home-background%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -192,10 +195,6 @@
     <Compile Include="MenuViewController.cs" />
     <Compile Include="MenuViewController.designer.cs">
       <DependentUpon>MenuViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuButton.cs" />
-    <Compile Include="MenuButton.designer.cs">
-      <DependentUpon>MenuButton.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
