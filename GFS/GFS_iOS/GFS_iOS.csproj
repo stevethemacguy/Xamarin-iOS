@@ -90,7 +90,6 @@
     <Reference Include="monotouch" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\blueX-backround.png" />
     <BundleResource Include="Resources\closeX-darkLine.png" />
     <BundleResource Include="Resources\closeX-lightLine.png" />
@@ -160,18 +159,28 @@
     <BundleResource Include="Resources\product4.png" />
     <BundleResource Include="Resources\product5.png" />
     <BundleResource Include="Resources\green-search-rectangle.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
     <BundleResource Include="Resources\Icon-29.png" />
     <BundleResource Include="Resources\Icon-57.png" />
     <BundleResource Include="Resources\Icon-58.png" />
     <BundleResource Include="Resources\Icon-80.png" />
     <BundleResource Include="Resources\Icon-114.png" />
     <BundleResource Include="Resources\Icon-120.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
+    <BundleResource Include="Resources\Default-568h%402x %28iOS default%29.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\app-Icon.png" />
+    <BundleResource Include="Resources\settings-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="Entitlements.plist" />
+    <None Include="Entitlements.plist">
+      <DependentUpon>Info.plist</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
