@@ -1,30 +1,44 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFS_iOS", "GFS_iOS\GFS_iOS.csproj", "{BCD91DB7-5574-41E8-8D9F-09598241B275}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|iPhoneSimulator = Debug|iPhoneSimulator
-		Release|iPhoneSimulator = Release|iPhoneSimulator
-		Debug|iPhone = Debug|iPhone
-		Release|iPhone = Release|iPhone
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		Ad-Hoc|iPhoneSimulator = Ad-Hoc|iPhoneSimulator
 		AppStore|iPhone = AppStore|iPhone
+		AppStore|iPhoneSimulator = AppStore|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Ad-Hoc|iPhoneSimulator
+		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Ad-Hoc|iPhoneSimulator.Build.0 = Ad-Hoc|iPhoneSimulator
+		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Ad-Hoc|iPhoneSimulator.Deploy.0 = Ad-Hoc|iPhoneSimulator
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{BCD91DB7-5574-41E8-8D9F-09598241B275}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
+		{BCD91DB7-5574-41E8-8D9F-09598241B275}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
+		{BCD91DB7-5574-41E8-8D9F-09598241B275}.AppStore|iPhoneSimulator.Deploy.0 = AppStore|iPhoneSimulator
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Debug|iPhone.Build.0 = Debug|iPhone
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Release|iPhone.ActiveCfg = Release|iPhone
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Release|iPhone.Build.0 = Release|iPhone
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{BCD91DB7-5574-41E8-8D9F-09598241B275}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = GFS_iOS\GFS_iOS.csproj
