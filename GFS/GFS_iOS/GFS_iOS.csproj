@@ -189,6 +189,14 @@
     <Compile Include="GFS_iOSViewController.designer.cs">
       <DependentUpon>GFS_iOSViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuViewController.cs" />
+    <Compile Include="MenuViewController.designer.cs">
+      <DependentUpon>MenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuButton.cs" />
+    <Compile Include="MenuButton.designer.cs">
+      <DependentUpon>MenuButton.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

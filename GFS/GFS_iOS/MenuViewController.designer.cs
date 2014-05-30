@@ -11,19 +11,11 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	[Register ("GFS_iOSViewController")]
-	partial class GFS_iOSViewController
+	[Register ("MenuViewController")]
+	partial class MenuViewController
 	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIButton MenuButton { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (MenuButton != null) {
-				MenuButton.Dispose ();
-				MenuButton = null;
-			}
 		}
 	}
 }
