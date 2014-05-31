@@ -202,6 +202,14 @@
     <Compile Include="MenuTableViewController.designer.cs">
       <DependentUpon>MenuTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchViewController.cs" />
+    <Compile Include="SearchViewController.designer.cs">
+      <DependentUpon>SearchViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotesViewController.cs" />
+    <Compile Include="NotesViewController.designer.cs">
+      <DependentUpon>NotesViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
