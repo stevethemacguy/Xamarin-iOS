@@ -11,11 +11,19 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	[Register ("MenuViewController")]
-	partial class MenuViewController
+	[Register ("HomeScreen")]
+	partial class HomeScreen
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableView MenuTableController { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (MenuTableController != null) {
+				MenuTableController.Dispose ();
+				MenuTableController = null;
+			}
 		}
 	}
 }

@@ -5,9 +5,9 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	partial class MenuViewController : UITableViewController
+	partial class HomeScreen : UITableViewController
 	{
-		public MenuViewController (IntPtr handle) : base (handle)
+		public HomeScreen (IntPtr handle) : base (handle)
 		{
 		}
 	}
