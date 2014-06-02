@@ -32,6 +32,10 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView EndOfContentCellBorder { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableViewCell Result1 { get; set; }
 
 		[Outlet]
@@ -67,6 +71,10 @@ namespace GFS_iOS
 			if (CellBorder4 != null) {
 				CellBorder4.Dispose ();
 				CellBorder4 = null;
+			}
+			if (EndOfContentCellBorder != null) {
+				EndOfContentCellBorder.Dispose ();
+				EndOfContentCellBorder = null;
 			}
 			if (Result1 != null) {
 				Result1.Dispose ();

@@ -179,6 +179,13 @@
     <BundleResource Include="Resources\science-background%402x.png" />
     <BundleResource Include="Resources\home-background%402x.png" />
     <BundleResource Include="Resources\magnifying-glass%402x.png" />
+    <BundleResource Include="Resources\product1%402x.png" />
+    <BundleResource Include="Resources\product2%402x.png" />
+    <BundleResource Include="Resources\product3%402x.png" />
+    <BundleResource Include="Resources\product4%402x.png" />
+    <BundleResource Include="Resources\product5%402x.png" />
+    <BundleResource Include="Resources\green-reload-button%402x.png" />
+    <BundleResource Include="Resources\product-result-background%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
