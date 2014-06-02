@@ -210,6 +210,26 @@
     <Compile Include="NotesViewController.designer.cs">
       <DependentUpon>NotesViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="SavedListController.cs" />
+    <Compile Include="SavedListController.designer.cs">
+      <DependentUpon>SavedListController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewController.cs" />
+    <Compile Include="ListViewController.designer.cs">
+      <DependentUpon>ListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManualsViewController.cs" />
+    <Compile Include="ManualsViewController.designer.cs">
+      <DependentUpon>ManualsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountViewController.cs" />
+    <Compile Include="AccountViewController.designer.cs">
+      <DependentUpon>AccountViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartViewController.cs" />
+    <Compile Include="CartViewController.designer.cs">
+      <DependentUpon>CartViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

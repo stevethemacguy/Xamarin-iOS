@@ -115,6 +115,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="191" kind="push" id="197"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="103" reuseIdentifier="searchcell">
                                         <rect key="frame" x="0.0" y="194" width="320" height="65"/>
@@ -162,6 +165,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="169" kind="push" id="184"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="111" reuseIdentifier="searchcell">
                                         <rect key="frame" x="0.0" y="324" width="320" height="65"/>
@@ -184,6 +190,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="162" kind="push" id="186"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="115" reuseIdentifier="searchcell">
                                         <rect key="frame" x="0.0" y="389" width="320" height="65"/>
@@ -206,6 +215,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="176" kind="push" id="188"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -258,6 +270,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="136" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-113" y="-317"/>
+        </scene>
+        <scene sceneID="161">
+            <objects>
+                <viewController id="162" sceneMemberID="viewController" customClass="ManualsViewController" storyboardIdentifier="manualsController" restorationIdentifier="manualsController" title="Saved Manuals">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="164"/>
+                        <viewControllerLayoutGuide type="bottom" id="165"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="163">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="166" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="-323"/>
+        </scene>
+        <scene sceneID="168">
+            <objects>
+                <viewController id="169" sceneMemberID="viewController" customClass="ListViewController" storyboardIdentifier="savedListController" restorationIdentifier="savedListController" title="Saved Lists">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="171"/>
+                        <viewControllerLayoutGuide type="bottom" id="172"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="170">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="173" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="-1010"/>
+        </scene>
+        <scene sceneID="175">
+            <objects>
+                <viewController id="176" sceneMemberID="viewController" customClass="AccountViewController" storyboardIdentifier="accountController" restorationIdentifier="accountController" title="Your Account">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="178"/>
+                        <viewControllerLayoutGuide type="bottom" id="179"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="177">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="180" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626" y="-326"/>
+        </scene>
+        <scene sceneID="190">
+            <objects>
+                <viewController id="191" sceneMemberID="viewController" customClass="CartViewController" storyboardIdentifier="cartController" restorationIdentifier="cartController" title="Shopping Cart">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="193"/>
+                        <viewControllerLayoutGuide type="bottom" id="194"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="192">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="195" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250" y="-1010"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
