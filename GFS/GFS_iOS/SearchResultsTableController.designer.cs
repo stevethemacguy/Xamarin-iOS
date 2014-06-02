@@ -54,6 +54,10 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableViewCell Result5 { get; set; }
 
+		[Action ("UIButton364_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void UIButton364_TouchUpInside (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (CellBorder1 != null) {
