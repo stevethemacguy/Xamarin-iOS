@@ -375,6 +375,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="217" id="218">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="260" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
+                                                    <rect key="frame" x="0.0" y="88" width="320" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
                                     </tableViewCell>
@@ -448,6 +454,7 @@
                         <outlet property="Result3" destination="221" id="name-outlet-221"/>
                         <outlet property="Result4" destination="227" id="name-outlet-227"/>
                         <outlet property="Result5" destination="229" id="name-outlet-229"/>
+                        <outlet property="CellBorder1" destination="260" id="name-outlet-260"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="214" userLabel="First Responder" sceneMemberID="firstResponder"/>

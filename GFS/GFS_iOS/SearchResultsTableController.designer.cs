@@ -16,6 +16,10 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView CellBorder1 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableViewCell Result1 { get; set; }
 
 		[Outlet]
@@ -36,6 +40,10 @@ namespace GFS_iOS
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (CellBorder1 != null) {
+				CellBorder1.Dispose ();
+				CellBorder1 = null;
+			}
 			if (Result1 != null) {
 				Result1.Dispose ();
 				Result1 = null;
