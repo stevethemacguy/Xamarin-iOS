@@ -384,6 +384,10 @@
                                                     <rect key="frame" x="3" y="5" width="76" height="79"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="292" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product1.png">
+                                                    <rect key="frame" x="17" y="12" width="49" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
@@ -401,6 +405,10 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="288" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
                                                     <rect key="frame" x="3" y="5" width="76" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="293" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product2.png">
+                                                    <rect key="frame" x="15" y="11" width="54" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -422,6 +430,10 @@
                                                     <rect key="frame" x="3" y="5" width="76" height="79"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="294" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product3.png">
+                                                    <rect key="frame" x="9" y="10" width="64" height="72"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -440,6 +452,10 @@
                                                     <rect key="frame" x="3" y="5" width="76" height="79"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="305" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product4.png">
+                                                    <rect key="frame" x="8" y="8" width="66" height="73"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -456,6 +472,10 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="291" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
                                                     <rect key="frame" x="3" y="5" width="76" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="306" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product5.png">
+                                                    <rect key="frame" x="11" y="8" width="61" height="73"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
