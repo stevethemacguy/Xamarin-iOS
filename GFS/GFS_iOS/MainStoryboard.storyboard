@@ -448,6 +448,14 @@
                                                         <segue destination="368" kind="push" id="367"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$8,272.03 – $ 11,203.05 " lineBreakMode="tailTruncation" minimumFontSize="10" id="389" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="86" y="68" width="143" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
@@ -484,6 +492,14 @@
                                                         <segue destination="371" kind="push" id="370"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$10,832.25 – $20,841.35" lineBreakMode="tailTruncation" minimumFontSize="10" id="390" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="86" y="68" width="143" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -518,6 +534,14 @@
                                                         <segue destination="374" kind="push" id="373"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$72.65  – $442.23" lineBreakMode="tailTruncation" minimumFontSize="10" id="391" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="86" y="68" width="143" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -552,6 +576,14 @@
                                                         <segue destination="377" kind="push" id="376"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$4,390.00 – $6,370.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="392" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="86" y="68" width="143" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
