@@ -186,6 +186,7 @@
     <BundleResource Include="Resources\product5%402x.png" />
     <BundleResource Include="Resources\green-reload-button%402x.png" />
     <BundleResource Include="Resources\product-result-background%402x.png" />
+    <BundleResource Include="Resources\blue-dots%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
