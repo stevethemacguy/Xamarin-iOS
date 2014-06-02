@@ -20,6 +20,18 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView CellBorder2 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView CellBorder3 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView CellBorder4 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableViewCell Result1 { get; set; }
 
 		[Outlet]
@@ -43,6 +55,18 @@ namespace GFS_iOS
 			if (CellBorder1 != null) {
 				CellBorder1.Dispose ();
 				CellBorder1 = null;
+			}
+			if (CellBorder2 != null) {
+				CellBorder2.Dispose ();
+				CellBorder2 = null;
+			}
+			if (CellBorder3 != null) {
+				CellBorder3.Dispose ();
+				CellBorder3 = null;
+			}
+			if (CellBorder4 != null) {
+				CellBorder4.Dispose ();
+				CellBorder4 = null;
 			}
 			if (Result1 != null) {
 				Result1.Dispose ();
