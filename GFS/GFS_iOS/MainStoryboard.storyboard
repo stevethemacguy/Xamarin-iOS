@@ -389,21 +389,25 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="307" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
-                                                    <rect key="frame" x="276" y="6" width="33" height="40"/>
+                                                    <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="309" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" text="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets" editable="NO" textAlignment="left" selectable="NO" showsVerticalScrollIndicator="NO" showsHorizontalScrollIndicator="NO" scrollEnabled="NO">
-                                                    <rect key="frame" x="85" y="-1" width="180" height="92"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="341" fixedFrame="YES">
+                                                    <rect key="frame" x="88" y="2" width="177" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
+                                                    <state key="normal" title="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="321" kind="push" id="342"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
+                                        <connections/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="219" reuseIdentifier="ResultCell2">
                                         <rect key="frame" x="0.0" y="154" width="320" height="90"/>
@@ -427,6 +431,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
+                                        <connections/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="221" reuseIdentifier="ResultCell3">
                                         <rect key="frame" x="0.0" y="244" width="320" height="90"/>
@@ -545,7 +550,24 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="214" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-677" y="-135"/>
+            <point key="canvasLocation" x="-1390" y="-169"/>
+        </scene>
+        <scene sceneID="320">
+            <objects>
+                <viewController id="321" sceneMemberID="viewController" customClass="Product1View" storyboardIdentifier="productView" restorationIdentifier="productView" title="Product Details">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="323"/>
+                        <viewControllerLayoutGuide type="bottom" id="324"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="322">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="325" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-992" y="-134"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
