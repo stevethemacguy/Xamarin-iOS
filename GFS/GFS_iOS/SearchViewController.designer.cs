@@ -14,8 +14,16 @@ namespace GFS_iOS
 	[Register ("SearchViewController")]
 	partial class SearchViewController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIButton TestResults { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (TestResults != null) {
+				TestResults.Dispose ();
+				TestResults = null;
+			}
 		}
 	}
 }

@@ -230,6 +230,10 @@
     <Compile Include="CartViewController.designer.cs">
       <DependentUpon>CartViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchResultsTableController.cs" />
+    <Compile Include="SearchResultsTableController.designer.cs">
+      <DependentUpon>SearchResultsTableController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
