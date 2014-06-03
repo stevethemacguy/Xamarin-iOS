@@ -11,26 +11,18 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	[Register ("ProductDetails")]
-	partial class ProductDetails
+	[Register ("ProductDetailsTableController")]
+	partial class ProductDetailsTableController
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell Ok { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell ThirdCell { get; set; }
+		UIImageView SearchCellImage { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (Ok != null) {
-				Ok.Dispose ();
-				Ok = null;
-			}
-			if (ThirdCell != null) {
-				ThirdCell.Dispose ();
-				ThirdCell = null;
+			if (SearchCellImage != null) {
+				SearchCellImage.Dispose ();
+				SearchCellImage = null;
 			}
 		}
 	}

@@ -261,6 +261,14 @@
     <Compile Include="ProductDetails.designer.cs">
       <DependentUpon>ProductDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultsTableViewController.cs" />
+    <Compile Include="ResultsTableViewController.designer.cs">
+      <DependentUpon>ResultsTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetailsTableController.cs" />
+    <Compile Include="ProductDetailsTableController.designer.cs">
+      <DependentUpon>ProductDetailsTableController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
