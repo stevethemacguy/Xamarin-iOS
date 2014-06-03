@@ -16,47 +16,43 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView CellBorder1 { get; set; }
+		MonoTouch.UIKit.UIImageView CellBorder1 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView CellBorder2 { get; set; }
+		MonoTouch.UIKit.UIImageView CellBorder2 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView CellBorder3 { get; set; }
+		MonoTouch.UIKit.UIImageView CellBorder3 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView CellBorder4 { get; set; }
+		MonoTouch.UIKit.UIImageView CellBorder4 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView EndOfContentCellBorder { get; set; }
+		MonoTouch.UIKit.UIImageView EndOfContentCellBorder { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell Result1 { get; set; }
+		MonoTouch.UIKit.UITableViewCell Result1 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell Result2 { get; set; }
+		MonoTouch.UIKit.UITableViewCell Result2 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell Result3 { get; set; }
+		MonoTouch.UIKit.UITableViewCell Result3 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell Result4 { get; set; }
+		MonoTouch.UIKit.UITableViewCell Result4 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell Result5 { get; set; }
-
-		[Action ("UIButton372_TouchUpInside:")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void UIButton372_TouchUpInside (UIButton sender);
+		MonoTouch.UIKit.UITableViewCell Result5 { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{

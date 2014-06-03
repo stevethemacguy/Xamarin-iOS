@@ -196,8 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Main.cs">
-    </Compile>
+    <Compile Include="Main.cs" />
     <Compile Include="GFS_iOSViewController.cs" />
     <Compile Include="GFS_iOSViewController.designer.cs">
       <DependentUpon>GFS_iOSViewController.cs</DependentUpon>
@@ -253,6 +252,10 @@
     <Compile Include="SearchTableView.cs" />
     <Compile Include="SearchTableView.designer.cs">
       <DependentUpon>SearchTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetails.cs" />
+    <Compile Include="ProductDetails.designer.cs">
+      <DependentUpon>ProductDetails.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
