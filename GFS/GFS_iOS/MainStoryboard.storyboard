@@ -434,7 +434,7 @@
                                                         <segue destination="321" kind="push" id="342"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$11,203.05 – $ 15,690.65" lineBreakMode="tailTruncation" minimumFontSize="10" id="354" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From previous search" lineBreakMode="tailTruncation" minimumFontSize="10" id="354" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="86" y="67" width="143" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -477,7 +477,7 @@
                                                     <connections>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$8,272.03 – $ 11,203.05 " lineBreakMode="tailTruncation" minimumFontSize="10" id="389" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From &quot;cabinet&quot; saved list" lineBreakMode="tailTruncation" minimumFontSize="10" id="389" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="86" y="67" width="143" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -524,14 +524,6 @@
                                                     <connections>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$10,832.25 – $20,841.35" lineBreakMode="tailTruncation" minimumFontSize="10" id="390" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="86" y="67" width="143" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="394" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
                                                     <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -569,14 +561,6 @@
                                                     <connections>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$72.65  – $442.23" lineBreakMode="tailTruncation" minimumFontSize="10" id="391" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="86" y="67" width="143" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="395" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
                                                     <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -614,14 +598,6 @@
                                                     <connections>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$4,390.00 – $6,370.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="392" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="86" y="66" width="143" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="396" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
                                                     <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
