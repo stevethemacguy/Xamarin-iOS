@@ -16,13 +16,21 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIButton TestResults { get; set; }
+		MonoTouch.UIKit.UITableView HintTable { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UISearchBar SearchBar { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (TestResults != null) {
-				TestResults.Dispose ();
-				TestResults = null;
+			if (HintTable != null) {
+				HintTable.Dispose ();
+				HintTable = null;
+			}
+			if (SearchBar != null) {
+				SearchBar.Dispose ();
+				SearchBar = null;
 			}
 		}
 	}
