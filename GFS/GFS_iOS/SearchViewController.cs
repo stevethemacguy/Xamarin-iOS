@@ -7,21 +7,25 @@ namespace GFS_iOS
 {
 	partial class SearchViewController : UIViewController
 	{
+		SearchViewController currentController;
+
 		public SearchViewController (IntPtr handle) : base (handle)
 		{
+			currentController = this;
 		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 			string[] hints1 = new string[] {"cabinet", "cabinet door", "cabbage"};
-			HintTable.Source = new TableSource(hints1);
+			HintTable.Source = new TableSource(currentController, hints1);
 			HintTable.ScrollEnabled = true;
 			HintTable.Hidden = true;
 
 			//this.SearchBar.OnEditingStarted --- EventArgs
 			this.SearchBar.TextChanged += (object sender, UISearchBarTextChangedEventArgs e) =>
 			{
+				string[] tempHints;
 				if (SearchBar.Text == "")
 				{
 					HintTable.Hidden = true;
@@ -30,44 +34,44 @@ namespace GFS_iOS
 				{
 					if(SearchBar.Text == "c")
 					{
-						string[] tempHints = new string[] { "cat", "cool", "chrome", "call", "cake", "cab" };
-						HintTable.Source = new TableSource(tempHints);
+						tempHints = new string[] { "cat", "cool", "chrome", "call", "cake", "cab" };
+						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "ca")
 					{
-						string[] tempHints = new string[] { "cat", "call", "cake", "cab", "cable", "cabbage" };
-						HintTable.Source = new TableSource(tempHints);
+						tempHints = new string[] { "cat", "call", "cake", "cab", "cable", "cabbage" };
+						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cab")
 					{
-						string[] tempHints = new string[] { "cab", "cabin", "cabinet", "cabinetry", "cable", "cabbage" };
-						HintTable.Source = new TableSource(tempHints);
+						tempHints = new string[] { "cab", "cabin", "cabinet", "cabinetry", "cable", "cabbage" };
+						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cabi")
 					{
-						string[] tempHints = new string[] { "cabin", "cabinet"};
-						HintTable.Source = new TableSource(tempHints);
+						tempHints = new string[] { "cabin", "cabinet"};
+						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cabin")
 					{
-						string[] tempHints = new string[] { "cabin", "cabinet" };
-						HintTable.Source = new TableSource(tempHints);
+						tempHints = new string[] { "cabin", "cabinet" };
+						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cabine")
 					{
-						string[] tempHints = new string[] { "cabinet"};
-						HintTable.Source = new TableSource(tempHints);
+						tempHints = new string[] { "cabinet"};
+						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cabinet")
 					{
-						string[] tempHints = new string[] { "cabinet"};
-						HintTable.Source = new TableSource(tempHints);
+						tempHints = new string[] { "cabinet"};
+						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}
 
@@ -77,20 +81,26 @@ namespace GFS_iOS
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
+
 	}
 
-	public class TableSource : UITableViewSource
+	class TableSource : UITableViewSource
 	{
+		SearchViewController controller;
 		string[] tableItems;
 		string cellIdentifier = "TableCell";
-		public TableSource(string[] items)
+
+		public TableSource(SearchViewController controller, string[] items)
 		{
 			tableItems = items;
+			this.controller = controller;
 		}
+
 		public override int RowsInSection(UITableView tableview, int section)
 		{
 			return tableItems.Length;
 		}
+
 		public override UITableViewCell GetCell(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
 			UITableViewCell cell = tableView.DequeueReusableCell(cellIdentifier);
@@ -100,5 +110,22 @@ namespace GFS_iOS
 			cell.TextLabel.Text = tableItems[indexPath.Row];
 			return cell;
 		}
+
+		//When any row is selected
+		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+		{
+			//Get the current storyboard
+			UIStoryboard test = UIStoryboard.FromName("MainStoryboard", null); 
+
+			//Get the searchResultsController View Controller 
+			UIViewController ok = (UIViewController) test.InstantiateViewController(  
+				"searchResultsController"
+			);
+
+			//Segue to the new View
+			controller.NavigationController.PushViewController(ok, true);
+		}
 	}
+
+
 }
