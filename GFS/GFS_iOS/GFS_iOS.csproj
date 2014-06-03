@@ -187,6 +187,10 @@
     <BundleResource Include="Resources\green-reload-button%402x.png" />
     <BundleResource Include="Resources\product-result-background%402x.png" />
     <BundleResource Include="Resources\blue-dots%402x.png" />
+    <BundleResource Include="Resources\product-details-header%402x.png" />
+    <BundleResource Include="Resources\catalog-header.png" />
+    <BundleResource Include="Resources\catalog-heade%402x.png" />
+    <BundleResource Include="Resources\product-details-header.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
