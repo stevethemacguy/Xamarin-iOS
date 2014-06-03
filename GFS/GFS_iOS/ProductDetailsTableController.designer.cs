@@ -14,16 +14,8 @@ namespace GFS_iOS
 	[Register ("ProductDetailsTableController")]
 	partial class ProductDetailsTableController
 	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView SearchCellImage { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (SearchCellImage != null) {
-				SearchCellImage.Dispose ();
-				SearchCellImage = null;
-			}
 		}
 	}
 }

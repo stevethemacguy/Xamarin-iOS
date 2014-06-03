@@ -191,6 +191,7 @@
     <BundleResource Include="Resources\catalog-header.png" />
     <BundleResource Include="Resources\catalog-heade%402x.png" />
     <BundleResource Include="Resources\product-details-header.png" />
+    <BundleResource Include="Resources\green-arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
