@@ -22,9 +22,9 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableViewCell ListProdCell1 { get; set; }
 
-		[Action ("UIButton840_TouchUpInside:")]
+		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void UIButton840_TouchUpInside (UIButton sender);
+		UITableViewCell ListProdCell2 { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -35,6 +35,10 @@ namespace GFS_iOS
 			if (ListProdCell1 != null) {
 				ListProdCell1.Dispose ();
 				ListProdCell1 = null;
+			}
+			if (ListProdCell2 != null) {
+				ListProdCell2.Dispose ();
+				ListProdCell2 = null;
 			}
 		}
 	}
