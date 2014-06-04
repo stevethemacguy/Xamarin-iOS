@@ -11,26 +11,22 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	[Register ("SavedListsTableController")]
-	partial class SavedListsTableController
+	[Register ("ListATableViewController")]
+	partial class ListATableViewController
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel Cabinets { get; set; }
+		UITableViewCell DetailCell2 { get; set; }
 
-		[Outlet]
+		[Action ("UIButton840_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel OtherStuffLabel { get; set; }
+		partial void UIButton840_TouchUpInside (UIButton sender);
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (Cabinets != null) {
-				Cabinets.Dispose ();
-				Cabinets = null;
-			}
-			if (OtherStuffLabel != null) {
-				OtherStuffLabel.Dispose ();
-				OtherStuffLabel = null;
+			if (DetailCell2 != null) {
+				DetailCell2.Dispose ();
+				DetailCell2 = null;
 			}
 		}
 	}
