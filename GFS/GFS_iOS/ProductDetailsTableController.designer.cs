@@ -20,6 +20,10 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableView ProductDetailsUIView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableViewCell Result1 { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -27,6 +31,10 @@ namespace GFS_iOS
 			if (CellBorder1 != null) {
 				CellBorder1.Dispose ();
 				CellBorder1 = null;
+			}
+			if (ProductDetailsUIView != null) {
+				ProductDetailsUIView.Dispose ();
+				ProductDetailsUIView = null;
 			}
 			if (Result1 != null) {
 				Result1.Dispose ();

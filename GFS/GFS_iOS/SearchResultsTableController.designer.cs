@@ -16,43 +16,51 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIImageView CellBorder1 { get; set; }
+		UIImageView CellBorder1 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIImageView CellBorder2 { get; set; }
+		UIImageView CellBorder2 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIImageView CellBorder3 { get; set; }
+		UIImageView CellBorder3 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIImageView CellBorder4 { get; set; }
+		UIImageView CellBorder4 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIImageView EndOfContentCellBorder { get; set; }
+		UIImageView EndOfContentCellBorder { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell Result1 { get; set; }
+		UITableViewCell LoadResultsCell { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell Result2 { get; set; }
+		UITableViewCell Result1 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell Result3 { get; set; }
+		UITableViewCell Result2 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell Result4 { get; set; }
+		UITableViewCell Result3 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell Result5 { get; set; }
+		UITableViewCell Result4 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableViewCell Result5 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableView SearchResultsUIView { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -76,6 +84,10 @@ namespace GFS_iOS
 				EndOfContentCellBorder.Dispose ();
 				EndOfContentCellBorder = null;
 			}
+			if (LoadResultsCell != null) {
+				LoadResultsCell.Dispose ();
+				LoadResultsCell = null;
+			}
 			if (Result1 != null) {
 				Result1.Dispose ();
 				Result1 = null;
@@ -95,6 +107,10 @@ namespace GFS_iOS
 			if (Result5 != null) {
 				Result5.Dispose ();
 				Result5 = null;
+			}
+			if (SearchResultsUIView != null) {
+				SearchResultsUIView.Dispose ();
+				SearchResultsUIView = null;
 			}
 		}
 	}

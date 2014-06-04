@@ -15,5 +15,20 @@ namespace GFS_iOS
 		{
 			base.ViewWillAppear (animated);
 		}
+
+		public override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
+
+			//Make the Cells have a clear background color
+			Result1.BackgroundColor = UIColor.Clear;
+			Result2.BackgroundColor = UIColor.Clear;
+			Result3.BackgroundColor = UIColor.Clear;
+			Result4.BackgroundColor = UIColor.Clear;
+			Result5.BackgroundColor = UIColor.Clear;
+			LoadResultsCell.BackgroundColor = UIColor.Clear;
+			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
+			SearchResultsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+		}
 	}
 }
