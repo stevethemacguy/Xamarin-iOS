@@ -20,7 +20,19 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableViewCell List1Cell { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableViewCell List2Cell { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel OtherStuffLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableView SavedListsUIView { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -28,9 +40,21 @@ namespace GFS_iOS
 				Cabinets.Dispose ();
 				Cabinets = null;
 			}
+			if (List1Cell != null) {
+				List1Cell.Dispose ();
+				List1Cell = null;
+			}
+			if (List2Cell != null) {
+				List2Cell.Dispose ();
+				List2Cell = null;
+			}
 			if (OtherStuffLabel != null) {
 				OtherStuffLabel.Dispose ();
 				OtherStuffLabel = null;
+			}
+			if (SavedListsUIView != null) {
+				SavedListsUIView.Dispose ();
+				SavedListsUIView = null;
 			}
 		}
 	}
