@@ -21,8 +21,7 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
 			//Make the Cells have a clear background color
-			Result1.BackgroundColor = UIColor.Clear;
-			Result2.BackgroundColor = UIColor.Clear;
+			//Result1 and 2 are featured, so should be green.
 			Result3.BackgroundColor = UIColor.Clear;
 			Result4.BackgroundColor = UIColor.Clear;
 			Result5.BackgroundColor = UIColor.Clear;
