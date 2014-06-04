@@ -14,12 +14,11 @@ namespace GFS_iOS
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		// class-level declarations
-		
 		public override UIWindow Window {
 			get;
 			set;
 		}
-		
+
 		// This method is invoked when the application is about to move from active to inactive state.
 		// OpenGL applications should use this method to pause.
 		public override void OnResignActivation(UIApplication application)

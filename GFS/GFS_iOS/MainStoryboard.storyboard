@@ -231,6 +231,13 @@
                         <outlet property="SavedListCellText" destination="109" id="name-outlet-109"/>
                         <outlet property="SavedManCellText" destination="113" id="name-outlet-113"/>
                         <outlet property="AccountCellText" destination="117" id="name-outlet-117"/>
+                        <outlet property="MenuView" destination="70" id="name-outlet-70"/>
+                        <outlet property="SearchCell" destination="83" id="name-outlet-83"/>
+                        <outlet property="CartCell" destination="99" id="name-outlet-99"/>
+                        <outlet property="NotesCell" destination="103" id="name-outlet-103"/>
+                        <outlet property="SavedListsCell" destination="107" id="name-outlet-107"/>
+                        <outlet property="SavedManualsCell" destination="111" id="name-outlet-111"/>
+                        <outlet property="YourAccountCell" destination="115" id="name-outlet-115"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -260,29 +267,29 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="448">
-                                        <rect key="frame" x="0.0" y="22" width="198" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="449" tableViewCell="448">
-                                            <rect key="frame" x="0.0" y="0.0" width="198" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="450">
-                                        <rect key="frame" x="0.0" y="66" width="198" height="44"/>
+                                        <rect key="frame" x="0.0" y="66" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="451" tableViewCell="450">
-                                            <rect key="frame" x="0.0" y="0.0" width="198" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="452">
-                                        <rect key="frame" x="0.0" y="110" width="198" height="44"/>
+                                        <rect key="frame" x="0.0" y="110" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="453" tableViewCell="452">
-                                            <rect key="frame" x="0.0" y="0.0" width="198" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1209,7 +1216,7 @@
         <image name="blueX-backround.png" width="105" height="107"/>
         <image name="closeX-darkLine.png" width="2" height="107"/>
         <image name="closeX-lightLine.png" width="1" height="107"/>
-        <image name="main-background.png" width="640" height="1665"/>
+        <image name="main-background.png" width="1280" height="3330"/>
         <image name="science-background.png" width="640" height="409"/>
         <image name="startScreen-text.png" width="640" height="1126"/>
         <image name="startScreenBackground.png" width="640" height="1126"/>
@@ -1297,5 +1304,8 @@
         <image name="catalog-header.png" width="609" height="62"/>
         <image name="catalog-heade.png" width="1218" height="124"/>
         <image name="green-arrow.png" width="27" height="27"/>
+        <image name="test.png" width="320" height="833"/>
+        <image name="test2.png" width="320" height="504"/>
+        <image name="main-background-resized.png" width="320" height="504"/>
     </resources>
 </document>

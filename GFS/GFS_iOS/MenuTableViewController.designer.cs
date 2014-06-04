@@ -20,11 +20,35 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableViewCell CartCell { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableView MenuView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableViewCell NotesCell { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UILabel SavedListCellText { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableViewCell SavedListsCell { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UILabel SavedManCellText { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableViewCell SavedManualsCell { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableViewCell SearchCell { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -38,19 +62,47 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UILabel ViewCellText { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableViewCell YourAccountCell { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (AccountCellText != null) {
 				AccountCellText.Dispose ();
 				AccountCellText = null;
 			}
+			if (CartCell != null) {
+				CartCell.Dispose ();
+				CartCell = null;
+			}
+			if (MenuView != null) {
+				MenuView.Dispose ();
+				MenuView = null;
+			}
+			if (NotesCell != null) {
+				NotesCell.Dispose ();
+				NotesCell = null;
+			}
 			if (SavedListCellText != null) {
 				SavedListCellText.Dispose ();
 				SavedListCellText = null;
 			}
+			if (SavedListsCell != null) {
+				SavedListsCell.Dispose ();
+				SavedListsCell = null;
+			}
 			if (SavedManCellText != null) {
 				SavedManCellText.Dispose ();
 				SavedManCellText = null;
+			}
+			if (SavedManualsCell != null) {
+				SavedManualsCell.Dispose ();
+				SavedManualsCell = null;
+			}
+			if (SearchCell != null) {
+				SearchCell.Dispose ();
+				SearchCell = null;
 			}
 			if (SearchCellImage != null) {
 				SearchCellImage.Dispose ();
@@ -63,6 +115,10 @@ namespace GFS_iOS
 			if (ViewCellText != null) {
 				ViewCellText.Dispose ();
 				ViewCellText = null;
+			}
+			if (YourAccountCell != null) {
+				YourAccountCell.Dispose ();
+				YourAccountCell = null;
 			}
 		}
 	}

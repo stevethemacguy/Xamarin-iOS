@@ -93,11 +93,9 @@
     <BundleResource Include="Resources\blueX-backround.png" />
     <BundleResource Include="Resources\closeX-darkLine.png" />
     <BundleResource Include="Resources\closeX-lightLine.png" />
-    <BundleResource Include="Resources\main-background.png" />
     <BundleResource Include="Resources\science-background.png" />
     <BundleResource Include="Resources\startScreen-text.png" />
     <BundleResource Include="Resources\startScreenBackground.png" />
-    <BundleResource Include="Resources\main-background.jpg" />
     <BundleResource Include="Resources\science-background.jpg" />
     <BundleResource Include="Resources\startScreen-jpeg.jpg" />
     <BundleResource Include="Resources\startscreen-text-jpeg.jpg" />
@@ -175,7 +173,6 @@
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\app-Icon.png" />
     <BundleResource Include="Resources\settings-icon.png" />
-    <BundleResource Include="Resources\menu-background.png" />
     <BundleResource Include="Resources\science-background%402x.png" />
     <BundleResource Include="Resources\home-background%402x.png" />
     <BundleResource Include="Resources\magnifying-glass%402x.png" />
@@ -192,6 +189,8 @@
     <BundleResource Include="Resources\catalog-heade%402x.png" />
     <BundleResource Include="Resources\product-details-header.png" />
     <BundleResource Include="Resources\green-arrow.png" />
+    <BundleResource Include="Resources\main-background-resized%402x.png" />
+    <BundleResource Include="Resources\main-background-resized.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -274,6 +273,7 @@
     <Compile Include="ProductActionsTableController.designer.cs">
       <DependentUpon>ProductActionsTableController.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
