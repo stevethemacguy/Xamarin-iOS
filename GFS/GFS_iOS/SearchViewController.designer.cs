@@ -22,6 +22,10 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UISearchBar SearchBar { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIView SearchUIView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (HintTable != null) {
@@ -31,6 +35,10 @@ namespace GFS_iOS
 			if (SearchBar != null) {
 				SearchBar.Dispose ();
 				SearchBar = null;
+			}
+			if (SearchUIView != null) {
+				SearchUIView.Dispose ();
+				SearchUIView = null;
 			}
 		}
 	}

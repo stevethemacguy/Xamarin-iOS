@@ -17,6 +17,9 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
+			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
+
 			string[] hints1 = new string[] {"cabinet", "cabinet door", "cabbage"};
 			HintTable.Source = new TableSource(currentController, hints1);
 			HintTable.ScrollEnabled = true;
@@ -40,13 +43,13 @@ namespace GFS_iOS
 					}
 					if (SearchBar.Text == "ca")
 					{
-						tempHints = new string[] { "cat", "call", "cake", "cab", "cable", "cabbage" };
+						tempHints = new string[] { "cat", "call", "cake", "cab", "cable"};
 						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cab")
 					{
-						tempHints = new string[] { "cab", "cabin", "cabinet", "cabinetry", "cable", "cabbage" };
+						tempHints = new string[] { "cab", "cabin", "cabinet", "cabinetry", "cable"};
 						HintTable.Source = new TableSource(currentController, tempHints);
 						HintTable.ReloadData();
 					}

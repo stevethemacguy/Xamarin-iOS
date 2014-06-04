@@ -36,12 +36,6 @@ namespace GFS_iOS
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			MenuView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
-//			test = new TestView();
-//			test.Frame = View.Bounds;
-//
-//			test.BackgroundColor = UIColor.FromRGB (60,100,100);
-//
-//			View.AddSubview(test);
 		}
 	}
 }

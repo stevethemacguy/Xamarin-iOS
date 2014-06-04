@@ -191,6 +191,7 @@
     <BundleResource Include="Resources\green-arrow.png" />
     <BundleResource Include="Resources\main-background-resized%402x.png" />
     <BundleResource Include="Resources\main-background-resized.png" />
+    <BundleResource Include="Resources\main-background568.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

@@ -262,7 +262,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="447" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="111" width="319" height="211"/>
+                                <rect key="frame" x="0.0" y="111" width="319" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -294,6 +294,15 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="800">
+                                        <rect key="frame" x="0.0" y="162" width="319" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="801" tableViewCell="800">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -301,6 +310,7 @@
                     <connections>
                         <outlet property="SearchBar" destination="432" id="name-outlet-432"/>
                         <outlet property="HintTable" destination="447" id="name-outlet-447"/>
+                        <outlet property="SearchUIView" destination="124" id="name-outlet-124"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="127" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1307,5 +1317,6 @@
         <image name="test.png" width="320" height="833"/>
         <image name="test2.png" width="320" height="504"/>
         <image name="main-background-resized.png" width="320" height="504"/>
+        <image name="main-background568.png" width="320" height="568"/>
     </resources>
 </document>
