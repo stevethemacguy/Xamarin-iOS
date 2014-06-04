@@ -295,7 +295,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="800">
-                                        <rect key="frame" x="0.0" y="162" width="319" height="44"/>
+                                        <rect key="frame" x="0.0" y="154" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="801" tableViewCell="800">
                                             <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
@@ -1218,56 +1218,17 @@
                             <outlet property="delegate" destination="805" id="823"/>
                         </connections>
                         <sections>
-                            <tableViewSection id="824">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="807" reuseIdentifier="ResultCell1">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="34"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="807" id="825">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="809" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="89" width="320" height="0.0"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="826" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="catalog-header.png">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="813" reuseIdentifier="detailCell">
-                                        <rect key="frame" x="0.0" y="98" width="320" height="82"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="813" id="829">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="836" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="81" width="320" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection id="837">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="815" reuseIdentifier="detailCell">
-                                        <rect key="frame" x="0.0" y="296" width="320" height="82"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="815" id="839">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="840" fixedFrame="YES">
-                                                    <rect key="frame" x="84" y="0.0" width="167" height="18"/>
+                                                    <rect key="frame" x="88" y="70" width="167" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <state key="normal" title="KS Class II,  A201">
@@ -1277,23 +1238,8 @@
                                                     <connections>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="841" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
-                                                    <rect key="frame" x="277" y="7" width="33" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="842" fixedFrame="YES">
-                                                    <rect key="frame" x="6" y="0.0" width="78" height="19"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="01-911-000">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Capacity: 120g" lineBreakMode="tailTruncation" minimumFontSize="10" id="843" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="84" y="21" width="117" height="21"/>
+                                                    <rect key="frame" x="88" y="90" width="117" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -1301,7 +1247,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Readability: 0.01mg" lineBreakMode="tailTruncation" minimumFontSize="10" id="844" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="84" y="37" width="159" height="21"/>
+                                                    <rect key="frame" x="88" y="106" width="159" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -1309,15 +1255,34 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $12,381.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="845" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="84" y="53" width="167" height="21"/>
+                                                    <rect key="frame" x="88" y="122" width="167" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="846" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="81" width="320" height="1"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="903" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
+                                                    <rect key="frame" x="3" y="5" width="76" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="904" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product1.png">
+                                                    <rect key="frame" x="17" y="12" width="49" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="905" fixedFrame="YES">
+                                                    <rect key="frame" x="88" y="1" width="153" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                    <state key="normal" title="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    </state>
+                                                    <connections>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="908" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
+                                                    <rect key="frame" x="277" y="7" width="33" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1326,7 +1291,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="817" reuseIdentifier="detailCell">
-                                        <rect key="frame" x="0.0" y="378" width="320" height="82"/>
+                                        <rect key="frame" x="0.0" y="224" width="320" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="817" id="848">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
@@ -1392,7 +1357,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="819" reuseIdentifier="detailCell">
-                                        <rect key="frame" x="0.0" y="460" width="320" height="82"/>
+                                        <rect key="frame" x="0.0" y="306" width="320" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="819" id="857">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
@@ -1458,7 +1423,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="821" reuseIdentifier="detailCell">
-                                        <rect key="frame" x="0.0" y="542" width="320" height="82"/>
+                                        <rect key="frame" x="0.0" y="388" width="320" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="821" id="866">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
@@ -1529,10 +1494,7 @@
                         <color key="sectionIndexBackgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                     </tableView>
                     <connections>
-                        <outlet property="Result1" destination="807" id="806"/>
-                        <outlet property="CellBorder1" destination="809" id="808"/>
                         <outlet property="ProductDetailsUIView" destination="811" id="810"/>
-                        <outlet property="DetailCell1" destination="813" id="812"/>
                         <outlet property="DetailCell2" destination="815" id="814"/>
                         <outlet property="DetailCell3" destination="817" id="816"/>
                         <outlet property="DetailCell4" destination="819" id="818"/>

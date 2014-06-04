@@ -16,14 +16,6 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView CellBorder1 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell DetailCell1 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableViewCell DetailCell2 { get; set; }
 
 		[Outlet]
@@ -42,20 +34,8 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView ProductDetailsUIView { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell Result1 { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (CellBorder1 != null) {
-				CellBorder1.Dispose ();
-				CellBorder1 = null;
-			}
-			if (DetailCell1 != null) {
-				DetailCell1.Dispose ();
-				DetailCell1 = null;
-			}
 			if (DetailCell2 != null) {
 				DetailCell2.Dispose ();
 				DetailCell2 = null;
@@ -75,10 +55,6 @@ namespace GFS_iOS
 			if (ProductDetailsUIView != null) {
 				ProductDetailsUIView.Dispose ();
 				ProductDetailsUIView = null;
-			}
-			if (Result1 != null) {
-				Result1.Dispose ();
-				Result1 = null;
 			}
 		}
 	}
