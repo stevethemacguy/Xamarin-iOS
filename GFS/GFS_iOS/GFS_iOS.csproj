@@ -267,6 +267,10 @@
       <DependentUpon>ProductActionsTableController.cs</DependentUpon>
     </Compile>
     <Compile Include="TestView.cs" />
+    <Compile Include="SavedListsTableController.cs" />
+    <Compile Include="SavedListsTableController.designer.cs">
+      <DependentUpon>SavedListsTableController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

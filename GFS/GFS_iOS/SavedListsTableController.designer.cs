@@ -11,8 +11,8 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	[Register ("ProductDetailsTableController")]
-	partial class ProductDetailsTableController
+	[Register ("SavedListsTableController")]
+	partial class SavedListsTableController
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
