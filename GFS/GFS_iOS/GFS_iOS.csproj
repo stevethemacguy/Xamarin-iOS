@@ -193,6 +193,7 @@
     <BundleResource Include="Resources\main-background-resized.png" />
     <BundleResource Include="Resources\main-background568.png" />
     <BundleResource Include="Resources\articlesFile_6905.pdf" />
+    <BundleResource Include="Resources\productSpec.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -283,6 +284,10 @@
     <Compile Include="ManualListTableController.designer.cs">
       <DependentUpon>ManualListTableController.cs</DependentUpon>
     </Compile>
+    <Compile Include="PDFViewControllerTwo.designer.cs">
+      <DependentUpon>PDFViewControllerTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFViewControllerTwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
