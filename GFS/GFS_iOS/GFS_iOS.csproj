@@ -275,6 +275,14 @@
     <Compile Include="ListATableViewController.designer.cs">
       <DependentUpon>ListATableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="SavedManualsTableViewController.cs" />
+    <Compile Include="SavedManualsTableViewController.designer.cs">
+      <DependentUpon>SavedManualsTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFViewController.cs" />
+    <Compile Include="PDFViewController.designer.cs">
+      <DependentUpon>PDFViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
