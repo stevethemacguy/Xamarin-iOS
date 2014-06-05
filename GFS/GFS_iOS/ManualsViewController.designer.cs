@@ -14,8 +14,16 @@ namespace GFS_iOS
 	[Register ("ManualsViewController")]
 	partial class ManualsViewController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIWebView PDFWebView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (PDFWebView != null) {
+				PDFWebView.Dispose ();
+				PDFWebView = null;
+			}
 		}
 	}
 }

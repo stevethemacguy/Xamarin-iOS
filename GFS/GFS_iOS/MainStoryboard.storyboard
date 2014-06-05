@@ -341,11 +341,14 @@
                         <viewControllerLayoutGuide type="top" id="164"/>
                         <viewControllerLayoutGuide type="bottom" id="165"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="163">
+                    <webView contentMode="scaleToFill" id="1079" translatesAutoresizingMaskIntoConstraints="NO" key="view">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </webView>
+                    <connections>
+                        <outlet property="PDFWebView" destination="1079" id="name-outlet-1079"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="166" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
