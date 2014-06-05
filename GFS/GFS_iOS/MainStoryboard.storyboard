@@ -1577,10 +1577,10 @@
                             <tableViewSection id="1197">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1192" translatesAutoresizingMaskIntoConstraints="NO" reuseIdentifier="manualListCells">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="54"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1192" id="1200">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KSClassII_ProductManual.pdf" lineBreakMode="tailTruncation" minimumFontSize="10" id="1186" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1592,7 +1592,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1241" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="pdf-icon.png">
-                                                    <rect key="frame" x="275" y="14" width="32" height="32"/>
+                                                    <rect key="frame" x="275" y="13" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1243" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
+                                                    <rect key="frame" x="0.0" y="61" width="320" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1602,10 +1606,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1194" translatesAutoresizingMaskIntoConstraints="NO" reuseIdentifier="manualListCells">
-                                        <rect key="frame" x="0.0" y="118" width="320" height="54"/>
+                                        <rect key="frame" x="0.0" y="126" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1194" id="1201">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="A2Series_SpecV2.pdf" lineBreakMode="tailTruncation" minimumFontSize="10" id="1188" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1617,7 +1621,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1242" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="pdf-icon.png">
-                                                    <rect key="frame" x="275" y="14" width="32" height="32"/>
+                                                    <rect key="frame" x="275" y="14" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1244" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
+                                                    <rect key="frame" x="0.0" y="61" width="320" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
