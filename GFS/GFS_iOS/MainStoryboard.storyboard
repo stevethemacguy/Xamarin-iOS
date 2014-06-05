@@ -1459,47 +1459,15 @@
                         <sections>
                             <tableViewSection id="1103">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1096" reuseIdentifier="detailCell">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="150"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1147" reuseIdentifier="detailCell">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1096" id="1106">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1147" id="1150">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Capacity: 120g" lineBreakMode="tailTruncation" minimumFontSize="10" id="1107" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="90" width="117" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Readability: 0.01mg" lineBreakMode="tailTruncation" minimumFontSize="10" id="1108" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="106" width="159" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $12,381.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="1109" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="122" width="167" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1110" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
-                                                    <rect key="frame" x="3" y="7" width="76" height="62"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1111" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product1.png">
-                                                    <rect key="frame" x="17" y="14" width="49" height="48"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1112" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="1" width="153" height="79"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1156" fixedFrame="YES">
+                                                    <rect key="frame" x="88" y="3" width="153" height="79"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <state key="normal" title="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets">
@@ -1509,15 +1477,7 @@
                                                     <connections>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1114" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
-                                                    <rect key="frame" x="277" y="8" width="33" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1115" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="149" width="320" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KS Class II,  A201" lineBreakMode="tailTruncation" minimumFontSize="10" id="1116" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KS Class II,  A201" lineBreakMode="tailTruncation" minimumFontSize="10" id="1160" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="88" y="70" width="111" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1525,49 +1485,32 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1175" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
+                                                    <rect key="frame" x="3" y="9" width="76" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1176" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product1.png">
+                                                    <rect key="frame" x="17" y="16" width="49" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1177" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
+                                                    <rect key="frame" x="0.0" y="99" width="320" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="162" kind="push" id="1132"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1100" reuseIdentifier="detailCell">
-                                        <rect key="frame" x="0.0" y="214" width="320" height="150"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1100" reuseIdentifier="manualCell">
+                                        <rect key="frame" x="0.0" y="164" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1100" id="1117">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Capacity: 520g" lineBreakMode="tailTruncation" minimumFontSize="10" id="1118" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="90" width="117" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Readability: 0.1mg" lineBreakMode="tailTruncation" minimumFontSize="10" id="1119" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="106" width="159" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $8,272.03" lineBreakMode="tailTruncation" minimumFontSize="10" id="1120" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="122" width="167" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1121" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
-                                                    <rect key="frame" x="3" y="6" width="76" height="62"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1122" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="2" width="146" height="68"/>
+                                                    <rect key="frame" x="88" y="3" width="146" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <state key="normal" title="Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets">
@@ -1577,18 +1520,6 @@
                                                     <connections>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1124" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
-                                                    <rect key="frame" x="277" y="8" width="33" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1125" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="149" width="320" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1126" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product2.png">
-                                                    <rect key="frame" x="15" y="13" width="54" height="56"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XPE 105" lineBreakMode="tailTruncation" minimumFontSize="10" id="1127" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="88" y="70" width="111" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1597,6 +1528,18 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1179" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
+                                                    <rect key="frame" x="3" y="8" width="76" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1180" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product2.png">
+                                                    <rect key="frame" x="15" y="14" width="54" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1125" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
+                                                    <rect key="frame" x="0.0" y="99" width="320" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1608,9 +1551,9 @@
                         <color key="sectionIndexBackgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                     </tableView>
                     <connections>
-                        <outlet property="ListProdCell1" destination="1096" id="1095"/>
                         <outlet property="SavedManualsList" destination="1098" id="name-outlet-1098"/>
-                        <outlet property="ListProdCell2" destination="1100" id="1099"/>
+                        <outlet property="manualProdCell2" destination="1100" id="name-outlet-1100"/>
+                        <outlet property="manualProdCell1" destination="1147" id="name-outlet-1147"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>

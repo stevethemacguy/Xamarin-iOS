@@ -231,10 +231,6 @@
     <Compile Include="ListViewController.designer.cs">
       <DependentUpon>ListViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManualsViewController.cs" />
-    <Compile Include="ManualsViewController.designer.cs">
-      <DependentUpon>ManualsViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="AccountViewController.cs" />
     <Compile Include="AccountViewController.designer.cs">
       <DependentUpon>AccountViewController.cs</DependentUpon>

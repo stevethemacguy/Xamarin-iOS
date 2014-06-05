@@ -16,11 +16,11 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell ListProdCell1 { get; set; }
+		UITableViewCell manualProdCell1 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell ListProdCell2 { get; set; }
+		UITableViewCell manualProdCell2 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -28,13 +28,13 @@ namespace GFS_iOS
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (ListProdCell1 != null) {
-				ListProdCell1.Dispose ();
-				ListProdCell1 = null;
+			if (manualProdCell1 != null) {
+				manualProdCell1.Dispose ();
+				manualProdCell1 = null;
 			}
-			if (ListProdCell2 != null) {
-				ListProdCell2.Dispose ();
-				ListProdCell2 = null;
+			if (manualProdCell2 != null) {
+				manualProdCell2.Dispose ();
+				manualProdCell2 = null;
 			}
 			if (SavedManualsList != null) {
 				SavedManualsList.Dispose ();
