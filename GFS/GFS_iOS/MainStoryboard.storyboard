@@ -1257,6 +1257,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="935" kind="push" id="1251"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1551,6 +1554,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <segue destination="1184" kind="push" id="1249"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
