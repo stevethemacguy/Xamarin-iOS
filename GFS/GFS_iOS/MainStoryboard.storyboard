@@ -422,18 +422,6 @@
                                                     <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="341" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="1" width="153" height="79"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <state key="normal" title="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="574" kind="push" id="773"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From previous search" lineBreakMode="tailTruncation" minimumFontSize="10" id="354" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="86" y="67" width="143" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -442,10 +430,20 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets" lineBreakMode="wordWrap" minimumFontSize="10" id="1033" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
+                                                    <rect key="frame" x="86" y="1" width="153" height="67"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
-                                        <connections/>
+                                        <connections>
+                                            <segue destination="574" kind="push" id="1025"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="219" reuseIdentifier="ResultCell2">
                                         <rect key="frame" x="0.0" y="154" width="320" height="90"/>
@@ -466,19 +464,7 @@
                                                     <rect key="frame" x="15" y="11" width="54" height="56"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="366" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="1" width="147" height="79"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <state key="normal" title="Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="574" kind="push" id="775"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From &quot;cabinet&quot; saved list" lineBreakMode="tailTruncation" minimumFontSize="10" id="389" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From &quot;Cabinets&quot; saved list" lineBreakMode="tailTruncation" minimumFontSize="10" id="389" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="86" y="67" width="143" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -490,10 +476,20 @@
                                                     <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets" lineBreakMode="characterWrap" minimumFontSize="10" id="1047" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
+                                                    <rect key="frame" x="86" y="1" width="150" height="67"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
-                                        <connections/>
+                                        <connections>
+                                            <segue destination="574" kind="push" id="1023"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="221" reuseIdentifier="ResultCell3">
                                         <rect key="frame" x="0.0" y="244" width="320" height="90"/>
@@ -514,25 +510,23 @@
                                                     <rect key="frame" x="9" y="10" width="64" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="369" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="1" width="151" height="79"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <state key="normal" title="Labconco™ Purifier™ Cell Logic™ Type A2 and B2 Biological Safety Cabinets  ">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="574" kind="push" id="777"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="394" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
                                                     <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Labconco™ Purifier™ Cell Logic™ Type A2 and B2 Biological Safety Cabinets" lineBreakMode="characterWrap" minimumFontSize="10" id="1049" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
+                                                    <rect key="frame" x="86" y="1" width="150" height="67"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections/>
+                                        <connections>
+                                            <segue destination="574" kind="push" id="1027"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="227" reuseIdentifier="ResultCell4">
                                         <rect key="frame" x="0.0" y="334" width="320" height="90"/>
@@ -553,25 +547,23 @@
                                                     <rect key="frame" x="8" y="8" width="66" height="59"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="372" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="1" width="141" height="79"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <state key="normal" title="Thermo Scientific™ Replacement HEPA Filters and Cleaning Kits">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="574" kind="push" id="779"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="395" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
                                                     <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thermo Scientific™ Replacement HEPA Filters and Cleaning Kits" lineBreakMode="characterWrap" minimumFontSize="10" id="1064" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="3" adjustsLetterSpacingToFitWidth="NO">
+                                                    <rect key="frame" x="86" y="5" width="150" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections/>
+                                        <connections>
+                                            <segue destination="574" kind="push" id="1029"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="229" reuseIdentifier="ResultCell5">
                                         <rect key="frame" x="0.0" y="424" width="320" height="90"/>
@@ -592,25 +584,23 @@
                                                     <rect key="frame" x="11" y="8" width="61" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="375" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="1" width="153" height="79"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <state key="normal" title="Labconco™ Purifier™ HEPA-Filtered Safety Enclosures">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="574" kind="push" id="781"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="396" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
                                                     <rect key="frame" x="277" y="5" width="33" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Labconco™ Purifier™ HEPA-Filtered Safety Enclosures" lineBreakMode="characterWrap" minimumFontSize="10" id="1065" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="3" adjustsLetterSpacingToFitWidth="NO">
+                                                    <rect key="frame" x="86" y="5" width="150" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections/>
+                                        <connections>
+                                            <segue destination="574" kind="push" id="1031"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -928,11 +918,12 @@
                                                     <rect key="frame" x="84" y="0.0" width="167" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="KS Class II,  A201">
+                                                    <state key="normal" title="KS Class II,  A205">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="UIButton719_TouchUpInside:" destination="574" id="1000" eventType="touchUpInside"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="720" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
@@ -943,14 +934,14 @@
                                                     <rect key="frame" x="6" y="0.0" width="78" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="01-911-000">
+                                                    <state key="normal" title="01-911-001">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
                                                     <connections>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Capacity: 120g" lineBreakMode="tailTruncation" minimumFontSize="10" id="722" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Capacity: 220" lineBreakMode="tailTruncation" minimumFontSize="10" id="722" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="84" y="21" width="117" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -966,7 +957,7 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $12,381.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="724" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $15,050.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="724" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="84" y="53" width="167" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -995,7 +986,7 @@
                                                     <rect key="frame" x="84" y="0.0" width="167" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="KS Class II,  A201">
+                                                    <state key="normal" title="KS Class II,  A205DR">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
@@ -1010,7 +1001,7 @@
                                                     <rect key="frame" x="6" y="0.0" width="78" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="01-911-000">
+                                                    <state key="normal" title="01-911-002">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
@@ -1033,7 +1024,7 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $12,381.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="733" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $13,337.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="733" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="84" y="53" width="167" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1062,7 +1053,7 @@
                                                     <rect key="frame" x="84" y="0.0" width="167" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="KS Class II,  A201">
+                                                    <state key="normal" title="KS Class II,  A204">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
@@ -1077,7 +1068,7 @@
                                                     <rect key="frame" x="6" y="0.0" width="78" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="01-911-000">
+                                                    <state key="normal" title="01-911-003">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
@@ -1100,7 +1091,7 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $12,381.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="742" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $10,500.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="742" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="84" y="53" width="167" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1129,7 +1120,7 @@
                                                     <rect key="frame" x="84" y="0.0" width="167" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="KS Class II,  A201">
+                                                    <state key="normal" title="KS Class II,  A504">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
@@ -1144,7 +1135,7 @@
                                                     <rect key="frame" x="6" y="0.0" width="78" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="01-911-000">
+                                                    <state key="normal" title="01-911-004">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
@@ -1167,7 +1158,7 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $12,381.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="751" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $12,400.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="751" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="84" y="53" width="167" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1298,18 +1289,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="944" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="70" width="167" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <state key="normal" title="KS Class II,  A201">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="UIButton840_TouchUpInside:" destination="935" id="945" eventType="touchUpInside"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Capacity: 120g" lineBreakMode="tailTruncation" minimumFontSize="10" id="946" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="88" y="90" width="117" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1335,11 +1314,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="949" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
-                                                    <rect key="frame" x="3" y="5" width="76" height="62"/>
+                                                    <rect key="frame" x="3" y="7" width="76" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="950" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product1.png">
-                                                    <rect key="frame" x="17" y="12" width="49" height="48"/>
+                                                    <rect key="frame" x="17" y="14" width="49" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="951" fixedFrame="YES">
@@ -1351,20 +1330,101 @@
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
                                                     <connections>
+                                                        <segue destination="574" kind="push" id="1016"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="952" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
-                                                    <rect key="frame" x="277" y="7" width="33" height="30"/>
+                                                    <rect key="frame" x="277" y="8" width="33" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="953" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
                                                     <rect key="frame" x="0.0" y="149" width="320" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KS Class II,  A201" lineBreakMode="tailTruncation" minimumFontSize="10" id="1020" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="88" y="70" width="111" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="574" kind="push" id="982"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="984" reuseIdentifier="detailCell">
+                                        <rect key="frame" x="0.0" y="214" width="320" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="984" id="987">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Capacity: 520g" lineBreakMode="tailTruncation" minimumFontSize="10" id="991" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="88" y="90" width="117" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Readability: 0.1mg" lineBreakMode="tailTruncation" minimumFontSize="10" id="992" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="88" y="106" width="159" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price: $8,272.03" lineBreakMode="tailTruncation" minimumFontSize="10" id="993" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="88" y="122" width="167" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="994" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
+                                                    <rect key="frame" x="3" y="6" width="76" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="996" fixedFrame="YES">
+                                                    <rect key="frame" x="88" y="2" width="146" height="68"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                    <state key="normal" title="Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="574" kind="push" id="1018"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="997" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
+                                                    <rect key="frame" x="277" y="8" width="33" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="998" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
+                                                    <rect key="frame" x="0.0" y="149" width="320" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="999" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product2.png">
+                                                    <rect key="frame" x="15" y="13" width="54" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XPE 105" lineBreakMode="tailTruncation" minimumFontSize="10" id="1021" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="88" y="70" width="111" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1375,6 +1435,7 @@
                     <connections>
                         <outlet property="ListProdCell1" destination="939" id="name-outlet-939"/>
                         <outlet property="ListOneUIView" destination="937" id="name-outlet-937"/>
+                        <outlet property="ListProdCell2" destination="984" id="name-outlet-984"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
