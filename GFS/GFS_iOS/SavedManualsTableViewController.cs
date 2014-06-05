@@ -17,9 +17,6 @@ namespace GFS_iOS
 			manualProdCell1.BackgroundColor = UIColor.Clear;
 			manualProdCell2.BackgroundColor = UIColor.Clear;
 			SavedManualsList.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
-
 		}
-
-
 	}
 }
