@@ -46,10 +46,6 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableViewCell Result1 { get; set; }
 
-		[Action ("UIButton719_TouchUpInside:")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void UIButton719_TouchUpInside (MonoTouch.UIKit.UIButton sender);
-
 		void ReleaseDesignerOutlets ()
 		{
 			if (CellBorder1 != null) {
