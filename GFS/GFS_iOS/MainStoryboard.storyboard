@@ -336,7 +336,7 @@
         </scene>
         <scene sceneID="161">
             <objects>
-                <viewController id="162" sceneMemberID="viewController" customClass="PDFViewController" storyboardIdentifier="pdfController" restorationIdentifier="pdfController" title="KSClassII_ProductManual.pdf">
+                <viewController id="162" sceneMemberID="viewController" customClass="PDFViewController" storyboardIdentifier="pdfController" restorationIdentifier="pdfController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="164"/>
                         <viewControllerLayoutGuide type="bottom" id="165"/>
@@ -1660,7 +1660,7 @@
         </scene>
         <scene sceneID="1216">
             <objects>
-                <viewController id="1217" sceneMemberID="viewController" customClass="PDFViewControllerTwo" storyboardIdentifier="PDFViewTwo" restorationIdentifier="PDFViewTwo" title="A2Series_SpecV2.pdf">
+                <viewController id="1217" sceneMemberID="viewController" customClass="PDFViewControllerTwo" storyboardIdentifier="PDFViewTwo" restorationIdentifier="PDFViewTwo">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1220"/>
                         <viewControllerLayoutGuide type="bottom" id="1221"/>
