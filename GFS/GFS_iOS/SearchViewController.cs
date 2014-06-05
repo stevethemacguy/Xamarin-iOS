@@ -39,45 +39,38 @@ namespace GFS_iOS
 					{
 						tempHints = new string[] { "cat", "cool", "chrome", "call", "cake", "cab" };
 						HintTable.Source = new TableSource(currentController, tempHints);
-						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "ca")
 					{
 						tempHints = new string[] { "cat", "call", "cake", "cab", "cable"};
 						HintTable.Source = new TableSource(currentController, tempHints);
-						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cab")
 					{
 						tempHints = new string[] { "cab", "cabin", "cabinet", "cabinetry", "cable"};
 						HintTable.Source = new TableSource(currentController, tempHints);
-						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cabi")
 					{
 						tempHints = new string[] { "cabin", "cabinet"};
 						HintTable.Source = new TableSource(currentController, tempHints);
-						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cabin")
 					{
 						tempHints = new string[] { "cabin", "cabinet" };
 						HintTable.Source = new TableSource(currentController, tempHints);
-						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cabine")
 					{
 						tempHints = new string[] { "cabinet"};
 						HintTable.Source = new TableSource(currentController, tempHints);
-						HintTable.ReloadData();
 					}
 					if (SearchBar.Text == "cabinet")
 					{
 						tempHints = new string[] { "cabinet"};
 						HintTable.Source = new TableSource(currentController, tempHints);
-						HintTable.ReloadData();
 					}
-
+                    HintTable.ReloadData();
 					HintTable.Hidden = false;
 				}
 			};
@@ -126,7 +119,7 @@ namespace GFS_iOS
 			);
 
 			//Segue to the new View
-			controller.NavigationController.PushViewController(ok, true);
+		    controller.NavigationController.PushViewController(ok, true);
 		}
 	}
 

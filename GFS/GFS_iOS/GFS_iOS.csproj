@@ -198,6 +198,7 @@
     <None Include="Entitlements.plist">
       <DependentUpon>Info.plist</DependentUpon>
     </None>
+    <Content Include="Resources\articlesFile_6905.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
