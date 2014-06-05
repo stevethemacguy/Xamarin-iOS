@@ -194,6 +194,8 @@
     <BundleResource Include="Resources\main-background568.png" />
     <BundleResource Include="Resources\articlesFile_6905.pdf" />
     <BundleResource Include="Resources\productSpec.pdf" />
+    <BundleResource Include="Resources\pdf-icon.png" />
+    <BundleResource Include="Resources\pdf-icon%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
