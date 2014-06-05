@@ -290,6 +290,10 @@
       <DependentUpon>PDFViewControllerTwo.cs</DependentUpon>
     </Compile>
     <Compile Include="PDFViewControllerTwo.cs" />
+    <Compile Include="ProductPageViewController.cs" />
+    <Compile Include="ProductPageViewController.designer.cs">
+      <DependentUpon>ProductPageViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

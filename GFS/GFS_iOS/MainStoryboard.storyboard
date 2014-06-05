@@ -445,7 +445,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
                                         <connections>
-                                            <segue destination="574" kind="push" id="1025"/>
+                                            <segue destination="1287" kind="push" id="1295"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="219" reuseIdentifier="ResultCell2">
@@ -491,7 +491,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90588235294117647" green="0.96862745098039216" blue="0.803921568627451" alpha="1"/>
                                         <connections>
-                                            <segue destination="574" kind="push" id="1023"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="221" reuseIdentifier="ResultCell3">
@@ -528,7 +527,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="574" kind="push" id="1027"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="227" reuseIdentifier="ResultCell4">
@@ -565,7 +563,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="574" kind="push" id="1029"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="229" reuseIdentifier="ResultCell5">
@@ -602,7 +599,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="574" kind="push" id="1031"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -676,7 +672,7 @@
                             <tableViewSection id="530">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="531" reuseIdentifier="searchcell" rowHeight="0">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="531" id="534">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -700,7 +696,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="535" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="129" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="65" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="535" id="536">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -724,7 +720,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="538" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="194" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="538" id="541">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -748,7 +744,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="548" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="259" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="195" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="548" id="551">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -772,7 +768,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="553" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="324" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="260" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="553" id="556">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -909,7 +905,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="512" kind="push" id="783"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -980,7 +975,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="512" kind="push" id="757"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="726" reuseIdentifier="detailCell">
@@ -1047,7 +1041,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="512" kind="push" id="759"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="735" reuseIdentifier="detailCell">
@@ -1114,7 +1107,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="512" kind="push" id="761"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="744" reuseIdentifier="detailCell">
@@ -1181,7 +1173,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="512" kind="push" id="763"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1203,7 +1194,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="635" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-925" y="-113"/>
+            <point key="canvasLocation" x="-568" y="-1620"/>
         </scene>
         <scene sceneID="804">
             <objects>
@@ -1341,7 +1332,6 @@
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="574" kind="push" id="1016"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="952" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
@@ -1363,7 +1353,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="574" kind="push" id="982"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="984" reuseIdentifier="detailCell">
@@ -1410,7 +1399,6 @@
                                                         <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="574" kind="push" id="1018"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="997" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
@@ -1436,7 +1424,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="574" kind="push" id="1245"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1677,6 +1664,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1222" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="870" y="391"/>
+        </scene>
+        <scene sceneID="1286">
+            <objects>
+                <viewController id="1287" sceneMemberID="viewController" customClass="ProductPageViewController" storyboardIdentifier="productPageController" restorationIdentifier="productPageController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1289"/>
+                        <viewControllerLayoutGuide type="bottom" id="1290"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1288">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1298" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png" fixedFrame="YES">
+                                <rect key="frame" x="110" y="70" width="100" height="116"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1300" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product1.png">
+                                <rect key="frame" x="130" y="76" width="60" height="105"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="ProductImageBackground" destination="1298" id="name-outlet-1298"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1291" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1002" y="-118"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

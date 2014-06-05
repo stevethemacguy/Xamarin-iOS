@@ -16,27 +16,27 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell ManualListCell1 { get; set; }
+		MonoTouch.UIKit.UITableViewCell ManualListCell1 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell ManualListCell2 { get; set; }
+		MonoTouch.UIKit.UITableViewCell ManualListCell2 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableView ManualListView { get; set; }
+		MonoTouch.UIKit.UITableView ManualListView { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView pdfImage { get; set; }
+		MonoTouch.UIKit.UIImageView pdfImage { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel ProductManual { get; set; }
+		MonoTouch.UIKit.UILabel ProductManual { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel TechnicalSpecification { get; set; }
+		MonoTouch.UIKit.UILabel TechnicalSpecification { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
