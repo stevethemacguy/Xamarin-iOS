@@ -16,15 +16,15 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell manualProdCell1 { get; set; }
+		MonoTouch.UIKit.UITableViewCell manualProdCell1 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell manualProdCell2 { get; set; }
+		MonoTouch.UIKit.UITableViewCell manualProdCell2 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableView SavedManualsList { get; set; }
+		MonoTouch.UIKit.UITableView SavedManualsList { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{

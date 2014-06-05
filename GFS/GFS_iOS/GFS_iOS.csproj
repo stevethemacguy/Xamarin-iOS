@@ -279,6 +279,10 @@
     <Compile Include="PDFViewController.designer.cs">
       <DependentUpon>PDFViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManualListTableController.cs" />
+    <Compile Include="ManualListTableController.designer.cs">
+      <DependentUpon>ManualListTableController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
