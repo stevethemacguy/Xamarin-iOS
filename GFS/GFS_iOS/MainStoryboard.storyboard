@@ -352,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="166" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="-133"/>
+            <point key="canvasLocation" x="353" y="-126"/>
         </scene>
         <scene sceneID="175">
             <objects>
@@ -1500,6 +1500,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <segue destination="162" kind="push" id="1181"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1100" reuseIdentifier="manualCell">
