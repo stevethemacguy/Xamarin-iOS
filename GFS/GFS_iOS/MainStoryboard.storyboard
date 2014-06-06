@@ -1552,7 +1552,7 @@
         <scene sceneID="1183">
             <objects>
                 <tableViewController id="1184" sceneMemberID="viewController" title="Saved Manuals" customClass="ManualListTableController" storyboardIdentifier="manualListsTable" restorationIdentifier="manualListsTable">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1190">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="singleLine" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1190">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1567,7 +1567,7 @@
                                         <rect key="frame" x="0.0" y="64" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1192" id="1200">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KSClassII_ProductManual.pdf" lineBreakMode="tailTruncation" minimumFontSize="10" id="1186" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1578,12 +1578,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1241" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="pdf-icon.png">
-                                                    <rect key="frame" x="275" y="15" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1243" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="61" width="320" height="1"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1372" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="pdf-icon.png">
+                                                    <rect key="frame" x="275" y="15" width="30" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1596,7 +1592,7 @@
                                         <rect key="frame" x="0.0" y="126" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1194" id="1201">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="A2Series_SpecV2.pdf" lineBreakMode="tailTruncation" minimumFontSize="10" id="1188" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1608,11 +1604,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1242" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="pdf-icon.png">
-                                                    <rect key="frame" x="275" y="15" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1244" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="61" width="320" height="1"/>
+                                                    <rect key="frame" x="275" y="15" width="30" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1632,7 +1624,6 @@
                         <outlet property="ManualListView" destination="1190" id="name-outlet-1190"/>
                         <outlet property="ManualListCell1" destination="1192" id="name-outlet-1192"/>
                         <outlet property="ManualListCell2" destination="1194" id="name-outlet-1194"/>
-                        <outlet property="pdfImage" destination="1241" id="name-outlet-1241"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
