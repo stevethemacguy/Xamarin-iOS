@@ -1733,10 +1733,6 @@
                                 <string key="text">XPE Analytical Balances provide the best performance in analytical weighing and support the highest requirements for safety, efficiency and ease of compliance. Thanks to low repeatability, XPE Analytical balances offer the smallest minimum weight. Quality Management features such as the innovative StatusLight™ and proprietary StaticDetect™ technology take the worry out of weighing and provide a high level of trust in your results. LevelControl and MinWeigh™ enable full regulatory compliance.</string>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="1358" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="description-text.png">
-                                <rect key="frame" x="17" y="535" width="289" height="240"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                         </subviews>
                     </view>
                     <connections>

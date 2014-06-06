@@ -198,7 +198,6 @@
     <BundleResource Include="Resources\pdf-icon%402x.png" />
     <BundleResource Include="Resources\stars.png" />
     <BundleResource Include="Resources\selected-product-border.png" />
-    <BundleResource Include="Resources\description-text.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -302,4 +301,7 @@
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="description-text.png" />
+  </ItemGroup>
 </Project>
