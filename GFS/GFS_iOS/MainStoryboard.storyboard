@@ -1733,41 +1733,10 @@
                                 <string key="text">XPE Analytical Balances provide the best performance in analytical weighing and support the highest requirements for safety, efficiency and ease of compliance. Thanks to low repeatability, XPE Analytical balances offer the smallest minimum weight. Quality Management features such as the innovative StatusLight™ and proprietary StaticDetect™ technology take the worry out of weighing and provide a high level of trust in your results. LevelControl and MinWeigh™ enable full regulatory compliance.</string>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="StatusLight™ uses color to help you identify the status of your balance, so you know exactly when it is ready for use." lineBreakMode="tailTruncation" minimumFontSize="10" id="1354" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="2">
-                                <rect key="frame" x="17" y="365" width="281" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="9"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="1355" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="3">
-                                <rect key="frame" x="17" y="392" width="281" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="9"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                                <string key="text">SmartGrid™ weighing pan minimizes effects of turbulence in weighing chamber and ensures more accurate results and shorter stabilization times.</string>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="1356" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="3">
-                                <rect key="frame" x="17" y="425" width="281" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="9"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                                <string key="text">StaticDetect™ technology detects electrostatic charge on sample and/or its container; weighing error is measured and warning given if user-defined limit is exceeded.</string>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="1357" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="3">
-                                <rect key="frame" x="17" y="462" width="281" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="9"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                                <string key="text">SmartSense sensors offer ergonomic, hands-free operation and personnel security enabling user to tare, open and close draft shield or print without touching balance.</string>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="1358" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="description-text.png">
+                                <rect key="frame" x="17" y="535" width="289" height="240"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -1885,5 +1854,6 @@
         <image name="pdf-icon.png" width="80" height="96"/>
         <image name="stars.png" width="216" height="35"/>
         <image name="selected-product-border.png" width="402" height="402"/>
+        <image name="description-text.png" width="594" height="1181"/>
     </resources>
 </document>
