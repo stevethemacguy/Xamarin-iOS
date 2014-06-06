@@ -296,9 +296,15 @@
     <Compile Include="ProductPageViewController.designer.cs">
       <DependentUpon>ProductPageViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductPageViewController2.cs" />
+    <Compile Include="ProductPageViewController2.designer.cs">
+      <DependentUpon>ProductPageViewController2.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="MainStoryboard.storyboard">
+      <DependentUpon>ProductPageViewController2.cs</DependentUpon>
+    </InterfaceDefinition>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>

@@ -11,18 +11,26 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	[Register ("PDFViewControllerTwo")]
-	partial class PDFViewControllerTwo
+	[Register ("ProductPageViewController2")]
+	partial class ProductPageViewController2
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIWebView pdfViewerTwo { get; set; }
+		UIView ProductPageUIView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView StarsImage { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (pdfViewerTwo != null) {
-				pdfViewerTwo.Dispose ();
-				pdfViewerTwo = null;
+			if (ProductPageUIView != null) {
+				ProductPageUIView.Dispose ();
+				ProductPageUIView = null;
+			}
+			if (StarsImage != null) {
+				StarsImage.Dispose ();
+				StarsImage = null;
 			}
 		}
 	}
