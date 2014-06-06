@@ -1677,18 +1677,44 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1298" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png" fixedFrame="YES">
-                                <rect key="frame" x="110" y="70" width="100" height="116"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1298" translatesAutoresizingMaskIntoConstraints="NO" image="selected-product-border.png" fixedFrame="YES">
+                                <rect key="frame" x="103" y="70" width="114" height="121"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1300" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product1.png">
-                                <rect key="frame" x="130" y="76" width="60" height="105"/>
+                                <rect key="frame" x="118" y="76" width="84" height="108"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets" lineBreakMode="wordWrap" minimumFontSize="10" id="1301" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
+                                <rect key="frame" x="11" y="198" width="242" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="11"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1302" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
+                                <rect key="frame" x="275" y="169" width="33" height="88"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$10,500 – $ 15,0505" lineBreakMode="tailTruncation" minimumFontSize="10" id="1303" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="11" y="230" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1307" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="stars.png">
+                                <rect key="frame" x="105" y="196" width="86" height="88"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="ProductImageBackground" destination="1298" id="name-outlet-1298"/>
+                        <outlet property="ProductPageUIView" destination="1288" id="name-outlet-1288"/>
+                        <outlet property="StarsImage" destination="1307" id="name-outlet-1307"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1291" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1799,5 +1825,7 @@
         <image name="main-background-resized.png" width="320" height="504"/>
         <image name="main-background568.png" width="320" height="568"/>
         <image name="pdf-icon.png" width="80" height="96"/>
+        <image name="stars.png" width="216" height="35"/>
+        <image name="selected-product-border.png" width="402" height="402"/>
     </resources>
 </document>

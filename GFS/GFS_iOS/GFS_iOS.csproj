@@ -196,6 +196,8 @@
     <BundleResource Include="Resources\productSpec.pdf" />
     <BundleResource Include="Resources\pdf-icon.png" />
     <BundleResource Include="Resources\pdf-icon%402x.png" />
+    <BundleResource Include="Resources\stars.png" />
+    <BundleResource Include="Resources\selected-product-border.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

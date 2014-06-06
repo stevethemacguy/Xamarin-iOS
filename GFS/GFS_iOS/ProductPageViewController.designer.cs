@@ -18,11 +18,27 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIImageView ProductImageBackground { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIView ProductPageUIView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView StarsImage { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (ProductImageBackground != null) {
 				ProductImageBackground.Dispose ();
 				ProductImageBackground = null;
+			}
+			if (ProductPageUIView != null) {
+				ProductPageUIView.Dispose ();
+				ProductPageUIView = null;
+			}
+			if (StarsImage != null) {
+				StarsImage.Dispose ();
+				StarsImage = null;
 			}
 		}
 	}
