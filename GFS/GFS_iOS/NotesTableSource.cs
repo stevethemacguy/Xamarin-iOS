@@ -6,12 +6,16 @@ using System.Collections.Generic;
 
 namespace GFS_iOS
 {
+
 	public class NotesTableSource : UITableViewSource {
 		protected string[] tableItems;
-		protected string cellIdentifier = "TableCell";
-		public NotesTableSource (string[] items)
+		protected string cellIdentifier = "testCell";
+		UIViewController parentController;
+
+		public NotesTableSource (UIViewController parentController, string[] items)
 		{
 			tableItems = items;
+			this.parentController = parentController;
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
@@ -25,6 +29,22 @@ namespace GFS_iOS
 			//tableItems[indexPath] the actual text of the row
 			Console.WriteLine(indexPath.Row); //the row number
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
+
+			var index = indexPath.Row;
+			//Do the segue
+			//Get the current storyboard
+			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+
+			//Get the NotesViewController
+			NotesViewController notesView = (NotesViewController) board.InstantiateViewController(  
+				"notesViewController"
+			);
+			//Segue to the new View
+			parentController.NavigationController.PushViewController (notesView, false);
+			notesView.index = indexPath.Row;
+			//segue.Perform;
+			//UINavigationController.PushViewController("NotesViewController");
+			//PerformSegue("MyRowSelectedSegue", indexPath);
 		}
 
 		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)

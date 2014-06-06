@@ -18,11 +18,19 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView SavedListsUIView { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableViewCell TestCell { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (SavedListsUIView != null) {
 				SavedListsUIView.Dispose ();
 				SavedListsUIView = null;
+			}
+			if (TestCell != null) {
+				TestCell.Dispose ();
+				TestCell = null;
 			}
 		}
 	}
