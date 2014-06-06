@@ -8,9 +8,11 @@ namespace GFS_iOS
 {
 	partial class NotesTableController : UITableViewController
 	{
+		UITableView table;
 		public String[] notes; //An array of strings. Each string is the text of one note
 		//The Strings are associated to each cell by their index. So cell0 will have note[0] for it's text.
 		//If the segue doesn't handle passing properly, then Make the saved text/note combo public so we can update it.
+		string[] cellNames = new string[]{"First Note", "Second Fun Note"};
 
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
@@ -22,6 +24,11 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			//Create the table and populate it with two cells
+			table = new UITableView(View.Bounds); // defaults to Plain style
+			table.AutoresizingMask = UIViewAutoresizing.All;
+			table.Source = new NotesTableSource(cellNames);
+			Add (table);
 		}
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)

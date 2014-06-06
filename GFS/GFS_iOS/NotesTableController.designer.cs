@@ -16,45 +16,13 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel FirstNote { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell NoteCell1 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableViewCell NoteCell2 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView SavedListsUIView { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel SecondNote { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (FirstNote != null) {
-				FirstNote.Dispose ();
-				FirstNote = null;
-			}
-			if (NoteCell1 != null) {
-				NoteCell1.Dispose ();
-				NoteCell1 = null;
-			}
-			if (NoteCell2 != null) {
-				NoteCell2.Dispose ();
-				NoteCell2 = null;
-			}
 			if (SavedListsUIView != null) {
 				SavedListsUIView.Dispose ();
 				SavedListsUIView = null;
-			}
-			if (SecondNote != null) {
-				SecondNote.Dispose ();
-				SecondNote = null;
 			}
 		}
 	}

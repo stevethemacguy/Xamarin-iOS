@@ -308,6 +308,7 @@
     <Compile Include="NotesTableController.designer.cs">
       <DependentUpon>NotesTableController.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard">
