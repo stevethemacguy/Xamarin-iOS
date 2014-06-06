@@ -28,14 +28,6 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell actionCell4 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell actionCell5 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableView actionsView { get; set; }
 
 		[Outlet]
@@ -55,14 +47,6 @@ namespace GFS_iOS
 			if (actionCell3 != null) {
 				actionCell3.Dispose ();
 				actionCell3 = null;
-			}
-			if (actionCell4 != null) {
-				actionCell4.Dispose ();
-				actionCell4 = null;
-			}
-			if (actionCell5 != null) {
-				actionCell5.Dispose ();
-				actionCell5 = null;
 			}
 			if (actionsView != null) {
 				actionsView.Dispose ();
