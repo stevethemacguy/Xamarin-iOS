@@ -17,8 +17,8 @@ namespace GFS_iOS
 			actionCell1.BackgroundColor = UIColor.Clear;
 			actionCell2.BackgroundColor = UIColor.Clear;
 			actionCell3.BackgroundColor = UIColor.Clear;
-			actionCell4.BackgroundColor = UIColor.Clear;
-			actionCell5.BackgroundColor = UIColor.Clear;
+			//actionCell4.BackgroundColor = UIColor.Clear;
+			//actionCell5.BackgroundColor = UIColor.Clear;
 			actionsView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			DownloadButton.TouchUpInside += (o,s) => {
