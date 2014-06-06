@@ -1716,6 +1716,23 @@
                                     <segue destination="512" kind="push" id="1328"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Worry-free weighing thanks to balance intelligence." lineBreakMode="wordWrap" minimumFontSize="10" id="1332" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
+                                <rect key="frame" x="11" y="252" width="242" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="9"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1335" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="left" editable="NO" scrollEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO">
+                                <rect key="frame" x="7" y="265" width="304" height="99"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <string key="text">XPE Analytical Balances provide the best performance in analytical weighing and support the highest requirements for safety, efficiency and ease of compliance. Thanks to low repeatability, XPE Analytical balances offer the smallest minimum weight. Quality Management features such as the innovative StatusLight™ and proprietary StaticDetect™ technology take the worry out of weighing and provide a high level of trust in your results. LevelControl and MinWeigh™ enable full regulatory compliance.</string>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                            </textView>
                         </subviews>
                     </view>
                     <connections>
