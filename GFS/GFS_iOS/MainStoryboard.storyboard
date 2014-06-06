@@ -1323,17 +1323,6 @@
                                                     <rect key="frame" x="17" y="14" width="49" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="951" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="1" width="153" height="79"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <state key="normal" title="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="952" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
                                                     <rect key="frame" x="277" y="8" width="33" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1347,6 +1336,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets" lineBreakMode="wordWrap" minimumFontSize="10" id="1353" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
+                                                    <rect key="frame" x="88" y="1" width="153" height="67"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1391,17 +1388,6 @@
                                                     <rect key="frame" x="3" y="6" width="76" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="996" fixedFrame="YES">
-                                                    <rect key="frame" x="88" y="2" width="146" height="68"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <state key="normal" title="Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    </state>
-                                                    <connections>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="997" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
                                                     <rect key="frame" x="277" y="8" width="33" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1419,6 +1405,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets" lineBreakMode="characterWrap" minimumFontSize="10" id="1354" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
+                                                    <rect key="frame" x="88" y="2" width="150" height="67"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
