@@ -10,5 +10,10 @@ namespace GFS_iOS
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
 		}
+
+		public override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
+		}
 	}
 }
