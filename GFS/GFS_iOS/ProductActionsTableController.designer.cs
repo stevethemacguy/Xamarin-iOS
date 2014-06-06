@@ -38,6 +38,10 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableView actionsView { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIButton DownloadButton { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (actionCell1 != null) {
@@ -63,6 +67,10 @@ namespace GFS_iOS
 			if (actionsView != null) {
 				actionsView.Dispose ();
 				actionsView = null;
+			}
+			if (DownloadButton != null) {
+				DownloadButton.Dispose ();
+				DownloadButton = null;
 			}
 		}
 	}

@@ -20,6 +20,11 @@ namespace GFS_iOS
 			actionCell4.BackgroundColor = UIColor.Clear;
 			actionCell5.BackgroundColor = UIColor.Clear;
 			actionsView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
+			DownloadButton.TouchUpInside += (o,s) => {
+				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");
+					alert.Show();
+			};
 		}
 	}
 }
