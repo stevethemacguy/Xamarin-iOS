@@ -10,7 +10,8 @@ namespace GFS_iOS
 	{
 		String noteText;
 		public String[] notes; //An array of strings. Each string is the text of one note //initialized by NotesTableController during prepare to segue
-		public int index;
+		public int index; //The NotesViewController appears when a cell row is tapped/clicked. This index is the index of the row that was clicked.
+
 		public NotesViewController  (IntPtr handle) : base (handle)
 		{
 			notes = new String[9];
@@ -29,8 +30,8 @@ namespace GFS_iOS
 			SavedNoteButton.Clicked += (o,s) => {
 
 				noteText = NoteTextView.Text; //get the current text
-				//Console.WriteLine(notes[0]);
-				Console.WriteLine(index);
+				Console.WriteLine("Row "+ index + " was clicked");
+				Console.WriteLine(noteText);
 				//Find which cell was clicked (pass from previous view)
 				//Change the text of the cell to the noteText
 				//Also keep this instance of this note so that it is never deleted.

@@ -6,11 +6,10 @@ using System.Collections.Generic;
 
 namespace GFS_iOS
 {
-
 	public class NotesTableSource : UITableViewSource {
 		protected string[] tableItems;
 		protected string cellIdentifier = "testCell";
-		UIViewController parentController;
+		UIViewController parentController; //Used to store the parent controller of this TableSource
 
 		public NotesTableSource (UIViewController parentController, string[] items)
 		{
@@ -26,11 +25,11 @@ namespace GFS_iOS
 		//When the row is clicked, segue to the note view.
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
-			//tableItems[indexPath] the actual text of the row
-			Console.WriteLine(indexPath.Row); //the row number
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 
-			var index = indexPath.Row;
+			//tableItems[indexPath] the actual text of the row
+			var index = indexPath.Row; //The index of the row being selected
+
 			//Do the segue
 			//Get the current storyboard
 			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
@@ -39,12 +38,12 @@ namespace GFS_iOS
 			NotesViewController notesView = (NotesViewController) board.InstantiateViewController(  
 				"notesViewController"
 			);
-			//Segue to the new View
+
+			//Set the note's
+			notesView.index = indexPath.Row; //"Pass" along the index of the selected row to the index member variable
+
+			//Segue to the NotesView
 			parentController.NavigationController.PushViewController (notesView, false);
-			notesView.index = indexPath.Row;
-			//segue.Perform;
-			//UINavigationController.PushViewController("NotesViewController");
-			//PerformSegue("MyRowSelectedSegue", indexPath);
 		}
 
 		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
@@ -58,5 +57,4 @@ namespace GFS_iOS
 			return cell;
 		}
 	}
-
 }
