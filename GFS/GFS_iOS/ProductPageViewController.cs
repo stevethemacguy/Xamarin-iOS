@@ -10,5 +10,11 @@ namespace GFS_iOS
 		public ProductPageViewController (IntPtr handle) : base (handle)
 		{
 		}
+
+		public override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
+			ProductPageUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-568.png"));
+		}
 	}
 }

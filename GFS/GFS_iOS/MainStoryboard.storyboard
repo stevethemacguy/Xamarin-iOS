@@ -672,7 +672,7 @@
                             <tableViewSection id="530">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="531" reuseIdentifier="searchcell" rowHeight="0">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="531" id="534">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -696,7 +696,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="535" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="65" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="129" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="535" id="536">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -720,7 +720,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="538" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="130" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="194" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="538" id="541">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -744,7 +744,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="548" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="195" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="259" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="548" id="551">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -768,7 +768,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="553" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="260" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="324" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="553" id="556">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -1353,6 +1353,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <segue destination="1287" kind="push" id="1330"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="984" reuseIdentifier="detailCell">
@@ -1693,10 +1694,6 @@
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1302" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
-                                <rect key="frame" x="275" y="169" width="33" height="88"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$10,500 – $ 15,0505" lineBreakMode="tailTruncation" minimumFontSize="10" id="1303" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="11" y="230" width="139" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1709,6 +1706,16 @@
                                 <rect key="frame" x="105" y="196" width="86" height="88"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1325" fixedFrame="YES">
+                                <rect key="frame" x="278" y="200" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="" backgroundImage="blue-dots.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="512" kind="push" id="1328"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
