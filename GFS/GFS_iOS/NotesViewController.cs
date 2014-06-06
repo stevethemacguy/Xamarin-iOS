@@ -27,6 +27,10 @@ namespace GFS_iOS
 
 				noteText = NoteTextView.Text; //get the current text
 				Console.WriteLine(noteText);
+
+				//Find which cell was clicked (pass from previous view)
+				//Change the text of the cell to the noteText
+				//Also keep this instance of this note so that it is never deleted.
 			};
 		}
 	}
