@@ -303,5 +303,6 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <Content Include="description-text.png" />
+    <Content Include="description-text2.png" />
   </ItemGroup>
 </Project>
