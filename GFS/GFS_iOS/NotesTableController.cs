@@ -2,12 +2,13 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
+using System.Collections.Generic;
 
 namespace GFS_iOS
 {
 	partial class NotesTableController : UITableViewController
 	{
-		String[] notes; //An array of strings. Each string is the text of one note
+		public String[] notes; //An array of strings. Each string is the text of one note
 		//The Strings are associated to each cell by their index. So cell0 will have note[0] for it's text.
 		//If the segue doesn't handle passing properly, then Make the saved text/note combo public so we can update it.
 
@@ -21,6 +22,14 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+		}
+
+		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
+		{
+			base.PrepareForSegue (segue, sender);
+
+			var test = segue.DestinationViewController as NotesViewController;
+			test.notes = notes; //Send the list of "notes" (text) to the NotesViewController
 		}
 
 		//prepare for segue... 
