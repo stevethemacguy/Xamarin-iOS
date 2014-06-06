@@ -14,7 +14,7 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			ProductPageUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-568.png"));
+			ProductPageUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 		}
 	}
 }

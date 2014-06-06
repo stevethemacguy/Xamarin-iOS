@@ -16,10 +16,6 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView ProductImageBackground { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UIView ProductPageUIView { get; set; }
 
 		[Outlet]
@@ -28,10 +24,6 @@ namespace GFS_iOS
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (ProductImageBackground != null) {
-				ProductImageBackground.Dispose ();
-				ProductImageBackground = null;
-			}
 			if (ProductPageUIView != null) {
 				ProductPageUIView.Dispose ();
 				ProductPageUIView = null;
