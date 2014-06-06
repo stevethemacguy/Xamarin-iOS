@@ -16,11 +16,11 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIView ProductPageUIView { get; set; }
+		MonoTouch.UIKit.UIView ProductPageUIView { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView StarsImage { get; set; }
+		MonoTouch.UIKit.UIImageView StarsImage { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{

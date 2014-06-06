@@ -14,8 +14,16 @@ namespace GFS_iOS
 	[Register ("NotesViewController")]
 	partial class NotesViewController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITextView NoteTextView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (NoteTextView != null) {
+				NoteTextView.Dispose ();
+				NoteTextView = null;
+			}
 		}
 	}
 }

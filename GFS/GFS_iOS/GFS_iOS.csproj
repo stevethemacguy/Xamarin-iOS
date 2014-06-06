@@ -304,6 +304,10 @@
     <Compile Include="OtherTableViewController.designer.cs">
       <DependentUpon>OtherTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotesTableController.cs" />
+    <Compile Include="NotesTableController.designer.cs">
+      <DependentUpon>NotesTableController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard">
