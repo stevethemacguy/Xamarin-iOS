@@ -9,19 +9,22 @@ namespace GFS_iOS
 	partial class NotesTableController : UITableViewController
 	{
 		UITableView table;
-		public String[] notes; //An array of strings. Each string is the text of one note
+		public string[] allNotes; //An array of strings. Each string is the text of one note
 		//The Strings are associated to each cell by their index. So cell0 will have note[0] for it's text.
 		//If the segue doesn't handle passing properly, then Make the saved text/note combo public so we can update it.
 
 		NotesTableController currentController; 
-		string[] cellNames = new string[]{"First Note", "Second Fun Note"};
+		public string[] rowNames; //Used to store the row titles. These are changed to the first line of text when saved.
 
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
-			notes = new String[2];
-			notes[0] = "Super Awesome Note";
-			notes[1] = "A very special note";
+			allNotes = new String[10];
+			allNotes[0] = "Super Awesome Note";
+			allNotes[1] = "A very special note";
 			currentController = this;
+			rowNames = new string[10]; 
+			rowNames[0] = "First Row";
+			rowNames[1] = "Second Row";
 		}
 
 		public override void ViewDidLoad()
@@ -30,8 +33,9 @@ namespace GFS_iOS
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
-			table.Source = new NotesTableSource(currentController, cellNames);
+			table.Source = new NotesTableSource(currentController, rowNames, allNotes);
 			Add (table);
+
 		}
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -39,7 +43,7 @@ namespace GFS_iOS
 			base.PrepareForSegue (segue, sender);
 			var rowPath = table.IndexPathForSelectedRow;
 			var test = segue.DestinationViewController as NotesViewController;
-			test.notes = notes; //Send the list of "notes" (text) to the NotesViewController
+			test.notes = allNotes; //Send the list of "notes" (text) to the NotesViewController
 		}
 
 		//prepare for segue... 

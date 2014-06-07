@@ -14,7 +14,7 @@ namespace GFS_iOS
 
 		public NotesViewController  (IntPtr handle) : base (handle)
 		{
-			notes = new String[9];
+			//notes = new String[9];
 		}
 
 		public override void ViewDidLoad()
@@ -32,6 +32,9 @@ namespace GFS_iOS
 				noteText = NoteTextView.Text; //get the current text
 				Console.WriteLine("Row "+ index + " was clicked");
 				Console.WriteLine(noteText);
+				Console.WriteLine(notes[index]);
+				//notes[index] = noteText; //Change the Text of the clicked cell to the note we just saved.
+
 				//Find which cell was clicked (pass from previous view)
 				//Change the text of the cell to the noteText
 				//Also keep this instance of this note so that it is never deleted.
