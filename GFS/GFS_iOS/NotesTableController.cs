@@ -19,15 +19,26 @@ namespace GFS_iOS
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
 			allNotes = new string[10];
-			allNotes[0] = "Super Awesome Note";
+			allNotes[0] = "A Super Awesome Note that spans multiple lines. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 			allNotes[1] = "A very special note";
 			currentController = this;
 			rowNames = new string[10]; 
 
 			//Create a row for each note, using the actual note text as the row name
-			for (int i =0 ;i < allNotes.Length ; i++)
+			for (int i = 0 ;i < allNotes.Length ; i++)
 			{
-				rowNames [i] = allNotes [i];
+				string full = allNotes[i];
+				string shortName = full;
+				//iOS automatically shortens the name and adds an ellipse. If you want to remove the elipses, use the code below:
+				//This code shortens the name to 25 chars.
+//				if (full != null)
+//				{
+// 					if(full.Length > 24)
+//					{
+				//						shortName = shortName.Substring(0, 24); //Limit the row name to 20 charactors
+//					}
+//				}
+				rowNames[i] = shortName; 
 			}
 		}
 
