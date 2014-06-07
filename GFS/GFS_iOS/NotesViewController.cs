@@ -21,6 +21,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+			//Set the current note text to the Note text passed in (which corresponds with the cell that was clicked).
+			NoteTextView.Text = notes [index];
+
 			//Create the Save button and add it to the toolbar
 			UIBarButtonItem SavedNoteButton = new UIBarButtonItem();
 			SavedNoteButton.Title = "Save";
@@ -33,12 +36,21 @@ namespace GFS_iOS
 				Console.WriteLine("Row "+ index + " was clicked");
 				Console.WriteLine(noteText);
 				Console.WriteLine(notes[index]);
-				//notes[index] = noteText; //Change the Text of the clicked cell to the note we just saved.
+				notes[index] = noteText; //Change the Text of the clicked cell to the note we just saved.
 
 				//Find which cell was clicked (pass from previous view)
 				//Change the text of the cell to the noteText
 				//Also keep this instance of this note so that it is never deleted.
 			};
+
+//			public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
+//			{
+//				base.PrepareForSegue (segue, sender);
+//				var rowPath = table.IndexPathForSelectedRow;
+//				var test = segue.DestinationViewController as NotesViewController;
+//				test.notes = allNotes; //Send the list of "notes" (text) to the NotesViewController
+//			}
+
 		}
 	}
 }

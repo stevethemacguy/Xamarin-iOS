@@ -18,13 +18,17 @@ namespace GFS_iOS
 
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
-			allNotes = new String[10];
+			allNotes = new string[10];
 			allNotes[0] = "Super Awesome Note";
 			allNotes[1] = "A very special note";
 			currentController = this;
 			rowNames = new string[10]; 
-			rowNames[0] = "First Row";
-			rowNames[1] = "Second Row";
+
+			//Create a row for each note, using the actual note text as the row name
+			for (int i =0 ;i < allNotes.Length ; i++)
+			{
+				rowNames [i] = allNotes [i];
+			}
 		}
 
 		public override void ViewDidLoad()
