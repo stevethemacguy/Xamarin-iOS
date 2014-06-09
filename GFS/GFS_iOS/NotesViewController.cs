@@ -10,7 +10,7 @@ namespace GFS_iOS
 	{
 		String noteText; //The full text of the note currently being viewed
 		public List<string> notes; //Each string is the full text of one note. This is created when a NotesTableSource row is selected
-
+		public Boolean addingNote = false; //true if a new note is beeing added.
 		//The NotesViewController is created when a cell row is tapped/clicked. This index is the index of the row that was clicked.
 		public int index; //Value is passed in from NotesTableSource on segue
 
@@ -25,8 +25,16 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			//Set the current note text to the Note text passed in (the text that corresponds with the cell that was clicked).
-			NoteTextView.Text = notes[index];
+
+			if (addingNote)
+			{
+				NoteTextView.Text = "";
+			}
+			else
+			{
+				NoteTextView.Text = notes[index]; //Set the current note text to the Note text passed in (the text that corresponds with the cell that was clicked).
+				addingNote = false;
+			}
 
 			//Create the Save button and add it to the toolbar
 			UIBarButtonItem SavedNoteButton = new UIBarButtonItem();
@@ -36,8 +44,18 @@ namespace GFS_iOS
 			//When the Save button is pressed, save the text.
 			SavedNoteButton.Clicked += (o,s) => {
 				noteText = NoteTextView.Text; //get the current text
-				notes[index] = noteText; //Change the Text of the clicked cell to the note we just saved.
-				tableController.refreshTable(notes.ToArray()); //"Refresh" the table using our new list of notes.
+				if(addingNote)
+				{
+					notes.Add(noteText); //add a new note
+				}
+
+				else
+				{
+					notes[index] = noteText; //Change the Text of the clicked cell to the note we just saved.
+				}
+
+
+				tableController.refreshTable(notes.ToArray(), noteText); //"Refresh" the table using our new list of notes.
 			};
 		}
 	}

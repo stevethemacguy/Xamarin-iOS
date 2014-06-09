@@ -66,12 +66,35 @@ namespace GFS_iOS
 
 			//When the Add button is pressed, "Create" a new note.
 			AddNoteButton.Clicked += (o,s) => {
-				createNote();
+				//Segue to the NotesViewController, but with a "blank" note
+
+				//Get the current storyboard
+				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+
+				//Get the NotesViewController
+				NotesViewController notesView = (NotesViewController) board.InstantiateViewController(  
+					"notesViewController"
+				);
+
+				notesView.tableController = (NotesTableController) currentController;
+				//Normlly the NotesViewController index is the "selected row," but in the case of the add button, no row is selected, so
+				//the index is the next "empty" row.  (i.e. if there are 2 rows currently (at 0 and 1), then the next free index is 2)
+				notesView.index = (allNotes.Count); 
+				notesView.notes = allNotes;
+				notesView.addingNote = true;
+				//Segue to the NotesView
+				currentController.NavigationController.PushViewController (notesView, false);
 			};
 		}
 
-		public void refreshTable(string[] newRows)
+		//Adds a new note and refreshes the table
+		public void refreshTable(string[] newRows, string justAdded)
 		{
+			//reacreate the allNotes List, now with our new note
+			allNotes = new List<string>();
+			foreach(string s in newRows){
+				allNotes.Add(s);
+			}
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
 			table.Source = new NotesTableSource(currentController, newRows, allNotes);
@@ -82,24 +105,10 @@ namespace GFS_iOS
 
 		public void createNote()
 		{
-			//Get the current storyboard
-			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
 
-			//Get the NotesViewController
-			NotesViewController notesView = (NotesViewController) board.InstantiateViewController(  
-				"notesViewController"
-			);
 
-			//Normlly the NotesViewController index is the "selected row," but in the case of the add button, no row is selected, so
-			//the index is the next "empty" row.  (i.e. if there are 2 rows currently (at 0 and 1), then the next free index is 2)
-			notesView.index = (allNotes.Count); 
+			//allNotes.Add(""); //Add an empty note to the note list.
 
-			allNotes.Add(""); //Add an empty note to the note list.
-
-			notesView.notes = allNotes;
-			notesView.tableController = (NotesTableController) currentController;
-			//Segue to the NotesView
-			currentController.NavigationController.PushViewController (notesView, false);
 		}
 	}
 }
