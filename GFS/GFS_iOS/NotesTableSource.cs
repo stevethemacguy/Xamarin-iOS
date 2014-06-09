@@ -8,12 +8,12 @@ namespace GFS_iOS
 {
 	public class NotesTableSource : UITableViewSource {
 
-		protected string[] tableItems; //Store the rowNames
+		protected List<string> tableItems; //Store the rowNames
 		protected string cellIdentifier = "testCell";
 		public List<string> allNotes; //Each string is the full text of one note
 		UIViewController parentController; //Used to store the parent controller of this TableSource
 
-		public NotesTableSource (UIViewController parentController, string[] rowNames, List<string> notes)
+		public NotesTableSource (UIViewController parentController, List<string> rowNames, List<string> notes)
 		{
 			tableItems = rowNames;
 			this.allNotes = notes;
@@ -22,7 +22,7 @@ namespace GFS_iOS
 
 		public override int RowsInSection (UITableView tableview, int section)
 		{
-			return tableItems.Length;
+			return tableItems.Count;
 		}
 
 		//When the row is clicked, segue to the note view and pass all note data

@@ -25,15 +25,15 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-
+			//If we're adding a new note, make the text view empty.
 			if (addingNote)
 			{
 				NoteTextView.Text = "";
 			}
-			else
+			else //Otherwise, use the existing note text
 			{
 				NoteTextView.Text = notes[index]; //Set the current note text to the Note text passed in (the text that corresponds with the cell that was clicked).
-				addingNote = false;
+				addingNote = false; //We're editing an existing note, not adding one.
 			}
 
 			//Create the Save button and add it to the toolbar
@@ -45,25 +45,24 @@ namespace GFS_iOS
 			SavedNoteButton.Clicked += (o,s) => {
 				noteText = NoteTextView.Text; //get the current text
 
+				//Don't allow blank notes to be created
 				if(noteText == "")
 				{
-					UIAlertView alert = new UIAlertView ("Failed to Save", "You can not save a blank note.", null, "OK");
+					UIAlertView alert = new UIAlertView ("Failed to Save", "You can not save an empty note.", null, "OK");
 					alert.Show();
-					return; //Don't segue back
+					return; //Do not segue. Keep the user here until they fix the problem or back out of the note.
 				}
 
 				if(addingNote)
 				{
 					notes.Add(noteText); //add a new note
 				}
-
 				else
 				{
-					notes[index] = noteText; //Change the Text of the clicked cell to the note we just saved.
+					notes[index] = noteText; //Overrite the existing note Text of the clicked cell to the new text
 				}
 
-
-				tableController.refreshTable(notes.ToArray(), noteText); //"Refresh" the table using our new list of notes.
+				tableController.refreshTable(notes, noteText); //"Refresh" the table using our new list of notes.
 			};
 		}
 	}

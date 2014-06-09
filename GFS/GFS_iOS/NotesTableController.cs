@@ -9,7 +9,7 @@ namespace GFS_iOS
 	partial class NotesTableController : UITableViewController
 	{
 		public UITableView table;
-		public string[] rowNames; //Used to store the row titles. These are changed to the first line of text when saved.
+		public List<string> rowNames; //Used to store the row titles. These are changed to the first line of text when saved.
 		//Each string is the text of one note. The Strings "match" to a table row by their index. So cell0 will have note[0] for it's text.
 		public List<string> allNotes; //Each String is the full text of a note.
 
@@ -26,7 +26,7 @@ namespace GFS_iOS
 				//First time through, use defaults for row names
 				allNotes.Add("A Super Awesome Note that spans multiple lines. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 				allNotes.Add("A very special note");
-				rowNames = new string[2]; 
+				rowNames = new List<string>();
 			}
 
 			//Create a row for each note, using the actual note text as the row name
@@ -43,7 +43,7 @@ namespace GFS_iOS
 				//						shortName = shortName.Substring(0, 24); //Limit the row name to 20 charactors
 //					}
 //				}
-				rowNames[i] = shortName; 
+				rowNames.Add(shortName); 
 				//noteCount++;
 			}
 		}
@@ -81,23 +81,21 @@ namespace GFS_iOS
 				//the index is the next "empty" row.  (i.e. if there are 2 rows currently (at 0 and 1), then the next free index is 2)
 				notesView.index = (allNotes.Count); 
 				notesView.notes = allNotes;
-				notesView.addingNote = true;
+				notesView.addingNote = true; //Let the new view know that we're trying to add a note as opposed to a "normal" segue
 				//Segue to the NotesView
 				currentController.NavigationController.PushViewController (notesView, false);
 			};
 		}
 
 		//Adds a new note and refreshes the table
-		public void refreshTable(string[] newRows, string justAdded)
+		public void refreshTable(List<string> newNotes, string justAdded)
 		{
 			//reacreate the allNotes List, now with our new note
-			allNotes = new List<string>();
-			foreach(string s in newRows){
-				allNotes.Add(s);
-			}
+			allNotes = newNotes;
+
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
-			table.Source = new NotesTableSource(currentController, newRows, allNotes);
+			table.Source = new NotesTableSource(currentController, allNotes, allNotes);
 
 			table.ReloadData();
 			Add (table);
