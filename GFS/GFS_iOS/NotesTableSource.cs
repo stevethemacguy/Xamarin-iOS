@@ -9,10 +9,10 @@ namespace GFS_iOS
 	public class NotesTableSource : UITableViewSource {
 		protected string[] tableItems;
 		protected string cellIdentifier = "testCell";
-		public string[] allNotes;
+		public List<string> allNotes;
 		//UIViewController parentController; //Used to store the parent controller of this TableSource
 		UIViewController parentController; //Used to store the parent controller of this TableSource
-		public NotesTableSource (UIViewController parentController, string[] rowNames, string[] notes)
+		public NotesTableSource (UIViewController parentController, string[] rowNames, List<string> notes)
 		{
 			tableItems = rowNames;
 			this.allNotes = notes;

@@ -8,34 +8,29 @@ namespace GFS_iOS
 {
 	partial class NotesTableController : UITableViewController
 	{
-		public UITableView table; //Only one table per time
-		public string[] allNotes; //An array of strings. Each string is the text of one note
-		//The Strings are associated to each cell by their index. So cell0 will have note[0] for it's text.
-		//If the segue doesn't handle passing properly, then Make the saved text/note combo public so we can update it.
+		public UITableView table;
+		public string[] rowNames; //Used to store the row titles. These are changed to the first line of text when saved.
+		//Each string is the text of one note. The Strings "match" to a table row by their index. So cell0 will have note[0] for it's text.
+		public List<string> allNotes; //Each String is the full text of a note.
 
 		NotesTableController currentController; 
-		public string[] rowNames; //Used to store the row titles. These are changed to the first line of text when saved.
 
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
-			currentController = this;
+			currentController = this; //Maintain a reference to this controller
 
-			//If the array does not already exist, create it.
+			//If we are contructing the table for the first time
 			if (allNotes == null)
 			{
-				allNotes = new string[10];
+				allNotes = new List<string>();
 				//First time through, use defaults for row names
-				allNotes[0] = "A Super Awesome Note that spans multiple lines. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-				allNotes[1] = "A very special note";
-			}
-
-			if (rowNames == null)
-			{
-				rowNames = new string[10]; 
+				allNotes.Add("A Super Awesome Note that spans multiple lines. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+				allNotes.Add("A very special note");
+				rowNames = new string[2]; 
 			}
 
 			//Create a row for each note, using the actual note text as the row name
-			for (int i = 0 ;i < allNotes.Length ; i++)
+			for (int i = 0 ;i < allNotes.Count ; i++)
 			{
 				string full = allNotes[i];
 				string shortName = full;
@@ -49,6 +44,7 @@ namespace GFS_iOS
 //					}
 //				}
 				rowNames[i] = shortName; 
+				//noteCount++;
 			}
 		}
 
@@ -58,9 +54,9 @@ namespace GFS_iOS
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
-			//Create the Table rows from the source, passing to it the rowNames and full text for all notes
+			//Create the Table rows from the source, passing to it the rowNames, the full text for all notes, and the current ViewController
 			table.Source = new NotesTableSource(currentController, rowNames, allNotes);
-			Add (table);
+			Add(table);
 
 			//Create the Add note button and add it to the toolbar
 			UIBarButtonItem AddNoteButton = new UIBarButtonItem();
@@ -68,6 +64,10 @@ namespace GFS_iOS
 			AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
 			this.NavigationItem.SetRightBarButtonItem(AddNoteButton, false);
 
+			//When the Add button is pressed, "Create" a new note.
+			AddNoteButton.Clicked += (o,s) => {
+				createNote();
+			};
 		}
 
 		public void refreshTable(string[] newRows)
@@ -80,9 +80,26 @@ namespace GFS_iOS
 			Add (table);
 		}
 
-		public void createRow()
+		public void createNote()
 		{
+			//Get the current storyboard
+			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
 
+			//Get the NotesViewController
+			NotesViewController notesView = (NotesViewController) board.InstantiateViewController(  
+				"notesViewController"
+			);
+
+			//Normlly the NotesViewController index is the "selected row," but in the case of the add button, no row is selected, so
+			//the index is the next "empty" row.  (i.e. if there are 2 rows currently (at 0 and 1), then the next free index is 2)
+			notesView.index = (allNotes.Count); 
+
+			allNotes.Add(""); //Add an empty note to the note list.
+
+			notesView.notes = allNotes;
+			notesView.tableController = (NotesTableController) currentController;
+			//Segue to the NotesView
+			currentController.NavigationController.PushViewController (notesView, false);
 		}
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)

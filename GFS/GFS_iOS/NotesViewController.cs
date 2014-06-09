@@ -9,7 +9,7 @@ namespace GFS_iOS
 	partial class NotesViewController : UIViewController
 	{
 		String noteText;
-		public String[] notes; //An array of strings. Each string is the text of one note //initialized by NotesTableController during prepare to segue
+		public List<string> notes; //An array of strings. Each string is the text of one note //initialized by NotesTableController during prepare to segue
 		//The NotesViewController appears when a cell row is tapped/clicked. This index is the index of the row that was clicked.
 		public int index; //Value is passed in from NotesTableSource on segue
 
@@ -42,20 +42,12 @@ namespace GFS_iOS
 				notes[index] = noteText; //Change the Text of the clicked cell to the note we just saved.
 				//NotesTableController.allNotes = notes; //Update the static variable of the NotesTableController
 
-				tableController.refreshTable(notes);
+				tableController.refreshTable(notes.ToArray());
 
 				//NotesTableController.table.Source = new NotesTableSource(currentController, rowNames, allNotes);
 
 				//Also keep this instance of this note so that it is never deleted.
 			};
 		}
-//
-//		//When we segue "back" to the NotesTableController, pass back the notes so we can imitate updating the row name when "saving" the note
-//		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
-//		{
-//			base.PrepareForSegue (segue, sender);
-//			var test = segue.DestinationViewController as NotesTableController;
-//			test.allNotes = notes; //Send the list of "notes" (text) to the NotesViewController
-//		}
 	}
 }
