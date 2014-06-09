@@ -311,6 +311,7 @@
       <DependentUpon>NotesTableController.cs</DependentUpon>
     </Compile>
     <Compile Include="NotesTableSource.cs" />
+    <Compile Include="SavedListTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard">
