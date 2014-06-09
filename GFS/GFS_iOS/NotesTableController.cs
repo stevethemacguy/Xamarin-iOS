@@ -62,6 +62,12 @@ namespace GFS_iOS
 			table.Source = new NotesTableSource(currentController, rowNames, allNotes);
 			Add (table);
 
+			//Create the Add note button and add it to the toolbar
+			UIBarButtonItem AddNoteButton = new UIBarButtonItem();
+			AddNoteButton.Image = UIImage.FromFile("cross.png");
+			AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
+			this.NavigationItem.SetRightBarButtonItem(AddNoteButton, false);
+
 		}
 
 		public void refreshTable(string[] newRows)
@@ -72,6 +78,11 @@ namespace GFS_iOS
 
 			table.ReloadData();
 			Add (table);
+		}
+
+		public void createRow()
+		{
+
 		}
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
