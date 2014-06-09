@@ -7,11 +7,12 @@ using System.Collections.Generic;
 namespace GFS_iOS
 {
 	public class NotesTableSource : UITableViewSource {
-		protected string[] tableItems;
+
+		protected string[] tableItems; //Store the rowNames
 		protected string cellIdentifier = "testCell";
-		public List<string> allNotes;
-		//UIViewController parentController; //Used to store the parent controller of this TableSource
+		public List<string> allNotes; //Each string is the full text of one note
 		UIViewController parentController; //Used to store the parent controller of this TableSource
+
 		public NotesTableSource (UIViewController parentController, string[] rowNames, List<string> notes)
 		{
 			tableItems = rowNames;
@@ -24,15 +25,11 @@ namespace GFS_iOS
 			return tableItems.Length;
 		}
 
-		//When the row is clicked, segue to the note view.
+		//When the row is clicked, segue to the note view and pass all note data
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 
-			//tableItems[indexPath] the actual text of the row
-			var index = indexPath.Row; //The index of the row being selected
-
-			//Do the segue
 			//Get the current storyboard
 			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
 
@@ -42,11 +39,13 @@ namespace GFS_iOS
 			);
 
 			//"Pass" along the index of the selected row to the index member variable
-			notesView.index = indexPath.Row; 
+			notesView.index = indexPath.Row;  //The index of the row being selected
 
 			//"Pass" along the actual notes
 			notesView.notes = allNotes;
+
 			notesView.tableController = (NotesTableController) parentController;
+
 			//Segue to the NotesView
 			parentController.NavigationController.PushViewController (notesView, false);
 		}

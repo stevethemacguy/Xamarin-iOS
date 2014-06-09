@@ -101,24 +101,5 @@ namespace GFS_iOS
 			//Segue to the NotesView
 			currentController.NavigationController.PushViewController (notesView, false);
 		}
-
-		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
-		{
-			base.PrepareForSegue (segue, sender);
-			var rowPath = table.IndexPathForSelectedRow;
-			var test = segue.DestinationViewController as NotesViewController;
-			test.notes = allNotes; //Send the list of "notes" (text) to the NotesViewController
-		}
-
-		//prepare for segue... 
-		//		Pass the Cell index that was clicked (say index 1)
-		//		Pass notes[1] since it corresponds to the cell that was clicked.
-		//		When the save button is clicked
-		//			1. "Aave" the text to notes[1]
-		//			2. Change the title of cell1 to use this text
-		//		Alternatively, just send this NotesTableController so it can access the fields directly?
-		//
-
-		//      If the saving method above doesn't work, than we may need to create the new note view manually so we can have a reference to the notes and save them some how.
 	}
 }
