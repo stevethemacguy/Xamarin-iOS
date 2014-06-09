@@ -9,7 +9,6 @@ namespace GFS_iOS
 	partial class NotesTableController : UITableViewController
 	{
 		public UITableView table;
-		public List<string> rowNames; //Used to store the row titles. These are changed to the first line of text when saved.
 		//Each string is the text of one note. The Strings "match" to a table row by their index. So cell0 will have note[0] for it's text.
 		public List<string> allNotes; //Each String is the full text of a note.
 
@@ -26,26 +25,24 @@ namespace GFS_iOS
 				//First time through, use defaults for row names
 				allNotes.Add("A Super Awesome Note that spans multiple lines. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 				allNotes.Add("A very special note");
-				rowNames = new List<string>();
 			}
 
-			//Create a row for each note, using the actual note text as the row name
-			for (int i = 0 ;i < allNotes.Count ; i++)
-			{
-				string full = allNotes[i];
-				string shortName = full;
-				//iOS automatically shortens the name and adds an ellipse. If you want to remove the elipses, use the code below:
-				//This code shortens the name to 25 chars.
+			//NO LONGER USED. Row names are now pulled directly from the notes.
+//			//Create a row for each note, using the actual note text as the row name
+//			for (int i = 0 ;i < allNotes.Count ; i++)
+//			{
+//				string full = allNotes[i];
+//				string shortName = full;
+//				//iOS automatically shortens the name and adds an ellipse. If you want to remove the elipses, use the code below:
+//				//This code shortens the name to 25 chars.
 //				if (full != null)
+//			{
+//			if(full.Length > 24)
 //				{
-// 					if(full.Length > 24)
-//					{
-				//						shortName = shortName.Substring(0, 24); //Limit the row name to 20 charactors
-//					}
+//				//						shortName = shortName.Substring(0, 24); //Limit the row name to 20 charactors
 //				}
-				rowNames.Add(shortName); 
-				//noteCount++;
-			}
+//				rowNames.Add(shortName); 
+//			}
 		}
 
 		public override void ViewDidLoad()
@@ -54,8 +51,8 @@ namespace GFS_iOS
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
-			//Create the Table rows from the source, passing to it the rowNames, the full text for all notes, and the current ViewController
-			table.Source = new NotesTableSource(currentController, rowNames, allNotes);
+			//Create the Table rows from the source, passing the full text for all notes (which will also act as row names), and the current ViewController
+			table.Source = new NotesTableSource(currentController, allNotes);
 			Add(table);
 
 			//Create the Add note button and add it to the toolbar
@@ -95,18 +92,11 @@ namespace GFS_iOS
 
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
-			table.Source = new NotesTableSource(currentController, allNotes, allNotes);
+			table.Source = new NotesTableSource(currentController, allNotes);
 
 			table.ReloadData();
 			Add (table);
 		}
 
-		public void createNote()
-		{
-
-
-			//allNotes.Add(""); //Add an empty note to the note list.
-
-		}
 	}
 }
