@@ -8,7 +8,7 @@ namespace GFS_iOS
 {
 	partial class NotesTableController : UITableViewController
 	{
-		UITableView table;
+		public UITableView table; //Only one table per time
 		public string[] allNotes; //An array of strings. Each string is the text of one note
 		//The Strings are associated to each cell by their index. So cell0 will have note[0] for it's text.
 		//If the segue doesn't handle passing properly, then Make the saved text/note combo public so we can update it.
@@ -18,11 +18,21 @@ namespace GFS_iOS
 
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
-			allNotes = new string[10];
-			allNotes[0] = "A Super Awesome Note that spans multiple lines. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-			allNotes[1] = "A very special note";
 			currentController = this;
-			rowNames = new string[10]; 
+
+			//If the array does not already exist, create it.
+			if (allNotes == null)
+			{
+				allNotes = new string[10];
+				//First time through, use defaults for row names
+				allNotes[0] = "A Super Awesome Note that spans multiple lines. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+				allNotes[1] = "A very special note";
+			}
+
+			if (rowNames == null)
+			{
+				rowNames = new string[10]; 
+			}
 
 			//Create a row for each note, using the actual note text as the row name
 			for (int i = 0 ;i < allNotes.Length ; i++)
@@ -48,9 +58,20 @@ namespace GFS_iOS
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
+			//Create the Table rows from the source, passing to it the rowNames and full text for all notes
 			table.Source = new NotesTableSource(currentController, rowNames, allNotes);
 			Add (table);
 
+		}
+
+		public void refreshTable(string[] newRows)
+		{
+			table = new UITableView(View.Bounds); // defaults to Plain style
+			table.AutoresizingMask = UIViewAutoresizing.All;
+			table.Source = new NotesTableSource(currentController, newRows, allNotes);
+
+			table.ReloadData();
+			Add (table);
 		}
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)

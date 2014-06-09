@@ -10,8 +10,8 @@ namespace GFS_iOS
 		protected string[] tableItems;
 		protected string cellIdentifier = "testCell";
 		public string[] allNotes;
+		//UIViewController parentController; //Used to store the parent controller of this TableSource
 		UIViewController parentController; //Used to store the parent controller of this TableSource
-
 		public NotesTableSource (UIViewController parentController, string[] rowNames, string[] notes)
 		{
 			tableItems = rowNames;
@@ -46,7 +46,7 @@ namespace GFS_iOS
 
 			//"Pass" along the actual notes
 			notesView.notes = allNotes;
-
+			notesView.tableController = (NotesTableController) parentController;
 			//Segue to the NotesView
 			parentController.NavigationController.PushViewController (notesView, false);
 		}
