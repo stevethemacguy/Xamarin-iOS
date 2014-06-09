@@ -44,6 +44,14 @@ namespace GFS_iOS
 			//When the Save button is pressed, save the text.
 			SavedNoteButton.Clicked += (o,s) => {
 				noteText = NoteTextView.Text; //get the current text
+
+				if(noteText == "")
+				{
+					UIAlertView alert = new UIAlertView ("Failed to Save", "You can not save a blank note.", null, "OK");
+					alert.Show();
+					return; //Don't segue back
+				}
+
 				if(addingNote)
 				{
 					notes.Add(noteText); //add a new note
