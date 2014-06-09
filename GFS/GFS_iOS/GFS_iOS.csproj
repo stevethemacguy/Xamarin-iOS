@@ -199,6 +199,7 @@
     <BundleResource Include="Resources\stars.png" />
     <BundleResource Include="Resources\selected-product-border.png" />
     <BundleResource Include="Resources\cross%402x.png" />
+    <BundleResource Include="Resources\cross.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
