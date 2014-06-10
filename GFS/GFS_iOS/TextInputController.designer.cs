@@ -16,13 +16,29 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextView InputTextView { get; set; }
+		UIButton CreateListButton { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIView InputUIView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextField ListInputField { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (InputTextView != null) {
-				InputTextView.Dispose ();
-				InputTextView = null;
+			if (CreateListButton != null) {
+				CreateListButton.Dispose ();
+				CreateListButton = null;
+			}
+			if (InputUIView != null) {
+				InputUIView.Dispose ();
+				InputUIView = null;
+			}
+			if (ListInputField != null) {
+				ListInputField.Dispose ();
+				ListInputField = null;
 			}
 		}
 	}
