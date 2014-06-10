@@ -18,8 +18,6 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			//List1Cell.BackgroundColor = UIColor.Clear;
-			//List2Cell.BackgroundColor = UIColor.Clear;
 			SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//Create the table and populate it with two cells
@@ -28,17 +26,7 @@ namespace GFS_iOS
 			//Create the Table rows from the source, passing the full text for all notes (which will also act as row names), and the current ViewController
 			table.Source = new SavedListTableSource(currentController);
 			Add(table);
-
-
-//			//Get the current storyboard
-//			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
-//
-//			//Get the SavedListsTable view
-//			NotesViewController notesView = (NotesViewController) board.InstantiateViewController(  
-//				"SavedListsUIView"
-//			);
-
+			table.BackgroundColor = UIColor.Clear; //Make the table clear
 		}
-
 	}
 }

@@ -55,6 +55,8 @@ namespace GFS_iOS
 			if (cell == null)
 				cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 			cell.TextLabel.Text = tableItems[indexPath.Row];
+			cell.BackgroundColor = UIColor.Clear; //Make all of the cells clear
+
 			return cell;
 		}
 	}

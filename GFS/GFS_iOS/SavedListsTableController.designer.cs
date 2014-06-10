@@ -16,10 +16,18 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableViewCell ListCell { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableView SavedListsUIView { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (ListCell != null) {
+				ListCell.Dispose ();
+				ListCell = null;
+			}
 			if (SavedListsUIView != null) {
 				SavedListsUIView.Dispose ();
 				SavedListsUIView = null;
