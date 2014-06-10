@@ -3,12 +3,16 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Drawing;
+
+
 namespace GFS_iOS
 {
 	partial class ProductActionsTableController : UITableViewController
 	{
-		public ProductActionsTableController actionsTable;
+		public ProductActionsTableController actionsTable; //The current controller
 		public HashSet<string> actionList;
+
 		public ProductActionsTableController (IntPtr handle) : base (handle)
 		{
 			actionsTable = this;
@@ -52,6 +56,27 @@ namespace GFS_iOS
 					else if (selectedItem == "Create List")
 					{
 						Console.WriteLine("Creating a list");
+//						//Add a text field when clicked
+//						RectangleF frame = new RectangleF(10, 10, 300, 40);
+//						UITextField inputField = new UITextField(frame);
+//						actionSheet.AddSubview(inputField);
+//						actionSheet.InsertSubview(inputField, 3);
+//						actionSheet.BringSubviewToFront(inputField);
+
+						//Get the current storyboard
+						UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+
+						//Get the TextInputController
+						TextInputController inputView = (TextInputController) board.InstantiateViewController(  
+							"textInputController"
+						);
+
+						//inputView.tableController = (NotesTableController) parentController;
+
+						//Segue to the NotesView
+						actionsTable.NavigationController.PushViewController (inputView, false);
+
+
 					}
 					else //The user selected a saved list
 					{	

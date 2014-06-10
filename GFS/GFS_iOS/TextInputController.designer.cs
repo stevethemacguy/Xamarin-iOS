@@ -11,18 +11,18 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	[Register ("OtherTableViewController")]
-	partial class OtherTableViewController
+	[Register ("TextInputController")]
+	partial class TextInputController
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableView ListTwoUIView { get; set; }
+		UITextView InputTextView { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (ListTwoUIView != null) {
-				ListTwoUIView.Dispose ();
-				ListTwoUIView = null;
+			if (InputTextView != null) {
+				InputTextView.Dispose ();
+				InputTextView = null;
 			}
 		}
 	}

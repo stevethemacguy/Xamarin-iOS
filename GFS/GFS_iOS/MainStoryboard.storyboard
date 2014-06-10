@@ -345,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="136" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176" y="575"/>
+            <point key="canvasLocation" x="421" y="555"/>
         </scene>
         <scene sceneID="161">
             <objects>
@@ -1779,7 +1779,37 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1495" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="578"/>
+            <point key="canvasLocation" x="-63" y="568"/>
+        </scene>
+        <scene sceneID="1615">
+            <objects>
+                <viewController id="1616" sceneMemberID="viewController" customClass="TextInputController" storyboardIdentifier="textInputController" restorationIdentifier="textInputController" title="Create a new list">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1620"/>
+                        <viewControllerLayoutGuide type="bottom" id="1621"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1619">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1618" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" text="" keyboardDismissMode="2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                                <dataDetectorType key="dataDetectorTypes" address="YES" link="YES" phoneNumber="YES" calendarEvent="YES"/>
+                            </textView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="InputTextView" destination="1618" id="name-outlet-1618"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1622" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-506" y="535"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1890,5 +1920,6 @@
         <image name="description-text.png" width="594" height="1181"/>
         <image name="description-text2.png" width="607" height="1693"/>
         <image name="cross.png" width="19" height="19"/>
+        <image name="camera-icon.png" width="30" height="30"/>
     </resources>
 </document>

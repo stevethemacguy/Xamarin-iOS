@@ -314,6 +314,10 @@
     <Compile Include="NotesTableSource.cs" />
     <Compile Include="SavedListTableSource.cs" />
     <Compile Include="DataSource.cs" />
+    <Compile Include="TextInputController.cs" />
+    <Compile Include="TextInputController.designer.cs">
+      <DependentUpon>TextInputController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
