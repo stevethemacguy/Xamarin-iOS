@@ -3,6 +3,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace GFS_iOS
 {
@@ -24,6 +25,28 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+            //Alternating the keyboard to add camera icon
+            UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, this.View.Frame.Size.Width, 44.0f));
+
+            toolbar.TintColor = UIColor.White;
+            toolbar.BarStyle = UIBarStyle.Black;
+
+            toolbar.Translucent = true;
+
+            UIBarButtonItem cameraButton = new UIBarButtonItem(UIImage.FromFile("camera.png"), UIBarButtonItemStyle.Plain, null);
+
+            toolbar.Items = new UIBarButtonItem[]{
+             cameraButton,
+             new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null),
+             new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
+             new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate {
+             this.NoteTextView.ResignFirstResponder();
+    })
+     };
+
+            this.NoteTextView.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            this.NoteTextView.InputAccessoryView = toolbar;
 
 			//If we're adding a new note, make the text view empty.
 			if (addingNote)

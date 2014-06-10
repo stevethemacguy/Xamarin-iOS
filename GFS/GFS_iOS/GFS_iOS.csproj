@@ -323,5 +323,6 @@
   <ItemGroup>
     <Content Include="description-text.png" />
     <Content Include="description-text2.png" />
+    <BundleResource Include="Resources\camera.png" />
   </ItemGroup>
 </Project>
