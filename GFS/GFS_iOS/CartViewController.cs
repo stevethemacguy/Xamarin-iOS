@@ -10,5 +10,11 @@ namespace GFS_iOS
 		public CartViewController (IntPtr handle) : base (handle)
 		{
 		}
+
+		public override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
+			//cartUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+		}
 	}
 }

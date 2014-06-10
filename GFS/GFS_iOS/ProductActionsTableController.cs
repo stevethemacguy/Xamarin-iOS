@@ -29,6 +29,7 @@ namespace GFS_iOS
 					alert.Show();
 			};
 
+			//Create an action sheet that comes up from the bottom.
 			AddToListButton.TouchUpInside += (o,s) => {
 				UIActionSheet actionSheet = new UIActionSheet ("Your Saved Lists");
 				if(SavedProductList.getInstance() != null)

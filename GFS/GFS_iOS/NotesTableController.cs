@@ -23,8 +23,8 @@ namespace GFS_iOS
 			{
 				allNotes = new List<string>();
 				//First time through, use defaults for row names
-				allNotes.Add("A Super Awesome Note that spans multiple lines. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
-				allNotes.Add("A very special note");
+				allNotes.Add("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
+				allNotes.Add("Another good find");
 			}
 
 			//NO LONGER USED. Row names are now pulled directly from the notes.

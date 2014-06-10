@@ -14,8 +14,16 @@ namespace GFS_iOS
 	[Register ("CartViewController")]
 	partial class CartViewController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIView cartUIView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (cartUIView != null) {
+				cartUIView.Dispose ();
+				cartUIView = null;
+			}
 		}
 	}
 }

@@ -14,8 +14,16 @@ namespace GFS_iOS
 	[Register ("AccountViewController")]
 	partial class AccountViewController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIView accountUIView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (accountUIView != null) {
+				accountUIView.Dispose ();
+				accountUIView = null;
+			}
 		}
 	}
 }
