@@ -8,7 +8,7 @@ namespace GFS_iOS
 	partial class OtherTableViewController : UITableViewController
 	{
 		public int index = 0; //the selected row
-		public  SavedListsTableController tableController;
+		public  SavedListsTableController tableController = null;
 
 		public OtherTableViewController (IntPtr handle) : base (handle)
 		{

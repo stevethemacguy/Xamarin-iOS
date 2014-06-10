@@ -25,6 +25,17 @@ namespace GFS_iOS
 				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");
 					alert.Show();
 			};
+
+			AddToListButton.TouchUpInside += (o,s) => {
+				UIActionSheet actionSheet = new UIActionSheet ("Your Saved Lists");
+				actionSheet.AddButton ("Cancel");
+				actionSheet.AddButton ("Another option");
+				actionSheet.Clicked += delegate(object a, UIButtonEventArgs b) {
+					Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
+				};
+
+				actionSheet.ShowInView (View);
+			};
 		}
 	}
 }

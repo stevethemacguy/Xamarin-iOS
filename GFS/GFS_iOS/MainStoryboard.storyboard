@@ -721,7 +721,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1454" fixedFrame="YES">
-                                                    <rect key="frame" x="65" y="24" width="223" height="30"/>
+                                                    <rect key="frame" x="65" y="19" width="223" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                                     <state key="normal" title="Download Product Manual">
@@ -742,18 +742,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add to List" lineBreakMode="tailTruncation" minimumFontSize="10" id="520" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="70" y="24" width="193" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="542" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="green-addToList.png">
                                                     <rect key="frame" x="25" y="22" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1594" fixedFrame="YES">
+                                                    <rect key="frame" x="65" y="19" width="95" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                    <state key="normal" title="Add to List">
+                                                        <color key="titleShadowColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                                    </state>
+                                                    <connections/>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -767,8 +769,9 @@
                         <outlet property="actionsView" destination="527" id="name-outlet-527"/>
                         <outlet property="actionCell1" destination="531" id="name-outlet-531"/>
                         <outlet property="actionCell2" destination="535" id="name-outlet-535"/>
-                        <outlet property="actionCell3" destination="538" id="name-outlet-538"/>
                         <outlet property="DownloadButton" destination="1454" id="name-outlet-1454"/>
+                        <outlet property="actionCell3" destination="538" id="name-outlet-538"/>
+                        <outlet property="AddToListButton" destination="1594" id="name-outlet-1594"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="558" userLabel="First Responder" sceneMemberID="firstResponder"/>
