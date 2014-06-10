@@ -2,13 +2,16 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
-
+using System.Collections.Generic;
 namespace GFS_iOS
 {
 	partial class ProductActionsTableController : UITableViewController
 	{
+		public ProductActionsTableController actionsTable;
+		public HashSet<string> actionList;
 		public ProductActionsTableController (IntPtr handle) : base (handle)
 		{
+			actionsTable = this;
 		}
 
 		public override void ViewDidLoad()
@@ -28,11 +31,20 @@ namespace GFS_iOS
 
 			AddToListButton.TouchUpInside += (o,s) => {
 				UIActionSheet actionSheet = new UIActionSheet ("Your Saved Lists");
+				if(SavedProductList.getInstance() != null)
+				{ 
+					actionList = SavedProductList.getInstance();
+					foreach (string item in actionList)
+					{
+						actionSheet.AddButton(item);
+					}
+				}
+				actionSheet.AddButton ("Create List");
 				actionSheet.AddButton ("Cancel");
-				actionSheet.AddButton ("Another option");
 				actionSheet.Clicked += delegate(object a, UIButtonEventArgs b) {
 					Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
 				};
+
 
 				actionSheet.ShowInView (View);
 			};

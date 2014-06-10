@@ -312,6 +312,7 @@
     </Compile>
     <Compile Include="NotesTableSource.cs" />
     <Compile Include="SavedListTableSource.cs" />
+    <Compile Include="SavedProductList.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard">

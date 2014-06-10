@@ -10,6 +10,7 @@ namespace GFS_iOS
 
 		protected List<string> tableItems; 
 		protected string cellIdentifier = "testCell";
+		public HashSet<string> savedLists;
 		UIViewController parentController; //Used to store the parent controller of this TableSource
 
 		public SavedListTableSource (UIViewController parentController) //List<string> notes)
@@ -19,6 +20,9 @@ namespace GFS_iOS
 			tableItems.Add("cabinets");
 			tableItems.Add("others");
 			this.parentController = parentController;
+
+			//Add to the global product list.
+			savedLists = SavedProductList.getInstance();
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
@@ -55,8 +59,9 @@ namespace GFS_iOS
 			if (cell == null)
 				cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 			cell.TextLabel.Text = tableItems[indexPath.Row];
-			cell.BackgroundColor = UIColor.Clear; //Make all of the cells clear
 
+			savedLists = SavedProductList.getInstance(); //create the saved product list
+			savedLists.Add(tableItems [indexPath.Row]); //Add to the static list of saved lists
 			return cell;
 		}
 	}
