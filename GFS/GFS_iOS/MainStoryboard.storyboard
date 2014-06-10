@@ -21,17 +21,19 @@
                     </view>
                     <connections>
                         <outlet property="MenuButton" destination="59" id="name-outlet-59"/>
+                        <outlet property="MenuButton" destination="1674" id="name-outlet-1674"/>
                     </connections>
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
-                        <barButtonItem style="plain" id="60" key="leftBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                        <barButtonItem style="plain" id="1675" key="leftBarButtonItem" title="Menu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1674" key="customView">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="69" kind="push" id="976"/>
+                                    <segue destination="69" kind="push" id="1676"/>
                                 </connections>
                             </button>
                         </barButtonItem>
