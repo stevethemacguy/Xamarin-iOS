@@ -3,6 +3,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GFS_iOS
 {
@@ -15,19 +16,18 @@ namespace GFS_iOS
 
 		public SavedListTableSource (UIViewController parentController) //List<string> notes)
 		{
-			//tableItems = notes;
-			tableItems = new List<string>();
-			tableItems.Add("cabinets");
-			tableItems.Add("others");
 			this.parentController = parentController;
 
 			//Get an instance of the datasource
 			dataSource = DataSource.getInstance();
+			dataSource.addSavedList("cabinets");
+			dataSource.addSavedList("others");
+			tableItems = dataSource.getSavedListSet().ToList();  //Convert the datasource set to a list for convenience
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
 		{
-			return tableItems.Count;
+			return dataSource.getSavedListSet().Count;
 		}
 
 		//When the row is clicked, segue to the note view and pass all note data

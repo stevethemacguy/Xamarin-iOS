@@ -46,7 +46,7 @@ namespace GFS_iOS
 
 				actionSheet.AddButton ("Create List");
 				actionSheet.AddButton ("Cancel");
-
+				actionSheet.ShowInView (View);
 				actionSheet.Clicked += delegate(object a, UIButtonEventArgs b) {
 					string selectedItem = actionSheet.ButtonTitle(b.ButtonIndex); //The string label on the button that was clicked
 					if (selectedItem == "Cancel")
@@ -55,7 +55,6 @@ namespace GFS_iOS
 					}
 					else if (selectedItem == "Create List")
 					{
-						Console.WriteLine("Creating a list");
 //						//Add a text field when clicked
 //						RectangleF frame = new RectangleF(10, 10, 300, 40);
 //						UITextField inputField = new UITextField(frame);
@@ -73,7 +72,7 @@ namespace GFS_iOS
 
 						//inputView.tableController = (NotesTableController) parentController;
 
-						//Segue to the NotesView
+						//Segue to the text input view
 						actionsTable.NavigationController.PushViewController (inputView, false);
 
 
@@ -85,9 +84,6 @@ namespace GFS_iOS
 					}
 						
 				};
-
-
-				actionSheet.ShowInView (View);
 			};
 		}
 	}
