@@ -41,8 +41,23 @@ namespace GFS_iOS
 				}
 				actionSheet.AddButton ("Create List");
 				actionSheet.AddButton ("Cancel");
+
 				actionSheet.Clicked += delegate(object a, UIButtonEventArgs b) {
-					Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
+					string selectedItem = actionSheet.ButtonTitle(b.ButtonIndex); //The string label on the button that was clicked
+					if (selectedItem == "Cancel")
+					{
+						//do nothing, it cancels automatically
+					}
+					else if (selectedItem == "Create List")
+					{
+						Console.WriteLine("Creating a list");
+					}
+					else //The user selected a saved list
+					{	
+						Console.WriteLine(selectedItem + " was clicked.");
+						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
+					}
+						
 				};
 
 
