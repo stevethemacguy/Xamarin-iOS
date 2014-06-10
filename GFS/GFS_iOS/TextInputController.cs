@@ -8,13 +8,22 @@ namespace GFS_iOS
 {
 	partial class TextInputController : UIViewController
 	{
+		TextInputController currentController;
 		public TextInputController (IntPtr handle) : base (handle)
 		{
+			currentController = this;
 		}
+
+		//Do Unwind segue
+//		public override void PerformSegue(string identifier, NSObject sender)
+//		{
+//			base.PerformSegue(identifier, sender);
+//		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
 			ListInputField.BecomeFirstResponder(); //Put the users cursor in the text field
 
 			//Dismiss the keyboard when the enter key is pressed.
@@ -39,7 +48,27 @@ namespace GFS_iOS
 					//create the list
 					DataSource source = DataSource.getInstance();
 					source.addSavedList(newList);
-					//Now transition back to the product page and display an alert saying that it was saved.
+
+					//Unwind segue
+					//PerformSegue("UnwindToProductPageViewController", this);
+
+					//*******NORMAL TRANSITION*****
+					//Transition back to the product page and display an alert saying that it was saved.
+					//Get the current storyboard
+					UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+
+					//Get the TextInputController
+					ProductPageViewController productView = (ProductPageViewController) board.InstantiateViewController(  
+						"productPageController"
+					);
+
+					//productView.tableController = (NotesTableController) parentController;
+
+					productView.fromActionsPage = true;
+					//Segue to the text input view
+					currentController.NavigationController.PushViewController (productView, true);
+
+					//*******NORMAL TRANSITION*****
 				}
 
 			};

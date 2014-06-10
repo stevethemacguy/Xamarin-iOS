@@ -74,9 +74,8 @@ namespace GFS_iOS
 
 						//Segue to the text input view
 						actionsTable.NavigationController.PushViewController (inputView, false);
-
-
 					}
+
 					else //The user selected a saved list
 					{	
 						Console.WriteLine(selectedItem + " was clicked.");

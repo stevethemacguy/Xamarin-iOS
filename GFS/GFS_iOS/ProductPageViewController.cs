@@ -10,14 +10,54 @@ namespace GFS_iOS
 	{
 		UIScrollView scrollView;
 		UIImageView imageView;
+		public Boolean fromActionsPage = false; //True if this view is being "loaded" from the actions page (i.e. it's parent controller is TextInputController)
+		UIBarButtonItem mainMenuButton;
+		ProductPageViewController currentController;
 
 		public ProductPageViewController (IntPtr handle) : base (handle)
 		{
+			currentController = this;
+			mainMenuButton = new UIBarButtonItem();
+			mainMenuButton.Title = "Menu";
 		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//IF COMING FROM THE ACTIONS then do stuff
+			if (fromActionsPage)
+			{
+				//Hide the back button
+				this.NavigationItem.HidesBackButton = true;
+				//Create the Menu button and add it to LEFT SIDE OF the toolbar
+				this.NavigationItem.SetLeftBarButtonItem(mainMenuButton, false);
+			} 
+			else 
+			{
+//				//Create the Menu button and add it to the right side of toolbar
+//				mainMenuButton = new UIBarButtonItem();
+//				mainMenuButton.Title = "Menu";
+//				this.NavigationItem.SetRightBarButtonItem(mainMenuButton, false);
+			}
+
+			//Segue to the Main Menu. THIS IS BAD. We should "Rewind", not push a new view on the stack.
+			mainMenuButton.Clicked += (o,s) => {
+
+				//Segue
+				//Get the current storyboard
+				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+
+				//Get the NotesViewController
+				MenuTableViewController menuView = (MenuTableViewController) board.InstantiateViewController(  
+					"menuTable"
+				);
+
+				//Segue to the text input view
+				currentController.NavigationController.PushViewController (menuView, true);
+			};
+
+
 			ProductPageUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 
 			//Create a scroll view. X, Y, Width, Height. Note that the height MUST be smaller than the image if you want it to scroll!
@@ -36,5 +76,12 @@ namespace GFS_iOS
 			scrollView.AddSubview (imageView);
 			scrollView.Bounces = false; //We don't want it to "bounce" when it reaches the bottom.
 		}
+
+		//"Unwind Segue". This occurs after a new saved list is saved from the ProductActionsTableController
+//		[Action ("UnwindToProductPageViewController:")]
+//		public void UnwindToProductPageViewController (UIStoryboardSegue segue)
+//		{
+//			Console.WriteLine ("We've unwinded to Yellow!");
+//		}
 	}
 }
