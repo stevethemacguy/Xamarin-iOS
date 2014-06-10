@@ -26,26 +26,20 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-            //Alternating the keyboard to add camera icon
-            UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, this.View.Frame.Size.Width, 44.0f));
+			//Add camera icon to the toolbar
+			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, this.View.Frame.Size.Width, 31.0f));
+			UIBarButtonItem cameraButton = new UIBarButtonItem(UIImage.FromFile("camera-icon.png"), UIBarButtonItemStyle.Plain, null);
 
-            toolbar.TintColor = UIColor.White;
-            toolbar.BarStyle = UIBarStyle.Black;
-
-            toolbar.Translucent = true;
-
-            UIBarButtonItem cameraButton = new UIBarButtonItem(UIImage.FromFile("camera.png"), UIBarButtonItemStyle.Plain, null);
-
-            toolbar.Items = new UIBarButtonItem[]{
-             cameraButton,
-             new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null),
-             new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
-             new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate {
-             this.NoteTextView.ResignFirstResponder();
-    })
-     };
-
-            this.NoteTextView.KeyboardAppearance = UIKeyboardAppearance.Dark;
+			toolbar.Items = new UIBarButtonItem[] {
+				cameraButton,
+				//new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null),
+				new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
+				new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate {
+					this.NoteTextView.ResignFirstResponder();
+				})
+			};
+				
+			//this.NoteTextView.KeyboardAppearance = UIKeyboardAppearance.Dark;
             this.NoteTextView.InputAccessoryView = toolbar;
 
 			//If we're adding a new note, make the text view empty.
