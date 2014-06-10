@@ -313,7 +313,7 @@
     </Compile>
     <Compile Include="NotesTableSource.cs" />
     <Compile Include="SavedListTableSource.cs" />
-    <Compile Include="SavedProductList.cs" />
+    <Compile Include="DataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

@@ -32,14 +32,14 @@ namespace GFS_iOS
 			//Create an action sheet that comes up from the bottom.
 			AddToListButton.TouchUpInside += (o,s) => {
 				UIActionSheet actionSheet = new UIActionSheet ("Your Saved Lists");
-				if(SavedProductList.getInstance() != null)
-				{ 
-					actionList = SavedProductList.getInstance();
-					foreach (string item in actionList)
-					{
-						actionSheet.AddButton(item);
-					}
+				actionList = (DataSource.getInstance()).getSavedListSet(); //Get the savedLists Set from the datasource
+
+				//Add buttons for each item in the savedList
+				foreach (string item in actionList)
+				{
+					actionSheet.AddButton(item);
 				}
+
 				actionSheet.AddButton ("Create List");
 				actionSheet.AddButton ("Cancel");
 
