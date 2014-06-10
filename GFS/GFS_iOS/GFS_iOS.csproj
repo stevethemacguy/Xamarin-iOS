@@ -315,9 +315,7 @@
     <Compile Include="SavedProductList.cs" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="MainStoryboard.storyboard">
-      <DependentUpon>ProductPageViewController2.cs</DependentUpon>
-    </InterfaceDefinition>
+    <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
