@@ -7,7 +7,7 @@
         <!--class Prefix:identifier View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="GFS_iOSViewController" sceneMemberID="viewController" title="HomeScreen" storyboardIdentifier="">
+                <viewController id="vXZ-lx-hvc" customClass="GFS_iOSViewController" sceneMemberID="viewController" title="What's New for You" storyboardIdentifier="">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -25,7 +25,7 @@
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
                         <barButtonItem style="plain" id="60" key="leftBarButtonItem">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="16"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="1647"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -752,16 +752,23 @@
                                                     <rect key="frame" x="25" y="22" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1594" fixedFrame="YES">
-                                                    <rect key="frame" x="65" y="19" width="95" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1649" fixedFrame="YES">
+                                                    <rect key="frame" x="14" y="0.0" width="303" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
-                                                    <state key="normal" title="Add to List">
-                                                        <color key="titleShadowColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
-                                                        <color key="titleColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                                    <state key="normal" title="">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <connections/>
+                                                    <connections>
+                                                    </connections>
                                                 </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add to List" lineBreakMode="tailTruncation" minimumFontSize="10" id="1651" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="69" y="23" width="201" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -777,7 +784,7 @@
                         <outlet property="actionCell2" destination="535" id="name-outlet-535"/>
                         <outlet property="DownloadButton" destination="1454" id="name-outlet-1454"/>
                         <outlet property="actionCell3" destination="538" id="name-outlet-538"/>
-                        <outlet property="AddToListButton" destination="1594" id="name-outlet-1594"/>
+                        <outlet property="AddToListButton" destination="1649" id="name-outlet-1649"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="558" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1711,7 +1718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1388" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1007" y="535"/>
+            <point key="canvasLocation" x="-1167" y="513"/>
         </scene>
         <scene sceneID="1397">
             <objects>
