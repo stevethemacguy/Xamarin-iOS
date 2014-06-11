@@ -29,29 +29,30 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-            base.ViewDidLoad();
 
             // Perform any additional setup after loading the view, typically from a nib.   
 
+            //generate main scroll view
             mainScrollView = new UIScrollView(
             new RectangleF(0, 64, 320
             , 504));
+            //initial a container to set content size for the scroll view
             RectangleF container = new RectangleF(0, 0, 320, 800);
             mainScrollView.ContentSize = container.Size;
 
+            //generate sub scroll view
             scrollView = new UIScrollView(
             new RectangleF(0, 207, View.Frame.Width
             , 150));
-
+            //adding an image view to sub scroll view
             imageView = new UIImageView(UIImage.FromFile("itemlist150.png"));
-            //imageView.Frame = new RectangleF(0, 0, 600, 130);
-            //scrollView.ContentSize = imageView.Frame.Size;
             scrollView.ContentSize = imageView.Image.Size;
             scrollView.AddSubview(imageView);
 
-            //mainScrollView.AddSubview(scrollView);
+            //adding main scroll view to the controllerview
             View.AddSubview(mainScrollView);
 
+            //adding images to specified location in main scroll view
             imageView = new UIImageView(UIImage.FromFile("homeadd.png"));
             mainScrollView.AddSubview(imageView);
             imageView = new UIImageView(UIImage.FromFile("recommandtxt.png"));
@@ -60,8 +61,10 @@ namespace GFS_iOS
             imageView = new UIImageView(UIImage.FromFile("viewed.png"));
             imageView.Frame = new RectangleF(0, 357, 320, 350);
             mainScrollView.AddSubview(imageView);
+
+            //adding sub scroll view into main scroll view
             mainScrollView.AddSubview(scrollView);
-			// Perform any additional setup after loading the view, typically from a nib.
+
 		}
 
 		public override void ViewWillAppear(bool animated)
