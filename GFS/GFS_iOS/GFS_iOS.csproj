@@ -227,6 +227,7 @@
     <Compile Include="SearchViewController.designer.cs">
       <DependentUpon>SearchViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductPageViewController.cs" />
     <Compile Include="NotesViewController.cs" />
     <Compile Include="NotesViewController.designer.cs">
       <DependentUpon>NotesViewController.cs</DependentUpon>
@@ -295,7 +296,6 @@
       <DependentUpon>PDFViewControllerTwo.cs</DependentUpon>
     </Compile>
     <Compile Include="PDFViewControllerTwo.cs" />
-    <Compile Include="ProductPageViewController.cs" />
     <Compile Include="ProductPageViewController.designer.cs">
       <DependentUpon>ProductPageViewController.cs</DependentUpon>
     </Compile>

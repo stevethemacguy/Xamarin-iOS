@@ -55,13 +55,6 @@ namespace GFS_iOS
 					}
 					else if (selectedItem == "Create List")
 					{
-//						//Add a text field when clicked
-//						RectangleF frame = new RectangleF(10, 10, 300, 40);
-//						UITextField inputField = new UITextField(frame);
-//						actionSheet.AddSubview(inputField);
-//						actionSheet.InsertSubview(inputField, 3);
-//						actionSheet.BringSubviewToFront(inputField);
-
 						//Get the current storyboard
 						UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
 

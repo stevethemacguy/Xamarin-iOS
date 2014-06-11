@@ -14,6 +14,8 @@ namespace GFS_iOS
 		UIBarButtonItem mainMenuButton;
 		ProductPageViewController currentController;
 
+		public string saved = "";
+		public Boolean failed = false;
 		public ProductPageViewController (IntPtr handle) : base (handle)
 		{
 			currentController = this;
@@ -78,10 +80,22 @@ namespace GFS_iOS
 		}
 
 		//"Unwind Segue". This occurs after a new saved list is saved from the ProductActionsTableController
-//		[Action ("UnwindToProductPageViewController:")]
-//		public void UnwindToProductPageViewController (UIStoryboardSegue segue)
-//		{
-//			Console.WriteLine ("We've unwinded to Yellow!");
-//		}
+		[Action ("UnwindToProductPageViewController:")]
+		public void UnwindToProductPageViewController (UIStoryboardSegue segue)
+		{
+			//Access member variable of the source TextInputController
+			TextInputController parentControl = (TextInputController) segue.SourceViewController;
+			if (parentControl.failed)
+			{
+				UIAlertView alert = new UIAlertView ("Failed to Save", "The list could not be created. Please try again.", null, "OK");
+				alert.Show();
+				return;
+			}
+			else{
+				string success = "The product was added to the list: \"" + parentControl.newList +"\"";
+				UIAlertView alert = new UIAlertView(success, "", null, "OK");
+				alert.Show();
+			}
+		}
 	}
 }
