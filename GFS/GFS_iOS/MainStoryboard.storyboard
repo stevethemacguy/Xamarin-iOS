@@ -267,7 +267,7 @@
                                         <rect key="frame" x="0.0" y="22" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="449" tableViewCell="448">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -277,7 +277,7 @@
                                         <rect key="frame" x="0.0" y="66" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="451" tableViewCell="450">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -286,7 +286,7 @@
                                         <rect key="frame" x="0.0" y="110" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="453" tableViewCell="452">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -295,7 +295,7 @@
                                         <rect key="frame" x="0.0" y="154" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="801" tableViewCell="800">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1227,7 +1227,7 @@
                         <sections>
                             <tableViewSection id="942">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="939" reuseIdentifier="detailCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="939" reuseIdentifier="detailCell" customClass="SpecialCell">
                                         <rect key="frame" x="0.0" y="64" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="939" id="943">

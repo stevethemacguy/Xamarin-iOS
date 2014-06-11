@@ -20,7 +20,7 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell ListProdCell1 { get; set; }
+		GFS_iOS.SpecialCell ListProdCell1 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]

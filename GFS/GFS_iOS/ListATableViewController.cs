@@ -22,7 +22,7 @@ namespace GFS_iOS
 			ListProdCell1.BackgroundColor = UIColor.Clear;
 			ListProdCell2.BackgroundColor = UIColor.Clear;
 			tableController.Title = title; //Set the title in the navigation bar to the selected cell's title
-			if (index == 1)
+			if (index == 1) //When other stuff is clicked, make things empty
 			{
 				//Hide the other products
 				ListProdCell1.Hidden = true;

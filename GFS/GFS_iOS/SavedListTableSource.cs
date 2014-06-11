@@ -30,7 +30,7 @@ namespace GFS_iOS
 			return dataSource.getSavedListSet().Count;
 		}
 
-		//When the row is clicked, segue to the note view and pass all note data
+		//When the row is clicked, segue to the ListATableViewController and pass all  data
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
@@ -58,7 +58,9 @@ namespace GFS_iOS
 			// if there are no cells to reuse, create a new one
 			if (cell == null)
 				cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
-			cell.TextLabel.Text = tableItems[indexPath.Row];
+
+			//tableItems[0], where zero is the index of the row, would get the first string in the data source SavedListSet.
+			cell.TextLabel.Text = tableItems[indexPath.Row]; 
 
 			//Add a Saved List to the DataSource, using the cell row name
 			dataSource.addSavedList(tableItems [indexPath.Row]); //Add to the static list of saved lists

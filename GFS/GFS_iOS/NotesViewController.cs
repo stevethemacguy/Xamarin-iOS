@@ -42,7 +42,7 @@ namespace GFS_iOS
 			{
 				notes[index] = noteText; //Overrite the existing note Text of the clicked cell to the new text
 			}
-			tableController.refreshTable(notes, noteText); //"Refresh" the table using our new list of notes.
+			tableController.refreshTable(notes); //"Refresh" the table using our new list of notes.
 		}
 
 		//When the back button is pressed

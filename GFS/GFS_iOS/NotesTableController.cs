@@ -85,7 +85,7 @@ namespace GFS_iOS
 		}
 
 		//Adds a new note and refreshes the table
-		public void refreshTable(List<string> newNotes, string justAdded)
+		public void refreshTable(List<string> newNotes)
 		{
 			//reacreate the allNotes List, now with our new note
 			allNotes = newNotes;
