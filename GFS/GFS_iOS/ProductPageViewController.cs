@@ -28,20 +28,20 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
 			//IF COMING FROM THE ACTIONS then do stuff
-			if (fromActionsPage)
-			{
-				//Hide the back button
-				this.NavigationItem.HidesBackButton = true;
-				//Create the Menu button and add it to LEFT SIDE OF the toolbar
-				this.NavigationItem.SetLeftBarButtonItem(mainMenuButton, false);
-			} 
-			else 
-			{
-//				//Create the Menu button and add it to the right side of toolbar
-//				mainMenuButton = new UIBarButtonItem();
-//				mainMenuButton.Title = "Menu";
-//				this.NavigationItem.SetRightBarButtonItem(mainMenuButton, false);
-			}
+//			if (fromActionsPage)
+//			{
+//				//Hide the back button
+//				this.NavigationItem.HidesBackButton = true;
+//				//Create the Menu button and add it to LEFT SIDE OF the toolbar
+//				this.NavigationItem.SetLeftBarButtonItem(mainMenuButton, false);
+//			} 
+//			else 
+//			{
+				//Create the Menu button and add it to the right side of toolbar
+				mainMenuButton = new UIBarButtonItem();
+				mainMenuButton.Title = "Menu";
+				this.NavigationItem.SetRightBarButtonItem(mainMenuButton, false);
+			//}
 
 			//Segue to the Main Menu. THIS IS BAD. We should "Rewind", not push a new view on the stack.
 			mainMenuButton.Clicked += (o,s) => {
@@ -92,7 +92,7 @@ namespace GFS_iOS
 				return;
 			}
 			else{
-				string success = "The product was added to the list: \"" + parentControl.newList +"\"";
+				string success = "The product was added to: \"" + parentControl.newList +"\"";
 				UIAlertView alert = new UIAlertView(success, "", null, "OK");
 				alert.Show();
 			}
