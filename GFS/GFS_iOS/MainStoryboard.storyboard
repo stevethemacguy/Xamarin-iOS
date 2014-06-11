@@ -12,12 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="65" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="home-background.png">
-                                <rect key="frame" x="0.0" y="250" width="320" height="371"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
+                        <subviews/>
                     </view>
                     <connections>
                         <outlet property="MenuButton" destination="59" id="name-outlet-59"/>
@@ -1942,5 +1937,9 @@
         <image name="description-text2.png" width="607" height="1693"/>
         <image name="cross.png" width="19" height="19"/>
         <image name="camera-icon.png" width="30" height="30"/>
+        <image name="gallery-icon.png" width="38" height="36"/>
+        <image name="homeadd.png" width="320" height="166"/>
+        <image name="recommandtxt.png" width="320" height="41"/>
+        <image name="viewed.png" width="320" height="350"/>
     </resources>
 </document>

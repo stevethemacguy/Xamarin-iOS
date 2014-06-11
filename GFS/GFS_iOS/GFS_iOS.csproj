@@ -327,5 +327,12 @@
     <Content Include="description-text.png" />
     <Content Include="description-text2.png" />
     <BundleResource Include="Resources\gallery-icon.png" />
+    <BundleResource Include="Resources\homeadd.png" />
+    <BundleResource Include="Resources\homeadd%402x.png" />
+    <BundleResource Include="Resources\recommandtxt.png" />
+    <BundleResource Include="Resources\recommandtxt%402x.png" />
+    <BundleResource Include="Resources\itemlist150.png" />
+    <BundleResource Include="Resources\viewed.png" />
+    <BundleResource Include="Resources\viewed%402x.png" />
   </ItemGroup>
 </Project>
