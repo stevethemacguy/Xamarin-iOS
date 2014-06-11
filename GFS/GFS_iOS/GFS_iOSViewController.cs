@@ -37,7 +37,7 @@ namespace GFS_iOS
             new RectangleF(0, 64, 320
             , 504));
             //initial a container to set content size for the scroll view
-            RectangleF container = new RectangleF(0, 0, 320, 800);
+            RectangleF container = new RectangleF(0, 0, 320, 775);
             mainScrollView.ContentSize = container.Size;
 
             //generate sub scroll view
@@ -45,7 +45,7 @@ namespace GFS_iOS
             new RectangleF(0, 207, View.Frame.Width
             , 150));
             //adding an image view to sub scroll view
-            imageView = new UIImageView(UIImage.FromFile("itemlist150.png"));
+            imageView = new UIImageView(UIImage.FromFile("itemlists.png"));
             scrollView.ContentSize = imageView.Image.Size;
             scrollView.AddSubview(imageView);
 

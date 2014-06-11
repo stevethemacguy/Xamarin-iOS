@@ -1941,5 +1941,6 @@
         <image name="homeadd.png" width="320" height="166"/>
         <image name="recommandtxt.png" width="320" height="41"/>
         <image name="viewed.png" width="320" height="350"/>
+        <image name="itemlists.png" width="552" height="150"/>
     </resources>
 </document>
