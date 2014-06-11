@@ -227,6 +227,7 @@
     <Compile Include="SearchViewController.designer.cs">
       <DependentUpon>SearchViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductPageViewController.cs" />
     <Compile Include="NotesViewController.cs" />
     <Compile Include="NotesViewController.designer.cs">
       <DependentUpon>NotesViewController.cs</DependentUpon>
@@ -295,7 +296,6 @@
       <DependentUpon>PDFViewControllerTwo.cs</DependentUpon>
     </Compile>
     <Compile Include="PDFViewControllerTwo.cs" />
-    <Compile Include="ProductPageViewController.cs" />
     <Compile Include="ProductPageViewController.designer.cs">
       <DependentUpon>ProductPageViewController.cs</DependentUpon>
     </Compile>
@@ -313,7 +313,11 @@
     </Compile>
     <Compile Include="NotesTableSource.cs" />
     <Compile Include="SavedListTableSource.cs" />
-    <Compile Include="SavedProductList.cs" />
+    <Compile Include="DataSource.cs" />
+    <Compile Include="TextInputController.cs" />
+    <Compile Include="TextInputController.designer.cs">
+      <DependentUpon>TextInputController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

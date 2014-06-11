@@ -3,6 +3,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GFS_iOS
 {
@@ -10,24 +11,23 @@ namespace GFS_iOS
 
 		protected List<string> tableItems; 
 		protected string cellIdentifier = "testCell";
-		public HashSet<string> savedLists;
+		private DataSource dataSource = null;
 		UIViewController parentController; //Used to store the parent controller of this TableSource
 
 		public SavedListTableSource (UIViewController parentController) //List<string> notes)
 		{
-			//tableItems = notes;
-			tableItems = new List<string>();
-			tableItems.Add("cabinets");
-			tableItems.Add("others");
 			this.parentController = parentController;
 
-			//Add to the global product list.
-			savedLists = SavedProductList.getInstance();
+			//Get an instance of the datasource
+			dataSource = DataSource.getInstance();
+			dataSource.addSavedList("cabinets");
+			dataSource.addSavedList("others");
+			tableItems = dataSource.getSavedListSet().ToList();  //Convert the datasource set to a list for convenience
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
 		{
-			return tableItems.Count;
+			return dataSource.getSavedListSet().Count;
 		}
 
 		//When the row is clicked, segue to the note view and pass all note data
@@ -60,8 +60,8 @@ namespace GFS_iOS
 				cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 			cell.TextLabel.Text = tableItems[indexPath.Row];
 
-			savedLists = SavedProductList.getInstance(); //create the saved product list
-			savedLists.Add(tableItems [indexPath.Row]); //Add to the static list of saved lists
+			//Add a Saved List to the DataSource, using the cell row name
+			dataSource.addSavedList(tableItems [indexPath.Row]); //Add to the static list of saved lists
 			return cell;
 		}
 	}

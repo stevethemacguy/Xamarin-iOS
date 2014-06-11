@@ -3,12 +3,16 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Drawing;
+
+
 namespace GFS_iOS
 {
 	partial class ProductActionsTableController : UITableViewController
 	{
-		public ProductActionsTableController actionsTable;
+		public ProductActionsTableController actionsTable; //The current controller
 		public HashSet<string> actionList;
+
 		public ProductActionsTableController (IntPtr handle) : base (handle)
 		{
 			actionsTable = this;
@@ -32,17 +36,17 @@ namespace GFS_iOS
 			//Create an action sheet that comes up from the bottom.
 			AddToListButton.TouchUpInside += (o,s) => {
 				UIActionSheet actionSheet = new UIActionSheet ("Your Saved Lists");
-				if(SavedProductList.getInstance() != null)
-				{ 
-					actionList = SavedProductList.getInstance();
-					foreach (string item in actionList)
-					{
-						actionSheet.AddButton(item);
-					}
+				actionList = (DataSource.getInstance()).getSavedListSet(); //Get the savedLists Set from the datasource
+
+				//Add buttons for each item in the savedList
+				foreach (string item in actionList)
+				{
+					actionSheet.AddButton(item);
 				}
+
 				actionSheet.AddButton ("Create List");
 				actionSheet.AddButton ("Cancel");
-
+				actionSheet.ShowInView (View);
 				actionSheet.Clicked += delegate(object a, UIButtonEventArgs b) {
 					string selectedItem = actionSheet.ButtonTitle(b.ButtonIndex); //The string label on the button that was clicked
 					if (selectedItem == "Cancel")
@@ -51,8 +55,20 @@ namespace GFS_iOS
 					}
 					else if (selectedItem == "Create List")
 					{
-						Console.WriteLine("Creating a list");
+						//Get the current storyboard
+						UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+
+						//Get the TextInputController
+						TextInputController inputView = (TextInputController) board.InstantiateViewController(  
+							"textInputController"
+						);
+
+						//inputView.tableController = (NotesTableController) parentController;
+
+						//Segue to the text input view
+						actionsTable.NavigationController.PushViewController (inputView, false);
 					}
+
 					else //The user selected a saved list
 					{	
 						Console.WriteLine(selectedItem + " was clicked.");
@@ -60,9 +76,6 @@ namespace GFS_iOS
 					}
 						
 				};
-
-
-				actionSheet.ShowInView (View);
 			};
 		}
 	}
