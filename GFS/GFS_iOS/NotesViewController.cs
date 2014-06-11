@@ -16,10 +16,14 @@ namespace GFS_iOS
 		public int index; //Value is passed in from NotesTableSource on segue
 
 		//refrences the table controller. this is passed by NotesTableSource when the table is created and allows us to update the table object
-		public NotesTableController tableController; 
+		public NotesTableController tableController;
+
+        UIImagePickerController picker;
+        NotesViewController myController;
 
 		public NotesViewController  (IntPtr handle) : base (handle)
 		{
+            myController = this;
 		}
 
 		public override void ViewDidLoad()
@@ -28,11 +32,12 @@ namespace GFS_iOS
 
 			//Add camera icon to the toolbar
 			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, this.View.Frame.Size.Width, 31.0f));
-			UIBarButtonItem cameraButton = new UIBarButtonItem(UIImage.FromFile("camera-icon.png"), UIBarButtonItemStyle.Plain, null);
+			UIBarButtonItem cameraButton = new UIBarButtonItem(UIImage.FromFile("camera-icon.png"), UIBarButtonItemStyle.Plain, cameraMode);
+            UIBarButtonItem galleryButton = new UIBarButtonItem(UIImage.FromFile("gallery-icon.png"), UIBarButtonItemStyle.Plain, imagePicker);
 
 			toolbar.Items = new UIBarButtonItem[] {
 				cameraButton,
-				//new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null),
+                galleryButton,
 				new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
 				new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate {
 					this.NoteTextView.ResignFirstResponder();
@@ -82,5 +87,21 @@ namespace GFS_iOS
 				tableController.refreshTable(notes, noteText); //"Refresh" the table using our new list of notes.
 			};
 		}
+        
+        private void imagePicker(object sender, EventArgs e)
+        {
+            picker = new UIImagePickerController();
+            picker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            picker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+            myController.PresentViewController(picker, true, null);
+        }
+
+        private void cameraMode(object sender, EventArgs e)
+        {
+            picker = new UIImagePickerController();
+            picker.SourceType = UIImagePickerControllerSourceType.Camera;
+            picker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.Camera);
+            myController.PresentViewController(picker, true, null);
+        }
 	}
 }
