@@ -318,10 +318,6 @@
     <Compile Include="TextInputController.designer.cs">
       <DependentUpon>TextInputController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpecialCell.cs" />
-    <Compile Include="SpecialCell.designer.cs">
-      <DependentUpon>SpecialCell.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
