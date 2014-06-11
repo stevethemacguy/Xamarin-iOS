@@ -71,31 +71,33 @@ namespace GFS_iOS
 			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, this.View.Frame.Size.Width, 31.0f));
 			UIBarButtonItem cameraButton = new UIBarButtonItem(UIImage.FromFile("camera-icon.png"), UIBarButtonItemStyle.Plain, cameraMode);
             UIBarButtonItem galleryButton = new UIBarButtonItem(UIImage.FromFile("gallery-icon.png"), UIBarButtonItemStyle.Plain, imagePicker);
+            UIBarButtonItem searchButton = new UIBarButtonItem(UIImage.FromFile("magnifying-glass-small.png"), UIBarButtonItemStyle.Plain, searchBar);
 
-			toolbar.Items = new UIBarButtonItem[] {
+            toolbar.Items = new UIBarButtonItem[] {
 				cameraButton,
                 galleryButton,
+                searchButton,
 				new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
 				new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate {
 					this.NoteTextView.ResignFirstResponder();
 				})
 			};
 
-			//this.NoteTextView.KeyboardAppearance = UIKeyboardAppearance.Dark;
-			this.NoteTextView.InputAccessoryView = toolbar;
+            //this.NoteTextView.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            this.NoteTextView.InputAccessoryView = toolbar;
 
 			//******** USE THE TOOLBAR "SAVE" BUTTON******/
 			//Create the Save button and add it to the toolbar
-//			UIBarButtonItem SavedNoteButton = new UIBarButtonItem();
-//			SavedNoteButton.Title = "Save";
-//			this.NavigationItem.SetRightBarButtonItem(SavedNoteButton, false);
-//
-//			//When the Save button is pressed, save the text.
+			//UIBarButtonItem SavedNoteButton = new UIBarButtonItem();
+			//SavedNoteButton.Title = "Save";
+			//this.NavigationItem.SetRightBarButtonItem(SavedNoteButton, false);
+			//
+			////When the Save button is pressed, save the text.
 //			SavedNoteButton.Clicked += (o,s) => {
 //				SaveNote();
 //			};
-		}
-        
+        }
+
         private void imagePicker(object sender, EventArgs e)
         {
             picker = new UIImagePickerController();
@@ -111,5 +113,17 @@ namespace GFS_iOS
             picker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.Camera);
             myController.PresentViewController(picker, true, null);
         }
-	}
+
+        private void searchBar(object sender, EventArgs e)
+        {
+            UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+
+            //Get the searchViewController
+            SearchResultsTableController searchView = (SearchResultsTableController)board.InstantiateViewController(
+                "searchResultsController"
+            );
+
+            myController.NavigationController.PushViewController(searchView, false);
+        }
+    }
 }

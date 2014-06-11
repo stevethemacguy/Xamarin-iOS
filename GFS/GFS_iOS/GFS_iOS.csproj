@@ -336,5 +336,6 @@
     <BundleResource Include="Resources\viewed%402x.png" />
     <BundleResource Include="Resources\itemlists.png" />
     <BundleResource Include="Resources\itemlists%402x.png" />
+    <BundleResource Include="Resources\magnifying-glass-small.png" />
   </ItemGroup>
 </Project>
