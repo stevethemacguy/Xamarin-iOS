@@ -334,5 +334,7 @@
     <BundleResource Include="Resources\itemlist150.png" />
     <BundleResource Include="Resources\viewed.png" />
     <BundleResource Include="Resources\viewed%402x.png" />
+    <BundleResource Include="Resources\itemlists.png" />
+    <BundleResource Include="Resources\itemlists%402x.png" />
   </ItemGroup>
 </Project>
