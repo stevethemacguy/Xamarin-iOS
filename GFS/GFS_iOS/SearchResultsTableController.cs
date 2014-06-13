@@ -7,6 +7,7 @@ namespace GFS_iOS
 {
 	partial class SearchResultsTableController : UITableViewController
 	{
+		public Boolean fromSegue = false; //Used when seguing from the "search" icon when typing in the NotesViewController
 		public SearchResultsTableController (IntPtr handle) : base (handle)
 		{
 		}
@@ -19,6 +20,13 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//If coming from the NotesViewController, don't allow users to segue back to the create a note view
+			if(fromSegue)
+			{
+				//Hide the back button
+				this.NavigationItem.HidesBackButton = true;
+			}
 
 			//Make the Cells have a clear background color
 			//Result1 and 2 are featured, so should be green.

@@ -117,12 +117,11 @@ namespace GFS_iOS
         private void searchBar(object sender, EventArgs e)
         {
             UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
-
             //Get the searchViewController
             SearchResultsTableController searchView = (SearchResultsTableController)board.InstantiateViewController(
                 "searchResultsController"
             );
-
+			searchView.fromSegue = true;
             myController.NavigationController.PushViewController(searchView, false);
         }
     }

@@ -12,13 +12,13 @@ namespace GFS_iOS
 		UIImageView imageView;
 		public Boolean fromActionsPage = false; //True if this view is being "loaded" from the actions page (i.e. it's parent controller is TextInputController)
 		UIBarButtonItem mainMenuButton;
-		ProductPageViewController currentController;
+		//ProductPageViewController currentController;
 
 		public string saved = "";
 		public Boolean failed = false;
 		public ProductPageViewController (IntPtr handle) : base (handle)
 		{
-			currentController = this;
+			//	currentController = this;
 			mainMenuButton = new UIBarButtonItem();
 			mainMenuButton.Title = "Menu";
 		}

@@ -2186,5 +2186,7 @@
         <image name="itemlists.png" width="554" height="150"/>
         <image name="itemlist150.png" width="498" height="150"/>
         <image name="magnifying-glass-small.png" width="28" height="28"/>
+        <image name="new-cross.png" width="17" height="17"/>
+        <image name="cross-medium.png" width="16" height="16"/>
     </resources>
 </document>

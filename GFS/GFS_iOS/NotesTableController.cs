@@ -68,7 +68,7 @@ namespace GFS_iOS
 
 			//Create the Add note button and add it to the toolbar
 			UIBarButtonItem AddNoteButton = new UIBarButtonItem();
-			AddNoteButton.Image = UIImage.FromFile("cross.png");
+			AddNoteButton.Image = UIImage.FromFile("cross-medium.png");
 			AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
 			this.NavigationItem.SetLeftBarButtonItem(AddNoteButton, false);
 
