@@ -387,7 +387,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1827" kind="unwind" unwindAction="UnwindToMenu:" id="1858"/>
+                                    <segue destination="1827" kind="unwind" unwindAction="UnwindToMenu:" id="1887"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1764,11 +1764,15 @@
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="1885" kind="unwind" unwindAction="UnwindToMenu:" id="1889"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1222" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1885" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="870" y="391"/>
         </scene>
