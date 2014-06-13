@@ -18,11 +18,19 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableView ListTwoUIView { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIButton MenuB6 { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (ListTwoUIView != null) {
 				ListTwoUIView.Dispose ();
 				ListTwoUIView = null;
+			}
+			if (MenuB6 != null) {
+				MenuB6.Dispose ();
+				MenuB6 = null;
 			}
 		}
 	}

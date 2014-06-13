@@ -26,6 +26,10 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableViewCell ListProdCell2 { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIButton MenuB5 { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (ListOneUIView != null) {
@@ -39,6 +43,10 @@ namespace GFS_iOS
 			if (ListProdCell2 != null) {
 				ListProdCell2.Dispose ();
 				ListProdCell2 = null;
+			}
+			if (MenuB5 != null) {
+				MenuB5.Dispose ();
+				MenuB5 = null;
 			}
 		}
 	}
