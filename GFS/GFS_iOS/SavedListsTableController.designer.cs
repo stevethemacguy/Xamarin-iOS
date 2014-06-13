@@ -20,6 +20,10 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIButton MenuB3 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableView SavedListsUIView { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -27,6 +31,10 @@ namespace GFS_iOS
 			if (ListCell != null) {
 				ListCell.Dispose ();
 				ListCell = null;
+			}
+			if (MenuB3 != null) {
+				MenuB3.Dispose ();
+				MenuB3 = null;
 			}
 			if (SavedListsUIView != null) {
 				SavedListsUIView.Dispose ();

@@ -356,6 +356,7 @@
                     <connections>
                         <outlet property="NoteTextView" destination="1499" id="name-outlet-1499"/>
                     </connections>
+                    <navigationItem title="Notes" id="1803" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="136" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -724,6 +725,7 @@
                         <outlet property="LoadResultsCell" destination="236" id="name-outlet-236"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem title="Search Results" id="1797" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="214" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -838,6 +840,7 @@
                         <outlet property="actionCell3" destination="538" id="name-outlet-538"/>
                         <outlet property="AddToListButton" destination="1649" id="name-outlet-1649"/>
                     </connections>
+                    <navigationItem title="Actions" id="1799" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="558" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1261,10 +1264,26 @@
                     <connections>
                         <outlet property="SavedListsUIView" destination="811" id="name-outlet-811"/>
                         <outlet property="ListCell" destination="1572" id="name-outlet-1572"/>
+                        <outlet property="MenuB3" destination="1791" id="name-outlet-1791"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem title="Saved Lists" id="1790" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
+                        <barButtonItem style="plain" id="1792" key="rightBarButtonItem">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1791" key="customView">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1774" kind="unwind" unwindAction="UnwindToMenu:" id="1793"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="874" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1774" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="12" y="-880"/>
         </scene>
@@ -1431,6 +1450,7 @@
                         <outlet property="ListProdCell2" destination="984" id="name-outlet-984"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem title="" id="1795" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="954" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1543,6 +1563,7 @@
                         <outlet property="manualProdCell1" destination="1147" id="name-outlet-1147"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem title="Saved Manuals" id="1800" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1128" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1625,6 +1646,7 @@
                         <outlet property="ManualListCell2" destination="1194" id="name-outlet-1194"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem title="Saved Manuals" id="1801" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1202" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1706,6 +1728,7 @@
                         <outlet property="ProductPageUIView" destination="1288" id="name-outlet-1288"/>
                         <outlet property="StarsImage" destination="1307" id="name-outlet-1307"/>
                     </connections>
+                    <navigationItem title="" id="1798" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1291" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1767,6 +1790,7 @@
                         <outlet property="ProductPageUIView" destination="1376" id="1375"/>
                         <outlet property="StarsImage" destination="1378" id="1377"/>
                     </connections>
+                    <navigationItem title="" id="1802" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1388" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1795,6 +1819,7 @@
                         <outlet property="ListTwoUIView" destination="1402" id="name-outlet-1402"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem title="Other Items" id="1796" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1432" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
