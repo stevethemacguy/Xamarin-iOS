@@ -18,11 +18,35 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UIView accountUIView { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIBarButtonItem MenuButton4 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIButton MenuButton5 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UINavigationItem yourAccountNavItem { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (accountUIView != null) {
 				accountUIView.Dispose ();
 				accountUIView = null;
+			}
+			if (MenuButton4 != null) {
+				MenuButton4.Dispose ();
+				MenuButton4 = null;
+			}
+			if (MenuButton5 != null) {
+				MenuButton5.Dispose ();
+				MenuButton5 = null;
+			}
+			if (yourAccountNavItem != null) {
+				yourAccountNavItem.Dispose ();
+				yourAccountNavItem = null;
 			}
 		}
 	}

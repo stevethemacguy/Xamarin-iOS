@@ -20,7 +20,15 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIButton MenuB1 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UISearchBar SearchBar { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UINavigationItem SearchNavItem { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -32,9 +40,17 @@ namespace GFS_iOS
 				HintTable.Dispose ();
 				HintTable = null;
 			}
+			if (MenuB1 != null) {
+				MenuB1.Dispose ();
+				MenuB1 = null;
+			}
 			if (SearchBar != null) {
 				SearchBar.Dispose ();
 				SearchBar = null;
+			}
+			if (SearchNavItem != null) {
+				SearchNavItem.Dispose ();
+				SearchNavItem = null;
 			}
 			if (SearchUIView != null) {
 				SearchUIView.Dispose ();
