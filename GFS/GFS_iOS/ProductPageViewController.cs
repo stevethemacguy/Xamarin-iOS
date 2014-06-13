@@ -38,26 +38,26 @@ namespace GFS_iOS
 //			else 
 //			{
 				//Create the Menu button and add it to the right side of toolbar
-				mainMenuButton = new UIBarButtonItem();
-				mainMenuButton.Title = "Menu";
-				this.NavigationItem.SetRightBarButtonItem(mainMenuButton, false);
+//				mainMenuButton = new UIBarButtonItem();
+//				mainMenuButton.Title = "Menu";
+//				this.NavigationItem.SetRightBarButtonItem(mainMenuButton, false);
 			//}
 
 			//Segue to the Main Menu. THIS IS BAD. We should "Rewind", not push a new view on the stack.
-			mainMenuButton.Clicked += (o,s) => {
-
-				//Segue
-				//Get the current storyboard
-				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
-
-				//Get the NotesViewController
-				MenuTableViewController menuView = (MenuTableViewController) board.InstantiateViewController(  
-					"menuTable"
-				);
-
-				//Segue to the text input view
-				currentController.NavigationController.PushViewController (menuView, true);
-			};
+//			mainMenuButton.Clicked += (o,s) => {
+//
+//				//Segue
+//				//Get the current storyboard
+//				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+//
+//				//Get the NotesViewController
+//				MenuTableViewController menuView = (MenuTableViewController) board.InstantiateViewController(  
+//					"menuTable"
+//				);
+//
+//				//Segue to the text input view
+//				currentController.NavigationController.PushViewController (menuView, true);
+//			};
 
 
 			ProductPageUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
