@@ -48,12 +48,15 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			NoteListUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
 			//Create the Table rows from the source, passing the full text for all notes (which will also act as row names), and the current ViewController
 			table.Source = new NotesTableSource(currentController, allNotes);
 			Add(table);
+			table.BackgroundColor = UIColor.Clear; //Make the table clear
 
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;

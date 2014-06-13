@@ -2002,7 +2002,7 @@
                         <color key="sectionIndexBackgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                     </tableView>
                     <connections>
-                        <outlet property="SavedListsUIView" destination="1481" id="1480"/>
+                        <outlet property="NoteListUIView" destination="1481" id="name-outlet-1481"/>
                         <outlet property="TestCell" destination="1542" id="name-outlet-1542"/>
                         <outlet property="MenuB2" destination="1786" id="name-outlet-1786"/>
                     </connections>

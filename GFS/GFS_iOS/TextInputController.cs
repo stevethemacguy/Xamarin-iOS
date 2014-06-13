@@ -48,7 +48,7 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
+			InputUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 			ListInputField.BecomeFirstResponder(); //Put the users cursor in the text field
 
 			//Dismiss the keyboard when the enter key is pressed.

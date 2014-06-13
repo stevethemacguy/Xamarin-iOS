@@ -20,7 +20,7 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableView SavedListsUIView { get; set; }
+		UITableView NoteListUIView { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -32,9 +32,9 @@ namespace GFS_iOS
 				MenuB2.Dispose ();
 				MenuB2 = null;
 			}
-			if (SavedListsUIView != null) {
-				SavedListsUIView.Dispose ();
-				SavedListsUIView = null;
+			if (NoteListUIView != null) {
+				NoteListUIView.Dispose ();
+				NoteListUIView = null;
 			}
 			if (TestCell != null) {
 				TestCell.Dispose ();
