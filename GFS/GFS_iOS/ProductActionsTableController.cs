@@ -71,7 +71,10 @@ namespace GFS_iOS
 
 					else //The user selected a saved list
 					{	
-						Console.WriteLine(selectedItem + " was clicked.");
+						string success = "The product was added to: \"" + selectedItem +"\"";
+						UIAlertView alert = new UIAlertView(success, "", null, "OK");
+						alert.Show();
+						//Console.WriteLine(selectedItem + " was clicked.");
 						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
 					}
 						
