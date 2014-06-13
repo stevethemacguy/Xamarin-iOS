@@ -55,11 +55,19 @@ namespace GFS_iOS
 			table.Source = new NotesTableSource(currentController, allNotes);
 			Add(table);
 
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
+			//Add Menu Button to the right
+//			UIBarButtonItem MenuButton = new UIBarButtonItem();
+//			MenuButton.Title = "Menu";
+//			this.NavigationItem.SetRightBarButtonItem(MenuButton, false);
+
 			//Create the Add note button and add it to the toolbar
 			UIBarButtonItem AddNoteButton = new UIBarButtonItem();
 			AddNoteButton.Image = UIImage.FromFile("cross.png");
 			AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
-			this.NavigationItem.SetRightBarButtonItem(AddNoteButton, false);
+			this.NavigationItem.SetLeftBarButtonItem(AddNoteButton, false);
 
 			//When the Add button is pressed, "Create" a new note.
 			AddNoteButton.Clicked += (o,s) => {

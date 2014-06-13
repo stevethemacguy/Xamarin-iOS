@@ -16,6 +16,10 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton MenuB2 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView SavedListsUIView { get; set; }
 
 		[Outlet]
@@ -24,6 +28,10 @@ namespace GFS_iOS
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (MenuB2 != null) {
+				MenuB2.Dispose ();
+				MenuB2 = null;
+			}
 			if (SavedListsUIView != null) {
 				SavedListsUIView.Dispose ();
 				SavedListsUIView = null;
