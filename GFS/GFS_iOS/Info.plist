@@ -2,14 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDisplayName</key>
-	<string>GFS_iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Siteworx.GFS_iOS</string>
+	<string>com.siteworx.xamarin.b2b</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>17.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -39,5 +37,7 @@
 		<string>Icon-Small@2x</string>
 		<string>settings-icon</string>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>GFS iOS</string>
 </dict>
 </plist>
