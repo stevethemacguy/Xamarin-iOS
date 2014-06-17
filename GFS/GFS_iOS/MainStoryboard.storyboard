@@ -17,7 +17,6 @@
                     <connections>
                         <outlet property="MenuButton" destination="59" id="name-outlet-59"/>
                         <outlet property="MenuButton" destination="1674" id="name-outlet-1674"/>
-                        <outlet property="HomePageNavItem" destination="15" id="name-outlet-15"/>
                     </connections>
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
                         <barButtonItem style="plain" id="1675" key="leftBarButtonItem" title="Menu">
