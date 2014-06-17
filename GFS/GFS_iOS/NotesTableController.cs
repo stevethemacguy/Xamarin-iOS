@@ -66,11 +66,18 @@ namespace GFS_iOS
 //			MenuButton.Title = "Menu";
 //			this.NavigationItem.SetRightBarButtonItem(MenuButton, false);
 
-			//Create the Add note button and add it to the toolbar
-			UIBarButtonItem AddNoteButton = new UIBarButtonItem();
-			AddNoteButton.Image = UIImage.FromFile("cross-medium.png");
-			AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
+
+			//Use System Add Note
+			var AddNoteButton = new UIBarButtonItem(UIBarButtonSystemItem.Compose);
+			//AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
 			this.NavigationItem.SetLeftBarButtonItem(AddNoteButton, false);
+
+			//Create the Add note button and add it to the toolbar
+//			UIBarButtonItem AddNoteButton = new UIBarButtonItem();
+//			AddNoteButton.Image = UIImage.FromFile("cross-medium.png");
+//			AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
+//			this.NavigationItem.SetLeftBarButtonItem(AddNoteButton, false);
+
 
 			//When the Add button is pressed, "Create" a new note.
 			AddNoteButton.Clicked += (o,s) => {
