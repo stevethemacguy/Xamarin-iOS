@@ -20,10 +20,11 @@ namespace GFS_iOS
 
         UIImagePickerController picker;
         NotesViewController myController;
-
+		DataSource data;
 		public NotesViewController  (IntPtr handle) : base (handle)
 		{
             myController = this;
+			data = DataSource.getInstance();
 		}
 
 		private void SaveNote()
@@ -36,13 +37,14 @@ namespace GFS_iOS
 			}
 			if(addingNote)
 			{
-				notes.Add(noteText); //add a new note
+				data.addNote(noteText);
 			}
 			else
 			{
+				//This actually modifies the database 
 				notes[index] = noteText; //Overrite the existing note Text of the clicked cell to the new text
 			}
-			tableController.refreshTable(notes); //"Refresh" the table using our new list of notes.
+			tableController.refreshTable(); //"Refresh" the table using our new list of notes.
 		}
 
 		//When the back button is pressed

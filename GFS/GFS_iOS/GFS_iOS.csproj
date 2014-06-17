@@ -207,6 +207,7 @@
     <BundleResource Include="Resources\cross-medium%402x.png" />
     <BundleResource Include="Resources\navBarBackground.png" />
     <BundleResource Include="Resources\navBarBackground%402x.png" />
+    <BundleResource Include="Resources\navBarBackground%28small%29%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

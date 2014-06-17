@@ -33,6 +33,7 @@ namespace GFS_iOS
 			var navBar = this.NavigationController.NavigationBar;
 			//Create the NavBar image
 			navBar.SetBackgroundImage(UIImage.FromFile("blueX-backround.png"),UIBarMetrics.Default);
+
 			navBar.TintColor = UIColor.White; //Make the text color white.
 			//Make the controller title text white
 			UITextAttributes test = new UITextAttributes();
