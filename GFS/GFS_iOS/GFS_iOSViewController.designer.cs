@@ -16,10 +16,18 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UINavigationItem HomePageNavItem { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UIButton MenuButton { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (HomePageNavItem != null) {
+				HomePageNavItem.Dispose ();
+				HomePageNavItem = null;
+			}
 			if (MenuButton != null) {
 				MenuButton.Dispose ();
 				MenuButton = null;

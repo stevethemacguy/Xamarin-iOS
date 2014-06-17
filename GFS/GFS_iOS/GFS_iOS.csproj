@@ -205,6 +205,8 @@
     <BundleResource Include="Resources\camera-icon.png" />
     <BundleResource Include="Resources\cross-medium.png" />
     <BundleResource Include="Resources\cross-medium%402x.png" />
+    <BundleResource Include="Resources\navBarBackground.png" />
+    <BundleResource Include="Resources\navBarBackground%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

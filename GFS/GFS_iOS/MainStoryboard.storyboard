@@ -17,6 +17,7 @@
                     <connections>
                         <outlet property="MenuButton" destination="59" id="name-outlet-59"/>
                         <outlet property="MenuButton" destination="1674" id="name-outlet-1674"/>
+                        <outlet property="HomePageNavItem" destination="15" id="name-outlet-15"/>
                     </connections>
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
                         <barButtonItem style="plain" id="1675" key="leftBarButtonItem" title="Menu">
@@ -2188,5 +2189,6 @@
         <image name="magnifying-glass-small.png" width="28" height="28"/>
         <image name="new-cross.png" width="17" height="17"/>
         <image name="cross-medium.png" width="16" height="16"/>
+        <image name="navBarBackground.png" width="320" height="72"/>
     </resources>
 </document>
