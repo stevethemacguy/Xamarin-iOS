@@ -31,6 +31,17 @@ namespace GFS_iOS
 			DownloadButton.TouchUpInside += (o,s) => {
 				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");
 					alert.Show();
+				DataSource data = DataSource.getInstance();
+				//We have two hardcoded PDFs for this prototype. If the user clicks to download, we just show the first row (with the first PDF)
+				if (data.showRow1 == false)
+				{
+					data.showRow1 = true;
+				}
+				else  //If showRow1 is already showing, then just reveal row 2 now.
+				{
+					data.showRow2 = true;
+				}
+
 			};
 
 			//Create an action sheet that comes up from the bottom.

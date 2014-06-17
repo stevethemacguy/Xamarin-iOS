@@ -6,6 +6,8 @@ namespace GFS_iOS
 	//DataSource follows the singleton pattern
 	public class DataSource
 	{
+		public bool showRow1 = false; //Controls whether the first PDF Manual Row is hidden
+		public bool showRow2 = false; //Controls whether the second PDF Manual Row is hidden
 		private HashSet<string> savedListSet; //Each string in the savedList Set is a name of one saved list. (savedLists is a Set, so no duplicates allowed).
 		private List<string> allNotes; //Each String is the full text of a note.
 		private static DataSource instance; //There can only be one instance of the DataSource.
