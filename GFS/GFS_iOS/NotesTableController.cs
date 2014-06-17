@@ -23,8 +23,8 @@ namespace GFS_iOS
 			{
 				allNotes = new List<string>();
 				//First time through, use defaults for row names
-				allNotes.Add("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
-				allNotes.Add("Another good find");
+				//allNotes.Add("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
+				//allNotes.Add("Another good find");
 			}
 
 			//NO LONGER USED. Row names are now pulled directly from the notes.
@@ -50,11 +50,12 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			NoteListUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
+			DataSource db = DataSource.getInstance();
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
 			//Create the Table rows from the source, passing the full text for all notes (which will also act as row names), and the current ViewController
-			table.Source = new NotesTableSource(currentController, allNotes);
+			table.Source = new NotesTableSource(currentController, db.getAllNotes());
 			Add(table);
 			table.BackgroundColor = UIColor.Clear; //Make the table clear
 

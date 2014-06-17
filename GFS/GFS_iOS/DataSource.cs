@@ -7,6 +7,7 @@ namespace GFS_iOS
 	public class DataSource
 	{
 		private HashSet<string> savedListSet; //Each string in the savedList Set is a name of one saved list. (savedLists is a Set, so no duplicates allowed).
+		private List<string> allNotes; //Each String is the full text of a note.
 		private static DataSource instance; //There can only be one instance of the DataSource.
 
 		//Can't be instantiated except by the getInstance method
@@ -19,6 +20,9 @@ namespace GFS_iOS
 				//Add the two defaults for now
 				addSavedList("cabinets");
 				addSavedList("others");
+				allNotes = new List<string>();
+				addNote("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
+				addNote("Another good find");
 			}	
 		}
 
@@ -36,6 +40,22 @@ namespace GFS_iOS
 		public HashSet<string> getSavedListSet()
 		{
 			return savedListSet;
+		}
+
+		public void addNote(string tooAdd)
+		{
+			allNotes.Add(tooAdd);
+		}
+
+		public void removeNote(string toRemove)
+		{
+			allNotes.Remove(toRemove);
+		}
+
+		//Returns a set of all saved lists
+		public List<string> getAllNotes()
+		{
+			return allNotes;
 		}
 
 		//Returns the singleton DataSource (or creates and returns it if has not been instantiated).
