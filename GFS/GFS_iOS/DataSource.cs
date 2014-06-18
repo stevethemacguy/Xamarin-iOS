@@ -8,8 +8,6 @@ namespace GFS_iOS
 	{
 		public bool showRow1 = false; //Controls whether the first PDF Manual Row is shown
 		public bool showRow2 = false; //Controls whether the second PDF Manual Row is shown
-		public bool showProdRow1 = false; //Controls whether the first Product Row is shown
-		public bool showProdRow2 = false; //Controls whether the first Product Row is shown
 
 		private HashSet<string> savedListSet; //Each string in the savedList Set is a name of one saved list. (savedLists is a Set, so no duplicates allowed).
 		private List<string> allNotes; //Each String is the full text of a note.

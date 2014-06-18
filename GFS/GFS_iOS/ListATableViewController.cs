@@ -36,7 +36,6 @@ namespace GFS_iOS
 //				ListProdCell2.Hidden = true;
 //			}
 
-			Console.WriteLine(prodList.Count);
 			//If only one product exists, show the first row only
 			if (prodList.Count >= 1)
 			{
@@ -54,21 +53,21 @@ namespace GFS_iOS
 			{	
 				if (ind == 0)
 				{
-					Prod1Image.Image = UIImage.FromFile(prodList[0].getImageFileName());
-					Prod1Title.Text = prodList[0].getTitle();
-					Prod1Class.Text = prodList [0].getProdClass();
-					Prod1Capacity.Text = prodList[0].getCapacity();
-					Prod1Readability.Text = prodList[0].getReadability();
-					Prod1Price.Text = prodList[0].getPrice();
+					Prod1Image.Image = UIImage.FromFile(prodList[ind].getImageFileName());
+					Prod1Title.Text = prodList[ind].getTitle();
+					Prod1Class.Text = prodList [ind].getProdClass();
+					Prod1Capacity.Text = prodList[ind].getCapacity();
+					Prod1Readability.Text = prodList[ind].getReadability();
+					Prod1Price.Text = prodList[ind].getPrice();
 				}
 				if (ind == 1)
 				{
-					Prod2Image.Image = UIImage.FromFile(prodList[0].getImageFileName());
-					Prod2Title.Text = prodList[0].getTitle();
-					Prod2Class.Text = prodList [0].getProdClass();
-					Prod2Capacity.Text = prodList[0].getCapacity();
-					Prod2Readability.Text = prodList[0].getReadability();
-					Prod2Price.Text = prodList[0].getPrice();
+					Prod2Image.Image = UIImage.FromFile(prodList[ind].getImageFileName());
+					Prod2Title.Text = prodList[ind].getTitle();
+					Prod2Class.Text = prodList [ind].getProdClass();
+					Prod2Capacity.Text = prodList[ind].getCapacity();
+					Prod2Readability.Text = prodList[ind].getReadability();
+					Prod2Price.Text = prodList[ind].getPrice();
 				}
 
 			}
@@ -100,7 +99,7 @@ namespace GFS_iOS
 				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
 				UIViewController toPush = new UIViewController();
 				//Are we pushing to product A or B?
-				if(prodList[0].getSegueName() == "Prod1Segue")
+				if(prodList[1].getSegueName() == "Prod1Segue")
 				{
 					toPush =  (ProductPageViewController)board.InstantiateViewController(
 						"productPageController"

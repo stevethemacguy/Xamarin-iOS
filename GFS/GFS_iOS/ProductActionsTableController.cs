@@ -107,7 +107,7 @@ namespace GFS_iOS
 								"XPE 105", 
 								"Capacity: 520g", 
 								"Readability: 0.1mg", 
-								"Price: $8,272.03", "Prod1Segue"));
+								"Price: $8,272.03", "Prod2Segue"));
 						}
 
 						//Console.WriteLine(selectedItem + " was clicked.");
