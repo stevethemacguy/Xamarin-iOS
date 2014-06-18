@@ -3,6 +3,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace GFS_iOS
 {
@@ -31,8 +32,48 @@ namespace GFS_iOS
 			else 
 			{
 				//create the list
-				DataSource source = DataSource.getInstance();
-				source.addSavedList(newList);
+				DataSource db = DataSource.getInstance();
+				db.addSavedList(newList);
+
+				//Add the product to the newly created list!
+				Dictionary<String, List<Product>> prodMap = db.getProductMap();
+
+				//Since we just created this list, it needs to be added to the map with an empty list
+				prodMap.Add(newList, new List<Product>());
+
+				//if the product1 is selected, add the product to the new list
+				if (db.currentProduct == "product1")
+				{
+					//Add a new product to the selected list
+					prodMap[newList].Add(new Product(
+						"product1.png", 
+						"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
+						"KS Class II,  A201", 
+						"Capacity: 120g", 
+						"Readability: 0.01mg", 
+						"Price: $12,381.00", "Prod1Segue")
+					);
+				}
+				else //the second product was selected, so add the second product to the new list
+				{
+					//Add a new product to the selected list
+					prodMap[newList].Add(new Product(
+						"product2.png", 
+						"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
+						"XPE 105", 
+						"Capacity: 520g", 
+						"Readability: 0.1mg", 
+						"Price: $8,272.03", "Prod2Segue"));
+				}
+
+				foreach (var entry in prodMap){
+					Product[] values = entry.Value.ToArray();
+					Console.WriteLine("key: {0}", entry.Key); 
+					foreach(Product st in values)
+					{
+						Console.WriteLine(st.ToString());
+					}
+				}
 			}
 		}
 

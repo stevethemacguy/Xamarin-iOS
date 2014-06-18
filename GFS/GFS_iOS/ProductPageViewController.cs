@@ -26,6 +26,9 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			//"Tell" the database that which product we are currently viewing.
+			DataSource db = DataSource.getInstance();
+			db.currentProduct = "product1";
 
 			//IF COMING FROM THE ACTIONS then do stuff
 //			if (fromActionsPage)

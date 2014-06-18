@@ -26,25 +26,35 @@ namespace GFS_iOS
 
 		#region View lifecycle
 
+
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			var navBar = this.NavigationController.NavigationBar;
+			//Create the NavBar image
+			navBar.SetBackgroundImage(UIImage.FromFile("blueX-backround.png"),UIBarMetrics.Default);
 
-            MenuButton.TouchUpInside += HandleTouchUpInsideSearch;
+			navBar.TintColor = UIColor.White; //Make the text color white.
+			//Make the controller title text white
+			UITextAttributes test = new UITextAttributes();
+			test.TextColor = UIColor.White;
+			navBar.SetTitleTextAttributes(test);
+
+			//this.SetNeedsStatusBarAppearanceUpdate();
+
+
+			//this.ParentViewController.NavigationItem.back
+			//HomePageNavItem;
             // Perform any additional setup after loading the view, typically from a nib.   
 
             //generate main scroll view
-            mainScrollView = new UIScrollView(
-            new RectangleF(0, 64, 320
-            , 504));
+            mainScrollView = new UIScrollView(new RectangleF(0, 64, 320, 504));
             //initial a container to set content size for the scroll view
             RectangleF container = new RectangleF(0, 0, 320, 775);
             mainScrollView.ContentSize = container.Size;
 
             //generate sub scroll view
-            scrollView = new UIScrollView(
-            new RectangleF(0, 207, View.Frame.Width
-            , 150));
+            scrollView = new UIScrollView(new RectangleF(0, 207, View.Frame.Width, 150));
             //adding an image view to sub scroll view
             imageView = new UIImageView(UIImage.FromFile("itemlists.png"));
             scrollView.ContentSize = imageView.Image.Size;
@@ -65,24 +75,8 @@ namespace GFS_iOS
 
             //adding sub scroll view into main scroll view
             mainScrollView.AddSubview(scrollView);
+
 		}
-
-        void HandleTouchUpInsideSearch(object sender, EventArgs e)
-        {
-            UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
-            MenuTableViewController menuAA = (MenuTableViewController)board.InstantiateViewController(
-                "menuTable"
-            );
-
-            menuAA.View.Frame = new RectangleF(0, 64, 300, 504);
-            AddChildViewController(menuAA);
-            View.AddSubview(menuAA.View);
-            /*
-            UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
-            UIViewController ctrl = (UIViewController)board.InstantiateViewController("searchController");
-            this.PresentViewController(ctrl, true, null);
-            */
-        }
 
 		public override void ViewWillAppear(bool animated)
 		{

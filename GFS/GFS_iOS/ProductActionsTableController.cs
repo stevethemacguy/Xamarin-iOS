@@ -31,6 +31,17 @@ namespace GFS_iOS
 			DownloadButton.TouchUpInside += (o,s) => {
 				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");
 					alert.Show();
+				DataSource data = DataSource.getInstance();
+				//We have two hardcoded PDFs for this prototype. If the user clicks to download, we just show the first row (with the first PDF)
+				if (data.showRow1 == false)
+				{
+					data.showRow1 = true;
+				}
+				else  //If showRow1 is already showing, then just reveal row 2 now.
+				{
+					data.showRow2 = true;
+				}
+
 			};
 
 			//Create an action sheet that comes up from the bottom.
@@ -74,6 +85,56 @@ namespace GFS_iOS
 						string success = "The product was added to: \"" + selectedItem +"\"";
 						UIAlertView alert = new UIAlertView(success, "", null, "OK");
 						alert.Show();
+
+						//Actually Add the product cell to the Saved Lists Table
+						DataSource db = DataSource.getInstance();
+
+						Dictionary<String, List<Product>> prodMap = db.getProductMap();
+						//initialize list if empty
+
+						//If the list doesn't exist in the map yet, then create it
+						if(prodMap.ContainsKey(selectedItem) == false)
+						{
+							prodMap.Add(selectedItem, new List<Product>());
+						}
+
+
+						//if the product selected is A, then add prod A to the selected list
+						if (db.currentProduct == "product1")
+						{
+							//Add a new product to the selected list
+							prodMap[selectedItem].Add(new Product(
+								"product1.png", 
+								"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
+								"KS Class II,  A201", 
+								"Capacity: 120g", 
+								"Readability: 0.01mg", 
+								"Price: $12,381.00", "Prod1Segue")
+							);
+						}
+						else //the second product was selected, so add the second product to the selected list
+						{
+							//Add a new product to the selected list
+							prodMap[selectedItem].Add(new Product(
+								"product2.png", 
+								"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
+								"XPE 105", 
+								"Capacity: 520g", 
+								"Readability: 0.1mg", 
+								"Price: $8,272.03", "Prod2Segue"));
+						}
+
+						foreach (var entry in prodMap){
+							Product[] values = entry.Value.ToArray();
+							Console.WriteLine("key: {0}", entry.Key); 
+							foreach(Product st in values)
+							{
+								Console.WriteLine(st.ToString());
+							}
+						}
+							
+
+
 						//Console.WriteLine(selectedItem + " was clicked.");
 						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
 					}
