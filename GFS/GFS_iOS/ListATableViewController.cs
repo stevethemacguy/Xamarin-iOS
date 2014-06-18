@@ -50,9 +50,15 @@ namespace GFS_iOS
 			Prod2Price.Text = prodList[1].getPrice();
 				
 			ListOneUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
 			//Segue to product 2 instead of one.
 			segueButton1.TouchUpInside += (o, s) => {
-				PerformSegue("Prod2Segue", this);
+				PerformSegue(prodList[0].getSegueName(), this);
+			};
+
+			//Segue to product 2 instead of one.
+			segueButton1.TouchUpInside += (o, s) => {
+				PerformSegue(prodList[1].getSegueName(), this);
 			};
 		}
 

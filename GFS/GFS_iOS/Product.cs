@@ -12,9 +12,10 @@ namespace GFS_iOS
 		private String capacity = "";
 		private String readability = "";
 		private String price = "";
-
-		public Product(String imageFileName, String title, String prodClass, String cap, String readability, String price)
+		private String segueName = "";
+		public Product(String imageFileName, String title, String prodClass, String cap, String readability, String price, String segueName)
 		{
+			this.segueName = segueName;
 			this.readability = readability;
 			this.price = price;
 			this.imageFileName = imageFileName;
@@ -47,6 +48,9 @@ namespace GFS_iOS
 			return price;
 		}
 
+		public String getSegueName() {
+			return segueName;
+		}
 	}
 
 }

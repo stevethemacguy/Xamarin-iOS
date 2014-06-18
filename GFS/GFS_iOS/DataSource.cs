@@ -31,8 +31,8 @@ namespace GFS_iOS
 			if (productList == null)
 			{
 				productList = new List<Product>();
-				productList.Add(new Product("product1.png", "Awesome Fun", "Even More Fun", "1.5 and stuff", "Very readable", "$5,000"));
-				productList.Add(new Product("product2.png","Some other prod","YES","ok","readable","$1,000"));
+				productList.Add(new Product("product1.png", "Awesome Fun", "Even More Fun", "1.5 and stuff", "Very readable", "$5,000", "Prod1Segue"));
+				productList.Add(new Product("product2.png","Some other prod","YES","ok","readable","$1,000","Prod2Segue"));
 			}
 		}
 
