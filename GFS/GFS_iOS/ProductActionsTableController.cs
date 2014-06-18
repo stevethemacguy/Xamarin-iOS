@@ -103,11 +103,21 @@ namespace GFS_iOS
 						//if the product selected is A, then add prod A
 						if (db.currentProduct == "product1")
 						{
-							prodlist.Add(new Product("product1.png", "Awesome Fun", "Even More Fun", "1.5 and stuff", "Very readable", "$5,000", "Prod1Segue"));
+							prodlist.Add(new Product("product1.png", 
+								"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
+								"KS Class II,  A201", 
+								"Capacity: 120g", 
+								"Readability: 0.01mg", 
+								"Price: $12,381.00", "Prod1Segue"));
 						}
 						else //the second product was selected, so add the second product
 						{
-							prodlist.Add(new Product("product2.png","Some other prod","YES","ok","readable","$1,000","Prod2Segue"));
+							prodlist.Add(new Product("product2.png", 
+								"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
+								"XPE 105", 
+								"Capacity: 520g", 
+								"Readability: 0.1mg", 
+								"Price: $8,272.03", "Prod1Segue"));
 						}
 
 						//Console.WriteLine(selectedItem + " was clicked.");
