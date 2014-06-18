@@ -11,9 +11,13 @@ namespace GFS_iOS
         UIScrollView scrollView;
         UIImageView imageView;
         UIScrollView mainScrollView;
+        UIView menuView;
+        MenuTableViewController menuViewController;
+        UIViewController controller;
 
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
+            controller = this;
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -81,14 +85,32 @@ namespace GFS_iOS
 
         void HandleTouchUpInsideMenuUnclciked(object sender, EventArgs e)
         {
+            MenuButton.TouchUpInside -= HandleTouchUpInsideMenuUnclciked;
+            MenuButton.TouchUpInside += HandleTouchUpInsideMenuHide;
             UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
-            MenuTableViewController menuAA = (MenuTableViewController)board.InstantiateViewController(
+            menuViewController = (MenuTableViewController)board.InstantiateViewController(
                 "menuTable"
             );
 
-            menuAA.View.Frame = new RectangleF(0, 64, 300, 504);
-            AddChildViewController(menuAA);
-            View.AddSubview(menuAA.View);
+            menuViewController.View.Frame = new RectangleF(0, 64, 300, 504);
+            menuView = menuViewController.View;
+            AddChildViewController(menuViewController);
+            menuViewController.DidMoveToParentViewController(controller);
+            View.AddSubview(menuView);
+        }
+
+        void HandleTouchUpInsideMenuShow(object sender, EventArgs e)
+        {
+            menuView.Hidden = false;
+            MenuButton.TouchUpInside -= HandleTouchUpInsideMenuShow;
+            MenuButton.TouchUpInside += HandleTouchUpInsideMenuHide;
+        }
+
+        void HandleTouchUpInsideMenuHide(object sender, EventArgs e)
+        {
+            menuView.Hidden = true;
+            MenuButton.TouchUpInside -= HandleTouchUpInsideMenuHide;
+            MenuButton.TouchUpInside += HandleTouchUpInsideMenuShow;
         }
 
 		public override void ViewWillAppear(bool animated)
