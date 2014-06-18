@@ -90,16 +90,6 @@ namespace GFS_iOS
 						DataSource db = DataSource.getInstance();
 						List<Product> prodlist = db.getProductList();
 
-						//Show the first row
-						if(db.showProdRow1 == false)
-						{
-							db.showProdRow1 = true; //
-						}
-						else //the first row is already shown, so show the second row
-						{
-							db.showProdRow2 = true;
-						}
-
 						//if the product selected is A, then add prod A
 						if (db.currentProduct == "product1")
 						{

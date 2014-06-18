@@ -8,7 +8,7 @@ namespace GFS_iOS
 {
 	partial class ListATableViewController : UITableViewController
 	{
-		public int index = 0;
+		public int index = 0; //The row that was selected to get to this controller
 		public string title = ""; //set by SavedListTableSource during the segue.
 		public SavedListsTableController currentController;
 		public ListATableViewController tableController;
@@ -36,33 +36,43 @@ namespace GFS_iOS
 //				ListProdCell2.Hidden = true;
 //			}
 
-			//The user has added the first product so show the row and add the product
-			if (db.showProdRow1)
+			Console.WriteLine(prodList.Count);
+			//If only one product exists, show the first row only
+			if (prodList.Count >= 1)
 			{
 				ListProdCell1.Hidden = false;
-				//Set product1 properties
-				Prod1Image.Image = UIImage.FromFile(prodList[0].getImageFileName());
-				Prod1Title.Text = prodList[0].getTitle();
-				Prod1Class.Text = prodList [0].getProdClass();
-				Prod1Capacity.Text = prodList[0].getCapacity();
-				Prod1Readability.Text = prodList[0].getReadability();
-				Prod1Price.Text = prodList[0].getPrice();
 			}
-
-			//The user has added the second product
-			if (db.showProdRow2)
+			//If 2 or more products exist, also show the second row
+			if (prodList.Count >= 2) 
 			{
+				ListProdCell1.Hidden = false;
 				ListProdCell2.Hidden = false;
-				//Set product2 properties
-				Prod2Image.Image = UIImage.FromFile(prodList[1].getImageFileName());
-				Prod2Title.Text = prodList[1].getTitle();
-				Prod2Class.Text = prodList [1].getProdClass();
-				Prod2Capacity.Text = prodList[1].getCapacity();
-				Prod2Readability.Text = prodList[1].getReadability();
-				Prod2Price.Text = prodList[1].getPrice();
 			}
 
-			//if (currentProduct == "product1") //then make the cell with product 1
+			//Create the products in each row
+			for (int ind = 0 ; ind < prodList.Count ; ind++)
+			{	
+				if (ind == 0)
+				{
+					Prod1Image.Image = UIImage.FromFile(prodList[0].getImageFileName());
+					Prod1Title.Text = prodList[0].getTitle();
+					Prod1Class.Text = prodList [0].getProdClass();
+					Prod1Capacity.Text = prodList[0].getCapacity();
+					Prod1Readability.Text = prodList[0].getReadability();
+					Prod1Price.Text = prodList[0].getPrice();
+				}
+				if (ind == 1)
+				{
+					Prod2Image.Image = UIImage.FromFile(prodList[0].getImageFileName());
+					Prod2Title.Text = prodList[0].getTitle();
+					Prod2Class.Text = prodList [0].getProdClass();
+					Prod2Capacity.Text = prodList[0].getCapacity();
+					Prod2Readability.Text = prodList[0].getReadability();
+					Prod2Price.Text = prodList[0].getPrice();
+				}
+
+			}
+
 				
 			ListOneUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
