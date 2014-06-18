@@ -31,6 +31,7 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
+            MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
 			//Create the NavBar image
 			navBar.SetBackgroundImage(UIImage.FromFile("blueX-backround.png"),UIBarMetrics.Default);
 
@@ -77,6 +78,18 @@ namespace GFS_iOS
             mainScrollView.AddSubview(scrollView);
 
 		}
+
+        void HandleTouchUpInsideMenuUnclciked(object sender, EventArgs e)
+        {
+            UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+            MenuTableViewController menuAA = (MenuTableViewController)board.InstantiateViewController(
+                "menuTable"
+            );
+
+            menuAA.View.Frame = new RectangleF(0, 64, 300, 504);
+            AddChildViewController(menuAA);
+            View.AddSubview(menuAA.View);
+        }
 
 		public override void ViewWillAppear(bool animated)
 		{
