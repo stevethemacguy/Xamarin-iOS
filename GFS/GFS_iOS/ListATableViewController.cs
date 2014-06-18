@@ -28,10 +28,30 @@ namespace GFS_iOS
 				ListProdCell1.Hidden = true;
 				ListProdCell2.Hidden = true;
 			}
+
+			Prod1Image.Image = UIImage.FromFile("product2.png");
+			Prod1Title.Text = "Fun Fun";
+			Prod1Class.Text = "Even More Fun";
+			Prod1Capacity.Text = "1.5 and stuff";
+			Prod1Readability.Text = "Very Readable";
+			Prod1Price.Text = "class?";
 				
 			ListOneUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+			//Segue to product 2 instead of one.
+			segueButton1.TouchUpInside += (o, s) => {
+				PerformSegue("Prod2Segue", this);
+			};
 		}
 
+//		public override row
+//		{
+//			[self performSegueWithIdentifier:@"addToCartSegue" sender:self];
+//		}
+
+//		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+//		{
+//			base.PrepareForSegue(segue, sender);
+//		}
 
 	}
 }
