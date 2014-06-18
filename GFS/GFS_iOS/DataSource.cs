@@ -11,7 +11,7 @@ namespace GFS_iOS
 		private HashSet<string> savedListSet; //Each string in the savedList Set is a name of one saved list. (savedLists is a Set, so no duplicates allowed).
 		private List<string> allNotes; //Each String is the full text of a note.
 		private static DataSource instance; //There can only be one instance of the DataSource.
-
+		private List<Product> productList;
 		//Can't be instantiated except by the getInstance method
 		protected DataSource()
 		{
@@ -25,7 +25,19 @@ namespace GFS_iOS
 				allNotes = new List<string>();
 				addNote("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
 				addNote("Another good find");
-			}	
+			}
+
+			//Create the productList and add the two default products to the list
+			if (productList == null)
+			{
+				productList = new List<Product>();
+				productList.Add(new Product("product1.png", "Awesome Fun", "Even More Fun", "1.5 and stuff", "Very readable", "$5,000"));
+				productList.Add(new Product("product2.png","Some other prod","YES","ok","readable","$1,000"));
+			}
+		}
+
+		public List<Product> getProductList() {
+			return productList;
 		}
 
 		public void addSavedList(string tooAdd)

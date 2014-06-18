@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace GFS_iOS
 {
 	//Represents a single product
-	class Product
+	public class Product
 	{
 		private String imageFileName = "";
 		private String title = "";
@@ -22,7 +22,6 @@ namespace GFS_iOS
 			this.prodClass = prodClass;
 			this.capacity = cap;
 		}
-
 
 		public String getImageFileName() {
 			return imageFileName;

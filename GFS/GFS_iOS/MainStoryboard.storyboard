@@ -1404,7 +1404,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1896" fixedFrame="YES">
-                                                    <rect key="frame" x="277" y="9" width="31" height="30"/>
+                                                    <rect key="frame" x="278" y="8" width="31" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="" backgroundImage="blue-dots.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1452,10 +1452,6 @@
                                                     <rect key="frame" x="3" y="6" width="76" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="997" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="blue-dots.png">
-                                                    <rect key="frame" x="277" y="8" width="33" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="998" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
                                                     <rect key="frame" x="0.0" y="149" width="320" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1480,6 +1476,14 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1898" fixedFrame="YES">
+                                                    <rect key="frame" x="278" y="8" width="31" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="" backgroundImage="blue-dots.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections/>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1496,14 +1500,21 @@
                         <outlet property="ListOneUIView" destination="937" id="name-outlet-937"/>
                         <outlet property="ListProdCell2" destination="984" id="name-outlet-984"/>
                         <outlet property="MenuB5" destination="1808" id="name-outlet-1808"/>
-                        <outlet property="ProdOneImage" destination="950" id="name-outlet-950"/>
+                        <outlet property="Prod1Image" destination="950" id="name-outlet-950"/>
                         <outlet property="Prod1Title" destination="1353" id="name-outlet-1353"/>
-                        <outlet property="ProdOneClass" destination="1020" id="name-outlet-1020"/>
+                        <outlet property="Prod1Class" destination="1020" id="name-outlet-1020"/>
                         <outlet property="Prod1Capacity" destination="946" id="name-outlet-946"/>
                         <outlet property="Prod1Readability" destination="947" id="name-outlet-947"/>
                         <outlet property="Prod1Price" destination="948" id="name-outlet-948"/>
-                        <outlet property="TB" destination="1896" id="name-outlet-1896"/>
+                        <outlet property="segueButton1" destination="1896" id="name-outlet-1896"/>
                         <outlet property="prodSegueButton1" destination="943" id="name-outlet-943"/>
+                        <outlet property="Prod2Image" destination="999" id="name-outlet-999"/>
+                        <outlet property="Prod2Title" destination="1354" id="name-outlet-1354"/>
+                        <outlet property="Prod2Class" destination="1021" id="name-outlet-1021"/>
+                        <outlet property="Prod2Capacity" destination="991" id="name-outlet-991"/>
+                        <outlet property="Prod2Readability" destination="992" id="name-outlet-992"/>
+                        <outlet property="Prod2Price" destination="993" id="name-outlet-993"/>
+                        <outlet property="segueButton2" destination="1898" id="name-outlet-1898"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="" id="1795" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
