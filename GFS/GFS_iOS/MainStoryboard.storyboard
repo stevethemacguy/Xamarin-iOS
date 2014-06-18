@@ -1414,7 +1414,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="1287" kind="push" id="1330" identifier="Prod1Segue"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="984" reuseIdentifier="detailCell">
@@ -1487,7 +1486,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="1374" kind="push" id="1392" identifier="Prod2Segue"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

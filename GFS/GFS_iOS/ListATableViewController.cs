@@ -53,12 +53,24 @@ namespace GFS_iOS
 
 			//Segue to product 2 instead of one.
 			segueButton1.TouchUpInside += (o, s) => {
-				PerformSegue(prodList[0].getSegueName(), this);
+				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+				ProductPageViewController prodView = (ProductPageViewController)board.InstantiateViewController(
+					"productPageController"
+				);
+
+				tableController.NavigationController.PushViewController(prodView, true);
+				//PerformSegue(prodList[0].getSegueName(), this);
 			};
 
 			//Segue to product 2 instead of one.
-			segueButton1.TouchUpInside += (o, s) => {
-				PerformSegue(prodList[1].getSegueName(), this);
+			segueButton2.TouchUpInside += (o, s) => {
+				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+				ProductPageViewController2 prodView = (ProductPageViewController2)board.InstantiateViewController(
+					"productPageController2"
+				);
+
+				tableController.NavigationController.PushViewController(prodView, true);
+				//PerformSegue(prodList[1].getSegueName(), this);
 			};
 		}
 
