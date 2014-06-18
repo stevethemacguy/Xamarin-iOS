@@ -88,7 +88,6 @@ namespace GFS_iOS
 
 						//Actually Add the product cell to the Saved Lists Table
 						DataSource db = DataSource.getInstance();
-						List<Product> prodlist = db.getProductList();
 
 						Dictionary<String, List<Product>> prodMap = db.getProductMap();
 						//initialize list if empty
@@ -112,12 +111,6 @@ namespace GFS_iOS
 								"Readability: 0.01mg", 
 								"Price: $12,381.00", "Prod1Segue")
 							);
-//							prodlist.Add(new Product("product1.png", 
-//								"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
-//								"KS Class II,  A201", 
-//								"Capacity: 120g", 
-//								"Readability: 0.01mg", 
-//								"Price: $12,381.00", "Prod1Segue"));
 						}
 						else //the second product was selected, so add the second product to the selected list
 						{
@@ -129,12 +122,6 @@ namespace GFS_iOS
 								"Capacity: 520g", 
 								"Readability: 0.1mg", 
 								"Price: $8,272.03", "Prod2Segue"));
-//							prodlist.Add(new Product("product2.png", 
-//								"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
-//								"XPE 105", 
-//								"Capacity: 520g", 
-//								"Readability: 0.1mg", 
-//								"Price: $8,272.03", "Prod2Segue"));
 						}
 
 						foreach (var entry in prodMap){

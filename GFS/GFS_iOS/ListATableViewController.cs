@@ -57,12 +57,12 @@ namespace GFS_iOS
 //			}
 
 			//If only one product exists, show the first row only
-			if (prodMap.Count >= 1)
+			if (prodList.Count >= 1)
 			{
 				ListProdCell1.Hidden = false;
 			}
 			//If 2 or more products exist, also show the second row
-			if (prodMap.Count >= 2) 
+			if (prodList.Count >= 2) 
 			{
 				ListProdCell1.Hidden = false;
 				ListProdCell2.Hidden = false;
@@ -94,31 +94,6 @@ namespace GFS_iOS
 				}
 			}
 
-
-			//Create the products in each row
-//			for (int ind = 0 ; ind < prodList.Count ; ind++)
-//			{	
-//				if (ind == 0)
-//				{
-//					Prod1Image.Image = UIImage.FromFile(prodList[ind].getImageFileName());
-//					Prod1Title.Text = prodList[ind].getTitle();
-//					Prod1Class.Text = prodList [ind].getProdClass();
-//					Prod1Capacity.Text = prodList[ind].getCapacity();
-//					Prod1Readability.Text = prodList[ind].getReadability();
-//					Prod1Price.Text = prodList[ind].getPrice();
-//				}
-//				if (ind == 1)
-//				{
-//					Prod2Image.Image = UIImage.FromFile(prodList[ind].getImageFileName());
-//					Prod2Title.Text = prodList[ind].getTitle();
-//					Prod2Class.Text = prodList [ind].getProdClass();
-//					Prod2Capacity.Text = prodList[ind].getCapacity();
-//					Prod2Readability.Text = prodList[ind].getReadability();
-//					Prod2Price.Text = prodList[ind].getPrice();
-//				}
-//			}
-
-				
 			ListOneUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//Set up segue buttons to segue to the correct product view
