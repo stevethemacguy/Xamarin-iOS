@@ -30,6 +30,7 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+            MenuButton.TouchUpInside += HandleTouchUpInsideSearch;
             // Perform any additional setup after loading the view, typically from a nib.   
 
             //generate main scroll view
@@ -64,8 +65,24 @@ namespace GFS_iOS
 
             //adding sub scroll view into main scroll view
             mainScrollView.AddSubview(scrollView);
-
 		}
+
+        void HandleTouchUpInsideSearch(object sender, EventArgs e)
+        {
+            UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+            MenuTableViewController menuAA = (MenuTableViewController)board.InstantiateViewController(
+                "menuTable"
+            );
+
+            menuAA.View.Frame = new RectangleF(0, 64, 300, 504);
+            AddChildViewController(menuAA);
+            View.AddSubview(menuAA.View);
+            /*
+            UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+            UIViewController ctrl = (UIViewController)board.InstantiateViewController("searchController");
+            this.PresentViewController(ctrl, true, null);
+            */
+        }
 
 		public override void ViewWillAppear(bool animated)
 		{
