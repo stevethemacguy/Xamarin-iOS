@@ -41,5 +41,24 @@ namespace GFS_iOS
 			scrollView.AddSubview (imageView);
 			scrollView.Bounces = false; //We don't want it to "bounce" when it reaches the bottom.
 		}
+
+		//"Unwind Segue". This occurs after a new saved list is saved from the ProductActionsTableController
+		[Action ("UnwindToProductPageViewController:")]
+		public void UnwindToProductPageViewController (UIStoryboardSegue segue)
+		{
+			//Access member variable of the source TextInputController
+			TextInputController parentControl = (TextInputController) segue.SourceViewController;
+			if (parentControl.failed)
+			{
+				UIAlertView alert = new UIAlertView ("Failed to Save", "The list could not be created. Please try again.", null, "OK");
+				alert.Show();
+				return;
+			}
+			else{
+				string success = "The product was added to: \"" + parentControl.newList +"\"";
+				UIAlertView alert = new UIAlertView(success, "", null, "OK");
+				alert.Show();
+			}
+		}
 	}
 }

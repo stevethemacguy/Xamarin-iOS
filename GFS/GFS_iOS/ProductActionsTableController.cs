@@ -132,9 +132,6 @@ namespace GFS_iOS
 								Console.WriteLine(st.ToString());
 							}
 						}
-							
-
-
 						//Console.WriteLine(selectedItem + " was clicked.");
 						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
 					}
