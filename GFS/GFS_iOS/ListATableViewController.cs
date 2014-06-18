@@ -11,9 +11,12 @@ namespace GFS_iOS
 		public string title = ""; //set by SavedListTableSource during the segue.
 		public SavedListsTableController currentController;
 		public ListATableViewController tableController;
+		private DataSource db;
+
 		public ListATableViewController (IntPtr handle) : base (handle)
 		{
 			tableController = this;
+			db = DataSource.getInstance();
 		}
 
 		public override void ViewDidLoad()

@@ -326,6 +326,7 @@
     <Compile Include="TextInputController.designer.cs">
       <DependentUpon>TextInputController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
