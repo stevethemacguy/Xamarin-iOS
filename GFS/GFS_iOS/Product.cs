@@ -51,6 +51,18 @@ namespace GFS_iOS
 		public String getSegueName() {
 			return segueName;
 		}
+
+		public override string ToString()
+		{
+			String s = getImageFileName();
+			s += getTitle();
+//			s += getProdClass();
+//			s += getCapacity();
+//			s += getReadability();
+			s += getPrice();
+//			s += getSegueName();
+			return s;
+		}
 	}
 
 }

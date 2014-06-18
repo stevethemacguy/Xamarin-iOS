@@ -15,6 +15,9 @@ namespace GFS_iOS
 		private List<Product> productList;
 		public String currentProduct = "";
 
+		//A map where Key is the list name, and value is a list of products associated with that list
+		private Dictionary<String, List<Product>> productMap;
+
 		//Can't be instantiated except by the getInstance method
 		protected DataSource()
 		{
@@ -22,6 +25,7 @@ namespace GFS_iOS
 			if (savedListSet == null)
 			{
 				savedListSet = new HashSet<string>();
+				productMap = new Dictionary<string, List<Product>>();
 				//Add the two defaults for now
 				addSavedList("cabinets");
 				addSavedList("others");
@@ -39,6 +43,11 @@ namespace GFS_iOS
 
 		public List<Product> getProductList() {
 			return productList;
+		}
+
+
+		public Dictionary<String, List<Product>> getProductMap() {
+			return productMap;
 		}
 
 		public void addSavedList(string tooAdd)

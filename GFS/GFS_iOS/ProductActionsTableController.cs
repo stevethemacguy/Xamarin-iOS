@@ -90,25 +90,63 @@ namespace GFS_iOS
 						DataSource db = DataSource.getInstance();
 						List<Product> prodlist = db.getProductList();
 
-						//if the product selected is A, then add prod A
+						Dictionary<String, List<Product>> prodMap = db.getProductMap();
+						//initialize list if empty
+
+						//If the list doesn't exist in the map yet, then create it
+						if(prodMap.ContainsKey(selectedItem) == false)
+						{
+							prodMap.Add(selectedItem, new List<Product>());
+						}
+
+
+						//if the product selected is A, then add prod A to the selected list
 						if (db.currentProduct == "product1")
 						{
-							prodlist.Add(new Product("product1.png", 
+							//Add a new product to the selected list
+							prodMap[selectedItem].Add(new Product(
+								"product1.png", 
 								"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
 								"KS Class II,  A201", 
 								"Capacity: 120g", 
 								"Readability: 0.01mg", 
-								"Price: $12,381.00", "Prod1Segue"));
+								"Price: $12,381.00", "Prod1Segue")
+							);
+//							prodlist.Add(new Product("product1.png", 
+//								"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
+//								"KS Class II,  A201", 
+//								"Capacity: 120g", 
+//								"Readability: 0.01mg", 
+//								"Price: $12,381.00", "Prod1Segue"));
 						}
-						else //the second product was selected, so add the second product
+						else //the second product was selected, so add the second product to the selected list
 						{
-							prodlist.Add(new Product("product2.png", 
+							//Add a new product to the selected list
+							prodMap[selectedItem].Add(new Product(
+								"product2.png", 
 								"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
 								"XPE 105", 
 								"Capacity: 520g", 
 								"Readability: 0.1mg", 
 								"Price: $8,272.03", "Prod2Segue"));
+//							prodlist.Add(new Product("product2.png", 
+//								"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
+//								"XPE 105", 
+//								"Capacity: 520g", 
+//								"Readability: 0.1mg", 
+//								"Price: $8,272.03", "Prod2Segue"));
 						}
+
+						foreach (var entry in prodMap){
+							Product[] values = entry.Value.ToArray();
+							Console.WriteLine("key: {0}", entry.Key); 
+							foreach(Product st in values)
+							{
+								Console.WriteLine(st.ToString());
+							}
+						}
+							
+
 
 						//Console.WriteLine(selectedItem + " was clicked.");
 						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
