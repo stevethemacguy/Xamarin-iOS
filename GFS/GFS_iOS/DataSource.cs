@@ -46,7 +46,7 @@ namespace GFS_iOS
 		}
 
 
-		public Dictionary<String, List<Product>> getProductMap() {
+		public Dictionary<String, List<Product>> getProductMap(){
 			return productMap;
 		}
 
