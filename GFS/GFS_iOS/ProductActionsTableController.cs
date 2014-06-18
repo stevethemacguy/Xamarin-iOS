@@ -32,6 +32,16 @@ namespace GFS_iOS
 				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");
 					alert.Show();
 				DataSource data = DataSource.getInstance();
+				data.addToManualList(data.currentProduct);
+				if(data.savedManual1 == null){
+					data.savedManual1 = data.currentProduct;
+				}
+				else //manual1 already exists, so create the second manual
+				{
+					data.savedManual2 = data.currentProduct;
+				}
+
+
 				//We have two hardcoded PDFs for this prototype. If the user clicks to download, we just show the first row (with the first PDF)
 				if (data.showRow1 == false)
 				{

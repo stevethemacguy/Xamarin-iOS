@@ -15,7 +15,7 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 			ManualListCell1.BackgroundColor = UIColor.Clear;
-			ManualListCell2.BackgroundColor = UIColor.Clear;
+			//ManualListCell2.BackgroundColor = UIColor.Clear;
 			ManualListView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 		}
 	}
