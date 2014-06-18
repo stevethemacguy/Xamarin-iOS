@@ -85,6 +85,31 @@ namespace GFS_iOS
 						string success = "The product was added to: \"" + selectedItem +"\"";
 						UIAlertView alert = new UIAlertView(success, "", null, "OK");
 						alert.Show();
+
+						//Actually Add the product cell to the Saved Lists Table
+						DataSource db = DataSource.getInstance();
+						List<Product> prodlist = db.getProductList();
+
+						//Show the first row
+						if(db.showProdRow1 == false)
+						{
+							db.showProdRow1 = true; //
+						}
+						else //the first row is already shown, so show the second row
+						{
+							db.showProdRow2 = true;
+						}
+
+						//if the product selected is A, then add prod A
+						if (db.currentProduct == "product1")
+						{
+							prodlist.Add(new Product("product1.png", "Awesome Fun", "Even More Fun", "1.5 and stuff", "Very readable", "$5,000", "Prod1Segue"));
+						}
+						else //the second product was selected, so add the second product
+						{
+							prodlist.Add(new Product("product2.png","Some other prod","YES","ok","readable","$1,000","Prod2Segue"));
+						}
+
 						//Console.WriteLine(selectedItem + " was clicked.");
 						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
 					}

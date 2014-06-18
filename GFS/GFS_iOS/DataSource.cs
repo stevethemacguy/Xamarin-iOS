@@ -6,12 +6,17 @@ namespace GFS_iOS
 	//DataSource follows the singleton pattern
 	public class DataSource
 	{
-		public bool showRow1 = false; //Controls whether the first PDF Manual Row is hidden
-		public bool showRow2 = false; //Controls whether the second PDF Manual Row is hidden
+		public bool showRow1 = false; //Controls whether the first PDF Manual Row is shown
+		public bool showRow2 = false; //Controls whether the second PDF Manual Row is shown
+		public bool showProdRow1 = false; //Controls whether the first Product Row is shown
+		public bool showProdRow2 = false; //Controls whether the first Product Row is shown
+
 		private HashSet<string> savedListSet; //Each string in the savedList Set is a name of one saved list. (savedLists is a Set, so no duplicates allowed).
 		private List<string> allNotes; //Each String is the full text of a note.
 		private static DataSource instance; //There can only be one instance of the DataSource.
 		private List<Product> productList;
+		public String currentProduct = "";
+
 		//Can't be instantiated except by the getInstance method
 		protected DataSource()
 		{
@@ -31,8 +36,6 @@ namespace GFS_iOS
 			if (productList == null)
 			{
 				productList = new List<Product>();
-				productList.Add(new Product("product1.png", "Awesome Fun", "Even More Fun", "1.5 and stuff", "Very readable", "$5,000", "Prod1Segue"));
-				productList.Add(new Product("product2.png","Some other prod","YES","ok","readable","$1,000","Prod2Segue"));
 			}
 		}
 
