@@ -14,6 +14,10 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+            //setting up menuSubview function
+            MenuButton3 = new MenuSubView(this, MenuButton3, 0).setButton();
+
 			cartUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 		}
 	}

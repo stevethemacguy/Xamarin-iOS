@@ -19,7 +19,7 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
             //setting menuSubview function
-            MenuB1 = new MenuSubView(currentController, MenuB1, 0).setButton();
+            MenuB1 = new MenuSubView(currentController, MenuB1, 64).setButton();
 
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));

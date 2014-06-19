@@ -36,7 +36,7 @@ namespace GFS_iOS
                 "menuTable"
             );
 
-            menuViewController.View.Frame = new RectangleF(0, Y, 300, 504);
+            menuViewController.View.Frame = new RectangleF(20, Y, 300, 504);
             menuView = menuViewController.View;
             parentController.AddChildViewController(menuViewController);
             parentController.View.AddSubview(menuView);
