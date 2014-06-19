@@ -205,6 +205,9 @@
     <BundleResource Include="Resources\camera-icon.png" />
     <BundleResource Include="Resources\cross-medium.png" />
     <BundleResource Include="Resources\cross-medium%402x.png" />
+    <BundleResource Include="Resources\navBarBackground.png" />
+    <BundleResource Include="Resources\navBarBackground%402x.png" />
+    <BundleResource Include="Resources\navBarBackground%28small%29%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -215,8 +218,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Main.cs" />
     <Compile Include="GFS_iOSViewController.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="GFS_iOSViewController.designer.cs">
       <DependentUpon>GFS_iOSViewController.cs</DependentUpon>
     </Compile>
@@ -323,6 +326,7 @@
     <Compile Include="TextInputController.designer.cs">
       <DependentUpon>TextInputController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

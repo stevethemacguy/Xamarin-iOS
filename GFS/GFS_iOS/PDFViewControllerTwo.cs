@@ -16,8 +16,8 @@ namespace GFS_iOS
 		{
 			string fileName = "productSpec.pdf";
 			string localHtmlUrl = Path.Combine(NSBundle.MainBundle.BundlePath, fileName);
-			pdfViewerTwo.LoadRequest(new NSUrlRequest(new NSUrl(localHtmlUrl, false)));
-			pdfViewerTwo.ScalesPageToFit = true;
+			//pdfViewerTwo.LoadRequest(new NSUrlRequest(new NSUrl(localHtmlUrl, false)));
+			//pdfViewerTwo.ScalesPageToFit = true;
 		}
 
 		public override void ViewDidLoad()

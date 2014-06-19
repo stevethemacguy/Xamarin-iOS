@@ -16,6 +16,30 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UILabel manProd1Class { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIImageView manProd1Image { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UILabel manProd1Title { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UILabel manProd2Class { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIImageView manProd2Image { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UILabel manProd2Title { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableViewCell manualProdCell1 { get; set; }
 
 		[Outlet]
@@ -32,6 +56,30 @@ namespace GFS_iOS
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (manProd1Class != null) {
+				manProd1Class.Dispose ();
+				manProd1Class = null;
+			}
+			if (manProd1Image != null) {
+				manProd1Image.Dispose ();
+				manProd1Image = null;
+			}
+			if (manProd1Title != null) {
+				manProd1Title.Dispose ();
+				manProd1Title = null;
+			}
+			if (manProd2Class != null) {
+				manProd2Class.Dispose ();
+				manProd2Class = null;
+			}
+			if (manProd2Image != null) {
+				manProd2Image.Dispose ();
+				manProd2Image = null;
+			}
+			if (manProd2Title != null) {
+				manProd2Title.Dispose ();
+				manProd2Title = null;
+			}
 			if (manualProdCell1 != null) {
 				manualProdCell1.Dispose ();
 				manualProdCell1 = null;

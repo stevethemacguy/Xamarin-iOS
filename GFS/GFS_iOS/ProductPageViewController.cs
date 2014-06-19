@@ -26,6 +26,9 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			//"Tell" the database that which product we are currently viewing.
+			DataSource db = DataSource.getInstance();
+			db.currentProduct = "product1";
 
 			//IF COMING FROM THE ACTIONS then do stuff
 //			if (fromActionsPage)
@@ -42,23 +45,6 @@ namespace GFS_iOS
 //				mainMenuButton.Title = "Menu";
 //				this.NavigationItem.SetRightBarButtonItem(mainMenuButton, false);
 			//}
-
-			//Segue to the Main Menu. THIS IS BAD. We should "Rewind", not push a new view on the stack.
-//			mainMenuButton.Clicked += (o,s) => {
-//
-//				//Segue
-//				//Get the current storyboard
-//				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
-//
-//				//Get the NotesViewController
-//				MenuTableViewController menuView = (MenuTableViewController) board.InstantiateViewController(  
-//					"menuTable"
-//				);
-//
-//				//Segue to the text input view
-//				currentController.NavigationController.PushViewController (menuView, true);
-//			};
-
 
 			ProductPageUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 

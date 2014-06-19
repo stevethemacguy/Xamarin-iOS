@@ -18,6 +18,11 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//"Tell" the database that which product we are currently viewing.
+			DataSource db = DataSource.getInstance();
+			db.currentProduct = "product2";
+
 			ProductPageUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 
 			//Create a scroll view. X, Y, Width, Height. Note that the height MUST be smaller than the image if you want it to scroll!
@@ -35,6 +40,25 @@ namespace GFS_iOS
 			scrollView.ContentSize = new SizeF(226, 735); 
 			scrollView.AddSubview (imageView);
 			scrollView.Bounces = false; //We don't want it to "bounce" when it reaches the bottom.
+		}
+
+		//"Unwind Segue". This occurs after a new saved list is saved from the ProductActionsTableController
+		[Action ("UnwindToProductPageViewController:")]
+		public void UnwindToProductPageViewController (UIStoryboardSegue segue)
+		{
+			//Access member variable of the source TextInputController
+			TextInputController parentControl = (TextInputController) segue.SourceViewController;
+			if (parentControl.failed)
+			{
+				UIAlertView alert = new UIAlertView ("Failed to Save", "The list could not be created. Please try again.", null, "OK");
+				alert.Show();
+				return;
+			}
+			else{
+				string success = "The product was added to: \"" + parentControl.newList +"\"";
+				UIAlertView alert = new UIAlertView(success, "", null, "OK");
+				alert.Show();
+			}
 		}
 	}
 }

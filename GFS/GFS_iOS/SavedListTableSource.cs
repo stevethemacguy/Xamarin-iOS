@@ -44,7 +44,7 @@ namespace GFS_iOS
 
 			//"Pass" along the index of the selected row to the index member variable
 			savedListTable.index = indexPath.Row; 
-			savedListTable.title = tableItems[indexPath.Row];
+			savedListTable.rowName = tableItems[indexPath.Row];
 			savedListTable.currentController = (SavedListsTableController) parentController;
 
 			//Segue to the SavedListTable
