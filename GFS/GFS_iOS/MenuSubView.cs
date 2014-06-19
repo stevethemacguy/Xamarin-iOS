@@ -24,12 +24,14 @@ namespace GFS_iOS
             Y = startingY;
             parentController = viewController;
             MenuButton = button;
-            MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
+			//Start the button in the unclicked state since it hasn't been clicked yet
+            MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclicked;
         }
 
-        void HandleTouchUpInsideMenuUnclciked(object sender, EventArgs e)
+		//Sets the button to it's unclicked state.
+        void HandleTouchUpInsideMenuUnclicked(object sender, EventArgs e)
         {
-            MenuButton.TouchUpInside -= HandleTouchUpInsideMenuUnclciked;
+            MenuButton.TouchUpInside -= HandleTouchUpInsideMenuUnclicked;
             MenuButton.TouchUpInside += HandleTouchUpInsideMenuHide;
             UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
             menuViewController = (MenuTableViewController)board.InstantiateViewController(
