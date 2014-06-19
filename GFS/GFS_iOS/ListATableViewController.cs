@@ -27,7 +27,7 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-            //setting up menuSubview function
+            //set up flyout menuSubview
             MenuB5 = new MenuSubView(tableController, MenuB5, 0).setButton();
 
 			if (prodMap.ContainsKey(rowName)) {

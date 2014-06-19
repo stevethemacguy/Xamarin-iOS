@@ -24,7 +24,7 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-            //setting up menuSubview function
+            //set up flyout menuSubview
             MenuB15 = new MenuSubView(this, MenuB15, 0).setButton();
 
 			showPDF();

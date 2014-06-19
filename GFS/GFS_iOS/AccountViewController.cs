@@ -15,6 +15,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 			accountUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
+			//set up flyout menuSubview
+			//MenuB30 = new MenuSubView(this, MenuB30, 0).setButton();
 		}
+	
 	}
 }

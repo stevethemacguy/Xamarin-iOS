@@ -27,7 +27,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="69" kind="push" id="1929"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -66,7 +65,7 @@
                             <tableViewSection id="82">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="83" reuseIdentifier="searchcell" rowHeight="0">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="83" id="84">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -91,7 +90,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="99" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="129" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="65" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="99" id="100">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -116,7 +115,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="103" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="194" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="103" id="104">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -141,7 +140,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="107" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="259" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="195" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="107" id="108">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -166,7 +165,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="111" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="324" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="260" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="111" id="112">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -191,7 +190,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="115" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="389" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="325" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="115" id="116">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -408,6 +407,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="1957" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="11" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Your Account" id="1958">
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                     </view>
                     <connections>
                         <outlet property="accountUIView" destination="177" id="name-outlet-177"/>
@@ -741,9 +750,9 @@
                     <navigationItem title="Search Results" id="1797" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1820" key="rightBarButtonItem">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1819" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal" title="" backgroundImage="menuIconShifted.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1306,19 +1315,19 @@
                     <connections>
                         <outlet property="SavedListsUIView" destination="811" id="name-outlet-811"/>
                         <outlet property="ListCell" destination="1572" id="name-outlet-1572"/>
-                        <outlet property="MenuB3" destination="1791" id="name-outlet-1791"/>
+                        <outlet property="MenuB3" destination="1936" id="name-outlet-1936"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="Saved Lists" id="1790" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1792" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1791" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                        <barButtonItem style="plain" id="1937" key="leftBarButtonItem"/>
+                        <barButtonItem style="plain" id="1938" key="rightBarButtonItem">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1936" key="customView">
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal" title="" backgroundImage="menuIconShifted.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1774" kind="unwind" unwindAction="UnwindToMenu:" id="1793"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1517,9 +1526,9 @@
                     <navigationItem title="" id="1795" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1809" key="rightBarButtonItem">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1808" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal" title="" backgroundImage="menuIconShifted.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1921,9 +1930,9 @@
                     <navigationItem title="Other Items" id="1796" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1818" key="rightBarButtonItem">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1817" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal" title="" backgroundImage="menuIconShifted.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>

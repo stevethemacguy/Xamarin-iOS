@@ -15,7 +15,7 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-            //setting up menuSubview function
+            //set up flyout menuSubview
             MenuB11 = new MenuSubView(this, MenuB11, 0).setButton();
 
 			ManualListCell1.BackgroundColor = UIColor.Clear;
