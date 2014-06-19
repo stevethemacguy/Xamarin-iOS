@@ -2,6 +2,7 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
+using System.Drawing;
 
 namespace GFS_iOS
 {
@@ -19,9 +20,15 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+			//Manually create a menu button and add it to the right side of the menu bar
+			UIButton menuButton31 = UIButton.FromType(UIButtonType.Custom);
+			menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+			menuButton31.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+			this.NavigationController.NavigationBar.Add(menuButton31);
+
             //setting menuSubview function
-            menuView = new MenuSubView(currentController, MenuB1, 64);
-            MenuB1 = menuView.setButton();
+			menuView = new MenuSubView(currentController, menuButton31, 64);
+			menuButton31 = menuView.setButton();
 
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
@@ -80,7 +87,6 @@ namespace GFS_iOS
 					HintTable.Hidden = false;
 				}
 			};
-
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
@@ -89,7 +95,6 @@ namespace GFS_iOS
             base.ViewDidDisappear(animated);
             menuView.clearSubView();
         }
-
 	}
 
 	class TableSource : UITableViewSource
@@ -134,6 +139,4 @@ namespace GFS_iOS
 		    controller.NavigationController.PushViewController(ok, true);
 		}
 	}
-
-
 }

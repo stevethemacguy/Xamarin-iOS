@@ -2,24 +2,33 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
+using System.Drawing;
 
 namespace GFS_iOS
 {
 	partial class CartViewController : UIViewController
 	{
-        MenuSubView menuView;
+		MenuSubView menuView;
+		CartViewController currentController;
 		public CartViewController (IntPtr handle) : base (handle)
 		{
+			currentController = this;
 		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-		
-			//set up flyout menuSubview
-            menuView = new MenuSubView(this, MenuButton3, 0);
-            MenuButton3 = menuView.setButton();
 			cartUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
+		
+			//Manually create a menu button and add it to the right side of the menu bar
+			UIButton menuButton33 = UIButton.FromType(UIButtonType.Custom);
+			menuButton33.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+			menuButton33.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+			this.NavigationController.NavigationBar.Add(menuButton33);
+
+			//set up flyout menuSubview
+			menuView = new MenuSubView(currentController, menuButton33, 64);
+			menuButton33 = menuView.setButton();
 		}
 
         public override void ViewDidDisappear(bool animated)

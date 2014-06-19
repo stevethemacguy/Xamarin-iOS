@@ -241,7 +241,7 @@
         </scene>
         <scene sceneID="122">
             <objects>
-                <viewController id="123" sceneMemberID="viewController" customClass="SearchViewController" title="Search" storyboardIdentifier="searchController" restorationIdentifier="searchController">
+                <viewController id="123" sceneMemberID="viewController" customClass="SearchViewController" storyboardIdentifier="searchController" restorationIdentifier="searchController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="125"/>
                         <viewControllerLayoutGuide type="bottom" id="126"/>
@@ -2172,5 +2172,6 @@
         <image name="menuIcon.png" width="44" height="44"/>
         <image name="menuIconShifted.png" width="44" height="44"/>
         <image name="menuIconShifted2.png" width="44" height="44"/>
+        <image name="greyTrans.png" width="20" height="504"/>
     </resources>
 </document>

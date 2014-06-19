@@ -11,7 +11,7 @@ namespace GFS_iOS
 		UIScrollView scrollView;
 		UIImageView imageView;
 		public Boolean fromActionsPage = false; //True if this view is being "loaded" from the actions page (i.e. it's parent controller is TextInputController)
-		UIBarButtonItem mainMenuButton;
+		//UIBarButtonItem mainMenuButton;
         MenuSubView menuView;
 		//ProductPageViewController currentController;
 
@@ -20,8 +20,8 @@ namespace GFS_iOS
 		public ProductPageViewController (IntPtr handle) : base (handle)
 		{
 			//	currentController = this;
-			mainMenuButton = new UIBarButtonItem();
-			mainMenuButton.Title = "Menu";
+			//mainMenuButton = new UIBarButtonItem();
+			//mainMenuButton.Title = "Menu";
 		}
 
 		public override void ViewDidLoad()
