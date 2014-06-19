@@ -20,10 +20,6 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableViewCell ManualListCell2 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableView ManualListView { get; set; }
 
 		[Outlet]
@@ -34,19 +30,11 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UILabel ProductManual { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UILabel TechnicalSpecification { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
 			if (ManualListCell1 != null) {
 				ManualListCell1.Dispose ();
 				ManualListCell1 = null;
-			}
-			if (ManualListCell2 != null) {
-				ManualListCell2.Dispose ();
-				ManualListCell2 = null;
 			}
 			if (ManualListView != null) {
 				ManualListView.Dispose ();
@@ -59,10 +47,6 @@ namespace GFS_iOS
 			if (ProductManual != null) {
 				ProductManual.Dispose ();
 				ProductManual = null;
-			}
-			if (TechnicalSpecification != null) {
-				TechnicalSpecification.Dispose ();
-				TechnicalSpecification = null;
 			}
 		}
 	}

@@ -37,13 +37,22 @@ namespace GFS_iOS
             MenuButton = new MenuSubView(controller, MenuButton, 64).setButton();
             ///MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
 			//Create the NavBar image
-			navBar.SetBackgroundImage(UIImage.FromFile("blueX-backround.png"),UIBarMetrics.Default);
+			navBar.SetBackgroundImage(UIImage.FromFile("navBarReversed.png"),UIBarMetrics.Default);
 
 			navBar.TintColor = UIColor.White; //Make the text color white.
 			//Make the controller title text white
 			UITextAttributes test = new UITextAttributes();
 			test.TextColor = UIColor.White;
 			navBar.SetTitleTextAttributes(test);
+
+			//Add the new menu button
+//			this.NavigationItem.SetRightBarButtonItem(
+//				new UIBarButtonItem(UIImage.FromFile("menuButton.png")
+//					, UIBarButtonItemStyle.Plain
+//					, (sender,args) => {
+//						// button was clicked
+//					})
+//				, true);
 
 			//this.SetNeedsStatusBarAppearanceUpdate();
 

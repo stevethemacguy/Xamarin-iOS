@@ -18,19 +18,11 @@ namespace GFS_iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UIButton MenuB15 { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIWebView pdfViewerTwo { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
 			if (MenuB15 != null) {
 				MenuB15.Dispose ();
 				MenuB15 = null;
-			}
-			if (pdfViewerTwo != null) {
-				pdfViewerTwo.Dispose ();
-				pdfViewerTwo = null;
 			}
 		}
 	}

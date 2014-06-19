@@ -14,6 +14,9 @@ namespace GFS_iOS
 		private static DataSource instance; //There can only be one instance of the DataSource.
 		private List<Product> productList;
 		public String currentProduct = "";
+		private List<String> manualList; //A list of product names for the manuals view
+		public String savedManual1 = null;
+		public String savedManual2 = null;
 
 		//A map where Key is the list name, and value is a list of products associated with that list
 		private Dictionary<String, List<Product>> productMap;
@@ -32,6 +35,7 @@ namespace GFS_iOS
 				allNotes = new List<string>();
 				addNote("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
 				addNote("Another good find");
+				manualList = new List<String>();
 			}
 
 			//Create the productList and add the two default products to the list
@@ -45,6 +49,14 @@ namespace GFS_iOS
 			return productList;
 		}
 
+		public void addToManualList(String productName)
+		{
+			manualList.Add(productName);
+		}
+
+		public List<String> getManualList() {
+			return manualList;
+		}
 
 		public Dictionary<String, List<Product>> getProductMap(){
 			return productMap;

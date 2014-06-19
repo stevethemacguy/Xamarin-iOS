@@ -205,9 +205,14 @@
     <BundleResource Include="Resources\camera-icon.png" />
     <BundleResource Include="Resources\cross-medium.png" />
     <BundleResource Include="Resources\cross-medium%402x.png" />
-    <BundleResource Include="Resources\navBarBackground.png" />
-    <BundleResource Include="Resources\navBarBackground%402x.png" />
-    <BundleResource Include="Resources\navBarBackground%28small%29%402x.png" />
+    <BundleResource Include="Resources\navBar44.png" />
+    <BundleResource Include="Resources\navBar44%402x.png" />
+    <BundleResource Include="Resources\navBarReversed.png" />
+    <BundleResource Include="Resources\navBarReversed%402x.png" />
+    <BundleResource Include="Resources\menuButton.png" />
+    <BundleResource Include="Resources\menuButton%402x.png" />
+    <BundleResource Include="Resources\menuIconShifted%402x.png" />
+    <BundleResource Include="Resources\menuIconShifted.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

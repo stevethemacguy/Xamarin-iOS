@@ -19,7 +19,7 @@ namespace GFS_iOS
             MenuB11 = new MenuSubView(this, MenuB11, 0).setButton();
 
 			ManualListCell1.BackgroundColor = UIColor.Clear;
-			ManualListCell2.BackgroundColor = UIColor.Clear;
+			//ManualListCell2.BackgroundColor = UIColor.Clear;
 			ManualListView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 		}
 	}
