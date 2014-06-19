@@ -352,5 +352,6 @@
     <BundleResource Include="Resources\itemlists.png" />
     <BundleResource Include="Resources\itemlists%402x.png" />
     <BundleResource Include="Resources\magnifying-glass-small.png" />
+    <BundleResource Include="Resources\greyTrans.png" />
   </ItemGroup>
 </Project>

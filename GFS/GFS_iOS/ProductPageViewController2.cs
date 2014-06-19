@@ -22,7 +22,7 @@ namespace GFS_iOS
 
 
 			//set up flyout menuSubview
-            menuView = new MenuSubView(this, MenuB16, 0);
+            menuView = new MenuSubView(this, MenuB16, 64);
             MenuB16 = menuView.setButton();
 
 			//"Tell" the database that which product we are currently viewing.

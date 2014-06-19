@@ -15,6 +15,7 @@ namespace GFS_iOS
         UIViewController parentController;
         UIViewController menuViewController;
         UIView menuView;
+        UIImageView img;
         int Y;
         int flag; //flag == 0 -> view has not created ||| flag == 1 -> view created
 
@@ -44,13 +45,17 @@ namespace GFS_iOS
 
             menuViewController.View.Frame = new RectangleF(20, Y, 300, 504);
             menuView = menuViewController.View;
+            img = new UIImageView(UIImage.FromFile("greyTrans.png"));
+            img.Frame = new RectangleF(0, Y, 20, 504);
             parentController.AddChildViewController(menuViewController);
             parentController.View.AddSubview(menuView);
+            parentController.View.AddSubview(img);
             flag = 1;
         }
 
         void HandleTouchUpInsideMenuShow(object sender, EventArgs e)
         {
+            img.Hidden = false;
             menuView.Hidden = false;
             MenuButton.TouchUpInside -= HandleTouchUpInsideMenuShow;
             MenuButton.TouchUpInside += HandleTouchUpInsideMenuHide;
@@ -58,6 +63,7 @@ namespace GFS_iOS
 
         void HandleTouchUpInsideMenuHide(object sender, EventArgs e)
         {
+            img.Hidden = true;
             menuView.Hidden = true;
             MenuButton.TouchUpInside -= HandleTouchUpInsideMenuHide;
             MenuButton.TouchUpInside += HandleTouchUpInsideMenuShow;
@@ -67,6 +73,7 @@ namespace GFS_iOS
         {
             if(flag == 1)
             {
+                img.Hidden = true;
                 menuView.Hidden = true;
                 MenuButton.TouchUpInside -= HandleTouchUpInsideMenuHide;
                 MenuButton.TouchUpInside += HandleTouchUpInsideMenuShow;    
