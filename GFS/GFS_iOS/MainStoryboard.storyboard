@@ -16,19 +16,18 @@
                     </view>
                     <connections>
                         <outlet property="MenuButton" destination="59" id="name-outlet-59"/>
-                        <outlet property="MenuButton" destination="1674" id="name-outlet-1674"/>
+                        <outlet property="MenuButton1" destination="1919" id="name-outlet-1919"/>
                     </connections>
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
-                        <barButtonItem style="plain" id="1675" key="leftBarButtonItem" title="Menu">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1674" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                        <barButtonItem style="plain" id="1922" key="rightBarButtonItem">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1919" key="customView">
+                                <rect key="frame" x="0.0" y="0.0" width="21" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal" title="" backgroundImage="menuBarIcon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="69" kind="push" id="1676"/>
+                                    <segue destination="69" kind="push" id="1929"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -314,7 +313,7 @@
                     <navigationItem title="Search" id="1761" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1764" key="rightBarButtonItem">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1763" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -417,7 +416,7 @@
                     <navigationItem title="Your Account" id="1876" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1878" key="rightBarButtonItem">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1877" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -455,7 +454,7 @@
                     <navigationItem title="Shopping Cart" id="1743" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1745" key="rightBarButtonItem" title="Menu">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1744" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Menu">
@@ -2156,5 +2155,10 @@
         <image name="navBarBackground(small).png" width="640" height="106"/>
         <image name="navBarBackground44.png" width="640" height="88"/>
         <image name="navBar44.png" width="320" height="44"/>
+        <image name="navBarReversed.png" width="320" height="44"/>
+        <image name="menuButton.png" width="44" height="44"/>
+        <image name="menuButton(large).png" width="46" height="52"/>
+        <image name="menuButton-no-text.png" width="44" height="29"/>
+        <image name="menuBarIcon.png" width="22" height="16"/>
     </resources>
 </document>

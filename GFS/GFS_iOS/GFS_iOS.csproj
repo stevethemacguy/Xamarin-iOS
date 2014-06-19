@@ -207,6 +207,14 @@
     <BundleResource Include="Resources\cross-medium%402x.png" />
     <BundleResource Include="Resources\navBar44.png" />
     <BundleResource Include="Resources\navBar44%402x.png" />
+    <BundleResource Include="Resources\navBarReversed.png" />
+    <BundleResource Include="Resources\navBarReversed%402x.png" />
+    <BundleResource Include="Resources\menuButton.png" />
+    <BundleResource Include="Resources\menuButton%402x.png" />
+    <BundleResource Include="Resources\menuButton-no-text%402x.png" />
+    <BundleResource Include="Resources\menuButton-no-text.png" />
+    <BundleResource Include="Resources\menuBarIcon%402x.png" />
+    <BundleResource Include="Resources\menuBarIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
