@@ -22,6 +22,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+            //setting up menuSubview function
+            MenuB10 = new MenuSubView(this, MenuB10, 0).setButton();
+
 			manualProdCell1.BackgroundColor = UIColor.Clear;
 			manualProdCell2.BackgroundColor = UIColor.Clear;
 			manualProdCell1.Hidden = true;

@@ -24,6 +24,9 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			NoteListUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
+            //setting up menuSubview function
+            MenuB2 = new MenuSubView(currentController, MenuB2, 0).setButton();
+
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;

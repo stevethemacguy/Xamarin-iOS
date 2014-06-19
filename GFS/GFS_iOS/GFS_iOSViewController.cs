@@ -11,8 +11,6 @@ namespace GFS_iOS
         UIScrollView scrollView;
         UIImageView imageView;
         UIScrollView mainScrollView;
-        UIView menuView;
-        MenuTableViewController menuViewController;
         UIViewController controller;
 
 

@@ -26,6 +26,10 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+            //setting up menuSubview function
+            MenuB9 = new MenuSubView(this, MenuB9, 0).setButton();
+
 			//"Tell" the database that which product we are currently viewing.
 			DataSource db = DataSource.getInstance();
 			db.currentProduct = "product1";

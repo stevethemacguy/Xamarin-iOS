@@ -23,6 +23,10 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+            //setting up menuSubview function
+            MenuB15 = new MenuSubView(this, MenuB15, 0).setButton();
+
 			showPDF();
 		}
 	}

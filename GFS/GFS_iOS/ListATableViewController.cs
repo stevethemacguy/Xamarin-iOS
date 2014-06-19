@@ -27,6 +27,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+            //setting up menuSubview function
+            MenuB5 = new MenuSubView(tableController, MenuB5, 0).setButton();
+
 			if (prodMap.ContainsKey(rowName)) {
 				prodList = prodMap[rowName]; //Retrieve a List<Product> from the map using the row name as a key
 			} else

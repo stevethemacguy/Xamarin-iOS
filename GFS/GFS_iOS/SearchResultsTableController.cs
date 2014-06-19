@@ -21,6 +21,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+            //setting up menuSubview function
+            MenuB7 = new MenuSubView(this, MenuB7, 0).setButton();
+
 			//If coming from the NotesViewController, don't allow users to segue back to the create a note view
 			if(fromSegue)
 			{
