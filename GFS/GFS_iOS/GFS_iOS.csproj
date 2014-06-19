@@ -208,6 +208,7 @@
     <BundleResource Include="Resources\navBarBackground.png" />
     <BundleResource Include="Resources\navBarBackground%402x.png" />
     <BundleResource Include="Resources\navBarBackground%28small%29%402x.png" />
+    <BundleResource Include="Resources\blueX-backround%28small%29.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
