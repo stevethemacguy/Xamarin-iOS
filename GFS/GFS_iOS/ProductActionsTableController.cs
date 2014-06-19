@@ -134,14 +134,15 @@ namespace GFS_iOS
 								"Price: $8,272.03", "Prod2Segue"));
 						}
 
-						foreach (var entry in prodMap){
-							Product[] values = entry.Value.ToArray();
-							Console.WriteLine("key: {0}", entry.Key); 
-							foreach(Product st in values)
-							{
-								Console.WriteLine(st.ToString());
-							}
-						}
+						//Write out the map values
+//						foreach (var entry in prodMap){
+//							Product[] values = entry.Value.ToArray();
+//							Console.WriteLine("key: {0}", entry.Key); 
+//							foreach(Product st in values)
+//							{
+//								Console.WriteLine(st.ToString());
+//							}
+//						}
 						//Console.WriteLine(selectedItem + " was clicked.");
 						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
 					}

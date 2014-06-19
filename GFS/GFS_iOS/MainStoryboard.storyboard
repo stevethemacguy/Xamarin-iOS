@@ -2152,7 +2152,9 @@
         <image name="magnifying-glass-small.png" width="28" height="28"/>
         <image name="new-cross.png" width="17" height="17"/>
         <image name="cross-medium.png" width="16" height="16"/>
-        <image name="navBarBackground.png" width="320" height="72"/>
+        <image name="navBarBackground.png" width="640" height="144"/>
         <image name="navBarBackground(small).png" width="640" height="106"/>
+        <image name="navBarBackground44.png" width="640" height="88"/>
+        <image name="navBar44.png" width="320" height="44"/>
     </resources>
 </document>
