@@ -7,8 +7,10 @@ namespace GFS_iOS
 {
 	partial class SearchResultsTableController : UITableViewController
 	{
+        MenuSubView menuView;
 		public Boolean fromSegue = false; //Used when seguing from the "search" icon when typing in the NotesViewController
-		public SearchResultsTableController (IntPtr handle) : base (handle)
+		
+        public SearchResultsTableController (IntPtr handle) : base (handle)
 		{
 		}
 
@@ -21,8 +23,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-            //set up flyout menuSubview
-            MenuB7 = new MenuSubView(this, MenuB7, 0).setButton();
+			//set up flyout menuSubview
+            menuView = new MenuSubView(this, MenuB7, 0);
+            MenuB7 = menuView.setButton();
 
 			//If coming from the NotesViewController, don't allow users to segue back to the create a note view
 			if(fromSegue)
@@ -40,5 +43,11 @@ namespace GFS_iOS
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchResultsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 		}
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 	}
 }

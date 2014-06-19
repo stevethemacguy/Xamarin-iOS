@@ -16,6 +16,7 @@ namespace GFS_iOS
         UIViewController menuViewController;
         UIView menuView;
         int Y;
+        int flag; //flag == 0 -> view has not created ||| flag == 1 -> view created
 
         public MenuSubView(UIViewController viewController, UIButton button, int startingY)
         {
@@ -24,8 +25,11 @@ namespace GFS_iOS
             Y = startingY;
             parentController = viewController;
             MenuButton = button;
+
 			//Start the button in the unclicked state since it hasn't been clicked yet
-            MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclicked;
+			MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclicked;
+            flag = 0;
+
         }
 
 		//Sets the button to it's unclicked state.
@@ -42,6 +46,7 @@ namespace GFS_iOS
             menuView = menuViewController.View;
             parentController.AddChildViewController(menuViewController);
             parentController.View.AddSubview(menuView);
+            flag = 1;
         }
 
         void HandleTouchUpInsideMenuShow(object sender, EventArgs e)
@@ -56,6 +61,16 @@ namespace GFS_iOS
             menuView.Hidden = true;
             MenuButton.TouchUpInside -= HandleTouchUpInsideMenuHide;
             MenuButton.TouchUpInside += HandleTouchUpInsideMenuShow;
+        }
+
+        public void clearSubView()
+        {
+            if(flag == 1)
+            {
+                menuView.Hidden = true;
+                MenuButton.TouchUpInside -= HandleTouchUpInsideMenuHide;
+                MenuButton.TouchUpInside += HandleTouchUpInsideMenuShow;    
+            }
         }
 
         public UIButton setButton()

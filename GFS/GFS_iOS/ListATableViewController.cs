@@ -8,6 +8,7 @@ namespace GFS_iOS
 {
 	partial class ListATableViewController : UITableViewController
 	{
+        MenuSubView menuView;
 		public int index = 0; //The row that was selected to get to this controller
 		public string rowName = ""; //set by SavedListTableSource during the segue.
 		public SavedListsTableController currentController;
@@ -27,8 +28,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-            //set up flyout menuSubview
-            MenuB5 = new MenuSubView(tableController, MenuB5, 0).setButton();
+			//set up flyout menuSubview
+            menuView = new MenuSubView(tableController, MenuB5, 0);
+            MenuB5 = menuView.setButton();
 
 			if (prodMap.ContainsKey(rowName)) {
 				prodList = prodMap[rowName]; //Retrieve a List<Product> from the map using the row name as a key
@@ -140,6 +142,11 @@ namespace GFS_iOS
 
 		}
 
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 //		public override row
 //		{
 //			[self performSegueWithIdentifier:@"addToCartSegue" sender:self];

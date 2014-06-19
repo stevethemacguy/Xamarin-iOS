@@ -11,7 +11,8 @@ namespace GFS_iOS
 		public UITableView table;
 		//Each string is the text of one note. The Strings "match" to a table row by their index. So cell0 will have note[0] for it's text.
 		DataSource db;
-		NotesTableController currentController; 
+		NotesTableController currentController;
+        MenuSubView menuView;
 
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
@@ -24,8 +25,9 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			NoteListUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
-            //set up flyout menuSubview
-            MenuB2 = new MenuSubView(currentController, MenuB2, 0).setButton();
+			//set up flyout menuSubview
+            menuView = new MenuSubView(this, MenuB2, 0);
+            MenuB2 = menuView.setButton();
 
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
@@ -78,6 +80,12 @@ namespace GFS_iOS
 				currentController.NavigationController.PushViewController (notesView, false);
 			};
 		}
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 
 		//Adds a new note and refreshes the table
 		public void refreshTable()

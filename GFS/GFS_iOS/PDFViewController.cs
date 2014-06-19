@@ -8,6 +8,7 @@ namespace GFS_iOS
 {
 	partial class PDFViewController : UIViewController
 	{
+        MenuSubView menuView;
 		public PDFViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -24,10 +25,17 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-            //set up flyout menuSubview
-            MenuB14 = new MenuSubView(this, MenuB14, 0).setButton();
+			//set up flyout menuSubview
+            menuView = new MenuSubView(this, MenuB14, 0);
+            MenuB14 = menuView.setButton();
 
 			showPDF();
 		}
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 	}
 }

@@ -9,6 +9,7 @@ namespace GFS_iOS
 	{
 		public UITableView table;
 		SavedListsTableController currentController;
+        MenuSubView menuView;
 
 		public SavedListsTableController (IntPtr handle) : base (handle)
 		{
@@ -18,8 +19,10 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-            MenuB3 = new MenuSubView(currentController, MenuB3, 0).setButton();
-			SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+            menuView = new MenuSubView(currentController, MenuB3, 0);
+            MenuB3 = menuView.setButton();
+			
+            SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
@@ -29,5 +32,11 @@ namespace GFS_iOS
 			Add(table);
 			table.BackgroundColor = UIColor.Clear; //Make the table clear
 		}
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 	}
 }
