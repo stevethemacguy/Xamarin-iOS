@@ -10,15 +10,18 @@ namespace GFS_iOS
 {
     class MenuSubView
     {
+        //Initializing variables 
         UIButton MenuButton;
         UIViewController parentController;
         UIViewController menuViewController;
         UIView menuView;
-        int X;
+        int Y;
 
-        public MenuSubView(UIViewController viewController, UIButton button, int startingX)
+        public MenuSubView(UIViewController viewController, UIButton button, int startingY)
         {
-            X = startingX;
+            //MenuSubView constructor, takes parent controller, button and a starting Y coordinate 
+            //Y coordinate either be 0 or 64
+            Y = startingY;
             parentController = viewController;
             MenuButton = button;
             MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
@@ -33,8 +36,7 @@ namespace GFS_iOS
                 "menuTable"
             );
 
-            menuViewController.View.Frame = new RectangleF(0, X, 300, 504);
-            //menuViewController.View.Frame = new RectangleF(0, 64, 300, 504);
+            menuViewController.View.Frame = new RectangleF(0, Y, 300, 504);
             menuView = menuViewController.View;
             parentController.AddChildViewController(menuViewController);
             parentController.View.AddSubview(menuView);
