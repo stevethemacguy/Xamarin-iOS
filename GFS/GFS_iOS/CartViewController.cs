@@ -7,6 +7,7 @@ namespace GFS_iOS
 {
 	partial class CartViewController : UIViewController
 	{
+        MenuSubView menuView;
 		public CartViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -16,9 +17,16 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
             //setting up menuSubview function
-            MenuButton3 = new MenuSubView(this, MenuButton3, 0).setButton();
+            menuView = new MenuSubView(this, MenuButton3, 0);
+            MenuButton3 = menuView.setButton();
 
 			cartUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 		}
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 	}
 }

@@ -10,6 +10,7 @@ namespace GFS_iOS
 	{
 		UIScrollView scrollView;
 		UIImageView imageView;
+        MenuSubView menuView;
 
 		public ProductPageViewController2 (IntPtr handle) : base (handle)
 		{
@@ -20,7 +21,9 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
             //setting up menuSubview function
-            MenuB16 = new MenuSubView(this, MenuB16, 0).setButton();
+
+            menuView = new MenuSubView(this, MenuB16, 0);
+            MenuB16 = menuView.setButton();
 
 			//"Tell" the database that which product we are currently viewing.
 			DataSource db = DataSource.getInstance();
@@ -44,6 +47,12 @@ namespace GFS_iOS
 			scrollView.AddSubview (imageView);
 			scrollView.Bounces = false; //We don't want it to "bounce" when it reaches the bottom.
 		}
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 
 		//"Unwind Segue". This occurs after a new saved list is saved from the ProductActionsTableController
 		[Action ("UnwindToProductPageViewController:")]

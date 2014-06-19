@@ -12,7 +12,7 @@ namespace GFS_iOS
         UIImageView imageView;
         UIScrollView mainScrollView;
         UIViewController controller;
-
+        MenuSubView menuView;
 
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
@@ -34,7 +34,8 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
-            MenuButton = new MenuSubView(controller, MenuButton, 64).setButton();
+            menuView = new MenuSubView(controller, MenuButton1, 64);
+            MenuButton1 = menuView.setButton();
             ///MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
 			//Create the NavBar image
 			navBar.SetBackgroundImage(UIImage.FromFile("navBarReversed.png"),UIBarMetrics.Default);
@@ -91,38 +92,6 @@ namespace GFS_iOS
             mainScrollView.AddSubview(scrollView);
 
 		}
-
-        /*
-        void HandleTouchUpInsideMenuUnclciked(object sender, EventArgs e)
-        {
-            MenuButton.TouchUpInside -= HandleTouchUpInsideMenuUnclciked;
-            MenuButton.TouchUpInside += HandleTouchUpInsideMenuHide;
-            UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
-            menuViewController = (MenuTableViewController)board.InstantiateViewController(
-                "menuTable"
-            );
-
-            menuViewController.View.Frame = new RectangleF(0, 64, 300, 504);
-            menuView = menuViewController.View;
-            AddChildViewController(menuViewController);
-            menuViewController.DidMoveToParentViewController(controller);
-            View.AddSubview(menuView);
-        }
-
-        void HandleTouchUpInsideMenuShow(object sender, EventArgs e)
-        {
-            menuView.Hidden = false;
-            MenuButton.TouchUpInside -= HandleTouchUpInsideMenuShow;
-            MenuButton.TouchUpInside += HandleTouchUpInsideMenuHide;
-        }
-
-        void HandleTouchUpInsideMenuHide(object sender, EventArgs e)
-        {
-            menuView.Hidden = true;
-            MenuButton.TouchUpInside -= HandleTouchUpInsideMenuHide;
-            MenuButton.TouchUpInside += HandleTouchUpInsideMenuShow;
-        }
-        */
           
 		public override void ViewWillAppear(bool animated)
 		{
@@ -142,6 +111,7 @@ namespace GFS_iOS
 		public override void ViewDidDisappear(bool animated)
 		{
 			base.ViewDidDisappear(animated);
+            menuView.clearSubView();
 		}
 
 		#endregion

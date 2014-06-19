@@ -12,6 +12,7 @@ namespace GFS_iOS
 		UIImageView imageView;
 		public Boolean fromActionsPage = false; //True if this view is being "loaded" from the actions page (i.e. it's parent controller is TextInputController)
 		UIBarButtonItem mainMenuButton;
+        MenuSubView menuView;
 		//ProductPageViewController currentController;
 
 		public string saved = "";
@@ -28,7 +29,8 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
             //setting up menuSubview function
-            MenuB9 = new MenuSubView(this, MenuB9, 0).setButton();
+            menuView = new MenuSubView(this, MenuB9, 0);
+            MenuB9 = menuView.setButton();
 
 			//"Tell" the database that which product we are currently viewing.
 			DataSource db = DataSource.getInstance();
@@ -68,6 +70,12 @@ namespace GFS_iOS
 			scrollView.AddSubview (imageView);
 			scrollView.Bounces = false; //We don't want it to "bounce" when it reaches the bottom.
 		}
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 
 		//"Unwind Segue". This occurs after a new saved list is saved from the ProductActionsTableController
 		[Action ("UnwindToProductPageViewController:")]

@@ -8,6 +8,7 @@ namespace GFS_iOS
 	partial class SearchViewController : UIViewController
 	{
 		SearchViewController currentController;
+        MenuSubView menuView;
 
 		public SearchViewController (IntPtr handle) : base (handle)
 		{
@@ -19,7 +20,8 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
             //setting menuSubview function
-            MenuB1 = new MenuSubView(currentController, MenuB1, 64).setButton();
+            menuView = new MenuSubView(currentController, MenuB1, 64);
+            MenuB1 = menuView.setButton();
 
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
@@ -81,6 +83,12 @@ namespace GFS_iOS
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            menuView.clearSubView();
+        }
 
 	}
 
