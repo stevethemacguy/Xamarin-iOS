@@ -15,6 +15,7 @@ namespace GFS_iOS
         MenuTableViewController menuViewController;
         UIViewController controller;
 
+
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
             controller = this;
@@ -35,7 +36,8 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
-            MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
+            MenuButton = new MenuSubView(controller, MenuButton, 64).setButton();
+            ///MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
 			//Create the NavBar image
 			navBar.SetBackgroundImage(UIImage.FromFile("blueX-backround.png"),UIBarMetrics.Default);
 
@@ -83,6 +85,7 @@ namespace GFS_iOS
 
 		}
 
+        /*
         void HandleTouchUpInsideMenuUnclciked(object sender, EventArgs e)
         {
             MenuButton.TouchUpInside -= HandleTouchUpInsideMenuUnclciked;
@@ -112,7 +115,8 @@ namespace GFS_iOS
             MenuButton.TouchUpInside -= HandleTouchUpInsideMenuHide;
             MenuButton.TouchUpInside += HandleTouchUpInsideMenuShow;
         }
-
+        */
+          
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);

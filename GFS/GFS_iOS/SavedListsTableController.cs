@@ -18,6 +18,7 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+            MenuB3 = new MenuSubView(currentController, MenuB3, 0).setButton();
 			SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//Create the table and populate it with two cells

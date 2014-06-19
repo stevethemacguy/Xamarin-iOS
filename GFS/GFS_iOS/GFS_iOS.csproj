@@ -227,6 +227,7 @@
     <Compile Include="HomeScreen.designer.cs">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuSubView.cs" />
     <Compile Include="MenuTableViewController.cs" />
     <Compile Include="MenuTableViewController.designer.cs">
       <DependentUpon>MenuTableViewController.cs</DependentUpon>
