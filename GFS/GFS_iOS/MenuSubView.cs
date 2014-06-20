@@ -51,6 +51,10 @@ namespace GFS_iOS
             parentController.View.AddSubview(menuView);
             parentController.View.AddSubview(img);
             flag = 1;
+
+			//Make Button show the X image once it's pressed.
+			MenuButton.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+			//UIImage.FromFile("menuIconShifted.png")
         }
 
         void HandleTouchUpInsideMenuShow(object sender, EventArgs e)
@@ -59,6 +63,9 @@ namespace GFS_iOS
             menuView.Hidden = false;
             MenuButton.TouchUpInside -= HandleTouchUpInsideMenuShow;
             MenuButton.TouchUpInside += HandleTouchUpInsideMenuHide;
+			//Make Button show the X image once it's pressed.
+			MenuButton.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+			//UIImage.FromFile("menuIconShifted.png")
         }
 
         void HandleTouchUpInsideMenuHide(object sender, EventArgs e)
@@ -67,6 +74,9 @@ namespace GFS_iOS
             menuView.Hidden = true;
             MenuButton.TouchUpInside -= HandleTouchUpInsideMenuHide;
             MenuButton.TouchUpInside += HandleTouchUpInsideMenuShow;
+
+			//Change X image back to the normal menu image
+			MenuButton.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
         }
 
         public void clearSubView()

@@ -214,6 +214,11 @@
     <BundleResource Include="Resources\menuIconShifted%402x.png" />
     <BundleResource Include="Resources\menuIconShifted.png" />
     <BundleResource Include="Resources\favorites-star.png" />
+    <BundleResource Include="Resources\XIcon.png" />
+    <BundleResource Include="Resources\Favorites-star%402x.png" />
+    <BundleResource Include="Resources\XIcon%402x.png" />
+    <BundleResource Include="Resources\XIcon%28big%29.png" />
+    <BundleResource Include="Resources\XIcon%28big%29%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

@@ -2211,8 +2211,10 @@
         <image name="menuIconShifted.png" width="44" height="44"/>
         <image name="menuIconShifted2.png" width="44" height="44"/>
         <image name="greyTrans.png" width="20" height="504"/>
-        <image name="favorites-star(big).png" width="112" height="104"/>
-        <image name="Favorites-star.png" width="194" height="180"/>
+        <image name="favorites-star(big).png" width="224" height="208"/>
+        <image name="Favorites-star.png" width="388" height="360"/>
         <image name="favorites-star.png" width="194" height="180"/>
+        <image name="XIcon.png" width="22" height="22"/>
+        <image name="XIcon(big).png" width="22" height="22"/>
     </resources>
 </document>
