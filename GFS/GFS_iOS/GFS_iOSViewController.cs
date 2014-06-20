@@ -33,42 +33,32 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
-
 			//Create the NavBar image
 			navBar.SetBackgroundImage(UIImage.FromFile("navBarReversed.png"),UIBarMetrics.Default);
-
 			navBar.TintColor = UIColor.White; //Make the text color white.
 			//Make the controller title text white
 			UITextAttributes test = new UITextAttributes();
 			test.TextColor = UIColor.White;
 			navBar.SetTitleTextAttributes(test);
 
-			//Add the new menu button
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+
+			//Create the Menu button
 			menuB1 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
 				(sender, args) => {
-					//When clicked
 					if (menuView.isVisible()) {
 						//Change X image back to the normal menu image
 						menuB1.Image = UIImage.FromFile("menuIconShifted.png");
-						//menuB1.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal, UIBarMetrics.Default);
 					} else {
 						//Make Button show the X image once it's pressed.
 						menuB1.Image = UIImage.FromFile("XIcon.png");
-						//menuB1.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal, UIBarMetrics.Default);
 					}
 					menuView.toggleMenu(this, 64);
 				});
-
+			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB1, true);
-
-			//this.SetNeedsStatusBarAppearanceUpdate();
-
-
-			//this.ParentViewController.NavigationItem.back
-			//HomePageNavItem;
-            // Perform any additional setup after loading the view, typically from a nib.   
 
             //generate main scroll view
             mainScrollView = new UIScrollView(new RectangleF(0, 64, 320, 504));
@@ -107,7 +97,7 @@ namespace GFS_iOS
 		{
 			menuView.toggleMenu(this, 64);
 			//Change X image back to the normal menu image
-			//menuB1.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal, UIBarMetrics.Default);
+			menuB1.Image = UIImage.FromFile("menuIconShifted.png");
 		}
 
 		#endregion
