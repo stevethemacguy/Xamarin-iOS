@@ -14,6 +14,7 @@ namespace GFS_iOS
 		public Boolean addingNote = false; //true if a new note is beeing added.
 		//The NotesViewController is created when a cell row is tapped/clicked. This index is the index of the row that was clicked.
 		public int index; //Value is passed in from NotesTableSource on segue
+		MenuSubView menuView;
 
 		//refrences the table controller. this is passed by NotesTableSource when the table is created and allows us to update the table object
 		public NotesTableController tableController;
@@ -21,6 +22,7 @@ namespace GFS_iOS
         UIImagePickerController picker;
         NotesViewController myController;
 		DataSource data;
+
 		public NotesViewController  (IntPtr handle) : base (handle)
 		{
             myController = this;
@@ -57,6 +59,16 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Manually create a menu button and add it to the right side of the menu bar
+			UIButton menuButton33 = UIButton.FromType(UIButtonType.Custom);
+			menuButton33.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+			menuButton33.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+			this.NavigationController.NavigationBar.Add(menuButton33);
+
+			//set up flyout menuSubview
+			menuView = new MenuSubView(myController, menuButton33, 64);
+			menuButton33 = menuView.setButton();
 
 			//If we're adding a new note, make the text view empty.
 			if (addingNote)

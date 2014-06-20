@@ -26,7 +26,7 @@ namespace GFS_iOS
 			NoteListUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//set up flyout menuSubview
-            menuView = new MenuSubView(this, MenuB2, 0);
+			menuView = new MenuSubView(currentController, MenuB2, 0);
             MenuB2 = menuView.setButton();
 
 			//Create the table and populate it with two cells
@@ -96,6 +96,9 @@ namespace GFS_iOS
 			table.Source = new NotesTableSource(currentController, db.getAllNotes());
 			table.ReloadData();
 			Add(table);
+			//refresh flyout menuSubview
+			//menuView = new MenuSubView(currentController, MenuB2, 0);
+			//MenuB2 = menuView.setButton();
 		}
 
 	}
