@@ -35,13 +35,11 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
 
-			//Get the menu instace
+			//Show Flyout Menu
 			menuView = MenuSubView.getInstance();
-			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			menuView.initializeMenuSubView(controller, MenuButton1, 64);
-			MenuButton1 = menuView.setButton();
-
-            ///MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
+			MenuButton1.TouchUpInside += (sender, e) => {
+				menuView.showMenu(this,MenuButton1, 64);
+			};
 
 			//Create the NavBar image
 			navBar.SetBackgroundImage(UIImage.FromFile("navBarReversed.png"),UIBarMetrics.Default);
@@ -117,7 +115,7 @@ namespace GFS_iOS
 		public override void ViewDidDisappear(bool animated)
 		{
 			base.ViewDidDisappear(animated);
-            menuView.clearSubView();
+			menuView.clearSubView();
 		}
 
 		//"Unwind Segue". 

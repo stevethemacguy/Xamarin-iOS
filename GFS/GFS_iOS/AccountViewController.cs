@@ -31,11 +31,10 @@ namespace GFS_iOS
 			this.NavigationController.NavigationBar.Add(menuButton32);
 
 
-			//Get the menu instace
+			//Show Flyout Menu
 			menuView = MenuSubView.getInstance();
 			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			menuView.initializeMenuSubView(currentController, menuButton32, 64);
-			menuButton32 = menuView.setButton();
+			menuView.showMenu(currentController, menuButton32, 64);
 		}
 	
 	}

@@ -29,11 +29,10 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
-			//Get the menu instace
+			//Show Flyout Menu
 			menuView = MenuSubView.getInstance();
 			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			menuView.initializeMenuSubView(this, MenuB10, 0);
-			MenuB10 = menuView.setButton();
+			menuView.showMenu(this, MenuB10, 0);
 
 			manualProdCell1.BackgroundColor = UIColor.Clear;
 			manualProdCell2.BackgroundColor = UIColor.Clear;

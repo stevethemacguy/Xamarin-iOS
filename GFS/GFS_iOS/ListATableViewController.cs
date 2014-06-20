@@ -28,11 +28,10 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			//Get the menu instace
+			//Show Flyout Menu
 			menuView = MenuSubView.getInstance();
 			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			menuView.initializeMenuSubView(controller, MenuB5, 64);
-			MenuB5 = menuView.setButton();
+			menuView.showMenu(tableController, MenuB5, 64);
 
 			if (prodMap.ContainsKey(rowName)) {
 				prodList = prodMap[rowName]; //Retrieve a List<Product> from the map using the row name as a key
