@@ -128,7 +128,7 @@ namespace GFS_iOS
 		[Action ("UnwindToHome:")]
 		public void UnwindToHome (UIStoryboardSegue segue)
 		{
-			menuView.clearSubView();
+			menuView.toggleMenu(this, 64);
 			//Change X image back to the normal menu image
 			MenuB41.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 		}

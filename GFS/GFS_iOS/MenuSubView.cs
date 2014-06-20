@@ -44,7 +44,9 @@ namespace GFS_iOS
 		{
 			//if the menu is visible, then hide it
 			if (menuIsVisible) {
-				clearSubView();
+				transaparentBackground.Hidden = true;
+				menuView.Hidden = true;
+				menuIsVisible = false;
 				return;
 			} 
 			//Otherwise, show the menu
@@ -65,15 +67,6 @@ namespace GFS_iOS
 				parentController.View.AddSubview(transaparentBackground);
 				menuIsVisible = true;
 			}
-		}
-
-		public void clearSubView()
-		{
-			if (menuIsVisible) {
-				transaparentBackground.Hidden = true;
-				menuView.Hidden = true;
-				menuIsVisible = false;
-			} 
 		}
     }
 }
