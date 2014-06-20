@@ -16,20 +16,8 @@
                     </view>
                     <connections>
                         <outlet property="MenuButton" destination="59" id="name-outlet-59"/>
-                        <outlet property="MenuB41" destination="1919" id="name-outlet-1919"/>
                     </connections>
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
-                        <barButtonItem style="plain" id="1922" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1919" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="" backgroundImage="menuIconShifted.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -12,7 +12,7 @@ namespace GFS_iOS
         UIImageView imageView;
         UIScrollView mainScrollView;
         MenuSubView menuView;
-
+		UIBarButtonItem menuB1;
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -35,17 +35,6 @@ namespace GFS_iOS
 
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			MenuB41.TouchUpInside += (sender, e) => {
-				if (menuView.isVisible())
-				{
-					//Change X image back to the normal menu image
-					MenuB41.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-				}else{
-					//Make Button show the X image once it's pressed.
-					MenuB41.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-				}
-				menuView.toggleMenu(this, 64);
-			};
 
 			//Create the NavBar image
 			navBar.SetBackgroundImage(UIImage.FromFile("navBarReversed.png"),UIBarMetrics.Default);
@@ -57,13 +46,22 @@ namespace GFS_iOS
 			navBar.SetTitleTextAttributes(test);
 
 			//Add the new menu button
-//			this.NavigationItem.SetRightBarButtonItem(
-//				new UIBarButtonItem(UIImage.FromFile("menuButton.png")
-//					, UIBarButtonItemStyle.Plain
-//					, (sender,args) => {
-//						// button was clicked
-//					})
-//				, true);
+			menuB1 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				(sender, args) => {
+					//When clicked
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB1.Image = UIImage.FromFile("menuIconShifted.png");
+						//menuB1.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal, UIBarMetrics.Default);
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB1.Image = UIImage.FromFile("XIcon.png");
+						//menuB1.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal, UIBarMetrics.Default);
+					}
+					menuView.toggleMenu(this, 64);
+				});
+
+			this.NavigationItem.SetRightBarButtonItem(menuB1, true);
 
 			//this.SetNeedsStatusBarAppearanceUpdate();
 
@@ -109,7 +107,7 @@ namespace GFS_iOS
 		{
 			menuView.toggleMenu(this, 64);
 			//Change X image back to the normal menu image
-			MenuB41.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+			//menuB1.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal, UIBarMetrics.Default);
 		}
 
 		#endregion

@@ -10,7 +10,10 @@ namespace GFS_iOS
 	{
         MenuSubView menuView;
 		UIButton MenuB71;
-		public Boolean fromSegue = false; //Used when seguing from the "search" icon when typing in the NotesViewController
+		public Boolean fromSegue = false;
+		UIBarButtonItem menuB3;
+
+ //Used when seguing from the "search" icon when typing in the NotesViewController
 		
         public SearchResultsTableController (IntPtr handle) : base (handle)
 		{
@@ -38,39 +41,55 @@ namespace GFS_iOS
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchResultsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
-			//Manually create a menu button and add it to the right side of the menu bar
-			MenuB71 = UIButton.FromType(UIButtonType.Custom);
-			MenuB71.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-			MenuB71.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
-			this.NavigationController.NavigationBar.Add(MenuB71);
-
-			//Initialize Flyout Menu
+//			//Manually create a menu button and add it to the right side of the menu bar
+//			MenuB71 = UIButton.FromType(UIButtonType.Custom);
+//			MenuB71.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+//			MenuB71.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+//			this.NavigationController.NavigationBar.Add(MenuB71);
+//
+//			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			MenuB71.TouchUpInside += (sender, e) => {
-				if (menuView.isVisible())
-				{  
-					//Change X image back to the normal menu image
-					MenuB71.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-				}else{
-					//Make Button show the X image once it's pressed.
-					MenuB71.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-				}
-				menuView.toggleMenu(this, 0);
-			};
+//			MenuB71.TouchUpInside += (sender, e) => {
+//				if (menuView.isVisible())
+//				{  
+//					//Change X image back to the normal menu image
+//					MenuB71.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+//				}else{
+//					//Make Button show the X image once it's pressed.
+//					MenuB71.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+//				}
+//				menuView.toggleMenu(this, 0);
+			//};
+
+			//Add the new menu button
+			menuB3 = new UIBarButtonItem(UIImage.FromFile("green-arrow.png"), UIBarButtonItemStyle.Plain, 
+				(sender, args) => {
+					//When clicked
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						//	menuB1.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal, UIBarMetrics.Default);
+					} else {
+						//Make Button show the X image once it's pressed.
+						//	menuB1.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal, UIBarMetrics.Default);
+					}
+					menuView.toggleMenu(this, 64);
+				});
+
+			this.NavigationItem.SetRightBarButtonItem(menuB3, true);
 
 		}
 
 		//Show the Menu Button
 		public override void ViewWillAppear(bool animated)
 		{
-			MenuB71.Hidden = false;
+			//	MenuB71.Hidden = false;
 		}
 
 		//Show the Menu Button
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-			MenuB71.Hidden = true;
+			//	MenuB71.Hidden = true;
         }
 	}
 }

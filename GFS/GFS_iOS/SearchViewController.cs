@@ -12,6 +12,8 @@ namespace GFS_iOS
 		SearchViewController currentController;
         MenuSubView menuView;
 
+		UIBarButtonItem menuB2;
+
 		public SearchViewController (IntPtr handle) : base (handle)
 		{
 			currentController = this;
@@ -24,26 +26,42 @@ namespace GFS_iOS
 			this.NavigationItem.HidesBackButton = true;
 
 			//Manually create a menu button and add it to the right side of the menu bar
-			menuButton31 = UIButton.FromType(UIButtonType.Custom);
-			menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-			menuButton31.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
-			this.NavigationController.NavigationBar.Add(menuButton31);
-
+//			menuButton31 = UIButton.FromType(UIButtonType.Custom);
+//			menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+//			menuButton31.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+//			this.NavigationController.NavigationBar.Add(menuButton31);
+//
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			menuButton31.TouchUpInside += (sender, e) => {
-				if (menuView.isVisible())
-				{
-					//Change X image back to the normal menu image
-					menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-				}else{
-					//Make Button show the X image once it's pressed.
-					menuButton31.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-				}
-				menuView.toggleMenu(this, 64);
-				//Dismiss the keyboard when the menu button is pressed.
-				SearchBar.ResignFirstResponder();
-			};
+//			menuButton31.TouchUpInside += (sender, e) => {
+//				if (menuView.isVisible())
+//				{
+//					//Change X image back to the normal menu image
+//					menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+//				}else{
+//					//Make Button show the X image once it's pressed.
+//					menuButton31.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+//				}
+//				menuView.toggleMenu(this, 64);
+//				//Dismiss the keyboard when the menu button is pressed.
+//				SearchBar.ResignFirstResponder();
+//			};
+
+			//Add the new menu button
+			menuB2 = new UIBarButtonItem(UIImage.FromFile("cross.png"), UIBarButtonItemStyle.Plain, 
+				(sender, args) => {
+					//When clicked
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						//	menuB1.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal, UIBarMetrics.Default);
+					} else {
+						//Make Button show the X image once it's pressed.
+						//	menuB1.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal, UIBarMetrics.Default);
+					}
+					menuView.toggleMenu(this, 64);
+				});
+
+			this.NavigationItem.SetRightBarButtonItem(menuB2, true);
 
 
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
@@ -109,14 +127,14 @@ namespace GFS_iOS
 		//Show the Menu Button
 		public override void ViewWillAppear(bool animated)
 		{
-			menuButton31.Hidden = false;
+			//menuButton31.Hidden = false;
 		}
 
 		//Hide the Menu Button since we now have duplicates
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-			menuButton31.Hidden = true;
+			//menuButton31.Hidden = true;
 			//Remove the button from the navbar. Otherwise it will appear as a double button when the next view is pushed!
 			//this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
         }

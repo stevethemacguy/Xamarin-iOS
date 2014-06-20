@@ -14,16 +14,8 @@ namespace GFS_iOS
 	[Register ("GFS_iOSViewController")]
 	partial class GFS_iOSViewController
 	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIButton MenuB41 { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (MenuB41 != null) {
-				MenuB41.Dispose ();
-				MenuB41 = null;
-			}
 		}
 	}
 }
