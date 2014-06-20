@@ -213,6 +213,7 @@
     <BundleResource Include="Resources\menuButton%402x.png" />
     <BundleResource Include="Resources\menuIconShifted%402x.png" />
     <BundleResource Include="Resources\menuIconShifted.png" />
+    <BundleResource Include="Resources\favorites-star.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

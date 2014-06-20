@@ -117,7 +117,12 @@ namespace GFS_iOS
             menuView.clearSubView();
 		}
 
-		#endregion
+		//"Unwind Segue". 
+		[Action ("UnwindToHome:")]
+		public void UnwindToHome (UIStoryboardSegue segue)
+		{
+			//do nothing
+		}
 	}
 }
 

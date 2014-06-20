@@ -155,7 +155,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="110" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="saved-list-icon.png">
-                                                    <rect key="frame" x="25" y="22" width="25" height="25"/>
+                                                    <rect key="frame" x="25" y="22" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -214,6 +214,31 @@
                                             <segue destination="176" kind="push" id="188"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1965" reuseIdentifier="searchcell">
+                                        <rect key="frame" x="0.0" y="390" width="320" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1965" id="1968">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What's New" lineBreakMode="tailTruncation" minimumFontSize="10" id="1969" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="75" y="24" width="144" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1970" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="favorites-star.png">
+                                                    <rect key="frame" x="23" y="19" width="28" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1967" kind="push" id="1966"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -233,6 +258,7 @@
                         <outlet property="SavedListsCell" destination="107" id="name-outlet-107"/>
                         <outlet property="SavedManualsCell" destination="111" id="name-outlet-111"/>
                         <outlet property="YourAccountCell" destination="115" id="name-outlet-115"/>
+                        <outlet property="HomeCell" destination="1965" id="name-outlet-1965"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2173,5 +2199,8 @@
         <image name="menuIconShifted.png" width="44" height="44"/>
         <image name="menuIconShifted2.png" width="44" height="44"/>
         <image name="greyTrans.png" width="20" height="504"/>
+        <image name="favorites-star(big).png" width="112" height="104"/>
+        <image name="Favorites-star.png" width="194" height="180"/>
+        <image name="favorites-star.png" width="194" height="180"/>
     </resources>
 </document>
