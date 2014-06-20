@@ -19,7 +19,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 			cartUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
-		
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
 			//Manually create a menu button and add it to the right side of the menu bar
 			UIButton menuButton33 = UIButton.FromType(UIButtonType.Custom);
 			menuButton33.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);

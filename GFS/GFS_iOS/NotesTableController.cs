@@ -25,6 +25,9 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			NoteListUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
 			//set up flyout menuSubview
 			menuView = new MenuSubView(currentController, MenuB2, 0);
             MenuB2 = menuView.setButton();

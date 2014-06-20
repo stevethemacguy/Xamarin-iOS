@@ -12,10 +12,12 @@ namespace GFS_iOS
 		//TextInputController currentController;
 		public bool failed = false;
 		public string newList = "";
+		TextInputController currentController;
+		MenuSubView menuView;
 
 		public TextInputController (IntPtr handle) : base (handle)
 		{
-			//	currentController = this;
+			currentController = this;
 		}
 
 		//Creates a new list from the text entered and adds it to the data source. If the text is empty, does nothing.
@@ -90,6 +92,17 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Manually create a menu button and add it to the right side of the menu bar
+			UIButton menuButton34 = UIButton.FromType(UIButtonType.Custom);
+			menuButton34.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+			menuButton34.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+			this.NavigationController.NavigationBar.Add(menuButton34);
+
+			//set up flyout menuSubview
+			menuView = new MenuSubView(currentController, menuButton34, 64);
+			menuButton34 = menuView.setButton();
+
 			InputUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 			ListInputField.BecomeFirstResponder(); //Put the users cursor in the text field
 

@@ -19,6 +19,8 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
 
 			//Manually create a menu button and add it to the right side of the menu bar
 			UIButton menuButton31 = UIButton.FromType(UIButtonType.Custom);

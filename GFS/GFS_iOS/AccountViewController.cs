@@ -21,6 +21,9 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			accountUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
 			//Manually create a menu button and add it to the right side of the menu bar
 			UIButton menuButton32 = UIButton.FromType(UIButtonType.Custom);
 			menuButton32.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);

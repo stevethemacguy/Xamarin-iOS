@@ -26,6 +26,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
 			//set up flyout menuSubview
             menuView = new MenuSubView(this, MenuB10, 0);
             MenuB10 = menuView.setButton();

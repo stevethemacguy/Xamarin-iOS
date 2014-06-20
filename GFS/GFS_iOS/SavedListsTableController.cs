@@ -19,6 +19,10 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
             menuView = new MenuSubView(currentController, MenuB3, 0);
             MenuB3 = menuView.setButton();
 			
