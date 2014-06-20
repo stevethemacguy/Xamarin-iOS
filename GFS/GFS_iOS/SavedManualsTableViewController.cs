@@ -12,6 +12,7 @@ namespace GFS_iOS
 		Boolean showFirst; //Controls whether the first PDF Manual Row is hidden
 		Boolean showSecond; //Controls whether the second PDF Manual Row is hidden
 		private List<String> manualList; //A list of all the products in the "database"
+        MenuSubView menuView;
 
 		public SavedManualsTableViewController (IntPtr handle) : base (handle)
 		{
@@ -24,6 +25,24 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			MenuB10.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					MenuB10.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					MenuB10.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
+				menuView.toggleMenu(this, 0);
+			};
+
 
 			manualProdCell1.BackgroundColor = UIColor.Clear;
 			manualProdCell2.BackgroundColor = UIColor.Clear;
@@ -70,9 +89,6 @@ namespace GFS_iOS
 						manProd2Class.Text = "XPE 105";
 					}
 				}
-
-				//
-
 			}
 		}
 	}

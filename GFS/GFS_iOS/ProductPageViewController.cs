@@ -11,7 +11,8 @@ namespace GFS_iOS
 		UIScrollView scrollView;
 		UIImageView imageView;
 		public Boolean fromActionsPage = false; //True if this view is being "loaded" from the actions page (i.e. it's parent controller is TextInputController)
-		UIBarButtonItem mainMenuButton;
+		//UIBarButtonItem mainMenuButton;
+        MenuSubView menuView;
 		//ProductPageViewController currentController;
 
 		public string saved = "";
@@ -19,13 +20,28 @@ namespace GFS_iOS
 		public ProductPageViewController (IntPtr handle) : base (handle)
 		{
 			//	currentController = this;
-			mainMenuButton = new UIBarButtonItem();
-			mainMenuButton.Title = "Menu";
+			//mainMenuButton = new UIBarButtonItem();
+			//mainMenuButton.Title = "Menu";
 		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			MenuB9.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					MenuB9.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					MenuB9.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
+				menuView.toggleMenu(this, 64);
+			};
+
 			//"Tell" the database that which product we are currently viewing.
 			DataSource db = DataSource.getInstance();
 			db.currentProduct = "product1";

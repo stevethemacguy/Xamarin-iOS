@@ -12,10 +12,11 @@ namespace GFS_iOS
 		//TextInputController currentController;
 		public bool failed = false;
 		public string newList = "";
+		MenuSubView menuView;
+		UIButton menuButton34;
 
 		public TextInputController (IntPtr handle) : base (handle)
 		{
-			//	currentController = this;
 		}
 
 		//Creates a new list from the text entered and adds it to the data source. If the text is empty, does nothing.
@@ -66,14 +67,15 @@ namespace GFS_iOS
 						"Price: $8,272.03", "Prod2Segue"));
 				}
 
-				foreach (var entry in prodMap){
-					Product[] values = entry.Value.ToArray();
-					Console.WriteLine("key: {0}", entry.Key); 
-					foreach(Product st in values)
-					{
-						Console.WriteLine(st.ToString());
-					}
-				}
+				//Write out the map values
+//				foreach (var entry in prodMap){
+//					Product[] values = entry.Value.ToArray();
+//					Console.WriteLine("key: {0}", entry.Key); 
+//					foreach(Product st in values)
+//					{
+//						Console.WriteLine(st.ToString());
+//					}
+//				}
 			}
 		}
 
@@ -89,6 +91,28 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Manually create a menu button and add it to the right side of the menu bar
+			menuButton34 = UIButton.FromType(UIButtonType.Custom);
+			menuButton34.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+			menuButton34.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+			this.NavigationController.NavigationBar.Add(menuButton34);
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			menuButton34.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					menuButton34.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					menuButton34.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
+				menuView.toggleMenu(this, 64);
+				ListInputField.ResignFirstResponder();
+			};
+
 			InputUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 			ListInputField.BecomeFirstResponder(); //Put the users cursor in the text field
 
@@ -146,5 +170,16 @@ namespace GFS_iOS
 //			};
 		}
 
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear(animated);
+			menuButton34.Hidden = true;
+		}
+
+		//Show the Menu Button
+		public override void ViewWillAppear(bool animated)
+		{
+			menuButton34.Hidden = false;
+		}
 	}
 }

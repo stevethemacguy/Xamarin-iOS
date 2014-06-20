@@ -10,6 +10,7 @@ namespace GFS_iOS
 	{
 		UIScrollView scrollView;
 		UIImageView imageView;
+        MenuSubView menuView;
 
 		public ProductPageViewController2 (IntPtr handle) : base (handle)
 		{
@@ -18,6 +19,20 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			MenuB16.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					MenuB16.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					MenuB16.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
+				menuView.toggleMenu(this, 64);
+			};
 
 			//"Tell" the database that which product we are currently viewing.
 			DataSource db = DataSource.getInstance();

@@ -29,6 +29,7 @@ namespace GFS_iOS
 			SavedListsCell.BackgroundColor = UIColor.Clear;
 			SavedManualsCell.BackgroundColor = UIColor.Clear;
 			YourAccountCell.BackgroundColor = UIColor.Clear;
+			HomeCell.BackgroundColor = UIColor.Clear;
 
 			//Set Background to a solid color. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			//MenuView.BackgroundColor = UIColor.FromRGB (60,100,100);

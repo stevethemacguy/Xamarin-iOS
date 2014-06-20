@@ -11,7 +11,8 @@ namespace GFS_iOS
 		public UITableView table;
 		//Each string is the text of one note. The Strings "match" to a table row by their index. So cell0 will have note[0] for it's text.
 		DataSource db;
-		NotesTableController currentController; 
+		NotesTableController currentController;
+        MenuSubView menuView;
 
 		public NotesTableController (IntPtr handle) : base (handle)
 		{
@@ -24,6 +25,23 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			NoteListUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			MenuB2.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					MenuB2.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					MenuB2.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
+				menuView.toggleMenu(this, 0);
+			};
+
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
@@ -35,23 +53,10 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
-			//Add Menu Button to the right
-//			UIBarButtonItem MenuButton = new UIBarButtonItem();
-//			MenuButton.Title = "Menu";
-//			this.NavigationItem.SetRightBarButtonItem(MenuButton, false);
-
-
 			//Use System Add Note
 			var AddNoteButton = new UIBarButtonItem(UIBarButtonSystemItem.Compose);
 			//AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
 			this.NavigationItem.SetLeftBarButtonItem(AddNoteButton, false);
-
-			//Create the Add note button and add it to the toolbar
-//			UIBarButtonItem AddNoteButton = new UIBarButtonItem();
-//			AddNoteButton.Image = UIImage.FromFile("cross-medium.png");
-//			AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
-//			this.NavigationItem.SetLeftBarButtonItem(AddNoteButton, false);
-
 
 			//When the Add button is pressed, "Create" a new note.
 			AddNoteButton.Clicked += (o,s) => {
@@ -86,6 +91,5 @@ namespace GFS_iOS
 			table.ReloadData();
 			Add(table);
 		}
-
 	}
 }

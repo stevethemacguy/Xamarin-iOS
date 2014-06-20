@@ -1,1 +1,2 @@
-Build 33.0
+Added menu button to navigation bar. 
+Known issue: Menu button occasionally doesn't respond after changing views multiple times.

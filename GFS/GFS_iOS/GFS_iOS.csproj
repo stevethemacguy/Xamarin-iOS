@@ -205,10 +205,20 @@
     <BundleResource Include="Resources\camera-icon.png" />
     <BundleResource Include="Resources\cross-medium.png" />
     <BundleResource Include="Resources\cross-medium%402x.png" />
-    <BundleResource Include="Resources\navBarBackground.png" />
-    <BundleResource Include="Resources\navBarBackground%402x.png" />
-    <BundleResource Include="Resources\navBarBackground%28small%29%402x.png" />
-    <BundleResource Include="Resources\blueX-backround%28small%29.png" />
+    <BundleResource Include="Resources\navBar44.png" />
+    <BundleResource Include="Resources\navBar44%402x.png" />
+    <BundleResource Include="Resources\navBarReversed.png" />
+    <BundleResource Include="Resources\navBarReversed%402x.png" />
+    <BundleResource Include="Resources\menuButton.png" />
+    <BundleResource Include="Resources\menuButton%402x.png" />
+    <BundleResource Include="Resources\menuIconShifted%402x.png" />
+    <BundleResource Include="Resources\menuIconShifted.png" />
+    <BundleResource Include="Resources\favorites-star.png" />
+    <BundleResource Include="Resources\XIcon.png" />
+    <BundleResource Include="Resources\Favorites-star%402x.png" />
+    <BundleResource Include="Resources\XIcon%402x.png" />
+    <BundleResource Include="Resources\XIcon%28big%29.png" />
+    <BundleResource Include="Resources\XIcon%28big%29%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -228,6 +238,7 @@
     <Compile Include="HomeScreen.designer.cs">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuSubView.cs" />
     <Compile Include="MenuTableViewController.cs" />
     <Compile Include="MenuTableViewController.designer.cs">
       <DependentUpon>MenuTableViewController.cs</DependentUpon>
@@ -347,5 +358,6 @@
     <BundleResource Include="Resources\itemlists.png" />
     <BundleResource Include="Resources\itemlists%402x.png" />
     <BundleResource Include="Resources\magnifying-glass-small.png" />
+    <BundleResource Include="Resources\greyTrans.png" />
   </ItemGroup>
 </Project>

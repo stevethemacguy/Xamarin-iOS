@@ -9,6 +9,7 @@ namespace GFS_iOS
 	{
 		public UITableView table;
 		SavedListsTableController currentController;
+        MenuSubView menuView;
 
 		public SavedListsTableController (IntPtr handle) : base (handle)
 		{
@@ -18,7 +19,25 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			MenuB3.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					MenuB3.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					MenuB3.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
+				menuView.toggleMenu(this, 0);
+			};
+
+            SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style

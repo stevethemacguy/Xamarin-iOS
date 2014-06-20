@@ -24,6 +24,14 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UIButton ClearButton { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MonoTouch.UIKit.UITableViewCell HomeCell { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableView MenuView { get; set; }
 
 		[Outlet]
@@ -75,6 +83,14 @@ namespace GFS_iOS
 			if (CartCell != null) {
 				CartCell.Dispose ();
 				CartCell = null;
+			}
+			if (ClearButton != null) {
+				ClearButton.Dispose ();
+				ClearButton = null;
+			}
+			if (HomeCell != null) {
+				HomeCell.Dispose ();
+				HomeCell = null;
 			}
 			if (MenuView != null) {
 				MenuView.Dispose ();

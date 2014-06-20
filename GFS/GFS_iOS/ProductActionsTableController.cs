@@ -12,6 +12,7 @@ namespace GFS_iOS
 	{
 		public ProductActionsTableController actionsTable; //The current controller
 		public HashSet<string> actionList;
+		MenuSubView menuView;
 
 		public ProductActionsTableController (IntPtr handle) : base (handle)
 		{
@@ -27,6 +28,20 @@ namespace GFS_iOS
 			//actionCell4.BackgroundColor = UIColor.Clear;
 			//actionCell5.BackgroundColor = UIColor.Clear;
 			actionsView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			MenuB8.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					MenuB8.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					MenuB8.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
+				menuView.toggleMenu(this, 0);
+			};
 
 			DownloadButton.TouchUpInside += (o,s) => {
 				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");
@@ -134,14 +149,15 @@ namespace GFS_iOS
 								"Price: $8,272.03", "Prod2Segue"));
 						}
 
-						foreach (var entry in prodMap){
-							Product[] values = entry.Value.ToArray();
-							Console.WriteLine("key: {0}", entry.Key); 
-							foreach(Product st in values)
-							{
-								Console.WriteLine(st.ToString());
-							}
-						}
+						//Write out the map values
+//						foreach (var entry in prodMap){
+//							Product[] values = entry.Value.ToArray();
+//							Console.WriteLine("key: {0}", entry.Key); 
+//							foreach(Product st in values)
+//							{
+//								Console.WriteLine(st.ToString());
+//							}
+//						}
 						//Console.WriteLine(selectedItem + " was clicked.");
 						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
 					}

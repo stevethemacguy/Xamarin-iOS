@@ -16,13 +16,13 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIButton MenuButton { get; set; }
+		MonoTouch.UIKit.UIButton MenuB41 { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (MenuButton != null) {
-				MenuButton.Dispose ();
-				MenuButton = null;
+			if (MenuB41 != null) {
+				MenuB41.Dispose ();
+				MenuB41 = null;
 			}
 		}
 	}

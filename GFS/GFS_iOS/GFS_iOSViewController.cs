@@ -11,6 +11,7 @@ namespace GFS_iOS
         UIScrollView scrollView;
         UIImageView imageView;
         UIScrollView mainScrollView;
+        MenuSubView menuView;
 
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
@@ -31,14 +32,38 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			MenuB41.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					MenuB41.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					MenuB41.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
+				menuView.toggleMenu(this, 64);
+			};
+
 			//Create the NavBar image
-			navBar.SetBackgroundImage(UIImage.FromFile("blueX-backround(small).png"),UIBarMetrics.Default);
+			navBar.SetBackgroundImage(UIImage.FromFile("navBarReversed.png"),UIBarMetrics.Default);
 
 			navBar.TintColor = UIColor.White; //Make the text color white.
 			//Make the controller title text white
 			UITextAttributes test = new UITextAttributes();
 			test.TextColor = UIColor.White;
 			navBar.SetTitleTextAttributes(test);
+
+			//Add the new menu button
+//			this.NavigationItem.SetRightBarButtonItem(
+//				new UIBarButtonItem(UIImage.FromFile("menuButton.png")
+//					, UIBarButtonItemStyle.Plain
+//					, (sender,args) => {
+//						// button was clicked
+//					})
+//				, true);
 
 			//this.SetNeedsStatusBarAppearanceUpdate();
 
@@ -78,24 +103,13 @@ namespace GFS_iOS
 
 		}
 
-		public override void ViewWillAppear(bool animated)
+		//"Unwind Segue". 
+		[Action ("UnwindToHome:")]
+		public void UnwindToHome (UIStoryboardSegue segue)
 		{
-			base.ViewWillAppear(animated);
-		}
-
-		public override void ViewDidAppear(bool animated)
-		{
-			base.ViewDidAppear(animated);
-		}
-
-		public override void ViewWillDisappear(bool animated)
-		{
-			base.ViewWillDisappear(animated);
-		}
-
-		public override void ViewDidDisappear(bool animated)
-		{
-			base.ViewDidDisappear(animated);
+			menuView.toggleMenu(this, 64);
+			//Change X image back to the normal menu image
+			MenuB41.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 		}
 
 		#endregion
