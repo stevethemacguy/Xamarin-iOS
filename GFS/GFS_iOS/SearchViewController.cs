@@ -32,6 +32,11 @@ namespace GFS_iOS
 			menuView = new MenuSubView(currentController, menuButton31, 64);
 			menuButton31 = menuView.setButton();
 
+			//Dismiss the keyboard when the menu button is pressed.
+			menuButton31.TouchUpInside += (sender, e) => {
+				SearchBar.ResignFirstResponder();
+			};
+
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 

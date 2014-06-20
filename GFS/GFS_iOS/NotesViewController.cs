@@ -70,6 +70,11 @@ namespace GFS_iOS
 			menuView = new MenuSubView(myController, menuButton33, 64);
 			menuButton33 = menuView.setButton();
 
+			//Dismiss the keyboard when the menu button is pressed.
+			menuButton33.TouchUpInside += (sender, e) => {
+				NoteTextView.ResignFirstResponder();
+			};
+
 			//If we're adding a new note, make the text view empty.
 			if (addingNote)
 			{

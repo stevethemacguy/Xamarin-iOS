@@ -103,6 +103,11 @@ namespace GFS_iOS
 			menuView = new MenuSubView(currentController, menuButton34, 64);
 			menuButton34 = menuView.setButton();
 
+			//Dismiss the keyboard when the menu button is pressed.
+			menuButton34.TouchUpInside += (sender, e) => {
+				ListInputField.ResignFirstResponder();
+			};
+
 			InputUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 			ListInputField.BecomeFirstResponder(); //Put the users cursor in the text field
 
