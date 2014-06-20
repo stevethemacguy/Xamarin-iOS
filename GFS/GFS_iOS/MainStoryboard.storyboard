@@ -16,7 +16,7 @@
                     </view>
                     <connections>
                         <outlet property="MenuButton" destination="59" id="name-outlet-59"/>
-                        <outlet property="MenuButton1" destination="1919" id="name-outlet-1919"/>
+                        <outlet property="MenuB41" destination="1919" id="name-outlet-1919"/>
                     </connections>
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
                         <barButtonItem style="plain" id="1922" key="rightBarButtonItem">
@@ -246,7 +246,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="1967" kind="push" id="1966"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -782,22 +781,9 @@
                         <outlet property="EndOfContentCellBorder" destination="276" id="name-outlet-276"/>
                         <outlet property="SearchResultsUIView" destination="209" id="name-outlet-209"/>
                         <outlet property="LoadResultsCell" destination="236" id="name-outlet-236"/>
-                        <outlet property="MenuB7" destination="1819" id="name-outlet-1819"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="Search Results" id="1797" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1820" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1819" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="" backgroundImage="menuIconShifted.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1828" kind="unwind" unwindAction="UnwindToMenu:" id="1837"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="214" userLabel="First Responder" sceneMemberID="firstResponder"/>

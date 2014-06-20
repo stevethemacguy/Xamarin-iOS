@@ -25,11 +25,20 @@ namespace GFS_iOS
 			UIButton menuButton33 = UIButton.FromType(UIButtonType.Custom);
 			menuButton33.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 			menuButton33.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+			menuButton33.Tag = 1;
 			this.NavigationController.NavigationBar.Add(menuButton33);
 
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
 			menuButton33.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					menuButton33.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					menuButton33.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
 				menuView.toggleMenu(this, 64);
 			};
 		}
@@ -37,7 +46,8 @@ namespace GFS_iOS
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-            menuView.clearSubView();
+			this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
+            //menuView.clearSubView()();
         }
 	}
 }

@@ -40,10 +40,6 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIButton MenuB7 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UITableViewCell Result1 { get; set; }
 
 		[Outlet]
@@ -91,10 +87,6 @@ namespace GFS_iOS
 			if (LoadResultsCell != null) {
 				LoadResultsCell.Dispose ();
 				LoadResultsCell = null;
-			}
-			if (MenuB7 != null) {
-				MenuB7.Dispose ();
-				MenuB7 = null;
 			}
 			if (Result1 != null) {
 				Result1.Dispose ();

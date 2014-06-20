@@ -16,12 +16,13 @@ namespace GFS_iOS
         UIViewController parentController;
         UIViewController menuViewController;
         UIView menuView;
-        UIImageView img;
-		private Boolean menuIsVisible = false;
+		UIImageView transaparentBackground;
+		private Boolean menuIsVisible;
 
 		//Can't be instantiated except by the getInstance method
 		protected MenuSubView()
         {
+			menuIsVisible = false;
         }
 
 		public Boolean isVisible()
@@ -38,13 +39,12 @@ namespace GFS_iOS
 			return instance;
 		}
 
+		//startingY coordinate will be either 0 or 64
 		public void toggleMenu(UIViewController viewController, int startingY)
 		{
 			//if the menu is visible, then hide it
 			if (menuIsVisible) {
-				img.Hidden = true;
-				menuView.Hidden = true;
-				menuIsVisible = false;
+				clearSubView();
 				return;
 			} 
 			//Otherwise, show the menu
@@ -55,18 +55,14 @@ namespace GFS_iOS
 					"menuTable"
 				);
 
-				//Y coordinate will be either 0 or 64
 				parentController = viewController;
-
 				menuViewController.View.Frame = new RectangleF(20, startingY, 300, 504);
 				menuView = menuViewController.View;
-				img = new UIImageView(UIImage.FromFile("greyTrans.png"));
-				img.Frame = new RectangleF(0, startingY, 20, 504);
-				img.Hidden = false;
-				menuView.Hidden = false;
+				transaparentBackground = new UIImageView(UIImage.FromFile("greyTrans.png"));
+				transaparentBackground.Frame = new RectangleF(0, startingY, 20, 504);
 				parentController.AddChildViewController(menuViewController);
 				parentController.View.AddSubview(menuView);
-				parentController.View.AddSubview(img);
+				parentController.View.AddSubview(transaparentBackground);
 				menuIsVisible = true;
 			}
 		}
@@ -74,7 +70,7 @@ namespace GFS_iOS
 		public void clearSubView()
 		{
 			if (menuIsVisible) {
-				img.Hidden = true;
+				transaparentBackground.Hidden = true;
 				menuView.Hidden = true;
 				menuIsVisible = false;
 			} 

@@ -8,6 +8,7 @@ namespace GFS_iOS
 {
 	partial class SearchViewController : UIViewController
 	{
+		UIButton menuButton31;
 		SearchViewController currentController;
         MenuSubView menuView;
 
@@ -23,14 +24,23 @@ namespace GFS_iOS
 			this.NavigationItem.HidesBackButton = true;
 
 			//Manually create a menu button and add it to the right side of the menu bar
-			UIButton menuButton31 = UIButton.FromType(UIButtonType.Custom);
+			menuButton31 = UIButton.FromType(UIButtonType.Custom);
 			menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 			menuButton31.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+			menuButton31.Tag = 1;
 			this.NavigationController.NavigationBar.Add(menuButton31);
 
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
 			menuButton31.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					menuButton31.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
 				menuView.toggleMenu(this, 64);
 				//Dismiss the keyboard when the menu button is pressed.
 				SearchBar.ResignFirstResponder();
@@ -100,6 +110,8 @@ namespace GFS_iOS
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
+			//Remove the button from the navbar. Otherwise it will appear as a double button when the next view is pushed!
+			this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
         }
 	}
 
@@ -137,10 +149,9 @@ namespace GFS_iOS
 			UIStoryboard test = UIStoryboard.FromName("MainStoryboard", null); 
 
 			//Get the searchResultsController View Controller 
-			UIViewController ok = (UIViewController) test.InstantiateViewController(  
+			SearchResultsTableController ok = (SearchResultsTableController) test.InstantiateViewController(  
 				"searchResultsController"
 			);
-
 			//Segue to the new View
 		    controller.NavigationController.PushViewController(ok, true);
 		}

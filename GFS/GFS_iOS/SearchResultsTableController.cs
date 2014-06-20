@@ -2,6 +2,7 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
+using System.Drawing;
 
 namespace GFS_iOS
 {
@@ -23,9 +24,25 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+			//Manually create a menu button and add it to the right side of the menu bar
+			UIButton MenuB71 = UIButton.FromType(UIButtonType.Custom);
+			MenuB71.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+			MenuB71.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+			MenuB71.Tag = 1;
+			this.NavigationController.NavigationBar.Add(MenuB71);
+
+
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			MenuB7.TouchUpInside += (sender, e) => {
+			MenuB71.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{  
+					//Change X image back to the normal menu image
+					MenuB71.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					MenuB71.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
 				menuView.toggleMenu(this, 0);
 			};
 
@@ -49,7 +66,8 @@ namespace GFS_iOS
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-            menuView.clearSubView();
+			this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
+            //menuView.clearSubView()();
         }
 	}
 }

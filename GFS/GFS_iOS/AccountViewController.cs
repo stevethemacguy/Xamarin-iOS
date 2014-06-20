@@ -31,6 +31,14 @@ namespace GFS_iOS
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
 			menuButton32.TouchUpInside += (sender, e) => {
+				if (menuView.isVisible())
+				{
+					//Change X image back to the normal menu image
+					menuButton32.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				}else{
+					//Make Button show the X image once it's pressed.
+					menuButton32.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				}
 				menuView.toggleMenu(this, 64);
 			};
 		}
