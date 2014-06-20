@@ -47,11 +47,5 @@ namespace GFS_iOS
 			Add(table);
 			table.BackgroundColor = UIColor.Clear; //Make the table clear
 		}
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-            //menuView.clearSubView()();
-        }
 	}
 }

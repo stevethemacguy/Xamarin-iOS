@@ -42,11 +42,5 @@ namespace GFS_iOS
 
 			showPDF();
 		}
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-            //menuView.clearSubView()();
-        }
 	}
 }

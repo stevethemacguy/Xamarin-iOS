@@ -47,7 +47,6 @@ namespace GFS_iOS
         {
             base.ViewDidDisappear(animated);
 			menuButton33.Hidden = true;
-            //menuView.clearSubView()();
         }
 		public override void ViewWillAppear(bool animated)
 		{

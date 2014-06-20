@@ -8,12 +8,12 @@ using MonoTouch.UIKit;
 
 namespace GFS_iOS
 {
+	//A "Flyout" Subview that appears whener the white Menu button in the navigation bar is tapped.
+	//MenuSubView is a Singleton
 	public class MenuSubView
     {
 		private static MenuSubView instance; //There can only be one instance of the MenuSubView.
 
-        //Initializing variables 
-        UIViewController parentController;
         UIViewController menuViewController;
         UIView menuView;
 		UIImageView transaparentBackground;
@@ -57,14 +57,13 @@ namespace GFS_iOS
 					"menuTable"
 				);
 
-				parentController = viewController;
 				menuViewController.View.Frame = new RectangleF(20, startingY, 300, 504);
 				menuView = menuViewController.View;
 				transaparentBackground = new UIImageView(UIImage.FromFile("greyTrans.png"));
 				transaparentBackground.Frame = new RectangleF(0, startingY, 20, 504);
-				parentController.AddChildViewController(menuViewController);
-				parentController.View.AddSubview(menuView);
-				parentController.View.AddSubview(transaparentBackground);
+				viewController.AddChildViewController(menuViewController);
+				viewController.View.AddSubview(menuView);
+				viewController.View.AddSubview(transaparentBackground);
 				menuIsVisible = true;
 			}
 		}

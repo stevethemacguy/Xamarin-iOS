@@ -53,23 +53,10 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
-			//Add Menu Button to the right
-//			UIBarButtonItem MenuButton = new UIBarButtonItem();
-//			MenuButton.Title = "Menu";
-//			this.NavigationItem.SetRightBarButtonItem(MenuButton, false);
-
-
 			//Use System Add Note
 			var AddNoteButton = new UIBarButtonItem(UIBarButtonSystemItem.Compose);
 			//AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
 			this.NavigationItem.SetLeftBarButtonItem(AddNoteButton, false);
-
-			//Create the Add note button and add it to the toolbar
-//			UIBarButtonItem AddNoteButton = new UIBarButtonItem();
-//			AddNoteButton.Image = UIImage.FromFile("cross-medium.png");
-//			AddNoteButton.TintColor = UIColor.FromRGB(120, 181, 4); //Change from default blue to green color.
-//			this.NavigationItem.SetLeftBarButtonItem(AddNoteButton, false);
-
 
 			//When the Add button is pressed, "Create" a new note.
 			AddNoteButton.Clicked += (o,s) => {
@@ -94,12 +81,6 @@ namespace GFS_iOS
 			};
 		}
 
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-            //menuView.clearSubView()();
-        }
-
 		//Adds a new note and refreshes the table
 		public void refreshTable()
 		{
@@ -109,10 +90,6 @@ namespace GFS_iOS
 			table.Source = new NotesTableSource(currentController, db.getAllNotes());
 			table.ReloadData();
 			Add(table);
-			//refresh flyout menuSubview
-			//menuView = new MenuSubView(currentController, MenuB2, 0);
-			//MenuB2 = menuView.setButton();
 		}
-
 	}
 }

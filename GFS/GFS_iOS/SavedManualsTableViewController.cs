@@ -89,16 +89,7 @@ namespace GFS_iOS
 						manProd2Class.Text = "XPE 105";
 					}
 				}
-
-				//
-
 			}
 		}
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-            //menuView.clearSubView()();
-        }
 	}
 }

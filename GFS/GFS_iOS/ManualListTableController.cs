@@ -35,11 +35,5 @@ namespace GFS_iOS
 			//ManualListCell2.BackgroundColor = UIColor.Clear;
 			ManualListView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 		}
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-            //menuView.clearSubView()();
-        }
 	}
 }

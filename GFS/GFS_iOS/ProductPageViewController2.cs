@@ -57,12 +57,6 @@ namespace GFS_iOS
 			scrollView.Bounces = false; //We don't want it to "bounce" when it reaches the bottom.
 		}
 
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-            //menuView.clearSubView()();
-        }
-
 		//"Unwind Segue". This occurs after a new saved list is saved from the ProductActionsTableController
 		[Action ("UnwindToProductPageViewController:")]
 		public void UnwindToProductPageViewController (UIStoryboardSegue segue)

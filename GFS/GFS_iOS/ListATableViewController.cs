@@ -151,21 +151,5 @@ namespace GFS_iOS
 			};
 
 		}
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-            //menuView.clearSubView()();
-        }
-//		public override row
-//		{
-//			[self performSegueWithIdentifier:@"addToCartSegue" sender:self];
-//		}
-
-//		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
-//		{
-//			base.PrepareForSegue(segue, sender);
-//		}
-
 	}
 }
