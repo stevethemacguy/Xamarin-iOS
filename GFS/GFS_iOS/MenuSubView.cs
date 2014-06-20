@@ -14,7 +14,7 @@ namespace GFS_iOS
     {
 		private static MenuSubView instance; //There can only be one instance of the MenuSubView.
 
-        UIViewController menuViewController;
+		UIViewController menuViewController;
         UIView menuView;
 		UIImageView transaparentBackground;
 		private Boolean menuIsVisible;
@@ -61,9 +61,11 @@ namespace GFS_iOS
 				menuView = menuViewController.View;
 				transaparentBackground = new UIImageView(UIImage.FromFile("greyTrans.png"));
 				transaparentBackground.Frame = new RectangleF(0, startingY, 20, 504);
+
 				viewController.AddChildViewController(menuViewController);
 				viewController.View.AddSubview(menuView);
 				viewController.View.AddSubview(transaparentBackground);
+
 				menuIsVisible = true;
 			}
 		}
