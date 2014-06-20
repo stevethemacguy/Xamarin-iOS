@@ -31,7 +31,7 @@ namespace GFS_iOS
 			//Show Flyout Menu
 			menuView = MenuSubView.getInstance();
 			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			menuView.showMenu(currentController, menuButton31, 64);
+			//////menuView.showMenu(currentController, menuButton31, 64);
 
 
 			//Dismiss the keyboard when the menu button is pressed.
@@ -102,7 +102,6 @@ namespace GFS_iOS
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-            menuView.clearSubView();
         }
 	}
 

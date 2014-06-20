@@ -32,7 +32,7 @@ namespace GFS_iOS
 			//Show Flyout Menu
 			menuView = MenuSubView.getInstance();
 			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			menuView.showMenu(currentController, MenuB2, 0);
+			//////menuView.showMenu(currentController, MenuB2, 0);
 
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style

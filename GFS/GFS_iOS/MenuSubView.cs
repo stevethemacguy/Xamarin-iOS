@@ -18,7 +18,7 @@ namespace GFS_iOS
         UIViewController menuViewController;
         UIView menuView;
         UIImageView img;
-		int flag; //flag == 0 -> view has not created ||| flag == 1 -> view created
+		Boolean menuIsVisible = false;
 
 		//Can't be instantiated except by the getInstance method
 		protected MenuSubView()
@@ -34,47 +34,53 @@ namespace GFS_iOS
 			return instance;
 		}
 
-		public void showMenu(UIViewController viewController, UIButton buttonPassed, int startingY)
+		public void toggleMenu(UIViewController viewController, UIButton buttonPassed, int startingY)
 		{
-			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
-			menuViewController = (MenuTableViewController)board.InstantiateViewController(
-				"menuTable"
-			);
-
-			//Y coordinate will be either 0 or 64
-			parentController = viewController;
-
-			menuViewController.View.Frame = new RectangleF(20, startingY, 300, 504);
-			menuView = menuViewController.View;
-			img = new UIImageView(UIImage.FromFile("greyTrans.png"));
-			img.Frame = new RectangleF(0, startingY, 20, 504);
-			img.Hidden = false;
-			menuView.Hidden = false;
-			parentController.AddChildViewController(menuViewController);
-			parentController.View.AddSubview(menuView);
-			parentController.View.AddSubview(img);
-			flag = 1;
-
-			//Make Button show the X image once it's pressed.
-			buttonPassed.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-			//UIImage.FromFile("menuIconShifted.png")
-
-		}
-
-		public void hideMenu()
-        {
-			if (flag == 1) {
+			//if the menu is visible, then hide it
+			if (menuIsVisible) {
 				img.Hidden = true;
 				menuView.Hidden = true;
-				flag = 0;
 				//Change X image back to the normal menu image
-				MenuButton.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				buttonPassed.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				menuIsVisible = false;
+				return;
+			} 
+			//Otherwise, show the menu
+			else
+			{
+				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+				menuViewController = (MenuTableViewController)board.InstantiateViewController(
+					"menuTable"
+				);
+
+				//Y coordinate will be either 0 or 64
+				parentController = viewController;
+
+				menuViewController.View.Frame = new RectangleF(20, startingY, 300, 504);
+				menuView = menuViewController.View;
+				img = new UIImageView(UIImage.FromFile("greyTrans.png"));
+				img.Frame = new RectangleF(0, startingY, 20, 504);
+				img.Hidden = false;
+				menuView.Hidden = false;
+				parentController.AddChildViewController(menuViewController);
+				parentController.View.AddSubview(menuView);
+				parentController.View.AddSubview(img);
+				menuIsVisible = true;
+				//Make Button show the X image once it's pressed.
+				buttonPassed.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
+				//UIImage.FromFile("menuIconShifted.png")
 			}
-        }
+		}
 
 		public void clearSubView()
 		{
-			hideMenu();
+			if (menuIsVisible) {
+				img.Hidden = true;
+				menuView.Hidden = true;
+				//Change X image back to the normal menu image
+				//MenuButton.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+				menuIsVisible = false;
+			} 
 		}
     }
 }

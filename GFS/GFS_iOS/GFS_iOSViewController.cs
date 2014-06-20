@@ -38,7 +38,7 @@ namespace GFS_iOS
 			//Show Flyout Menu
 			menuView = MenuSubView.getInstance();
 			MenuButton1.TouchUpInside += (sender, e) => {
-				menuView.showMenu(this,MenuButton1, 64);
+				menuView.toggleMenu(this,MenuButton1, 64);
 			};
 
 			//Create the NavBar image
