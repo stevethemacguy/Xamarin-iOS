@@ -12,12 +12,10 @@ namespace GFS_iOS
 		//TextInputController currentController;
 		public bool failed = false;
 		public string newList = "";
-		TextInputController currentController;
 		MenuSubView menuView;
 
 		public TextInputController (IntPtr handle) : base (handle)
 		{
-			currentController = this;
 		}
 
 		//Creates a new list from the text entered and adds it to the data source. If the text is empty, does nothing.

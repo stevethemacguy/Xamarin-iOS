@@ -26,7 +26,7 @@ namespace GFS_iOS
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
 			MenuB7.TouchUpInside += (sender, e) => {
-				menuView.toggleMenu(this, 64);
+				menuView.toggleMenu(this, 0);
 			};
 
 			//If coming from the NotesViewController, don't allow users to segue back to the create a note view

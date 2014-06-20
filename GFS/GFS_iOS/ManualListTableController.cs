@@ -20,7 +20,7 @@ namespace GFS_iOS
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
 			MenuB11.TouchUpInside += (sender, e) => {
-				menuView.toggleMenu(this, 64);
+				menuView.toggleMenu(this, 0);
 			};
 
 			ManualListCell1.BackgroundColor = UIColor.Clear;

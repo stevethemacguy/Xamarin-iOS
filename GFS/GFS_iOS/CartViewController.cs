@@ -9,10 +9,9 @@ namespace GFS_iOS
 	partial class CartViewController : UIViewController
 	{
 		MenuSubView menuView;
-		CartViewController currentController;
+
 		public CartViewController (IntPtr handle) : base (handle)
 		{
-			currentController = this;
 		}
 
 		public override void ViewDidLoad()
