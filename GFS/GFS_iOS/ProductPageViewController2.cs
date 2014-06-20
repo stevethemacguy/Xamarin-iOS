@@ -20,11 +20,11 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-
-			//Show Flyout Menu
+			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			////menuView.showMenu(this, MenuB16, 64);
+			MenuB16.TouchUpInside += (sender, e) => {
+				menuView.toggleMenu(this, 64);
+			};
 
 			//"Tell" the database that which product we are currently viewing.
 			DataSource db = DataSource.getInstance();

@@ -28,11 +28,11 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
-
-			//Show Flyout Menu
+			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			//////menuView.showMenu(currentController, MenuB2, 0);
+			MenuB2.TouchUpInside += (sender, e) => {
+				menuView.toggleMenu(this, 0);
+			};
 
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style

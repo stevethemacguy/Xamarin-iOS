@@ -29,10 +29,11 @@ namespace GFS_iOS
 			//actionCell5.BackgroundColor = UIColor.Clear;
 			actionsView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
-			//Show Flyout Menu
+			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			////menuView.showMenu(this, MenuB8, 0);
+			MenuB8.TouchUpInside += (sender, e) => {
+				menuView.toggleMenu(this, 0);
+			};
 
 			DownloadButton.TouchUpInside += (o,s) => {
 				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");

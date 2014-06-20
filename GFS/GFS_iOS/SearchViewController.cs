@@ -28,16 +28,14 @@ namespace GFS_iOS
 			menuButton31.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
 			this.NavigationController.NavigationBar.Add(menuButton31);
 
-			//Show Flyout Menu
+			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			//////menuView.showMenu(currentController, menuButton31, 64);
-
-
-			//Dismiss the keyboard when the menu button is pressed.
 			menuButton31.TouchUpInside += (sender, e) => {
+				menuView.toggleMenu(this, 64);
+				//Dismiss the keyboard when the menu button is pressed.
 				SearchBar.ResignFirstResponder();
 			};
+
 
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));

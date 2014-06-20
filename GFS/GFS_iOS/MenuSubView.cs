@@ -13,17 +13,21 @@ namespace GFS_iOS
 		private static MenuSubView instance; //There can only be one instance of the MenuSubView.
 
         //Initializing variables 
-        UIButton MenuButton;
         UIViewController parentController;
         UIViewController menuViewController;
         UIView menuView;
         UIImageView img;
-		Boolean menuIsVisible = false;
+		private Boolean menuIsVisible = false;
 
 		//Can't be instantiated except by the getInstance method
 		protected MenuSubView()
         {
         }
+
+		public Boolean isVisible()
+		{
+			return menuIsVisible;
+		}
 
 		public static MenuSubView getInstance()
 		{
@@ -34,14 +38,12 @@ namespace GFS_iOS
 			return instance;
 		}
 
-		public void toggleMenu(UIViewController viewController, UIButton buttonPassed, int startingY)
+		public void toggleMenu(UIViewController viewController, int startingY)
 		{
 			//if the menu is visible, then hide it
 			if (menuIsVisible) {
 				img.Hidden = true;
 				menuView.Hidden = true;
-				//Change X image back to the normal menu image
-				buttonPassed.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 				menuIsVisible = false;
 				return;
 			} 
@@ -66,9 +68,6 @@ namespace GFS_iOS
 				parentController.View.AddSubview(menuView);
 				parentController.View.AddSubview(img);
 				menuIsVisible = true;
-				//Make Button show the X image once it's pressed.
-				buttonPassed.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-				//UIImage.FromFile("menuIconShifted.png")
 			}
 		}
 
@@ -77,8 +76,6 @@ namespace GFS_iOS
 			if (menuIsVisible) {
 				img.Hidden = true;
 				menuView.Hidden = true;
-				//Change X image back to the normal menu image
-				//MenuButton.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 				menuIsVisible = false;
 			} 
 		}

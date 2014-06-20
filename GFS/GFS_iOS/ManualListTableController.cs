@@ -17,11 +17,11 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-
-			//Show Flyout Menu
+			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			////menuView.showMenu(this, MenuB11, 64);
+			MenuB11.TouchUpInside += (sender, e) => {
+				menuView.toggleMenu(this, 64);
+			};
 
 			ManualListCell1.BackgroundColor = UIColor.Clear;
 			//ManualListCell2.BackgroundColor = UIColor.Clear;

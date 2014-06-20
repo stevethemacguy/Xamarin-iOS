@@ -23,9 +23,12 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
-//            menuView = new MenuSubView(currentController, MenuB3, 0);
-//            MenuB3 = menuView.setButton();
-			
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			MenuB3.TouchUpInside += (sender, e) => {
+				menuView.toggleMenu(this, 0);
+			};
+
             SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//Create the table and populate it with two cells

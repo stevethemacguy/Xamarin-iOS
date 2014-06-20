@@ -11,12 +11,10 @@ namespace GFS_iOS
         UIScrollView scrollView;
         UIImageView imageView;
         UIScrollView mainScrollView;
-        UIViewController controller;
         MenuSubView menuView;
 
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
-            controller = this;
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -35,10 +33,10 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
 
-			//Show Flyout Menu
+			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
 			MenuButton1.TouchUpInside += (sender, e) => {
-				menuView.toggleMenu(this,MenuButton1, 64);
+				menuView.toggleMenu(this, 64);
 			};
 
 			//Create the NavBar image

@@ -8,12 +8,10 @@ namespace GFS_iOS
 {
 	partial class AccountViewController : UIViewController
 	{
-		AccountViewController currentController;
 		MenuSubView menuView;
 
 		public AccountViewController (IntPtr handle) : base (handle)
 		{
-			currentController = this;
 		}
 
 		public override void ViewDidLoad()
@@ -30,12 +28,11 @@ namespace GFS_iOS
 			menuButton32.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
 			this.NavigationController.NavigationBar.Add(menuButton32);
 
-
-			//Show Flyout Menu
+			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-			////menuView.showMenu(currentController, menuButton32, 64);
+			menuButton32.TouchUpInside += (sender, e) => {
+				menuView.toggleMenu(this, 64);
+			};
 		}
-	
 	}
 }
