@@ -99,8 +99,11 @@ namespace GFS_iOS
 			menuButton34.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
 			this.NavigationController.NavigationBar.Add(menuButton34);
 
-			//set up flyout menuSubview
-			menuView = new MenuSubView(currentController, menuButton34, 64);
+
+			//Get the menu instace
+			menuView = MenuSubView.getInstance();
+			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
+			menuView.initializeMenuSubView(currentController, menuButton34, 64);
 			menuButton34 = menuView.setButton();
 
 			//Dismiss the keyboard when the menu button is pressed.

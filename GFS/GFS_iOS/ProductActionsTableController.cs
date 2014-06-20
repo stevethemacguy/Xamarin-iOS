@@ -29,8 +29,10 @@ namespace GFS_iOS
 			//actionCell5.BackgroundColor = UIColor.Clear;
 			actionsView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
-			//set up flyout menuSubview
-			menuView = new MenuSubView(this, MenuB8, 0);
+			//Get the menu instace
+			menuView = MenuSubView.getInstance();
+			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
+			menuView.initializeMenuSubView(this, MenuB8, 0);
 			MenuB8 = menuView.setButton();
 
 			DownloadButton.TouchUpInside += (o,s) => {

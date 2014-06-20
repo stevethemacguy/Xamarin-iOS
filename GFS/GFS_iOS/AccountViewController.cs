@@ -30,11 +30,12 @@ namespace GFS_iOS
 			menuButton32.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
 			this.NavigationController.NavigationBar.Add(menuButton32);
 
-			//set up flyout menuSubview
-			menuView = new MenuSubView(currentController, menuButton32, 64);
+
+			//Get the menu instace
+			menuView = MenuSubView.getInstance();
+			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
+			menuView.initializeMenuSubView(currentController, menuButton32, 64);
 			menuButton32 = menuView.setButton();
-
-
 		}
 	
 	}

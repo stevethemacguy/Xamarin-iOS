@@ -35,9 +35,12 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
 
+			//Get the menu instace
+			menuView = MenuSubView.getInstance();
 			// Convert the MenuButton passed into a Button that toggles between states "Unclicked" and "Clicked"
-            menuView = new MenuSubView(controller, MenuButton1, 64);
-            MenuButton1 = menuView.setButton();
+			menuView.initializeMenuSubView(controller, MenuButton1, 64);
+			MenuButton1 = menuView.setButton();
+
             ///MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclciked;
 
 			//Create the NavBar image

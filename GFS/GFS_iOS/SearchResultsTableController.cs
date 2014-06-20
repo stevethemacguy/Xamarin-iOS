@@ -24,8 +24,8 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
 			//set up flyout menuSubview
-            menuView = new MenuSubView(this, MenuB7, 0);
-            MenuB7 = menuView.setButton();
+//            menuView = new MenuSubView(this, MenuB7, 0);
+//            MenuB7 = menuView.setButton();
 
 			//If coming from the NotesViewController, don't allow users to segue back to the create a note view
 			if(fromSegue)

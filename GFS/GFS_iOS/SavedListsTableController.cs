@@ -23,8 +23,8 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
-            menuView = new MenuSubView(currentController, MenuB3, 0);
-            MenuB3 = menuView.setButton();
+//            menuView = new MenuSubView(currentController, MenuB3, 0);
+//            MenuB3 = menuView.setButton();
 			
             SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 

@@ -8,8 +8,10 @@ using MonoTouch.UIKit;
 
 namespace GFS_iOS
 {
-    class MenuSubView
+	public class MenuSubView
     {
+		private static MenuSubView instance; //There can only be one instance of the MenuSubView.
+
         //Initializing variables 
         UIButton MenuButton;
         UIViewController parentController;
@@ -19,19 +21,32 @@ namespace GFS_iOS
         int Y;
         int flag; //flag == 0 -> view has not created ||| flag == 1 -> view created
 
-        public MenuSubView(UIViewController viewController, UIButton button, int startingY)
+		//Can't be instantiated except by the getInstance method
+		protected MenuSubView()
         {
-            //MenuSubView constructor, takes parent controller, button and a starting Y coordinate 
-            //Y coordinate either be 0 or 64
-            Y = startingY;
-            parentController = viewController;
-            MenuButton = button;
+        }
+
+		public static MenuSubView getInstance()
+		{
+			//If the MenuSubView has not been created, then create it once.
+			if(instance == null) {
+				instance = new MenuSubView();
+			}
+			return instance;
+		}
+
+		public void initializeMenuSubView(UIViewController viewController, UIButton button, int startingY)
+		{
+			//MenuSubView constructor, takes parent controller, button and a starting Y coordinate 
+			//Y coordinate either be 0 or 64
+			Y = startingY;
+			parentController = viewController;
+			MenuButton = button;
 
 			//Start the button in the unclicked state since it hasn't been clicked yet
 			MenuButton.TouchUpInside += HandleTouchUpInsideMenuUnclicked;
-            flag = 0;
-
-        }
+			flag = 0;
+		}
 
 		//Sets the button to it's unclicked state.
         void HandleTouchUpInsideMenuUnclicked(object sender, EventArgs e)
