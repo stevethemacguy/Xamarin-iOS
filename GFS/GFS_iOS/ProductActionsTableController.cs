@@ -12,6 +12,7 @@ namespace GFS_iOS
 	{
 		public ProductActionsTableController actionsTable; //The current controller
 		public HashSet<string> actionList;
+		MenuSubView menuView;
 
 		public ProductActionsTableController (IntPtr handle) : base (handle)
 		{
@@ -27,6 +28,10 @@ namespace GFS_iOS
 			//actionCell4.BackgroundColor = UIColor.Clear;
 			//actionCell5.BackgroundColor = UIColor.Clear;
 			actionsView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
+			//set up flyout menuSubview
+			menuView = new MenuSubView(this, MenuB8, 0);
+			MenuB8 = menuView.setButton();
 
 			DownloadButton.TouchUpInside += (o,s) => {
 				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");
