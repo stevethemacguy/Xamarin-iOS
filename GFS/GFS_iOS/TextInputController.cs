@@ -13,6 +13,7 @@ namespace GFS_iOS
 		public bool failed = false;
 		public string newList = "";
 		MenuSubView menuView;
+		UIButton menuButton34;
 
 		public TextInputController (IntPtr handle) : base (handle)
 		{
@@ -92,10 +93,9 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
 			//Manually create a menu button and add it to the right side of the menu bar
-			UIButton menuButton34 = UIButton.FromType(UIButtonType.Custom);
+			menuButton34 = UIButton.FromType(UIButtonType.Custom);
 			menuButton34.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 			menuButton34.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
-			menuButton34.Tag = 1;
 			this.NavigationController.NavigationBar.Add(menuButton34);
 
 			//Initialize Flyout Menu
@@ -173,8 +173,13 @@ namespace GFS_iOS
 		public override void ViewWillDisappear(bool animated)
 		{
 			base.ViewWillDisappear(animated);
-			this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
+			menuButton34.Hidden = true;
 		}
 
+		//Show the Menu Button
+		public override void ViewWillAppear(bool animated)
+		{
+			menuButton34.Hidden = false;
+		}
 	}
 }

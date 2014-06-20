@@ -27,7 +27,6 @@ namespace GFS_iOS
 			menuButton31 = UIButton.FromType(UIButtonType.Custom);
 			menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 			menuButton31.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
-			menuButton31.Tag = 1;
 			this.NavigationController.NavigationBar.Add(menuButton31);
 
 			//Initialize Flyout Menu
@@ -107,11 +106,19 @@ namespace GFS_iOS
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
+		//Show the Menu Button
+		public override void ViewWillAppear(bool animated)
+		{
+			menuButton31.Hidden = false;
+		}
+
+		//Hide the Menu Button since we now have duplicates
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
+			menuButton31.Hidden = true;
 			//Remove the button from the navbar. Otherwise it will appear as a double button when the next view is pushed!
-			this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
+			//this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
         }
 	}
 

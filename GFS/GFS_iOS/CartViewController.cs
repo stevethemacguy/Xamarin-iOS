@@ -9,6 +9,7 @@ namespace GFS_iOS
 	partial class CartViewController : UIViewController
 	{
 		MenuSubView menuView;
+		UIButton menuButton33;
 
 		public CartViewController (IntPtr handle) : base (handle)
 		{
@@ -22,10 +23,9 @@ namespace GFS_iOS
 			this.NavigationItem.HidesBackButton = true;
 
 			//Manually create a menu button and add it to the right side of the menu bar
-			UIButton menuButton33 = UIButton.FromType(UIButtonType.Custom);
+			menuButton33 = UIButton.FromType(UIButtonType.Custom);
 			menuButton33.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 			menuButton33.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
-			menuButton33.Tag = 1;
 			this.NavigationController.NavigationBar.Add(menuButton33);
 
 			//Initialize Flyout Menu
@@ -46,8 +46,13 @@ namespace GFS_iOS
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-			this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
+			menuButton33.Hidden = true;
             //menuView.clearSubView()();
         }
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+			menuButton33.Hidden = false;
+		}
 	}
 }

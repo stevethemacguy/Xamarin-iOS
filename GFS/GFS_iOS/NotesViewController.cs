@@ -9,6 +9,8 @@ namespace GFS_iOS
 {
 	partial class NotesViewController : UIViewController
 	{
+		UIButton menuButton33;
+
 		String noteText; //The full text of the note currently being viewed
 		public List<string> notes; //Each string is the full text of one note. This is created when a NotesTableSource row is selected
 		public Boolean addingNote = false; //true if a new note is beeing added.
@@ -49,23 +51,14 @@ namespace GFS_iOS
 			tableController.refreshTable(); //"Refresh" the table using our new list of notes.
 		}
 
-		//When the back button is pressed
-		public override void ViewWillDisappear(bool animated)
-		{
-			base.ViewWillDisappear(animated);
-			this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
-			SaveNote();
-		}
-
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 
 			//Manually create a menu button and add it to the right side of the menu bar
-			UIButton menuButton33 = UIButton.FromType(UIButtonType.Custom);
+			menuButton33 = UIButton.FromType(UIButtonType.Custom);
 			menuButton33.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
 			menuButton33.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
-			menuButton33.Tag = 1;
 			this.NavigationController.NavigationBar.Add(menuButton33);
 
 			//Initialize Flyout Menu
@@ -125,6 +118,20 @@ namespace GFS_iOS
 //				SaveNote();
 //			};
         }
+
+		//When the back button is pressed
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear(animated);
+			menuButton33.Hidden = true;
+			SaveNote();
+		}
+
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+			menuButton33.Hidden = false;
+		}
 
         private void imagePicker(object sender, EventArgs e)
         {
