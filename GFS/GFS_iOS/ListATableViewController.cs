@@ -45,7 +45,7 @@ namespace GFS_iOS
 						//Make Button show the X image once it's pressed.
 						menuB5.Image = UIImage.FromFile("XIcon.png");
 					}
-					menuView.toggleMenu(this, 64);
+					menuView.toggleMenu(this, 0);
 				});
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB5, true);
