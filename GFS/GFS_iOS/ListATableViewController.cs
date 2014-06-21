@@ -14,7 +14,10 @@ namespace GFS_iOS
 		public SavedListsTableController currentController;
 		public ListATableViewController tableController;
 		private DataSource db;
-		private List<Product> prodList; //A list of all the products in the "database"
+		private List<Product> prodList;
+		UIBarButtonItem menuB5;
+
+ 		//A list of all the products in the "database"
 		private Dictionary<String,List<Product>> prodMap; //A list of all the products in the "database"
 		public ListATableViewController (IntPtr handle) : base (handle)
 		{
@@ -30,17 +33,23 @@ namespace GFS_iOS
 
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			MenuB5.TouchUpInside += (sender, e) => {
-				if (menuView.isVisible())
-				{
-					//Change X image back to the normal menu image
-					MenuB5.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-				}else{
-					//Make Button show the X image once it's pressed.
-					MenuB5.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-				}
-				menuView.toggleMenu(this, 0);
-			};
+
+			//Create the Menu button
+			menuB5 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
+				(sender, args) => {
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB5.Image = UIImage.FromFile("menuIconShifted.png");
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB5.Image = UIImage.FromFile("XIcon.png");
+					}
+					menuView.toggleMenu(this, 64);
+				});
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB5, true);
+
 
 			if (prodMap.ContainsKey(rowName)) {
 				prodList = prodMap[rowName]; //Retrieve a List<Product> from the map using the row name as a key

@@ -16,14 +16,6 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIBarButtonItem MenuB8 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIButton MenuB9 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UIView ProductPageUIView { get; set; }
 
 		[Outlet]
@@ -32,14 +24,6 @@ namespace GFS_iOS
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (MenuB8 != null) {
-				MenuB8.Dispose ();
-				MenuB8 = null;
-			}
-			if (MenuB9 != null) {
-				MenuB9.Dispose ();
-				MenuB9 = null;
-			}
 			if (ProductPageUIView != null) {
 				ProductPageUIView.Dispose ();
 				ProductPageUIView = null;

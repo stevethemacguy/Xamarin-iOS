@@ -234,10 +234,6 @@
     <Compile Include="GFS_iOSViewController.designer.cs">
       <DependentUpon>GFS_iOSViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeScreen.cs" />
-    <Compile Include="HomeScreen.designer.cs">
-      <DependentUpon>HomeScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuSubView.cs" />
     <Compile Include="MenuTableViewController.cs" />
     <Compile Include="MenuTableViewController.designer.cs">
