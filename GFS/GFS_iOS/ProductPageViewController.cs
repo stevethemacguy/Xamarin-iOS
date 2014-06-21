@@ -13,6 +13,8 @@ namespace GFS_iOS
 		public Boolean fromActionsPage = false; //True if this view is being "loaded" from the actions page (i.e. it's parent controller is TextInputController)
 		//UIBarButtonItem mainMenuButton;
         MenuSubView menuView;
+		UIBarButtonItem menuB9;
+
 		//ProductPageViewController currentController;
 
 		public string saved = "";
@@ -30,17 +32,22 @@ namespace GFS_iOS
 
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-			MenuB9.TouchUpInside += (sender, e) => {
-				if (menuView.isVisible())
-				{
-					//Change X image back to the normal menu image
-					MenuB9.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-				}else{
-					//Make Button show the X image once it's pressed.
-					MenuB9.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-				}
-				menuView.toggleMenu(this, 64);
-			};
+
+			//Create the Menu button
+			menuB9 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
+				(sender, args) => {
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB9.Image = UIImage.FromFile("menuIconShifted.png");
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB9.Image = UIImage.FromFile("XIcon.png");
+					}
+					menuView.toggleMenu(this, 64);
+				});
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB9, true);
 
 			//"Tell" the database that which product we are currently viewing.
 			DataSource db = DataSource.getInstance();

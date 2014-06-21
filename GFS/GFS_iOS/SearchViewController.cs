@@ -8,7 +8,6 @@ namespace GFS_iOS
 {
 	partial class SearchViewController : UIViewController
 	{
-		UIButton menuButton31;
 		SearchViewController currentController;
         MenuSubView menuView;
 
@@ -33,34 +32,23 @@ namespace GFS_iOS
 //
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-//			menuButton31.TouchUpInside += (sender, e) => {
-//				if (menuView.isVisible())
-//				{
-//					//Change X image back to the normal menu image
-//					menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-//				}else{
-//					//Make Button show the X image once it's pressed.
-//					menuButton31.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-//				}
-//				menuView.toggleMenu(this, 64);
-//				//Dismiss the keyboard when the menu button is pressed.
-//				SearchBar.ResignFirstResponder();
-//			};
 
-			//Add the new menu button
-			menuB2 = new UIBarButtonItem(UIImage.FromFile("cross.png"), UIBarButtonItemStyle.Plain, 
+			//Create the Menu button
+			menuB2 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
 				(sender, args) => {
-					//When clicked
+					//Dismiss the keyboard when the menu button is pressed.
+					SearchBar.ResignFirstResponder();
 					if (menuView.isVisible()) {
 						//Change X image back to the normal menu image
-						//	menuB1.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal, UIBarMetrics.Default);
+						menuB2.Image = UIImage.FromFile("menuIconShifted.png");
 					} else {
 						//Make Button show the X image once it's pressed.
-						//	menuB1.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal, UIBarMetrics.Default);
+						menuB2.Image = UIImage.FromFile("XIcon.png");
 					}
 					menuView.toggleMenu(this, 64);
 				});
-
+			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB2, true);
 
 

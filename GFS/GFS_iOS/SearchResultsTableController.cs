@@ -9,9 +9,8 @@ namespace GFS_iOS
 	partial class SearchResultsTableController : UITableViewController
 	{
         MenuSubView menuView;
-		UIButton MenuB71;
 		public Boolean fromSegue = false;
-		UIBarButtonItem menuB3;
+		UIBarButtonItem menuB71;
 
  //Used when seguing from the "search" icon when typing in the NotesViewController
 		
@@ -49,34 +48,22 @@ namespace GFS_iOS
 //
 //			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
-//			MenuB71.TouchUpInside += (sender, e) => {
-//				if (menuView.isVisible())
-//				{  
-//					//Change X image back to the normal menu image
-//					MenuB71.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-//				}else{
-//					//Make Button show the X image once it's pressed.
-//					MenuB71.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal);
-//				}
-//				menuView.toggleMenu(this, 0);
-			//};
 
-			//Add the new menu button
-			menuB3 = new UIBarButtonItem(UIImage.FromFile("green-arrow.png"), UIBarButtonItemStyle.Plain, 
+			//Create the Menu button
+			menuB71 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
 				(sender, args) => {
-					//When clicked
 					if (menuView.isVisible()) {
 						//Change X image back to the normal menu image
-						//	menuB1.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal, UIBarMetrics.Default);
+						menuB71.Image = UIImage.FromFile("menuIconShifted.png");
 					} else {
 						//Make Button show the X image once it's pressed.
-						//	menuB1.SetBackgroundImage(UIImage.FromFile("XIcon.png"), UIControlState.Normal, UIBarMetrics.Default);
+						menuB71.Image = UIImage.FromFile("XIcon.png");
 					}
-					menuView.toggleMenu(this, 64);
+					menuView.toggleMenu(this, 0);
 				});
-
-			this.NavigationItem.SetRightBarButtonItem(menuB3, true);
-
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB71, true);
 		}
 
 		//Show the Menu Button
