@@ -13,14 +13,8 @@ namespace GFS_iOS
 		{
 		}
 
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
-		}
-
 		public override void ViewDidLoad()
 		{
-
 			base.ViewDidLoad();
 			//Make the Cells have a clear background color
 			SearchCell.BackgroundColor = UIColor.Clear;

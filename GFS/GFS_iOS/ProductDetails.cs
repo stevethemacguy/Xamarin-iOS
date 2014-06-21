@@ -10,10 +10,5 @@ namespace GFS_iOS
 		public ProductDetails (IntPtr handle) : base (handle)
 		{
 		}
-
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
-		}
 	}
 }

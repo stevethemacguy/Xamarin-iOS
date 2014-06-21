@@ -65,18 +65,5 @@ namespace GFS_iOS
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB71, true);
 		}
-
-		//Show the Menu Button
-		public override void ViewWillAppear(bool animated)
-		{
-			//	MenuB71.Hidden = false;
-		}
-
-		//Show the Menu Button
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-			//	MenuB71.Hidden = true;
-        }
 	}
 }

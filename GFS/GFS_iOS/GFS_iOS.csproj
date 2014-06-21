@@ -248,14 +248,6 @@
     <Compile Include="NotesViewController.designer.cs">
       <DependentUpon>NotesViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SavedListController.cs" />
-    <Compile Include="SavedListController.designer.cs">
-      <DependentUpon>SavedListController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListViewController.cs" />
-    <Compile Include="ListViewController.designer.cs">
-      <DependentUpon>ListViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="AccountViewController.cs" />
     <Compile Include="AccountViewController.designer.cs">
       <DependentUpon>AccountViewController.cs</DependentUpon>
@@ -267,18 +259,6 @@
     <Compile Include="SearchResultsTableController.cs" />
     <Compile Include="SearchResultsTableController.designer.cs">
       <DependentUpon>SearchResultsTableController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SearchTableView.cs" />
-    <Compile Include="SearchTableView.designer.cs">
-      <DependentUpon>SearchTableView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductDetails.cs" />
-    <Compile Include="ProductDetails.designer.cs">
-      <DependentUpon>ProductDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ResultsTableViewController.cs" />
-    <Compile Include="ResultsTableViewController.designer.cs">
-      <DependentUpon>ResultsTableViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductDetailsTableController.cs" />
     <Compile Include="ProductDetailsTableController.designer.cs">

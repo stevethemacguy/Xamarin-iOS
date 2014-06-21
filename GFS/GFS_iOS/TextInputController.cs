@@ -40,7 +40,11 @@ namespace GFS_iOS
 				Dictionary<String, List<Product>> prodMap = db.getProductMap();
 
 				//Since we just created this list, it needs to be added to the map with an empty list
-				prodMap.Add(newList, new List<Product>());
+				//But do not attempt to add if the list already exists
+				if(prodMap.ContainsKey(newList) == false)
+				{
+					prodMap.Add(newList, new List<Product>());
+				}
 
 				//if the product1 is selected, add the product to the new list
 				if (db.currentProduct == "product1")

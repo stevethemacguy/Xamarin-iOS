@@ -111,21 +111,6 @@ namespace GFS_iOS
 			};
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
-
-		//Show the Menu Button
-		public override void ViewWillAppear(bool animated)
-		{
-			//menuButton31.Hidden = false;
-		}
-
-		//Hide the Menu Button since we now have duplicates
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-			//menuButton31.Hidden = true;
-			//Remove the button from the navbar. Otherwise it will appear as a double button when the next view is pushed!
-			//this.NavigationController.NavigationBar.ViewWithTag(1).RemoveFromSuperview();
-        }
 	}
 
 	class TableSource : UITableViewSource
