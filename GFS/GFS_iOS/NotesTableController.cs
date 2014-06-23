@@ -96,6 +96,10 @@ namespace GFS_iOS
 			table.Source = new NotesTableSource(currentController, db.getAllNotes());
 			table.ReloadData();
 			Add(table);
+
+			//Note: Fixes a bug: If the user clicks to create a new note while the menu view is still open, menuView.toggleMenu() is never called.
+			//Change X image back to the normal menu image. This is normally handled when instantiating a view, but we're unwinding after creating a note.
+			menuB22.Image = UIImage.FromFile("menuIconShifted.png");
 		}
 	}
 }

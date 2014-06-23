@@ -32,18 +32,30 @@ namespace GFS_iOS
 			MenuView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 		}
 
+		//When the back button is pressed
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear(animated);
+			MenuSubView menuView = MenuSubView.getInstance();
+			//If the back button was pressed while the menu was still visible
+			if(menuView.isVisible())
+			{
+				menuView.toggleMenu(this, 0); //Make sure toggle view is still called to close the menu properly
+			}
+		}
+
 		//Before seguing to a new view, make sure the menu's "visibility" is set to false
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
 			base.PrepareForSegue(segue, sender);
 			MenuSubView mainMenu = MenuSubView.getInstance();
-			//After seguing to a new view, the main menu "disappears," but toggleMenu() was never called so menuIsVisible is still true
+			//After seguing to a new view, the main menu "disappears," but toggleMenu() was never called so menuIsVisible is still true.
 			//menuIsVisible should always be false when a new view is loaded, so that clicking the button brings up the menu immediately
-			mainMenu.setVisibility(false); 
-			//mainMenu.toggleMenu(this, 64); //This can be used to do the same thing, but it's more clear to have a setVisibility method.
+			//Thus toggleMenu() needs to be called any time the menu needs to be closed or opened. 
+			mainMenu.toggleMenu(this, 64); //The 64 doesn't matter since we're really just closing the menu with this call
 		}
 
-		//"Unwind Segue". 
+		//"Unwind Segue" 
 		[Action ("UnwindToMenu:")]
 		public void UnwindToMenu (UIStoryboardSegue segue)
 		{

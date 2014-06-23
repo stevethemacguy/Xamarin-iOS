@@ -95,8 +95,9 @@ namespace GFS_iOS
 		[Action ("UnwindToHome:")]
 		public void UnwindToHome (UIStoryboardSegue segue)
 		{
-			menuView.toggleMenu(this, 64);
-			//Change X image back to the normal menu image
+			//Note: menuView.toggleMenu() is already called by PrepareForSegue() in MenuTableViewController.
+			//Change X image back to the normal menu image. This is normally handled when instantiating a view, 
+			//but we're unwinding to a view that already exists, so this has to be done manually.
 			menuB1.Image = UIImage.FromFile("menuIconShifted.png");
 		}
 

@@ -25,11 +25,6 @@ namespace GFS_iOS
 			menuIsVisible = false;
         }
 
-		public void setVisibility(bool trueOrFalse)
-		{
-			menuIsVisible = trueOrFalse;
-		}
-
 		public Boolean isVisible()
 		{
 			return menuIsVisible;
