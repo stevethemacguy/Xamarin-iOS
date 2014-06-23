@@ -37,6 +37,8 @@ namespace GFS_iOS
 			//Don't allow blank notes to be created
 			if(noteText == "")
 			{
+				//The only reason refresh is used here is to fix a bug where the Menu button incorrectly shows and X icon.
+				tableController.refreshTable(); 
 				return; //Do NOT create the note
 			}
 			if(addingNote)
