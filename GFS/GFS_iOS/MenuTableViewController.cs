@@ -32,6 +32,17 @@ namespace GFS_iOS
 			MenuView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 		}
 
+		//Before seguing to a new view, make sure the menu's "visibility" is set to false
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		{
+			base.PrepareForSegue(segue, sender);
+			MenuSubView mainMenu = MenuSubView.getInstance();
+			//After seguing to a new view, the main menu "disappears," but toggleMenu() was never called so menuIsVisible is still true
+			//menuIsVisible should always be false when a new view is loaded, so that clicking the button brings up the menu immediately
+			mainMenu.setVisibility(false); 
+			//mainMenu.toggleMenu(this, 64); //This can be used to do the same thing, but it's more clear to have a setVisibility method.
+		}
+
 		//"Unwind Segue". 
 		[Action ("UnwindToMenu:")]
 		public void UnwindToMenu (UIStoryboardSegue segue)

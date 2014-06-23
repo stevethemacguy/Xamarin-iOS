@@ -1,2 +1,2 @@
-Added menu button to navigation bar. 
-Known issue: Menu button occasionally doesn't respond after changing views multiple times.
+Menu Button behavior is more consistant.
+Known issue: Menu button sometimes requires a second tap before it opens.
