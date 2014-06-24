@@ -28,10 +28,6 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIButton MenuB5 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UILabel Prod1Capacity { get; set; }
 
 		[Outlet]
@@ -103,10 +99,6 @@ namespace GFS_iOS
 			if (ListProdCell2 != null) {
 				ListProdCell2.Dispose ();
 				ListProdCell2 = null;
-			}
-			if (MenuB5 != null) {
-				MenuB5.Dispose ();
-				MenuB5 = null;
 			}
 			if (Prod1Capacity != null) {
 				Prod1Capacity.Dispose ();

@@ -9,6 +9,8 @@ namespace GFS_iOS
 	{
 		public UITableView table;
 		SavedListsTableController currentController;
+        MenuSubView menuView;
+		UIBarButtonItem menuB30;
 
 		public SavedListsTableController (IntPtr handle) : base (handle)
 		{
@@ -18,7 +20,30 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+
+			//Create the Menu button
+			menuB30 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
+				(sender, args) => {
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB30.Image = UIImage.FromFile("menuIconShifted.png");
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB30.Image = UIImage.FromFile("XIcon.png");
+					}
+					menuView.toggleMenu(this, 0);
+				});
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB30, true);
+
+            SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//Create the table and populate it with two cells
 			table = new UITableView(View.Bounds); // defaults to Plain style

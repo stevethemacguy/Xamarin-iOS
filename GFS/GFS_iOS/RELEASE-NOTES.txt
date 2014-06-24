@@ -1,1 +1,2 @@
-Build 24.
+Menu Button behavior is more consistant.
+Known issue: Menu button sometimes requires a second tap before it opens.

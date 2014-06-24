@@ -9,11 +9,13 @@ namespace GFS_iOS
 {
 	partial class NotesViewController : UIViewController
 	{
+
 		String noteText; //The full text of the note currently being viewed
 		public List<string> notes; //Each string is the full text of one note. This is created when a NotesTableSource row is selected
 		public Boolean addingNote = false; //true if a new note is beeing added.
 		//The NotesViewController is created when a cell row is tapped/clicked. This index is the index of the row that was clicked.
 		public int index; //Value is passed in from NotesTableSource on segue
+		MenuSubView menuView;
 
 		//refrences the table controller. this is passed by NotesTableSource when the table is created and allows us to update the table object
 		public NotesTableController tableController;
@@ -21,6 +23,8 @@ namespace GFS_iOS
         UIImagePickerController picker;
         NotesViewController myController;
 		DataSource data;
+		UIBarButtonItem menuB33;
+
 		public NotesViewController  (IntPtr handle) : base (handle)
 		{
             myController = this;
@@ -33,6 +37,8 @@ namespace GFS_iOS
 			//Don't allow blank notes to be created
 			if(noteText == "")
 			{
+				//The only reason refresh is used here is to fix a bug where the Menu button incorrectly shows and X icon.
+				tableController.refreshTable(); 
 				return; //Do NOT create the note
 			}
 			if(addingNote)
@@ -47,16 +53,38 @@ namespace GFS_iOS
 			tableController.refreshTable(); //"Refresh" the table using our new list of notes.
 		}
 
-		//When the back button is pressed
-		public override void ViewWillDisappear(bool animated)
-		{
-			base.ViewWillDisappear(animated);
-			SaveNote();
-		}
-
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+//			//Manually create a menu button and add it to the right side of the menu bar
+//			menuButton33 = UIButton.FromType(UIButtonType.Custom);
+//			menuButton33.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+//			menuButton33.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+//			this.NavigationController.NavigationBar.Add(menuButton33);
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+			//Create the Menu button
+
+			menuB33 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
+				(sender, args) => {
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB33.Image = UIImage.FromFile("menuIconShifted.png");
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB33.Image = UIImage.FromFile("XIcon.png");
+						//Dismiss the keyboard when the menu button is pressed.
+						NoteTextView.ResignFirstResponder();
+					}
+					menuView.toggleMenu(this, 64);
+				});
+
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB33, true);
+				
 
 			//If we're adding a new note, make the text view empty.
 			if (addingNote)
@@ -99,6 +127,13 @@ namespace GFS_iOS
 //				SaveNote();
 //			};
         }
+
+		//When the back button is pressed
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear(animated);
+			SaveNote();
+		}
 
         private void imagePicker(object sender, EventArgs e)
         {

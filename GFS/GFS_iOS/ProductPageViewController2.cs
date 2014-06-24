@@ -10,6 +10,8 @@ namespace GFS_iOS
 	{
 		UIScrollView scrollView;
 		UIImageView imageView;
+        MenuSubView menuView;
+		UIBarButtonItem menuB16;
 
 		public ProductPageViewController2 (IntPtr handle) : base (handle)
 		{
@@ -18,6 +20,25 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+
+			//Create the Menu button
+			menuB16 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
+				(sender, args) => {
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB16.Image = UIImage.FromFile("menuIconShifted.png");
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB16.Image = UIImage.FromFile("XIcon.png");
+					}
+					menuView.toggleMenu(this, 64);
+				});
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB16, true);
 
 			//"Tell" the database that which product we are currently viewing.
 			DataSource db = DataSource.getInstance();

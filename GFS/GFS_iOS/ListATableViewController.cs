@@ -8,12 +8,16 @@ namespace GFS_iOS
 {
 	partial class ListATableViewController : UITableViewController
 	{
+        MenuSubView menuView;
 		public int index = 0; //The row that was selected to get to this controller
 		public string rowName = ""; //set by SavedListTableSource during the segue.
 		public SavedListsTableController currentController;
 		public ListATableViewController tableController;
 		private DataSource db;
-		private List<Product> prodList; //A list of all the products in the "database"
+		private List<Product> prodList;
+		UIBarButtonItem menuB5;
+
+ 		//A list of all the products in the "database"
 		private Dictionary<String,List<Product>> prodMap; //A list of all the products in the "database"
 		public ListATableViewController (IntPtr handle) : base (handle)
 		{
@@ -26,6 +30,26 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+
+			//Create the Menu button
+			menuB5 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
+				(sender, args) => {
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB5.Image = UIImage.FromFile("menuIconShifted.png");
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB5.Image = UIImage.FromFile("XIcon.png");
+					}
+					menuView.toggleMenu(this, 0);
+				});
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB5, true);
+
 
 			if (prodMap.ContainsKey(rowName)) {
 				prodList = prodMap[rowName]; //Retrieve a List<Product> from the map using the row name as a key
@@ -136,16 +160,5 @@ namespace GFS_iOS
 			};
 
 		}
-
-//		public override row
-//		{
-//			[self performSegueWithIdentifier:@"addToCartSegue" sender:self];
-//		}
-
-//		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
-//		{
-//			base.PrepareForSegue(segue, sender);
-//		}
-
 	}
 }

@@ -24,10 +24,6 @@ namespace GFS_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UIButton MenuB11 { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		MonoTouch.UIKit.UILabel ProductManual { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -39,10 +35,6 @@ namespace GFS_iOS
 			if (ManualListView != null) {
 				ManualListView.Dispose ();
 				ManualListView = null;
-			}
-			if (MenuB11 != null) {
-				MenuB11.Dispose ();
-				MenuB11 = null;
 			}
 			if (ProductManual != null) {
 				ProductManual.Dispose ();

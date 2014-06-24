@@ -16,27 +16,13 @@
                     </view>
                     <connections>
                         <outlet property="MenuButton" destination="59" id="name-outlet-59"/>
-                        <outlet property="MenuButton" destination="1674" id="name-outlet-1674"/>
                     </connections>
                     <navigationItem title="What's New for You" id="15" key="navigationItem">
-                        <barButtonItem style="plain" id="1675" key="leftBarButtonItem" title="Menu">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1674" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="69" kind="push" id="1676"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1031" y="-841"/>
+            <point key="canvasLocation" x="-1035" y="-833"/>
         </scene>
         <scene sceneID="3">
             <objects>
@@ -67,7 +53,7 @@
                             <tableViewSection id="82">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="83" reuseIdentifier="searchcell" rowHeight="0">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="83" id="84">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -92,7 +78,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="99" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="129" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="65" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="99" id="100">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -117,7 +103,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="103" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="194" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="103" id="104">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -142,7 +128,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="107" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="259" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="195" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="107" id="108">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -157,7 +143,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="110" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="saved-list-icon.png">
-                                                    <rect key="frame" x="25" y="22" width="25" height="25"/>
+                                                    <rect key="frame" x="25" y="22" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -167,7 +153,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="111" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="324" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="260" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="111" id="112">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -192,7 +178,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="115" reuseIdentifier="searchcell">
-                                        <rect key="frame" x="0.0" y="389" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="325" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="115" id="116">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -216,6 +202,40 @@
                                             <segue destination="176" kind="push" id="188"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1965" reuseIdentifier="searchcell">
+                                        <rect key="frame" x="0.0" y="390" width="320" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1965" id="1968">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What's New" lineBreakMode="tailTruncation" minimumFontSize="10" id="1969" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="75" y="24" width="144" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1970" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="favorites-star.png">
+                                                    <rect key="frame" x="23" y="19" width="28" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1971" fixedFrame="YES">
+                                                    <rect key="frame" x="2" y="0.0" width="318" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="">
+                                                        <color key="titleShadowColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="1974" kind="unwind" unwindAction="UnwindToHome:" id="1978"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -235,15 +255,18 @@
                         <outlet property="SavedListsCell" destination="107" id="name-outlet-107"/>
                         <outlet property="SavedManualsCell" destination="111" id="name-outlet-111"/>
                         <outlet property="YourAccountCell" destination="115" id="name-outlet-115"/>
+                        <outlet property="HomeCell" destination="1965" id="name-outlet-1965"/>
+                        <outlet property="ClearButton" destination="1971" id="name-outlet-1971"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1974" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-587" y="-838"/>
         </scene>
         <scene sceneID="122">
             <objects>
-                <viewController id="123" sceneMemberID="viewController" customClass="SearchViewController" title="Search" storyboardIdentifier="searchController" restorationIdentifier="searchController">
+                <viewController id="123" sceneMemberID="viewController" customClass="SearchViewController" storyboardIdentifier="searchController" restorationIdentifier="searchController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="125"/>
                         <viewControllerLayoutGuide type="bottom" id="126"/>
@@ -314,7 +337,7 @@
                     <navigationItem title="Search" id="1761" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1764" key="rightBarButtonItem">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1763" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -376,21 +399,8 @@
                     </webView>
                     <connections>
                         <outlet property="PDFWebView" destination="1079" id="name-outlet-1079"/>
-                        <outlet property="MenuB14" destination="1856" id="name-outlet-1856"/>
                     </connections>
                     <navigationItem title="" id="1854" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1857" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1856" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1827" kind="unwind" unwindAction="UnwindToMenu:" id="1887"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="166" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -409,6 +419,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="1957" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="11" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Your Account" id="1958">
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                     </view>
                     <connections>
                         <outlet property="accountUIView" destination="177" id="name-outlet-177"/>
@@ -417,7 +437,7 @@
                     <navigationItem title="Your Account" id="1876" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1878" key="rightBarButtonItem">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1877" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -455,7 +475,7 @@
                     <navigationItem title="Shopping Cart" id="1743" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
                         <barButtonItem style="plain" id="1745" key="rightBarButtonItem" title="Menu">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1744" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Menu">
@@ -736,22 +756,9 @@
                         <outlet property="EndOfContentCellBorder" destination="276" id="name-outlet-276"/>
                         <outlet property="SearchResultsUIView" destination="209" id="name-outlet-209"/>
                         <outlet property="LoadResultsCell" destination="236" id="name-outlet-236"/>
-                        <outlet property="MenuB7" destination="1819" id="name-outlet-1819"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="Search Results" id="1797" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1820" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1819" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1828" kind="unwind" unwindAction="UnwindToMenu:" id="1837"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="214" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -867,21 +874,8 @@
                         <outlet property="DownloadButton" destination="1454" id="name-outlet-1454"/>
                         <outlet property="actionCell3" destination="538" id="name-outlet-538"/>
                         <outlet property="AddToListButton" destination="1649" id="name-outlet-1649"/>
-                        <outlet property="MenuB8" destination="1842" id="name-outlet-1842"/>
                     </connections>
                     <navigationItem title="Actions" id="1799" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1843" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1842" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1829" kind="unwind" unwindAction="UnwindToMenu:" id="1844"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="558" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1307,22 +1301,10 @@
                     <connections>
                         <outlet property="SavedListsUIView" destination="811" id="name-outlet-811"/>
                         <outlet property="ListCell" destination="1572" id="name-outlet-1572"/>
-                        <outlet property="MenuB3" destination="1791" id="name-outlet-1791"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="Saved Lists" id="1790" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1792" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1791" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1774" kind="unwind" unwindAction="UnwindToMenu:" id="1793"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <barButtonItem style="plain" id="1937" key="leftBarButtonItem"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="874" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1497,7 +1479,6 @@
                         <outlet property="ListProdCell1" destination="939" id="name-outlet-939"/>
                         <outlet property="ListOneUIView" destination="937" id="name-outlet-937"/>
                         <outlet property="ListProdCell2" destination="984" id="name-outlet-984"/>
-                        <outlet property="MenuB5" destination="1808" id="name-outlet-1808"/>
                         <outlet property="Prod1Image" destination="950" id="name-outlet-950"/>
                         <outlet property="Prod1Title" destination="1353" id="name-outlet-1353"/>
                         <outlet property="Prod1Class" destination="1020" id="name-outlet-1020"/>
@@ -1516,18 +1497,6 @@
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="" id="1795" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1809" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1808" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1775" kind="unwind" unwindAction="UnwindToMenu:" id="1811"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="954" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1640,7 +1609,6 @@
                         <outlet property="SavedManualsList" destination="1098" id="name-outlet-1098"/>
                         <outlet property="manualProdCell2" destination="1100" id="name-outlet-1100"/>
                         <outlet property="manualProdCell1" destination="1147" id="name-outlet-1147"/>
-                        <outlet property="MenuB10" destination="1846" id="name-outlet-1846"/>
                         <outlet property="manProd1Title" destination="1268" id="name-outlet-1268"/>
                         <outlet property="manProd1Image" destination="1176" id="name-outlet-1176"/>
                         <outlet property="manProd1Class" destination="1160" id="name-outlet-1160"/>
@@ -1650,18 +1618,6 @@
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="Saved Manuals" id="1800" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1847" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1846" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1831" kind="unwind" unwindAction="UnwindToMenu:" id="1848"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1128" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1717,22 +1673,9 @@
                         <outlet property="ProductManual" destination="1186" id="name-outlet-1186"/>
                         <outlet property="ManualListView" destination="1190" id="name-outlet-1190"/>
                         <outlet property="ManualListCell1" destination="1192" id="name-outlet-1192"/>
-                        <outlet property="MenuB11" destination="1850" id="name-outlet-1850"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="Saved Manuals" id="1801" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1851" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1850" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1832" kind="unwind" unwindAction="UnwindToMenu:" id="1852"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1202" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1795,22 +1738,8 @@
                     <connections>
                         <outlet property="ProductPageUIView" destination="1288" id="name-outlet-1288"/>
                         <outlet property="StarsImage" destination="1307" id="name-outlet-1307"/>
-                        <outlet property="MenuB8" destination="1822" id="name-outlet-1822"/>
-                        <outlet property="MenuB9" destination="1821" id="name-outlet-1821"/>
                     </connections>
                     <navigationItem title="" id="1798" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1822" key="rightBarButtonItem" title="Menu">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1821" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1834" kind="unwind" unwindAction="UnwindToMenu:" id="1862"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1291" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1873,21 +1802,8 @@
                     <connections>
                         <outlet property="ProductPageUIView" destination="1376" id="1375"/>
                         <outlet property="StarsImage" destination="1378" id="1377"/>
-                        <outlet property="MenuB16" destination="1864" id="name-outlet-1864"/>
                     </connections>
                     <navigationItem title="" id="1802" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1865" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1864" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1872" kind="unwind" unwindAction="UnwindToMenu:" id="1874"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1388" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1916,19 +1832,9 @@
                     </tableView>
                     <connections>
                         <outlet property="ListTwoUIView" destination="1402" id="name-outlet-1402"/>
-                        <outlet property="MenuB6" destination="1817" id="name-outlet-1817"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="Other Items" id="1796" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1818" key="rightBarButtonItem">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1817" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1432" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1968,22 +1874,9 @@
                     <connections>
                         <outlet property="NoteListUIView" destination="1481" id="name-outlet-1481"/>
                         <outlet property="TestCell" destination="1542" id="name-outlet-1542"/>
-                        <outlet property="MenuB2" destination="1786" id="name-outlet-1786"/>
                     </connections>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationItem title="Notes" id="1783" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                        <barButtonItem style="plain" id="1787" key="rightBarButtonItem" title="">
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1786" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1782" kind="unwind" unwindAction="UnwindToMenu:" id="1788"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1495" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2152,7 +2045,23 @@
         <image name="magnifying-glass-small.png" width="28" height="28"/>
         <image name="new-cross.png" width="17" height="17"/>
         <image name="cross-medium.png" width="16" height="16"/>
-        <image name="navBarBackground.png" width="320" height="72"/>
+        <image name="navBarBackground.png" width="640" height="144"/>
         <image name="navBarBackground(small).png" width="640" height="106"/>
+        <image name="navBarBackground44.png" width="640" height="88"/>
+        <image name="navBar44.png" width="320" height="44"/>
+        <image name="navBarReversed.png" width="320" height="44"/>
+        <image name="menuButton.png" width="44" height="44"/>
+        <image name="menuButton(large).png" width="46" height="52"/>
+        <image name="menuButton-no-text.png" width="22" height="15"/>
+        <image name="menuBarIcon.png" width="44" height="31"/>
+        <image name="menuIcon.png" width="44" height="44"/>
+        <image name="menuIconShifted.png" width="44" height="44"/>
+        <image name="menuIconShifted2.png" width="44" height="44"/>
+        <image name="greyTrans.png" width="20" height="504"/>
+        <image name="favorites-star(big).png" width="224" height="208"/>
+        <image name="Favorites-star.png" width="388" height="360"/>
+        <image name="favorites-star.png" width="194" height="180"/>
+        <image name="XIcon.png" width="22" height="22"/>
+        <image name="XIcon(big).png" width="22" height="22"/>
     </resources>
 </document>

@@ -2,12 +2,16 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
+using System.Drawing;
 
 namespace GFS_iOS
 {
 	partial class SearchViewController : UIViewController
 	{
 		SearchViewController currentController;
+        MenuSubView menuView;
+
+		UIBarButtonItem menuB2;
 
 		public SearchViewController (IntPtr handle) : base (handle)
 		{
@@ -17,6 +21,37 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			//Hide the back button
+			this.NavigationItem.HidesBackButton = true;
+
+			//Manually create a menu button and add it to the right side of the menu bar
+//			menuButton31 = UIButton.FromType(UIButtonType.Custom);
+//			menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
+//			menuButton31.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
+//			this.NavigationController.NavigationBar.Add(menuButton31);
+//
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
+
+			//Create the Menu button
+			menuB2 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
+				(sender, args) => {
+					//Dismiss the keyboard when the menu button is pressed.
+					SearchBar.ResignFirstResponder();
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB2.Image = UIImage.FromFile("menuIconShifted.png");
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB2.Image = UIImage.FromFile("XIcon.png");
+					}
+					menuView.toggleMenu(this, 64);
+				});
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB2, true);
+
+
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 
@@ -74,10 +109,8 @@ namespace GFS_iOS
 					HintTable.Hidden = false;
 				}
 			};
-
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
-
 	}
 
 	class TableSource : UITableViewSource
@@ -114,14 +147,11 @@ namespace GFS_iOS
 			UIStoryboard test = UIStoryboard.FromName("MainStoryboard", null); 
 
 			//Get the searchResultsController View Controller 
-			UIViewController ok = (UIViewController) test.InstantiateViewController(  
+			SearchResultsTableController ok = (SearchResultsTableController) test.InstantiateViewController(  
 				"searchResultsController"
 			);
-
 			//Segue to the new View
 		    controller.NavigationController.PushViewController(ok, true);
 		}
 	}
-
-
 }

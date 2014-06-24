@@ -11,7 +11,8 @@ namespace GFS_iOS
         UIScrollView scrollView;
         UIImageView imageView;
         UIScrollView mainScrollView;
-
+        MenuSubView menuView;
+		UIBarButtonItem menuB1;
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -31,21 +32,33 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 			var navBar = this.NavigationController.NavigationBar;
-			//Create the NavBar image
-			navBar.SetBackgroundImage(UIImage.FromFile("blueX-backround.png"),UIBarMetrics.Default);
 
+			//Create the NavBar image
+			navBar.SetBackgroundImage(UIImage.FromFile("navBarReversed.png"),UIBarMetrics.Default);
 			navBar.TintColor = UIColor.White; //Make the text color white.
 			//Make the controller title text white
 			UITextAttributes test = new UITextAttributes();
 			test.TextColor = UIColor.White;
 			navBar.SetTitleTextAttributes(test);
 
-			//this.SetNeedsStatusBarAppearanceUpdate();
+			//Initialize Flyout Menu
+			menuView = MenuSubView.getInstance();
 
-
-			//this.ParentViewController.NavigationItem.back
-			//HomePageNavItem;
-            // Perform any additional setup after loading the view, typically from a nib.   
+			//Create the Menu button
+			menuB1 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
+				//When clicked
+				(sender, args) => {
+					if (menuView.isVisible()) {
+						//Change X image back to the normal menu image
+						menuB1.Image = UIImage.FromFile("menuIconShifted.png");
+					} else {
+						//Make Button show the X image once it's pressed.
+						menuB1.Image = UIImage.FromFile("XIcon.png");
+					}
+					menuView.toggleMenu(this, 64);
+				});
+			//Add the Menu button to the navigation bar.
+			this.NavigationItem.SetRightBarButtonItem(menuB1, true);
 
             //generate main scroll view
             mainScrollView = new UIScrollView(new RectangleF(0, 64, 320, 504));
@@ -78,24 +91,14 @@ namespace GFS_iOS
 
 		}
 
-		public override void ViewWillAppear(bool animated)
+		//"Unwind Segue". 
+		[Action ("UnwindToHome:")]
+		public void UnwindToHome (UIStoryboardSegue segue)
 		{
-			base.ViewWillAppear(animated);
-		}
-
-		public override void ViewDidAppear(bool animated)
-		{
-			base.ViewDidAppear(animated);
-		}
-
-		public override void ViewWillDisappear(bool animated)
-		{
-			base.ViewWillDisappear(animated);
-		}
-
-		public override void ViewDidDisappear(bool animated)
-		{
-			base.ViewDidDisappear(animated);
+			//Note: menuView.toggleMenu() is already called by PrepareForSegue() in MenuTableViewController.
+			//Change X image back to the normal menu image. This is normally handled when instantiating a view, 
+			//but we're unwinding to a view that already exists, so this has to be done manually.
+			menuB1.Image = UIImage.FromFile("menuIconShifted.png");
 		}
 
 		#endregion
