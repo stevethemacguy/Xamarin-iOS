@@ -172,7 +172,6 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small-40%402x.png" />
     <BundleResource Include="Resources\Default-568h%402x %28iOS default%29.png" />
-    <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\app-Icon.png" />
     <BundleResource Include="Resources\settings-icon.png" />
     <BundleResource Include="Resources\science-background%402x.png" />
@@ -219,6 +218,8 @@
     <BundleResource Include="Resources\XIcon%402x.png" />
     <BundleResource Include="Resources\XIcon%28big%29.png" />
     <BundleResource Include="Resources\XIcon%28big%29%402x.png" />
+    <BundleResource Include="Resources\splashScreen.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
