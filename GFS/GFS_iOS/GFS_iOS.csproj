@@ -219,6 +219,7 @@
     <BundleResource Include="Resources\XIcon%402x.png" />
     <BundleResource Include="Resources\XIcon%28big%29.png" />
     <BundleResource Include="Resources\XIcon%28big%29%402x.png" />
+    <BundleResource Include="Resources\splashScreen.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
