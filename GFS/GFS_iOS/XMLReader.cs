@@ -5,54 +5,23 @@ using System.Text;
 using System.Xml.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.IO;
 
 namespace GFS_iOS
 {
-	public class XMLReader
-    {
-        //this method checks if the element exist to avoid nullreference exception, if yes returns the value, if no returns null
-		public string GetElementValue(XElement parentElement, string elementName)
-        {
-            var element = parentElement.Element(elementName);
-            if (element != null)
-            {
-                return element.Value;
-            }
-            else
-            {
-                return null;
-            }
-        }
+	public class  XMLReader
+	{
+		private XDocument doc;
 
-        //this method returns a specified child element.
-		public XElement GetElement(XElement parentElement, string elementName)
-        {
-            var element = parentElement.Element(elementName);
-            if (element != null)
-            {
-                return element;
-            }
-            else
-            {
-                return null;
-            }
-        }
+		public XMLReader(StreamReader feedReader)
+		{
+			doc = XDocument.Parse(feedReader.ReadToEnd());
+		}
 
-        //this method returns a list of images associate with the product.
-		public List<Image> GetImages(XElement parentElement, string elementName)
-        {
-            List<Image> images = new List<Image>();
-            var imageElements = parentElement.Descendants("image");
-            foreach (XElement iElement in imageElements)
-            {
-                Image img = new Image();
-                img.Type = GetElementValue(iElement, "imageType");
-                img.Format = GetElementValue(iElement,"format");
-                img.URL = GetElementValue(iElement, "url");
-                images.Add(img);
-            }
+		public IEnumerable<XElement> getParentNodes(String parent)
+		{
+			return doc.Root.Descendants(parent);
+		}
 
-            return images;
-        }
-    }
+	}
 }
