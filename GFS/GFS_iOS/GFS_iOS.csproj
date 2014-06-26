@@ -231,7 +231,7 @@
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Image.cs" />
-    <Compile Include="ExtensionMethod.cs" />
+    <Compile Include="XMLReader.cs" />
     <Compile Include="GFS_iOSViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="GFS_iOSViewController.designer.cs">
@@ -339,5 +339,6 @@
     <BundleResource Include="Resources\itemlists%402x.png" />
     <BundleResource Include="Resources\magnifying-glass-small.png" />
     <BundleResource Include="Resources\greyTrans.png" />
+    <BundleResource Include="Resources\Hybris_Product_API_Feed.xml" />
   </ItemGroup>
 </Project>
