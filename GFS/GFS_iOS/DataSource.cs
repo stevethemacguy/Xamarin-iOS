@@ -22,7 +22,7 @@ namespace GFS_iOS
 		//A map where Key is the list name, and value is a list of products associated with that list
 		private Dictionary<String, List<Product>> savedListProductMap;
 
-		//This map stores all products that are in the application
+		//Stores all products that are loaded from the webservice (via xml or json)
 		//A map where Key is product ID, and value is the product with that ID.
 		private Dictionary<String, Product> productMap;
 
@@ -52,6 +52,24 @@ namespace GFS_iOS
 
 		public List<Product> getProductList() {
 			return productList;
+		}
+
+		//Returns a map of all products from the database, where the key is the product's unique ID and the value is the product
+		public Dictionary<String, Product> getAllProducts()
+		{
+			return productMap;
+		}
+
+		//Adds a product to the database using the product's unique ID as a key in the map
+		public void addProductToDB(String productID, Product toAdd)
+		{
+			productMap.Add(productID, toAdd);
+		}
+
+		//Removes product with an id of productID from the database.
+		public void removeProductFromDB(String productID)
+		{
+			productMap.Remove(productID);
 		}
 
 		public void addToManualList(String productName)

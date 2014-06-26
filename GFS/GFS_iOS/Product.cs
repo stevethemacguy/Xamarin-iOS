@@ -16,14 +16,18 @@ namespace GFS_iOS
 		private String readability = "";
 		private String price = "";
 		private String segueName = "";
+		//The full description of the product
+		private String description = "";
 
+		//Used only by webservice
 	    public Product()
 	    {
 	        
 	    }
 
-        public Product(String imageFileName, String title, String prodClass, String cap, String readability, String price, String segueName)
+		public Product(String imageFileName, String title, String prodClass, String cap, String readability, String price, String segueName, String description = "")
 		{
+			this.description = description;
 			this.segueName = segueName;
 			this.readability = readability;
 			this.price = price;
