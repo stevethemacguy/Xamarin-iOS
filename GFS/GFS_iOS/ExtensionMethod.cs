@@ -8,10 +8,10 @@ using MonoTouch.UIKit;
 
 namespace GFS_iOS
 {
-    public static class  ExtensionMethod
+    class  ExtensionMethod
     {
         //this method checks if the element exist to avoid nullreference exception, if yes returns the value, if no returns null
-        public static string GetElementValue(this XElement parentElement, string elementName)
+        private string GetElementValue(XElement parentElement, string elementName)
         {
             var element = parentElement.Element(elementName);
             if (element != null)
@@ -25,7 +25,7 @@ namespace GFS_iOS
         }
 
         //this method returns a specified child element.
-        public static XElement GetElement(this XElement parentElement, string elementName)
+        private XElement GetElement(XElement parentElement, string elementName)
         {
             var element = parentElement.Element(elementName);
             if (element != null)
@@ -39,16 +39,16 @@ namespace GFS_iOS
         }
 
         //this method returns a list of images associate with the product.
-        public static List<Image> GetImages(this XElement parentElement, string elementName)
+        private List<Image> GetImages(XElement parentElement, string elementName)
         {
             List<Image> images = new List<Image>();
             var imageElements = parentElement.Descendants("image");
             foreach (XElement iElement in imageElements)
             {
                 Image img = new Image();
-                img.Type = iElement.GetElementValue("imageType");
-                img.Format = iElement.GetElementValue("format");
-                img.URL = iElement.GetElementValue("url");
+                img.Type = GetElementValue(iElement, "imageType");
+                img.Format = GetElementValue(iElement,"format");
+                img.URL = GetElementValue(iElement, "url");
                 images.Add(img);
             }
 
