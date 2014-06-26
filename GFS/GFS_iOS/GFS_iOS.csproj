@@ -233,7 +233,6 @@
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Image.cs" />
-    <Compile Include="ExtensionMethod.cs" />
     <Compile Include="GFS_iOSViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="GFS_iOSViewController.designer.cs">
@@ -321,6 +320,7 @@
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="WebService.cs" />
+    <Compile Include="XMLReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

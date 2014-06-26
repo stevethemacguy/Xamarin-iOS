@@ -89,6 +89,13 @@ namespace GFS_iOS
             //adding sub scroll view into main scroll view
             mainScrollView.AddSubview(scrollView);
 
+			var webservice = new WebService();
+			var productlist = webservice.GetAllProducts();
+			foreach (Product p in productlist)
+			{
+				Console.WriteLine(p.Summary);
+			}
+
 		}
 
 		//"Unwind Segue". 

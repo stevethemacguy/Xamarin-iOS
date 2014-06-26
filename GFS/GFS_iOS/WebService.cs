@@ -36,14 +36,13 @@ namespace GFS_iOS
         //this method returns a collection of products with all the fields.
         public IEnumerable<Product> GetAllProducts()
         {
-            ExtensionMethod helper = new ExtensionMethod();
+			XMLReader xmlReader = new XMLReader();
             var result = doc.Root.Descendants("product").Select(x => new Product()
             {
-                Summary = helper.GetElementValue(x,"summary"),
-                AverageRating = helper.GetElementValue(x,"averageRating"),
-                stocklevelstatuscode =  new ExtensionMethod().GetElementValue(new ExtensionMethod().GetElement((new ExtensionMethod().GetElement(x,"stock")),"stockLevelStatus"),"code"),
+                Summary = xmlReader.GetElementValue(x,"summary"),
+                AverageRating = xmlReader.GetElementValue(x,"averageRating"),
+                stocklevelstatuscode =  new XMLReader().GetElementValue(new XMLReader().GetElement((new XMLReader().GetElement(x,"stock")),"stockLevelStatus"),"code"),
                 //stocklevelstatuscode = x.GetElement("stock").GetElement("stockLevelStatus").GetElementValue("code"),
-
             });
             return result;
         }
