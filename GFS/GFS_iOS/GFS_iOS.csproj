@@ -173,6 +173,7 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small-40%402x.png" />
     <BundleResource Include="Resources\Default-568h%402x %28iOS default%29.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\app-Icon.png" />
     <BundleResource Include="Resources\settings-icon.png" />
     <BundleResource Include="Resources\science-background%402x.png" />
@@ -219,9 +220,6 @@
     <BundleResource Include="Resources\XIcon%402x.png" />
     <BundleResource Include="Resources\XIcon%28big%29.png" />
     <BundleResource Include="Resources\XIcon%28big%29%402x.png" />
-    <BundleResource Include="Resources\splashScreen.png" />
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\sample.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -233,6 +231,7 @@
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Image.cs" />
+    <Compile Include="XMLReader.cs" />
     <Compile Include="GFS_iOSViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="GFS_iOSViewController.designer.cs">
@@ -320,7 +319,6 @@
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="WebService.cs" />
-    <Compile Include="XMLReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
@@ -341,5 +339,6 @@
     <BundleResource Include="Resources\itemlists%402x.png" />
     <BundleResource Include="Resources\magnifying-glass-small.png" />
     <BundleResource Include="Resources\greyTrans.png" />
+    <BundleResource Include="Resources\Hybris_Product_API_Feed.xml" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
-
+using System.Xml.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -31,6 +33,19 @@ namespace GFS_iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+		    WebService webservice = new WebService();
+		    XMLReader xmlReader = webservice.getXMLReader();
+		    IEnumerable<XElement> test2 = xmlReader.getParentNodes("product");
+            foreach (XElement x in test2)
+		    {
+		        var node = x.Element("stock").Element("stockLevelStatus").Element("code");
+		        if (node != null)
+		        {
+		            Console.WriteLine(node.Value);
+		        }
+		    }
+
 			var navBar = this.NavigationController.NavigationBar;
 
 			//Create the NavBar image
