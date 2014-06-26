@@ -18,8 +18,13 @@ namespace GFS_iOS
 		public String savedManual1 = null;
 		public String savedManual2 = null;
 
+		//Each Saved List has a list of associated products.
 		//A map where Key is the list name, and value is a list of products associated with that list
-		private Dictionary<String, List<Product>> productMap;
+		private Dictionary<String, List<Product>> savedListProductMap;
+
+		//This map stores all products that are in the application
+		//A map where Key is product ID, and value is the product with that ID.
+		private Dictionary<String, Product> productMap;
 
 		//Can't be instantiated except by the getInstance method
 		protected DataSource()
@@ -28,7 +33,7 @@ namespace GFS_iOS
 			if (savedListSet == null)
 			{
 				savedListSet = new HashSet<string>();
-				productMap = new Dictionary<string, List<Product>>();
+				savedListProductMap = new Dictionary<string, List<Product>>();
 				//Add the two defaults for now
 				addSavedList("cabinets");
 				addSavedList("others");
@@ -59,7 +64,7 @@ namespace GFS_iOS
 		}
 
 		public Dictionary<String, List<Product>> getProductMap(){
-			return productMap;
+			return savedListProductMap;
 		}
 
 		public void addSavedList(string tooAdd)
