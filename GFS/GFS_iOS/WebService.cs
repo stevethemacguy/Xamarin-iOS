@@ -19,10 +19,12 @@ namespace GFS_iOS
 
         public WebService()
         {
+            //constructor initializing source from local file
             feedReader = new StreamReader("Hybris_Product_API_Feed.xml");
             doc = XDocument.Parse(feedReader.ReadToEnd());
         }
 
+        //setting web service source(URL) and type(xml, json)
         public void SetWebServiceSource(string url, string contentType)
         {
             request = HttpWebRequest.Create(url);
@@ -31,6 +33,7 @@ namespace GFS_iOS
             doc = XDocument.Parse(feedReader.ReadToEnd());
         }
 
+        //this method returns a collection of products with all the fields.
         public IEnumerable<Product> GetAllProducts()
         {
             var result = doc.Root.Descendants("product").Select(x => new Product()

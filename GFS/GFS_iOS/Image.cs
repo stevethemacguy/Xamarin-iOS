@@ -8,6 +8,7 @@ using MonoTouch.UIKit;
 
 namespace GFS_iOS
 {
+    //image class for storing image fields 
     public class Image
     {
         public string Type;

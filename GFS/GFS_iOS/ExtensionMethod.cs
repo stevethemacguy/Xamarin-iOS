@@ -10,7 +10,8 @@ namespace GFS_iOS
 {
     public static class  ExtensionMethod
     {
-        public static string GetElementValue(this XElement parentElement, string elementName, string defaultValue = null)
+        //this method checks if the element exist to avoid nullreference exception, if yes returns the value, if no returns null
+        public static string GetElementValue(this XElement parentElement, string elementName)
         {
             var element = parentElement.Element(elementName);
             if (element != null)
@@ -19,10 +20,11 @@ namespace GFS_iOS
             }
             else
             {
-                return defaultValue;
+                return null;
             }
         }
 
+        //this method returns a specified child element.
         public static XElement GetElement(this XElement parentElement, string elementName)
         {
             var element = parentElement.Element(elementName);
@@ -36,6 +38,7 @@ namespace GFS_iOS
             }
         }
 
+        //this method returns a list of images associate with the product.
         public static List<Image> GetImages(this XElement parentElement, string elementName)
         {
             List<Image> images = new List<Image>();
