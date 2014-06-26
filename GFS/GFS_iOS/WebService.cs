@@ -16,8 +16,8 @@ namespace GFS_iOS
     {
         private WebRequest request;
         private StreamReader feedReader;
-        private XDocument doc;
        
+		//Placeholder for real web service functionality
         public WebService(string url, string contentType)
         {
             request = HttpWebRequest.Create(url);
@@ -28,15 +28,16 @@ namespace GFS_iOS
         //Read XML from file
         public WebService()
         {
-            feedReader = new StreamReader("Hybris_Product_API_Feed.xml");
         }
 
         //Returns a new XML Reader
         public XMLReader getXMLReader()
         {
+			feedReader = new StreamReader("sample.xml");
             return new XMLReader(feedReader);
         }
 
+		//Placeholder for future JSON Reader
         //public JSONReader getJSONReader()
         //{
         //    return null;

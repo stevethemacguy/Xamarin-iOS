@@ -19,13 +19,6 @@ namespace GFS_iOS
 		{
 		}
 
-		public override void DidReceiveMemoryWarning()
-		{
-			// Releases the view if it doesn't have a superview.
-			base.DidReceiveMemoryWarning();
-			
-			// Release any cached data, images, etc that aren't in use.
-		}
 
 		#region View lifecycle
 
@@ -34,8 +27,12 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+			////// Test out the webservice
+			//Initialize the webservice. Just reads from flat XML file for now, so use the empty constructor
 		    WebService webservice = new WebService();
+			//Initialize the XML reader
 		    XMLReader xmlReader = webservice.getXMLReader();
+			//
 		    IEnumerable<XElement> test2 = xmlReader.getParentNodes("product");
             foreach (XElement x in test2)
 		    {
