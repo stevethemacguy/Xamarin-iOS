@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace GFS_iOS
 {
@@ -48,6 +49,33 @@ namespace GFS_iOS
 			{
 				productList = new List<Product>();
 			}
+		}
+
+		//Creates all the products in the database (currently from an XML file)
+		public void initializeDB()
+		{
+			Helpers helper = new Helpers();
+			////// Test out the webservice
+			//Initialize the webservice. Just reads from flat XML file for now, so use the empty constructor
+			WebService webservice = new WebService();
+
+
+			//To use XML
+//			//Initialize the XML reader
+//			XMLReader xmlReader = webservice.getXMLReader();
+//			//
+//			IEnumerable<XElement> test2 = xmlReader.getParentNodes("product");
+//			foreach (XElement x in test2)
+//			{
+//
+//				String numTest = helper.getRandomNumber();
+//				var node = x.Element("stock").Element("stockLevelStatus").Element("code");
+//				if (node != null)
+//				{
+//					Console.WriteLine(node.Value);
+//					Console.WriteLine(numTest);
+//				}
+//			}
 		}
 
 		public List<Product> getProductList() {

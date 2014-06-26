@@ -27,21 +27,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			////// Test out the webservice
-			//Initialize the webservice. Just reads from flat XML file for now, so use the empty constructor
-		    WebService webservice = new WebService();
-			//Initialize the XML reader
-		    XMLReader xmlReader = webservice.getXMLReader();
-			//
-		    IEnumerable<XElement> test2 = xmlReader.getParentNodes("product");
-            foreach (XElement x in test2)
-		    {
-		        var node = x.Element("stock").Element("stockLevelStatus").Element("code");
-		        if (node != null)
-		        {
-		            Console.WriteLine(node.Value);
-		        }
-		    }
+			//Create all the products in the database
+			DataSource db = DataSource.getInstance();
+			db.initializeDB();
 
 			var navBar = this.NavigationController.NavigationBar;
 

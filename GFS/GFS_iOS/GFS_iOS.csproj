@@ -319,6 +319,7 @@
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="WebService.cs" />
+    <Compile Include="Helpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
