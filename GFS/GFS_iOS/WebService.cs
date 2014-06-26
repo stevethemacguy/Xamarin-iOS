@@ -20,7 +20,7 @@ namespace GFS_iOS
         public WebService()
         {
             //constructor initializing source from local file
-            feedReader = new StreamReader("Hybris_Product_API_Feed.xml");
+			feedReader = new StreamReader("sample.xml");
             doc = XDocument.Parse(feedReader.ReadToEnd());
         }
 
