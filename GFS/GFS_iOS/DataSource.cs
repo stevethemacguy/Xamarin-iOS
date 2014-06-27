@@ -49,16 +49,18 @@ namespace GFS_iOS
 			{
 				productList = new List<Product>();
 			}
+
+			productMap = new Dictionary<String, Product>();
 		}
 
 		//Creates all the products in the database (currently from an XML file)
 		public void initializeDB()
 		{
 			Helpers helper = new Helpers();
+		
 			////// Test out the webservice
 			//Initialize the webservice. Just reads from flat XML file for now, so use the empty constructor
 			WebService webservice = new WebService();
-
 
 			//To use XML
 			//Initialize the XML reader
@@ -68,7 +70,6 @@ namespace GFS_iOS
 			IEnumerable<XElement> productNodes = xmlReader.getParentNodes("product");
 			foreach (XElement x in productNodes)
 			{
-
 
 //				String prodClass="";
 //				String cap = ""; 
@@ -91,16 +92,21 @@ namespace GFS_iOS
 				{
 					if (helper.isNotNull(x.Element("images").Element("image"))) 
 					{
-						imageURL = "http://swx-hybris-ash02.siteworx.com:9001/" + xmlReader.getNodeValue(x.Element("images").Element("image").Element("url"));
+						imageURL = "http://swx-hybris-ash02.siteworx.com:9001" + xmlReader.getNodeValue(x.Element("images").Element("image").Element("url"));
 					}
 				}
 
-				Console.WriteLine(title);
-				Console.WriteLine(description);
-				Console.WriteLine(price);
-				Console.WriteLine(imageURL);
-
+				//Create the new product from the xml values and add it to the product map
+				Product p = new Product(imageURL, title, price, description);
+				productMap.Add(p.getID(), p); //Uses the ID as a key
 			}
+			//Print out the products using their toString
+			foreach(Product prod in getAllProducts().Values)
+			{
+				Console.WriteLine(prod);
+				Console.WriteLine("\n");
+			}
+				
 		}
 
 		public List<Product> getProductList() {
