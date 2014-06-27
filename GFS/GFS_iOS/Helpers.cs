@@ -12,6 +12,13 @@ namespace GFS_iOS
 			numGenerator = new Random();
 		}
 
+		public Boolean isNotNull(object toCheck)
+		{
+			if (toCheck == null)
+				return false;
+			else
+				return true;
+		}
 		//Returns a random 12 digit alpha-numeric number
 		public String getRandomNumber()
 		{

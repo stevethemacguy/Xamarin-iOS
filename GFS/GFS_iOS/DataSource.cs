@@ -61,21 +61,46 @@ namespace GFS_iOS
 
 
 			//To use XML
-//			//Initialize the XML reader
-//			XMLReader xmlReader = webservice.getXMLReader();
-//			//
-//			IEnumerable<XElement> test2 = xmlReader.getParentNodes("product");
-//			foreach (XElement x in test2)
-//			{
+			//Initialize the XML reader
+			XMLReader xmlReader = webservice.getXMLReader();
+
+			//Get all parent "product" nodes so we can loop over them
+			IEnumerable<XElement> productNodes = xmlReader.getParentNodes("product");
+			foreach (XElement x in productNodes)
+			{
+
+
+//				String prodClass="";
+//				String cap = ""; 
+//				String readability = ""; 
 //
-//				String numTest = helper.getRandomNumber();
-//				var node = x.Element("stock").Element("stockLevelStatus").Element("code");
-//				if (node != null)
-//				{
-//					Console.WriteLine(node.Value);
-//					Console.WriteLine(numTest);
-//				}
-//			}
+//				String segueName = ""; 
+				String price = "";
+				String imageURL = "";
+				String title = xmlReader.getNodeValue(x.Element("summary"));
+				String description = xmlReader.getNodeValue(x.Element("description"));
+
+				//Check if the node exists and get the value if it does
+				if (helper.isNotNull(x.Element("price")))
+				{
+						price = xmlReader.getNodeValue(x.Element("price").Element("formattedValue"));
+				}
+
+				//Check if the node exists and get the value if it does
+				if (helper.isNotNull(x.Element("images")))
+				{
+					if (helper.isNotNull(x.Element("images").Element("image"))) 
+					{
+						imageURL = "http://swx-hybris-ash02.siteworx.com:9001/" + xmlReader.getNodeValue(x.Element("images").Element("image").Element("url"));
+					}
+				}
+
+				Console.WriteLine(title);
+				Console.WriteLine(description);
+				Console.WriteLine(price);
+				Console.WriteLine(imageURL);
+
+			}
 		}
 
 		public List<Product> getProductList() {

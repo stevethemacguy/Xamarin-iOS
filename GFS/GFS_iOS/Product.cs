@@ -16,6 +16,7 @@ namespace GFS_iOS
 		private String readability = "";
 		private String price = "";
 		private String segueName = "";
+		private String id = "";
 		//The full description of the product
 		private String description = "";
 
@@ -27,6 +28,8 @@ namespace GFS_iOS
 
 		public Product(String imageFileName, String title, String prodClass, String cap, String readability, String price, String segueName, String description = "")
 		{
+			Helpers helper = new Helpers();
+			id = helper.getRandomNumber();
 			this.description = description;
 			this.segueName = segueName;
 			this.readability = readability;
@@ -51,6 +54,10 @@ namespace GFS_iOS
 
 		public String getCapacity() {
 			return capacity;
+		}
+
+		public String getID() {
+			return id;
 		}
 
 		public String getReadability() {
