@@ -347,4 +347,10 @@
     <BundleResource Include="Resources\greyTrans.png" />
     <BundleResource Include="Resources\Hybris_Product_API_Feed.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{0e237a64-5f31-41b1-aff4-65ea31b18e08}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
