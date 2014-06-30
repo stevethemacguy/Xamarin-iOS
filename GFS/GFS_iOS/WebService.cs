@@ -38,9 +38,9 @@ namespace GFS_iOS
         }
 
 		//Placeholder for future JSON Reader
-        //public JSONReader getJSONReader()
-        //{
-        //    return null;
-        //}
+        public JSONReader getJSONReader()
+        {
+            return new JSONReader(feedReader);
+        }
     }
 }

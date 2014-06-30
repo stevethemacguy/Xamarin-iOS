@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Json;
 using System.Xml.Linq;
 
 namespace GFS_iOS
@@ -60,12 +61,56 @@ namespace GFS_iOS
 		
 			////// Test out the webservice
 			//Initialize the webservice. Just reads from flat XML file for now, so use the empty constructor
-			WebService webservice = new WebService();
+            WebService webservice = new WebService("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products?query=a&pageSize=40", "json");
 
 			//To use XML
 			//Initialize the XML reader
-			XMLReader xmlReader = webservice.getXMLReader();
+			//xmlReader = webservice.getXMLReader();
 
+            //To use JSON
+            //Initialize the JSON reader
+            JSONReader jsonReader = webservice.getJSONReader();
+
+            //Get all parent "product" nodes so we can loop over them -- using JSON
+            JsonValue js = jsonReader.getParentNodes("products");
+            foreach (JsonValue j in js)
+            {
+
+                //				String prodClass="";
+                //				String cap = ""; 
+                //				String readability = ""; 
+                //
+                //				String segueName = ""; 
+                String price = "";
+                String imageURL = "";
+                String title = jsonReader.GetNodeValue(j, "summary");
+                String description = jsonReader.GetNodeValue(j, "description");
+
+                //Check if the node exists and get the value if it does
+                if (j.ContainsKey("price"))
+                {
+                    price = jsonReader.GetNodeValue(j["price"], "formattedValue");
+                }
+
+                //Check if the node exists and get the value if it does
+                if (j.ContainsKey("images"))
+                {
+                    JsonValue tempJsonValue = j["images"];
+                    foreach (JsonValue img in tempJsonValue)
+                    {
+                        if (img["imageType"].ToString().Equals("PRIMARY"))
+                        {
+                            imageURL = img["url"].ToString();
+                        }
+                    }
+                }
+
+                //Create the new product from the xml values and add it to the product map
+                Product p = new Product(imageURL, title, price, description);
+                productMap.Add(p.getID(), p); //Uses the ID as a key
+            }
+
+            /*
 			//Get all parent "product" nodes so we can loop over them
 			IEnumerable<XElement> productNodes = xmlReader.getParentNodes("product");
 			foreach (XElement x in productNodes)
@@ -100,6 +145,8 @@ namespace GFS_iOS
 				Product p = new Product(imageURL, title, price, description);
 				productMap.Add(p.getID(), p); //Uses the ID as a key
 			}
+             */ 
+             
 			//Print out the products using their toString
 			foreach(Product prod in getAllProducts().Values)
 			{
