@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Json;
 using System.Xml.Linq;
 
 namespace GFS_iOS
@@ -65,6 +66,46 @@ namespace GFS_iOS
 			//To use XML
 			//Initialize the XML reader
 			XMLReader xmlReader = webservice.getXMLReader();
+
+            //To use JSON
+            //Initialize the XML reader
+            JSONReader jsonReader = webservice.getJSONReader();
+
+
+            //Get all parent "product" nodes so we can loop over them -- using JSON
+		    JsonValue js = jsonReader.getParentNodes("parent");
+            foreach (JsonValue j in js)
+            {
+
+                //				String prodClass="";
+                //				String cap = ""; 
+                //				String readability = ""; 
+                //
+                //				String segueName = ""; 
+                String price = "";
+                String imageURL = "";
+                String title = j["summary"];
+                String description = xmlReader.getNodeValue(x.Element("description"));
+
+                //Check if the node exists and get the value if it does
+                if (helper.isNotNull(x.Element("price")))
+                {
+                    price = xmlReader.getNodeValue(x.Element("price").Element("formattedValue"));
+                }
+
+                //Check if the node exists and get the value if it does
+                if (helper.isNotNull(x.Element("images")))
+                {
+                    if (helper.isNotNull(x.Element("images").Element("image")))
+                    {
+                        imageURL = "http://swx-hybris-ash02.siteworx.com:9001" + xmlReader.getNodeValue(x.Element("images").Element("image").Element("url"));
+                    }
+                }
+
+                //Create the new product from the xml values and add it to the product map
+                Product p = new Product(imageURL, title, price, description);
+                productMap.Add(p.getID(), p); //Uses the ID as a key
+            }
 
 			//Get all parent "product" nodes so we can loop over them
 			IEnumerable<XElement> productNodes = xmlReader.getParentNodes("product");

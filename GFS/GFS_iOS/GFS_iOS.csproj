@@ -87,6 +87,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Json" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
@@ -231,6 +232,7 @@
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Image.cs" />
+    <Compile Include="JSONReader.cs" />
     <Compile Include="XMLReader.cs" />
     <Compile Include="GFS_iOSViewController.cs" />
     <Compile Include="Main.cs" />
