@@ -90,8 +90,7 @@ namespace GFS_iOS
                 //Check if the node exists and get the value if it does
                 if (j.ContainsKey("price"))
                 {
-                    JsonValue tempJsonValue = j["price"];
-                    price = jsonReader.GetNodeValue(tempJsonValue, "formattedValue");
+                    price = jsonReader.GetNodeValue(j["price"], "formattedValue");
                 }
 
                 //Check if the node exists and get the value if it does

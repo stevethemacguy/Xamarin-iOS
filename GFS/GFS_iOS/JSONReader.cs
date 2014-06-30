@@ -19,6 +19,7 @@ namespace GFS_iOS
             doc = JsonObject.Parse(feedReader.ReadToEnd());
         }
 
+        //get a collection of nodes specified under root
         public JsonValue getParentNodes(String parent)
         {
             if (doc.ContainsKey(parent))
@@ -31,6 +32,7 @@ namespace GFS_iOS
             }
         }
 
+        //return the value of a node specified if the node exist, otherwise, returns an empty string
         public String GetNodeValue(JsonValue node, string name)
         {
             if (node.ContainsKey(name))
