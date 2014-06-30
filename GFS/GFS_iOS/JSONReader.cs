@@ -31,15 +31,15 @@ namespace GFS_iOS
             }
         }
 
-        public String getNodeValue(JsonValue node, string )
+        public String GetNodeValue(JsonValue node, string name)
         {
-            if (node == null)
+            if (node.ContainsKey(name))
             {
-                return "";
+                return node[name].ToString();
             }
             else
             {
-                return node[];
+                return "";
             }
         }
     }

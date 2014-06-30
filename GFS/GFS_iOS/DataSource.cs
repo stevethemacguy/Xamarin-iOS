@@ -61,11 +61,11 @@ namespace GFS_iOS
 		
 			////// Test out the webservice
 			//Initialize the webservice. Just reads from flat XML file for now, so use the empty constructor
-			WebService webservice = new WebService();
+            WebService webservice = new WebService("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products?query=a&pageSize=40", "json");
 
 			//To use XML
 			//Initialize the XML reader
-			XMLReader xmlReader = webservice.getXMLReader();
+			//XMLReader xmlReader = webservice.getXMLReader();
 
             //To use JSON
             //Initialize the XML reader
@@ -73,7 +73,7 @@ namespace GFS_iOS
 
 
             //Get all parent "product" nodes so we can loop over them -- using JSON
-		    JsonValue js = jsonReader.getParentNodes("parent");
+		    JsonValue js = jsonReader.getParentNodes("products");
             foreach (JsonValue j in js)
             {
 
@@ -84,21 +84,26 @@ namespace GFS_iOS
                 //				String segueName = ""; 
                 String price = "";
                 String imageURL = "";
-                String title = j["summary"];
-                String description = xmlReader.getNodeValue(x.Element("description"));
+                String title = jsonReader.GetNodeValue(j, "summary");
+                String description = jsonReader.GetNodeValue(j, "description");
 
                 //Check if the node exists and get the value if it does
-                if (helper.isNotNull(x.Element("price")))
+                if (j.ContainsKey("price"))
                 {
-                    price = xmlReader.getNodeValue(x.Element("price").Element("formattedValue"));
+                    JsonValue tempJsonValue = j["price"];
+                    price = jsonReader.GetNodeValue(tempJsonValue, "formattedValue");
                 }
 
                 //Check if the node exists and get the value if it does
-                if (helper.isNotNull(x.Element("images")))
+                if (j.ContainsKey("images"))
                 {
-                    if (helper.isNotNull(x.Element("images").Element("image")))
+                    JsonValue tempJsonValue = j["images"];
+                    foreach (JsonValue img in tempJsonValue)
                     {
-                        imageURL = "http://swx-hybris-ash02.siteworx.com:9001" + xmlReader.getNodeValue(x.Element("images").Element("image").Element("url"));
+                        if (img["imageType"].ToString().Equals("PRIMARY"))
+                        {
+                            imageURL = img["url"].ToString();
+                        }
                     }
                 }
 
@@ -107,6 +112,7 @@ namespace GFS_iOS
                 productMap.Add(p.getID(), p); //Uses the ID as a key
             }
 
+            /*
 			//Get all parent "product" nodes so we can loop over them
 			IEnumerable<XElement> productNodes = xmlReader.getParentNodes("product");
 			foreach (XElement x in productNodes)
@@ -141,6 +147,8 @@ namespace GFS_iOS
 				Product p = new Product(imageURL, title, price, description);
 				productMap.Add(p.getID(), p); //Uses the ID as a key
 			}
+             */
+
 			//Print out the products using their toString
 			foreach(Product prod in getAllProducts().Values)
 			{

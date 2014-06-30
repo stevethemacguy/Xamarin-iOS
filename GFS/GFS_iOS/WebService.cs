@@ -20,8 +20,16 @@ namespace GFS_iOS
 		//Placeholder for real web service functionality
         public WebService(string url, string contentType)
         {
+            //var request = HttpWebRequest.Create("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products?query=a&pageSize=40");
+            ////request.ContentType = "application/xml";
+            //request.ContentType = "application/json";
+            //request.Method = "GET";
+            //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            //StreamReader reader = new StreamReader(response.GetResponseStream());
+
             request = HttpWebRequest.Create(url);
             request.ContentType = "application/" + contentType;
+            request.Method = "GET";
             feedReader = new StreamReader(((HttpWebResponse)request.GetResponse()).GetResponseStream());
         }
 
@@ -33,7 +41,7 @@ namespace GFS_iOS
         //Returns a new XML Reader
         public XMLReader getXMLReader()
         {
-			feedReader = new StreamReader("sample.xml");
+			feedReader = new StreamReader("Hybris_Product_API_Feed.xml");
             return new XMLReader(feedReader);
         }
 
