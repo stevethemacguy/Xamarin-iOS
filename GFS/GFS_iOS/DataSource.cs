@@ -55,32 +55,23 @@ namespace GFS_iOS
 		}
 
 		//Creates all the products in the database (currently from an XML file)
-		public void initializeDB()
+		public void initializeDBfromJSON()
 		{
-			Helpers helper = new Helpers();
-		
-			//Initialize the webservice. Just reads from flat XML file for now, so use the empty constructor
+			//Initialize the webservice.
             WebService webservice = new WebService("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products?query=a&pageSize=40", "json");
 
-			//To use XML
-			//Initialize the XML reader
-			//XMLReader xmlReader = webservice.getXMLReader();
-
-            //To use JSON
-            //Initialize the XML reader
+            //Initialize the JSON reader
             JSONReader jsonReader = webservice.getJSONReader();
-
 
             //Get all parent "product" nodes so we can loop over them -- using JSON
 		    JsonValue js = jsonReader.getParentNodes("products");
             foreach (JsonValue j in js)
             {
 
-                //				String prodClass="";
-                //				String cap = ""; 
-                //				String readability = ""; 
-                //
-                //				String segueName = ""; 
+				//String prodClass="";
+				//String cap = ""; 
+				//String readability = ""; 
+				//String segueName = ""; 
                 String price = "";
                 String imageURL = "";
                 String title = jsonReader.GetNodeValue(j, "summary");
@@ -110,17 +101,34 @@ namespace GFS_iOS
                 productMap.Add(p.getID(), p); //Uses the ID as a key
             }
 
-            /*
+			//Print out the products using their toString
+			foreach(Product prod in getAllProducts().Values)
+			{
+				Console.WriteLine(prod);
+				Console.WriteLine("\n");
+			}
+				
+		}
+
+		//Establishes a connection with the Webservice and creates all products by parsing the returned XML.
+		public void initializeDBfromXML()
+		{
+			Helpers helper = new Helpers();
+
+			//Initialize the webservice. Just reads from flat XML file for now
+			WebService webservice = new WebService("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products?query=a&pageSize=40", "xml");
+
+			//Initialize the XML reader
+			XMLReader xmlReader = webservice.getXMLReader();
+
 			//Get all parent "product" nodes so we can loop over them
 			IEnumerable<XElement> productNodes = xmlReader.getParentNodes("product");
 			foreach (XElement x in productNodes)
 			{
-
-//				String prodClass="";
-//				String cap = ""; 
-//				String readability = ""; 
-//
-//				String segueName = ""; 
+				//String prodClass="";
+				//String cap = ""; 
+				//String readability = ""; 
+				//String segueName = ""; 
 				String price = "";
 				String imageURL = "";
 				String title = xmlReader.getNodeValue(x.Element("summary"));
@@ -129,7 +137,7 @@ namespace GFS_iOS
 				//Check if the node exists and get the value if it does
 				if (helper.isNotNull(x.Element("price")))
 				{
-						price = xmlReader.getNodeValue(x.Element("price").Element("formattedValue"));
+					price = xmlReader.getNodeValue(x.Element("price").Element("formattedValue"));
 				}
 
 				//Check if the node exists and get the value if it does
@@ -145,7 +153,6 @@ namespace GFS_iOS
 				Product p = new Product(imageURL, title, price, description);
 				productMap.Add(p.getID(), p); //Uses the ID as a key
 			}
-             */
 
 			//Print out the products using their toString
 			foreach(Product prod in getAllProducts().Values)
@@ -153,8 +160,7 @@ namespace GFS_iOS
 				Console.WriteLine(prod);
 				Console.WriteLine("\n");
 			}
-				
-		}
+		} //End initializeDBFromXML
 
 		public List<Product> getProductList() {
 			return productList;

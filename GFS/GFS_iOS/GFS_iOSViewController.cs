@@ -19,9 +19,7 @@ namespace GFS_iOS
 		{
 		}
 
-
 		#region View lifecycle
-
 
 		public override void ViewDidLoad()
 		{
@@ -29,7 +27,12 @@ namespace GFS_iOS
 
 			//Create all the products in the database
 			DataSource db = DataSource.getInstance();
-			db.initializeDB();
+
+			//Initialize using JSON
+			db.initializeDBfromJSON();
+
+			//Initialize using XML
+			//db.initializeDBfromXML();
 
 			var navBar = this.NavigationController.NavigationBar;
 
