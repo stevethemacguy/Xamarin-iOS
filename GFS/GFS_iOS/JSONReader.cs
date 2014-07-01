@@ -1,12 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
+using System.IO; //For Stream Reader
 using System.Json;
-using System.Linq;
-using System.Text;
-
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 
 namespace GFS_iOS
 {
@@ -19,7 +13,7 @@ namespace GFS_iOS
             doc = JsonObject.Parse(feedReader.ReadToEnd());
         }
 
-        //get a collection of nodes specified under root
+        //Get a collection of nodes specified under root
         public JsonValue getParentNodes(String parent)
         {
             if (doc.ContainsKey(parent))
@@ -32,7 +26,7 @@ namespace GFS_iOS
             }
         }
 
-        //return the value of a node specified if the node exist, otherwise, returns an empty string
+        //Return the value of a node specified if the node exist, otherwise, returns an empty string
         public String GetNodeValue(JsonValue node, string name)
         {
             if (node.ContainsKey(name))

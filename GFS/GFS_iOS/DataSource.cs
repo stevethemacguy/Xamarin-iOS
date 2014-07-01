@@ -59,7 +59,6 @@ namespace GFS_iOS
 		{
 			Helpers helper = new Helpers();
 		
-			////// Test out the webservice
 			//Initialize the webservice. Just reads from flat XML file for now, so use the empty constructor
             WebService webservice = new WebService("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products?query=a&pageSize=40", "json");
 
