@@ -6,37 +6,25 @@ namespace GFS_iOS
 {
     class JSONReader
     {
-        private JsonValue doc;
+		//The "parent" JSON object returned from the feedReader that contains all other objects
+		public JsonValue AllObjects;
 
         public JSONReader(StreamReader feedReader)
         {
-            doc = JsonObject.Parse(feedReader.ReadToEnd());
+            AllObjects = JsonObject.Parse(feedReader.ReadToEnd());
         }
 
-        //Get a collection of nodes specified under root
-        public JsonValue getParentNodes(String parent)
+        //If obj exists, returns the value of the JSON object, otherwise returns an empty string
+		public String getValue(JsonValue obj, String key)
         {
-            if (doc.ContainsKey(parent))
-            {
-                return doc[parent];
-            }
-            else
-            {
-                return null;
-            }
+			if(obj.ContainsKey(key))
+			{
+				return obj[key].ToString();
+			}
+			else
+			{
+				return "";
+			}
         }
-
-        //Return the value of a node specified if the node exist, otherwise, returns an empty string
-        public String GetNodeValue(JsonValue node, string name)
-        {
-            if (node.ContainsKey(name))
-            {
-                return node[name].ToString();
-            }
-            else
-            {
-                return "";
-            }
-        }
-    }
+	}
 }

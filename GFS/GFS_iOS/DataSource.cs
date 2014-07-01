@@ -63,24 +63,24 @@ namespace GFS_iOS
             //Initialize the JSON reader
             JSONReader jsonReader = webservice.getJSONReader();
 
-            //Get all parent "product" nodes so we can loop over them -- using JSON
-		    JsonValue js = jsonReader.getParentNodes("products");
-            foreach (JsonValue j in js)
-            {
+			//Get the products object
+			JsonValue products = jsonReader.AllObjects["products"];
 
+            foreach (JsonValue j in products)
+            {
 				//String prodClass="";
 				//String cap = ""; 
 				//String readability = ""; 
 				//String segueName = ""; 
                 String price = "";
                 String imageURL = "";
-                String title = jsonReader.GetNodeValue(j, "summary");
-                String description = jsonReader.GetNodeValue(j, "description");
+				String title = jsonReader.getValue(j, "summary");
+				String description = jsonReader.getValue(j, "description");
 
-                //Check if the node exists and get the value if it does
-                if (j.ContainsKey("price"))
+
+				if (j.ContainsKey("price"))
                 {
-                    price = jsonReader.GetNodeValue(j["price"], "formattedValue");
+					price = jsonReader.getValue(j["price"], "formattedValue");
                 }
 
                 //Check if the node exists and get the value if it does
@@ -89,9 +89,9 @@ namespace GFS_iOS
                     JsonValue tempJsonValue = j["images"];
                     foreach (JsonValue img in tempJsonValue)
                     {
-                        if (img["imageType"].ToString().Equals("PRIMARY"))
+						if (jsonReader.getValue(img, "imageType").Equals("PRIMARY"))
                         {
-                            imageURL = img["url"].ToString();
+							imageURL = jsonReader.getValue(img, "url");
                         }
                     }
                 }
@@ -107,7 +107,6 @@ namespace GFS_iOS
 				Console.WriteLine(prod);
 				Console.WriteLine("\n");
 			}
-				
 		}
 
 		//Establishes a connection with the Webservice and creates all products by parsing the returned XML.
