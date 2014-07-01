@@ -101,12 +101,8 @@ namespace GFS_iOS
                 productMap.Add(p.getID(), p); //Uses the ID as a key
             }
 
-			//Print out the products using their toString
-			foreach(Product prod in getAllProducts().Values)
-			{
-				Console.WriteLine(prod);
-				Console.WriteLine("\n");
-			}
+			//Print out all the product information
+			printAllProducts();
 		}
 
 		//Establishes a connection with the Webservice and creates all products by parsing the returned XML.
@@ -153,12 +149,8 @@ namespace GFS_iOS
 				productMap.Add(p.getID(), p); //Uses the ID as a key
 			}
 
-			//Print out the products using their toString
-			foreach(Product prod in getAllProducts().Values)
-			{
-				Console.WriteLine(prod);
-				Console.WriteLine("\n");
-			}
+			printAllProducts();
+
 		} //End initializeDBFromXML
 
 		public List<Product> getProductList() {
@@ -236,6 +228,16 @@ namespace GFS_iOS
 				instance = new DataSource();
 			}
 			return instance;
+		}
+
+		//Prints out the products using their toString
+		public void printAllProducts()
+		{
+			var allProds = getAllProducts();
+			foreach (Product prod in allProds.Values) {
+				Console.WriteLine(prod);
+				Console.WriteLine("\n");
+			}
 		}
 	}
 }
