@@ -25,6 +25,21 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
+			////FOR TESTING ONLY! Test out the LiveResultsTableViewController
+
+//			//Get the current storyboard
+//			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+
+			LiveResultsTableViewController liveResults = new LiveResultsTableViewController();
+
+			//liveResults.currentController = (LiveResultsTableViewController) this.NavigationController;
+
+			//Segue to the SavedListTable
+			this.NavigationController.PushViewController (liveResults, true); //yes, animate the segue 
+
+			///// FOR TESTING ONLY!!
+
+
 			//Create all the products in the database
 			DataSource db = DataSource.getInstance();
 
