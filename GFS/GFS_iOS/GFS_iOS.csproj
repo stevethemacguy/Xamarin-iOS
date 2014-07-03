@@ -323,7 +323,6 @@
     <Compile Include="WebService.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
-    <Compile Include="LiveResultsTableSource.cs" />
     <Compile Include="ProductCell.cs" />
     <Compile Include="LiveResultsViewController.cs" />
     <Compile Include="LiveProductPageViewController.cs" />

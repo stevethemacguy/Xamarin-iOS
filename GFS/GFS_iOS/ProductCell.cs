@@ -11,6 +11,11 @@ namespace GFS_iOS
 			UILabel title;
 			UILabel	price;
 			UIImageView imageView;
+
+			//"New" way to do cell reuse
+			//public ProductCell(IntPtr p):base(p)
+
+			//"Old" way to do cell reuse
 			public ProductCell (NSString cellId) : base (UITableViewCellStyle.Default, cellId)
 			{
 				SelectionStyle = UITableViewCellSelectionStyle.Gray;
@@ -21,15 +26,15 @@ namespace GFS_iOS
 				title = new UILabel() {
 					Font = UIFont.FromName("Arial",12f),		//UIFont.FromName("Cochin-BoldItalic", 12f),
 					TextColor = UIColor.FromRGB (127, 51, 0),
-				//	Opaque = true
-					BackgroundColor = UIColor.Clear
+					Opaque = true
+				//	BackgroundColor = UIColor.Clear
 				};
 				price = new UILabel () {
 					Font = UIFont.FromName("Arial", 12f),
 					TextColor = UIColor.FromRGB (38, 127, 0),
-					TextAlignment = UITextAlignment.Center,
-				//	Opaque = true
-					BackgroundColor = UIColor.Clear
+					//TextAlignment = UITextAlignment.Center,
+					Opaque = true
+				//	BackgroundColor = UIColor.Clear
 				};
 				ContentView.Add (title);
 				ContentView.Add (price);
@@ -38,16 +43,6 @@ namespace GFS_iOS
 			//Get this cell it's values
 			public void UpdateCell (String prodTitle, String prodPrice, UIImage img)
 			{
-			///THE IMAGES ARE CURRENTLY CAUSING SLOW DOWN. Try to create images (or cache image views) outside of getCell if possible.
-				//Don't create the image if there is none.
-//				if (urlString != "")
-//				{
-//					//Create a url from the string and use it with an NSData object
-//					NSData data = NSData.FromUrl(new NSUrl(urlString));
-//
-//					//Create a UIimage using the url to load the image
-//					imageView.Image = UIImage.LoadFromData(data);
-//				}
 				imageView.Image = img;
 				title.Text = prodTitle;
 				price.Text = prodPrice;
