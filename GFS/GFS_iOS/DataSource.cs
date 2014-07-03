@@ -66,13 +66,8 @@ namespace GFS_iOS
 			//Get the products object
 			JsonValue products = jsonReader.AllObjects["products"];
 
-			//Limit the number of rows generated to improve performance
-			int limit = 0; 
             foreach (JsonValue j in products)
             {
-				limit++;
-				if (limit >= 15)
-					break;
 				//String prodClass="";
 				//String cap = ""; 
 				//String readability = ""; 
@@ -98,6 +93,7 @@ namespace GFS_iOS
                 //Create the new product from the xml values and add it to the product map
                 Product p = new Product(imageURL, title, price, description);
                 productMap.Add(p.getID(), p); //Uses the ID as a key
+
             }
 
 			//Print out all the product information

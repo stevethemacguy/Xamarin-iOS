@@ -48,10 +48,10 @@ namespace GFS_iOS
 			//Create the table and populate it with  cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
-			//Create the Table rows from the source, passing the full text for all notes (which will also act as row names), and the current ViewController
+			//Create the Table rows from the source
 			table.Source = new LiveResultsTableSource(currentController);
 
-			//table.SeparatorStyle = UITableViewCellSeparatorStyle.None; //We don't want seperator lines
+			//table.SeparatorStyle = UITableViewCellSeparatorStyle.None; //If you don't want seperator lines
 			table.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 			Add(table);
 		}
