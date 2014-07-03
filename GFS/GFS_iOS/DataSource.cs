@@ -86,14 +86,8 @@ namespace GFS_iOS
                 //Check if the node exists and get the value if it does
                 if (j.ContainsKey("images"))
                 {
-                    JsonValue tempJsonValue = j["images"];
-                    foreach (JsonValue img in tempJsonValue)
-                    {
-						if (jsonReader.getValue(img, "imageType").Equals("PRIMARY"))
-                        {
-							imageURL = jsonReader.getValue(img, "url");
-                        }
-                    }
+                    JsonValue tempJsonValue = j["images"][0]; //first image only
+					imageURL = "http://swx-hybris-ash02.siteworx.com:9001" + (jsonReader.getValue(tempJsonValue, "url")).Replace("\"", ""); //remove quotes from the stirng 
                 }
 
                 //Create the new product from the xml values and add it to the product map
