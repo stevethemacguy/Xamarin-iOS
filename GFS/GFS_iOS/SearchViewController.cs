@@ -24,6 +24,12 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
+//			//Create all the products in the database
+//			DataSource db = DataSource.getInstance();
+//
+//			//Initialize using JSON
+//			db.initializeDBfromJSON(this);
+
 			//Manually create a menu button and add it to the right side of the menu bar
 //			menuButton31 = UIButton.FromType(UIButtonType.Custom);
 //			menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
