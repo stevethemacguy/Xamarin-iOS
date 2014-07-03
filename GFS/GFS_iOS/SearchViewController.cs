@@ -3,6 +3,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace GFS_iOS
 {
@@ -10,8 +11,8 @@ namespace GFS_iOS
 	{
 		SearchViewController currentController;
         MenuSubView menuView;
-
 		UIBarButtonItem menuB2;
+		private LoadingOverlay loadingOverlay;
 
 		public SearchViewController (IntPtr handle) : base (handle)
 		{
@@ -23,12 +24,6 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
-
-//			//Create all the products in the database
-//			DataSource db = DataSource.getInstance();
-//
-//			//Initialize using JSON
-//			db.initializeDBfromJSON(this);
 
 			//Manually create a menu button and add it to the right side of the menu bar
 //			menuButton31 = UIButton.FromType(UIButtonType.Custom);
@@ -117,6 +112,19 @@ namespace GFS_iOS
 			};
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
+
+		public void showOverlay()
+		{
+			//Dismiss the keyboard
+			SearchBar.ResignFirstResponder();
+			loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds);
+			View.Add(loadingOverlay);
+		}
+
+		public void hideOverlay()
+		{
+			loadingOverlay.Hide();
+		}
 	}
 
 	class TableSource : UITableViewSource
@@ -146,8 +154,8 @@ namespace GFS_iOS
 			return cell;
 		}
 
-		//When any row is selected
-		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+		//When any row is selected. Async is used so we can stop the code from continuing until the task is complete (see await below).
+		public async override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 			////Segue to the old search results
 //			//Get the current storyboard
@@ -161,6 +169,22 @@ namespace GFS_iOS
 //		    controller.NavigationController.PushViewController(ok, true);
 
 			////Segue to the new live search results
+
+			//Show the loading screen while we wait for the database to load
+			controller.showOverlay();
+
+			//await says to wait until the task is completed before continuing (in this case in initializeDBfromJSON())
+			//Creates all the products in the database using JSON	
+			await Task.Factory.StartNew (() => {
+				DataSource db = DataSource.getInstance();
+				//Initialize using JSON
+				db.initializeDBfromJSON();
+			});
+
+			//Once the task finishes, hide the overlay.
+			controller.hideOverlay();
+
+
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
 			//Segue

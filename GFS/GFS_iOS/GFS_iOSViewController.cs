@@ -25,11 +25,12 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			//Create all the products in the database
-			DataSource db = DataSource.getInstance();
+			////Create all the products in the database	
+
+			//DataSource db = DataSource.getInstance();
 
 			//Initialize using JSON
-			db.initializeDBfromJSON();
+			//db.initializeDBfromJSON();
 
 			//Initialize using XML
 			//db.initializeDBfromXML();
