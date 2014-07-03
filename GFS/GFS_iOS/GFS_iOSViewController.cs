@@ -98,7 +98,7 @@ namespace GFS_iOS
 			//			//Get the current storyboard
 			//			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
 
-			LiveResultsTableViewController liveResults = new LiveResultsTableViewController();
+			LiveResultsViewController liveResults = new LiveResultsViewController();
 
 			//liveResults.currentController = (LiveResultsTableViewController) this.NavigationController;
 

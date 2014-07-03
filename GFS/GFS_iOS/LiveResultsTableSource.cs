@@ -61,13 +61,6 @@ namespace GFS_iOS
 			Product product = tableItems[indexPath.Row]; //The cell's product
 
 			// request a recycled cell to save memory
-//			UITableViewCell cell = tableView.DequeueReusableCell (cellIdentifier);
-//			// if there are no cells to reuse, create a new one
-//			if (cell == null)
-//				cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
-
-
-			// request a recycled cell to save memory
 			ProductCell cell = tableView.DequeueReusableCell (cellIdentifier) as ProductCell;
 			// if there are no cells to reuse, create a new one
 			if (cell == null)
@@ -75,21 +68,6 @@ namespace GFS_iOS
 
 			//Create (or update) the cell using the Product's title, price, and image url
 			cell.UpdateCell (product.getTitle(), product.getPrice(), product.getImageFileName());
-
-			//Add a Saved List to the DataSource, using the cell row name
-			//dataSource.addSavedList(tableItems [indexPath.Row]); //Add to the static list of saved lists
-//
-//
-//			UILabel name = new UILabel();
-//			name.Frame = new RectangleF(90, 20, 150, 50);
-//			//name.Lines = 2;
-//			name.Text = product.getTitle();
-//			cell.Add(name);
-
-//			UILabel price = new UILabel();
-//			price.Frame = new RectangleF(90, 80, 100, 20);
-//			price.Text = product.getPrice();
-//			cell.Add(price);
 
 			return cell;
 		}

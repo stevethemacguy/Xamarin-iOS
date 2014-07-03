@@ -5,14 +5,15 @@ using System.CodeDom.Compiler;
 
 namespace GFS_iOS
 {
-	partial class LiveResultsTableViewController : UITableViewController
+	//NOTE: This is not a table view controller. We add a TableView at the bottom. If we used a TableViewController, then we would end up with two tables.
+	partial class LiveResultsViewController : UIViewController
 	{
 		public UITableView table;
-		LiveResultsTableViewController currentController;
+		LiveResultsViewController currentController;
 		MenuSubView menuView;
 		UIBarButtonItem menuB30;
 
-		public LiveResultsTableViewController()
+		public LiveResultsViewController()
 		{
 			currentController = this; //Maintain a reference to this controller
 		}
@@ -44,15 +45,15 @@ namespace GFS_iOS
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB30, true);
 
-			//SavedListsUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
-
 			//Create the table and populate it with  cells
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
 			//Create the Table rows from the source, passing the full text for all notes (which will also act as row names), and the current ViewController
 			table.Source = new LiveResultsTableSource(currentController);
+
+			//table.SeparatorStyle = UITableViewCellSeparatorStyle.None; //We don't want seperator lines
+			table.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 			Add(table);
-			table.BackgroundColor = UIColor.Clear; //Make the table clear
 		}
 	}
 }

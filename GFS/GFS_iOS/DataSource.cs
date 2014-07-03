@@ -66,8 +66,13 @@ namespace GFS_iOS
 			//Get the products object
 			JsonValue products = jsonReader.AllObjects["products"];
 
+			//Limit the number of rows generated to improve performance
+			int limit = 0; 
             foreach (JsonValue j in products)
             {
+				limit++;
+				if (limit >= 15)
+					break;
 				//String prodClass="";
 				//String cap = ""; 
 				//String readability = ""; 
@@ -96,7 +101,7 @@ namespace GFS_iOS
             }
 
 			//Print out all the product information
-			printAllProducts();
+			//printAllProducts();
 		}
 
 		//Establishes a connection with the Webservice and creates all products by parsing the returned XML.
