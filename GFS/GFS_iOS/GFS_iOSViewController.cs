@@ -91,21 +91,6 @@ namespace GFS_iOS
 
             //adding sub scroll view into main scroll view
             mainScrollView.AddSubview(scrollView);
-
-
-			////FOR TESTING ONLY! Test out the LiveResultsTableViewController
-
-			//			//Get the current storyboard
-			//			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
-
-			LiveResultsViewController liveResults = new LiveResultsViewController();
-
-			//liveResults.currentController = (LiveResultsTableViewController) this.NavigationController;
-
-			//Segue to the SavedListTable
-			this.NavigationController.PushViewController (liveResults, true); //yes, animate the segue 
-
-			///// FOR TESTING ONLY!!
 		}
 
 		//"Unwind Segue". 

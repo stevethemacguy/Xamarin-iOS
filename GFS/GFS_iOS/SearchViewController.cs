@@ -143,15 +143,22 @@ namespace GFS_iOS
 		//When any row is selected
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
-			//Get the current storyboard
-			UIStoryboard test = UIStoryboard.FromName("MainStoryboard", null); 
+			////Segue to the old search results
+//			//Get the current storyboard
+//			UIStoryboard test = UIStoryboard.FromName("MainStoryboard", null); 
+//
+//			//Get the searchResultsController View Controller 
+//			SearchResultsTableController ok = (SearchResultsTableController) test.InstantiateViewController(  
+//				"searchResultsController"
+//			);
+//			//Segue to the new View
+//		    controller.NavigationController.PushViewController(ok, true);
 
-			//Get the searchResultsController View Controller 
-			SearchResultsTableController ok = (SearchResultsTableController) test.InstantiateViewController(  
-				"searchResultsController"
-			);
-			//Segue to the new View
-		    controller.NavigationController.PushViewController(ok, true);
+			////Segue to the new live search results
+			LiveResultsViewController liveResults = new LiveResultsViewController();
+
+			//Segue
+			controller.NavigationController.PushViewController (liveResults, true); //yes, animate the segue 
 		}
 	}
 }
