@@ -325,6 +325,7 @@
     <Compile Include="RandomNumberGenerator.cs" />
     <Compile Include="LiveResultsTableViewController.cs" />
     <Compile Include="LiveResultsTableSource.cs" />
+    <Compile Include="ProductCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
