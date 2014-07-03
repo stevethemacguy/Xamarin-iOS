@@ -36,19 +36,19 @@ namespace GFS_iOS
 				ContentView.Add (imageView);
 			}
 			//Get this cell it's values
-			public void UpdateCell (string prodTitle, string prodPrice, String urlString)
+			public void UpdateCell (string prodTitle, string prodPrice, UIImage img)
 			{
 			///THE IMAGES ARE CURRENTLY CAUSING SLOW DOWN. Try to create images (or cache image views) outside of getCell if possible.
 				//Don't create the image if there is none.
-				if (urlString != "")
-				{
-					//Create a url from the string and use it with an NSData object
-					NSData data = NSData.FromUrl(new NSUrl(urlString));
-
-					//Create a UIimage using the url to load the image
-					imageView.Image = UIImage.LoadFromData(data);
-				}
-				
+//				if (urlString != "")
+//				{
+//					//Create a url from the string and use it with an NSData object
+//					NSData data = NSData.FromUrl(new NSUrl(urlString));
+//
+//					//Create a UIimage using the url to load the image
+//					imageView.Image = UIImage.LoadFromData(data);
+//				}
+				imageView.Image = img;
 				title.Text = prodTitle;
 				price.Text = prodPrice;
 			}

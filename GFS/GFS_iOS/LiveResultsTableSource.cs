@@ -25,16 +25,8 @@ namespace GFS_iOS
 
 			//Get all of the products from the data base and uses these as the table items
 			Dictionary<String, Product> prodMap = dataSource.getAllProducts(); 
-
-			//Limit the number of rows generated to improve performance
-			int limit = 0; 
-
 			foreach (Product p in prodMap.Values)
 			{
-				limit++;
-				if (limit >= 15)
-					break;
-
 				tableItems.Add(p); //Items are the actual products
 			}
 		}
@@ -69,15 +61,22 @@ namespace GFS_iOS
 		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
 			Product product = tableItems[indexPath.Row]; //The cell's product
-			// request a recycled cell to save memory
+
+			//iOS6 way to reuse cells
+			//var cell = (ProductCell)tableView.DequeueReusableCell("productCell", indexPath);
+
+			//"Old way to reuse cells
+			//request a recycled cell to save memory
 			ProductCell cell = tableView.DequeueReusableCell (cellIdentifier) as ProductCell;
 			// if there are no cells to reuse, create a new one
 			if (cell == null)
 				cell = new ProductCell (cellIdentifier);
 
 			cell.Opaque = true;
+
+			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
 			//Create (or update) the cell using the Product's title, price, and image url
-			cell.UpdateCell (product.getTitle(), product.getPrice(), product.getImageFileName());
+			cell.UpdateCell (product.getTitle(), product.getPrice(), product.getCellImage());
 
 			return cell;
 		}

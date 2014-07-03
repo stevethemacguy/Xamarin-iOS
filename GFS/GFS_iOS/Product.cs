@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
 
 namespace GFS_iOS
 {
@@ -17,6 +19,7 @@ namespace GFS_iOS
 		private String price = "";
 		private String segueName = "";
 		private String id = "";
+		private UIImage cellImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
 		//The full description of the product
 
 		private String description = "";
@@ -30,6 +33,14 @@ namespace GFS_iOS
 			this.title = title;
 			this.price = price;
 			this.description = description;
+			//If there's an image url, then create the image now so it's already chached.
+			if (imageFileName != "")
+			{
+				//Create a url from the string and use it with an NSData object
+				NSData data = NSData.FromUrl(new NSUrl(imageFileName));
+				//Create a UIimage using the url to load the image
+				cellImage = UIImage.LoadFromData(data);
+			}
 	    }
 
 		public Product(String imageFileName, String title, String prodClass, String cap, String readability, String price, String segueName, String description = "")
@@ -40,6 +51,16 @@ namespace GFS_iOS
 			this.readability = readability;
 			this.price = price;
 			this.imageFileName = imageFileName;
+
+			//If there's an image url, then create the image now so it's already chached.
+			if (imageFileName != "")
+			{
+				//Create a url from the string and use it with an NSData object
+				NSData data = NSData.FromUrl(new NSUrl(imageFileName));
+				//Create a UIimage using the url to load the image
+				cellImage = UIImage.LoadFromData(data);
+			}
+
 			this.title = title;
 			this.prodClass = prodClass;
 			this.capacity = cap;
@@ -47,6 +68,10 @@ namespace GFS_iOS
 
 		public String getImageFileName() {
 			return imageFileName;
+		}
+
+		public UIImage getCellImage() {
+			return cellImage;
 		}
 
 		public String getTitle() {

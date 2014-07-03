@@ -13,9 +13,14 @@ namespace GFS_iOS
 		MenuSubView menuView;
 		UIBarButtonItem menuB30;
 
+		//Set up the cell for reuse (iOS6 way)
+		//static NSString cellID = new NSString ("productCell");
+
 		public LiveResultsViewController()
 		{
 			currentController = this; //Maintain a reference to this controller
+			//Set up the cell for reuse (iOS6 way)
+			//table.RegisterClassForCellReuse (typeof(ProductCell), cellID);
 		}
 
 		public override void ViewDidLoad()
@@ -39,7 +44,7 @@ namespace GFS_iOS
 						//Make Button show the X image once it's pressed.
 						menuB30.Image = UIImage.FromFile("XIcon.png");
 					}
-					menuView.toggleMenu(this, 0);
+					menuView.toggleMenu(this, 64);
 				});
 
 			//Add the Menu button to the navigation bar.
