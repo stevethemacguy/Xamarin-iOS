@@ -326,6 +326,7 @@
     <Compile Include="LiveResultsTableSource.cs" />
     <Compile Include="ProductCell.cs" />
     <Compile Include="LiveResultsViewController.cs" />
+    <Compile Include="LiveProductPageViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

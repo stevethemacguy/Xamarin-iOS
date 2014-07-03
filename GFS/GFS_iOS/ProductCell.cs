@@ -14,29 +14,29 @@ namespace GFS_iOS
 			public ProductCell (NSString cellId) : base (UITableViewCellStyle.Default, cellId)
 			{
 				SelectionStyle = UITableViewCellSelectionStyle.Gray;
-				//ContentView.BackgroundColor = UIColor.Clear; //UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));?
-				ContentView.Opaque = true;
+				ContentView.BackgroundColor = UIColor.Clear; //UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));?
+				//ContentView.Opaque = true;
 				imageView = new UIImageView();
-				imageView.Opaque = true;
+				//imageView.Opaque = true;
 				title = new UILabel() {
 					Font = UIFont.FromName("Arial",12f),		//UIFont.FromName("Cochin-BoldItalic", 12f),
 					TextColor = UIColor.FromRGB (127, 51, 0),
-					Opaque = true
-					//BackgroundColor = UIColor.Clear
+				//	Opaque = true
+					BackgroundColor = UIColor.Clear
 				};
 				price = new UILabel () {
 					Font = UIFont.FromName("Arial", 12f),
 					TextColor = UIColor.FromRGB (38, 127, 0),
 					TextAlignment = UITextAlignment.Center,
-					Opaque = true
-				//	BackgroundColor = UIColor.Clear
+				//	Opaque = true
+					BackgroundColor = UIColor.Clear
 				};
 				ContentView.Add (title);
 				ContentView.Add (price);
 				ContentView.Add (imageView);
 			}
 			//Get this cell it's values
-			public void UpdateCell (string prodTitle, string prodPrice, UIImage img)
+			public void UpdateCell (String prodTitle, String prodPrice, UIImage img)
 			{
 			///THE IMAGES ARE CURRENTLY CAUSING SLOW DOWN. Try to create images (or cache image views) outside of getCell if possible.
 				//Don't create the image if there is none.

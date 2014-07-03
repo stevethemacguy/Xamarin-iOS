@@ -41,20 +41,17 @@ namespace GFS_iOS
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 
-			//Get the current storyboard
-			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
-
-			ListATableViewController savedListTable = (ListATableViewController) board.InstantiateViewController(  
-				"listATable"
-			);
+			LiveProductPageViewController liveProductPage = new LiveProductPageViewController();
 
 			//"Pass" along the ibndex of the selected row to the index member variable
-			savedListTable.index = indexPath.Row; 
-			savedListTable.rowName = tableItems[indexPath.Row].getTitle();
-			savedListTable.currentController = (SavedListsTableController) parentController;
+			liveProductPage.index = indexPath.Row; 
+			liveProductPage.rowName = tableItems[indexPath.Row].getTitle();
 
-			//Segue to the SavedListTable
-			parentController.NavigationController.PushViewController (savedListTable, true); //yes, animate the segue
+			//Not needed?
+			//liveProductPage.parentController = (LiveProductPageViewController) parentController;
+
+			//Segue
+			parentController.NavigationController.PushViewController (liveProductPage, true); //yes, animate the segue 
 		}
 
 		//Create the Cells in the table
