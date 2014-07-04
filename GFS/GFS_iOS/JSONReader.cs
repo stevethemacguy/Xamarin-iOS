@@ -15,11 +15,12 @@ namespace GFS_iOS
         }
 
         //If obj exists, returns the value of the JSON object, otherwise returns an empty string
+		//Returned string is stripped of quotations
 		public String getValue(JsonValue obj, String key)
         {
 			if(obj.ContainsKey(key))
 			{
-				return obj[key].ToString();
+				return Helpers.stripQuotes(obj[key].ToString());
 			}
 			else
 			{

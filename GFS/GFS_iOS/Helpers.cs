@@ -10,6 +10,12 @@ namespace GFS_iOS
 
 		}
 
+		public static String stripQuotes(String s)
+		{
+			return s.Replace("\"", ""); //remove quotes from the stirng
+		}
+
+
 		public Boolean isNotNull(object toCheck)
 		{
 			if (toCheck == null)

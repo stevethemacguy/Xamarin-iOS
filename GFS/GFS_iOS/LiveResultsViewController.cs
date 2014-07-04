@@ -60,8 +60,11 @@ namespace GFS_iOS
 			//Create the Table rows from the source
 			table.Source = new LiveResultsTableSource(currentController);
 
-			//table.SeparatorStyle = UITableViewCellSeparatorStyle.None; //If you don't want seperator lines
+			table.SeparatorStyle = UITableViewCellSeparatorStyle.None; //If you don't want seperator lines
 			table.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
+			//Sets height of each cell (globally for all cells)
+			table.RowHeight = 80; //90 is original row height
 			Add(table);
 		}
 	} //End LiveResultsViewController
@@ -129,8 +132,13 @@ namespace GFS_iOS
 
 			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
 			//Create (or update) the cell using the Product's title, price, and image url
-			cell.UpdateCell (product.getTitle(), product.getPrice(), product.getCellImage());
-
+			cell.UpdateCell (
+							product.getTitle(), 
+							product.getPrice(), product.getCellImage(),
+							UIImage.FromFile("product-result-background.png"),
+							UIImage.FromFile("blue-dots.png"),
+							UIImage.FromFile("product-devider.png")
+				);
 			return cell;
 		}
 	}

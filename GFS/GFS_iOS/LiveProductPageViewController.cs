@@ -7,13 +7,13 @@ namespace GFS_iOS
 	{
 		MenuSubView menuView;
 		UIBarButtonItem menub101;
-		LiveProductPageViewController currentController;
+		//LiveProductPageViewController currentController;
 
 		public int index; //Index of the cell row that pushed to this view
 		public String rowName; //Name of the cell row that pushed to this view
 		public LiveProductPageViewController()
 		{
-			currentController = this;
+		//	currentController = this;
 		}
 
 		public override void ViewDidLoad()

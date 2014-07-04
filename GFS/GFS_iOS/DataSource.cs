@@ -77,6 +77,8 @@ namespace GFS_iOS
 				String title = jsonReader.getValue(j, "summary");
 				String description = jsonReader.getValue(j, "description");
 
+				if (title == "")
+					title = "Unknown Product";
 
 				if (j.ContainsKey("price"))
                 {
