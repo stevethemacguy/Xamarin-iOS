@@ -230,7 +230,6 @@
     <None Include="Entitlements.plist">
       <DependentUpon>Info.plist</DependentUpon>
     </None>
-    <None Include="packages.config" />
     <None Include="RELEASE-NOTES.txt" />
   </ItemGroup>
   <ItemGroup>
