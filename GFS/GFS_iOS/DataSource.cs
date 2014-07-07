@@ -67,13 +67,13 @@ namespace GFS_iOS
 			JsonValue products = jsonReader.AllObjects["products"];
 
 			///////Limit the results FOR TESTING ONLY//////
-			//int limit = 0;
+			int limit = 0;
             foreach (JsonValue j in products)
             {
-//				limit++;
+				limit++;
 				///////Limit the results FOR TESTING ONLY//////
-				//if (limit > 10)
-			//		break;
+				if (limit > 20)
+					break;
 				//String prodClass="";
 				//String cap = ""; 
 				//String readability = ""; 
