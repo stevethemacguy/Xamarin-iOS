@@ -249,6 +249,57 @@
     <None Include="RELEASE-NOTES.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Core\BL\Contracts\EntityBase.cs">
+      <Link>BL\Contracts\EntityBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Contracts\IEntity.cs">
+      <Link>BL\Contracts\IEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\Image.cs">
+      <Link>BL\Entities\Image.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\List.cs">
+      <Link>BL\Entities\List.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\Manual.cs">
+      <Link>BL\Entities\Manual.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\Note.cs">
+      <Link>BL\Entities\Note.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\Price.cs">
+      <Link>BL\Entities\Price.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\Product.cs">
+      <Link>BL\Entities\Product.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Managers\ImageManager.cs">
+      <Link>BL\Managers\ImageManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Managers\ListManager.cs">
+      <Link>BL\Managers\ListManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Managers\ManualManager.cs">
+      <Link>BL\Managers\ManualManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Managers\NoteManager.cs">
+      <Link>BL\Managers\NoteManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Managers\PriceManager.cs">
+      <Link>BL\Managers\PriceManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Managers\ProductManager.cs">
+      <Link>BL\Managers\ProductManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\DAL\B2BRepository.cs">
+      <Link>DAL\B2BRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\DL\B2BDB.cs">
+      <Link>DL\B2BDB.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\DL\SQLite.cs">
+      <Link>DL\SQLite.cs</Link>
+    </Compile>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="JSONReader.cs" />
@@ -363,5 +414,8 @@
     <BundleResource Include="Resources\magnifying-glass-small.png" />
     <BundleResource Include="Resources\greyTrans.png" />
     <BundleResource Include="Resources\Hybris_Product_API_Feed.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SVC\" />
   </ItemGroup>
 </Project>
