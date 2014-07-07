@@ -16,7 +16,7 @@ namespace GFS_iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		MonoTouch.UIKit.UITableView ListTwoUIView { get; set; }
+		UITableView ListTwoUIView { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{

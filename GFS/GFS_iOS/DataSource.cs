@@ -71,7 +71,8 @@ namespace GFS_iOS
 				//String prodClass="";
 				//String cap = ""; 
 				//String readability = ""; 
-				//String segueName = ""; 
+				//String segueName = "";
+				float starRating = jsonReader.getNumericValue(j, "averageRating");
                 String price = "";
                 String imageURL = "";
 				String title = jsonReader.getValue(j, "summary");
@@ -95,7 +96,7 @@ namespace GFS_iOS
                 //Create the new product from the xml values and add it to the product map
                 Product p = new Product(imageURL, title, price, description);
                 productMap.Add(p.getID(), p); //Uses the ID as a key
-
+				Console.WriteLine(starRating);
             }
 
 			//Print out all the product information

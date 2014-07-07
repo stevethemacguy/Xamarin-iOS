@@ -27,5 +27,18 @@ namespace GFS_iOS
 				return "";
 			}
         }
+
+		//If obj exists, returns the numerice value of the JSON object, otherwise returns -1
+		public float getNumericValue(JsonValue obj, String key)
+		{
+			if(obj.ContainsKey(key))
+			{
+				return obj[key];
+			}
+			else
+			{
+				return -1;
+			}
+		}
 	}
 }
