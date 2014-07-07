@@ -61,7 +61,7 @@ namespace GFS_iOS
 
 			//Create circle button
 			UIImageView circleButtonView = new UIImageView(UIImage.FromFile("blue-dots.png"));
-			circleButtonView.Frame = new RectangleF(278, 200, 30, 30); //new RectangleF(280, 9, 30, 30);
+			circleButtonView.Frame = new RectangleF(278, 192, 30, 30); //new RectangleF(280, 9, 30, 30);
 			View.AddSubview(circleButtonView);
 
 			//Create the title label and add it to the main view
@@ -81,23 +81,42 @@ namespace GFS_iOS
 
 			View.AddSubview(prodName);
 
+			//Get the description string and add a new line after each hyphen in the string. Only add a newline in certain cases (so words "like-this" don't break):
+			//	-After a period
+			//	-After a space (if there's a space before the hypen, then we assume the intention was to create a new line
+			String descriptionText = product.getDescription();
+			//Note: The order of these lines does matter.
+			descriptionText = descriptionText.Replace("- ", System.Environment.NewLine + System.Environment.NewLine + "-"); 
+			descriptionText = descriptionText.Replace(".-", "." + System.Environment.NewLine + System.Environment.NewLine + "-"); 
+			descriptionText = descriptionText.Replace(". -", "." + System.Environment.NewLine + System.Environment.NewLine + "-"); 
+			descriptionText = descriptionText.Replace(" -", System.Environment.NewLine + System.Environment.NewLine + "-"); 
+			descriptionText = descriptionText.Replace(":-", ":" + System.Environment.NewLine + System.Environment.NewLine + "-"); 
+			//If we added too much whitespace to the start of the string, then remove it.
+			descriptionText = descriptionText.TrimStart();
 			//Create the description label and add it to the main view
 			prodDescription = new UILabel() { 
 				Font = UIFont.FromName("Arial",11f), 
-				TextColor = UIColor.Black
-					//Opaque = true
-					//	BackgroundColor = UIColor.Clear
+				TextColor = UIColor.Black,
+				Text = descriptionText
+				//Opaque = true
 			};
-
-			prodDescription.Frame = new RectangleF(11, 235, 198, 65);
-			prodDescription.Text = product.getDescription();
+			//Y is at 0 since we're puttin this in a scroll view that is already repositioned
+			prodDescription.Frame = new RectangleF(11, 0, 280, 65);
 
 			//Max number of lines
-			prodDescription.Lines = 40;
+			prodDescription.Lines = 0; //unlimited number of lines
 			prodDescription.SizeToFit(); //Shrinks the ImageView to fit the number of text lines (this prevents a single line from appearing centered)
 			prodDescription.LineBreakMode = UILineBreakMode.WordWrap;
 
-			View.AddSubview(prodDescription);
+			//Create a scroll view for the product description in case it's very long
+			UIScrollView scrollView;
+			//245 is remaining viewable screen height. This number must be smaller than the descriptionText height or it won't scroll
+			scrollView = new UIScrollView(new RectangleF(0, 230, View.Frame.Width, 340));
+			scrollView.ContentSize = prodDescription.Frame.Size; //Make the scrollview's size big enough to fit the description text
+			scrollView.AddSubview(prodDescription);
+
+			//Add the scroll view
+			View.AddSubview(scrollView);
 
 			//UIImage.FromFile("product-result-background.png"),
 			//UIImage.FromFile("product-devider.png")
