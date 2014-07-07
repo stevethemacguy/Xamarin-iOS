@@ -66,8 +66,15 @@ namespace GFS_iOS
 			//Get the products object
 			JsonValue products = jsonReader.AllObjects["products"];
 
+			///////Limit the results FOR TESTING ONLY//////
+			int limit = 0;
+
             foreach (JsonValue j in products)
             {
+				limit++;
+				///////Limit the results FOR TESTING ONLY//////
+				if (limit > 10)
+					break;
 				//String prodClass="";
 				//String cap = ""; 
 				//String readability = ""; 
@@ -96,7 +103,6 @@ namespace GFS_iOS
                 //Create the new product from the xml values and add it to the product map
                 Product p = new Product(imageURL, title, price, description);
                 productMap.Add(p.getID(), p); //Uses the ID as a key
-				Console.WriteLine(starRating);
             }
 
 			//Print out all the product information

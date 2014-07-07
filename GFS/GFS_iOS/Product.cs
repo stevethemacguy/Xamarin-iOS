@@ -19,7 +19,7 @@ namespace GFS_iOS
 		private String price = "";
 		private String segueName = "";
 		private String id = "";
-		private UIImage cellImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
+		private UIImage productImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
 		//The full description of the product
 
 		private String description = "";
@@ -39,7 +39,7 @@ namespace GFS_iOS
 				//Create a url from the string and use it with an NSData object
 				NSData data = NSData.FromUrl(new NSUrl(imageFileName));
 				//Create a UIimage using the url to load the image
-				cellImage = UIImage.LoadFromData(data);
+				productImage = UIImage.LoadFromData(data);
 			}
 	    }
 
@@ -58,7 +58,7 @@ namespace GFS_iOS
 				//Create a url from the string and use it with an NSData object
 				NSData data = NSData.FromUrl(new NSUrl(imageFileName));
 				//Create a UIimage using the url to load the image
-				cellImage = UIImage.LoadFromData(data);
+				productImage = UIImage.LoadFromData(data);
 			}
 
 			this.title = title;
@@ -70,8 +70,8 @@ namespace GFS_iOS
 			return imageFileName;
 		}
 
-		public UIImage getCellImage() {
-			return cellImage;
+		public UIImage getProductImage() {
+			return productImage;
 		}
 
 		public String getTitle() {

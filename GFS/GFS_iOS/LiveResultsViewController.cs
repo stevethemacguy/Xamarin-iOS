@@ -14,7 +14,7 @@ namespace GFS_iOS
 		LiveResultsViewController currentController;
 		MenuSubView menuView;
 		UIBarButtonItem menuB30;
-
+		public Product product; //The product represented by the currently selected row
 		//Set up the cell for reuse (iOS6 way)
 		//static NSString cellIdentifier = new NSString ("productCell");
 
@@ -100,12 +100,14 @@ namespace GFS_iOS
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 
-			LiveProductPageViewController liveProductPage = new LiveProductPageViewController();
+			//The selected product (i.e. selected row)
+			Product selectedProduct = tableItems[indexPath.Row];
+
+			LiveProductPageViewController liveProductPage = new LiveProductPageViewController(selectedProduct);
 
 			//"Pass" along the ibndex of the selected row to the index member variable
 			liveProductPage.index = indexPath.Row; 
-			liveProductPage.rowName = tableItems[indexPath.Row].getTitle();
-
+			liveProductPage.rowName = selectedProduct.getTitle();
 			//Not needed?
 			//liveProductPage.parentController = (LiveProductPageViewController) parentController;
 
@@ -133,11 +135,12 @@ namespace GFS_iOS
 			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
 			//Create (or update) the cell using the Product's title, price, and image url
 			cell.UpdateCell (
-							product.getTitle(), 
-							product.getPrice(), product.getCellImage(),
-							UIImage.FromFile("product-result-background.png"),
-							UIImage.FromFile("blue-dots.png"),
-							UIImage.FromFile("product-devider.png")
+					product.getTitle(), 
+					product.getPrice(), 
+					product.getProductImage(),
+					UIImage.FromFile("product-result-background.png"),
+					UIImage.FromFile("blue-dots.png"),
+					UIImage.FromFile("product-devider.png")
 				);
 			return cell;
 		}
