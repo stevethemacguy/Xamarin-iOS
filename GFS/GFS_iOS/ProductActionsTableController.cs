@@ -123,10 +123,6 @@ namespace GFS_iOS
 
 					else //The user selected a saved list
 					{	
-						string success = "The product was added to: \"" + selectedItem +"\"";
-						UIAlertView alert = new UIAlertView(success, "", null, "OK");
-						alert.Show();
-
 						//Actually Add the product cell to the Saved Lists Table
 						DataSource db = DataSource.getInstance();
 
@@ -139,8 +135,23 @@ namespace GFS_iOS
 							savedListMap.Add(selectedItem, new List<Product>());
 						}
 
+						//Check if the product has alredy been added to the selected list
+						//If the product was previously added, don't add it. We don't want duplicate products in the list
+						List<Product> savedList = savedListMap[selectedItem];
+						if(savedList.Contains(selectedProduct))
+						{
+							string duplicate = "The product you selected is already in your list: \n\"" + selectedItem +"\"";
+							UIAlertView alertView = new UIAlertView(duplicate, "", null, "OK");
+							alertView.Show();
+							return;
+						}
+
 						//Add the selected product to the selected list
 						savedListMap[selectedItem].Add(selectedProduct);
+
+						string success = "The product was added to: \"" + selectedItem +"\"";
+						UIAlertView alert = new UIAlertView(success, "", null, "OK");
+						alert.Show();
 					}
 				};
 			};
