@@ -248,7 +248,6 @@
     <Compile Include="SearchViewController.designer.cs">
       <DependentUpon>SearchViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductPageViewController.cs" />
     <Compile Include="NotesViewController.cs" />
     <Compile Include="NotesViewController.designer.cs">
       <DependentUpon>NotesViewController.cs</DependentUpon>
@@ -293,13 +292,6 @@
       <DependentUpon>PDFViewControllerTwo.cs</DependentUpon>
     </Compile>
     <Compile Include="PDFViewControllerTwo.cs" />
-    <Compile Include="ProductPageViewController.designer.cs">
-      <DependentUpon>ProductPageViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductPageViewController2.cs" />
-    <Compile Include="ProductPageViewController2.designer.cs">
-      <DependentUpon>ProductPageViewController2.cs</DependentUpon>
-    </Compile>
     <Compile Include="NotesTableController.cs" />
     <Compile Include="NotesTableController.designer.cs">
       <DependentUpon>NotesTableController.cs</DependentUpon>
