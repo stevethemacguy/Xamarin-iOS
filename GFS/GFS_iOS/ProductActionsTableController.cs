@@ -15,6 +15,10 @@ namespace GFS_iOS
 		MenuSubView menuView;
 		UIBarButtonItem menuB15;
 
+		//THe actions table is always pushed from a LiveProductPageViewController.
+		//selectedProduct is the product that the user was viewing when they "clicked" the circle button
+		public Product selectedProduct;
+
 		public ProductActionsTableController (IntPtr handle) : base (handle)
 		{
 			actionsTable = this;
@@ -134,33 +138,10 @@ namespace GFS_iOS
 							prodMap.Add(selectedItem, new List<Product>());
 						}
 
+						//Add the selected product to the selected list
+						prodMap[selectedItem].Add(selectedProduct);
 
-						//if the product selected is A, then add prod A to the selected list
-						if (db.currentProduct == "product1")
-						{
-							//Add a new product to the selected list
-							prodMap[selectedItem].Add(new Product(
-								"product1.png", 
-								"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
-								"KS Class II,  A201", 
-								"Capacity: 120g", 
-								"Readability: 0.01mg", 
-								"Price: $12,381.00", "Prod1Segue")
-							);
-						}
-						else //the second product was selected, so add the second product to the selected list
-						{
-							//Add a new product to the selected list
-							prodMap[selectedItem].Add(new Product(
-								"product2.png", 
-								"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
-								"XPE 105", 
-								"Capacity: 520g", 
-								"Readability: 0.1mg", 
-								"Price: $8,272.03", "Prod2Segue"));
-						}
-
-						//Write out the map values
+//						//Write out the map values
 //						foreach (var entry in prodMap){
 //							Product[] values = entry.Value.ToArray();
 //							Console.WriteLine("key: {0}", entry.Key); 

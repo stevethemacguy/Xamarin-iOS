@@ -130,7 +130,7 @@ namespace GFS_iOS
 			if (cell == null)
 				cell = new ProductCell (cellIdentifier);
 
-			//cell.Opaque = true;
+
 
 			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
 			//Create (or update) the cell using the Product's title, price, and image url
@@ -142,6 +142,9 @@ namespace GFS_iOS
 					UIImage.FromFile("blue-dots.png"),
 					UIImage.FromFile("product-devider.png")
 				);
+			//cell.Opaque
+			///Warning: Setting to clear could cause performance issues
+			//cell.BackgroundColor = UIColor.Clear;
 			return cell;
 		}
 	}

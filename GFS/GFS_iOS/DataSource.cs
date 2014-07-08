@@ -75,7 +75,7 @@ namespace GFS_iOS
             {
 				limit++;
 				///////Limit the results FOR TESTING ONLY//////
-				if (limit > 1)
+				if (limit > 5)
 					break;
 				//String prodClass="";
 				//String cap = ""; 
@@ -103,7 +103,7 @@ namespace GFS_iOS
                 }
 
                 //Create the new product from the xml values and add it to the product map
-                Product p = new Product(imageURL, title, price, description);
+				Product p = new Product(imageURL, title, price, description, starRating);
                 productMap.Add(p.getID(), p); //Uses the ID as a key
             }
 
@@ -137,6 +137,7 @@ namespace GFS_iOS
 				String imageURL = "";
 				String title = xmlReader.getNodeValue(x.Element("summary"));
 				String description = xmlReader.getNodeValue(x.Element("description"));
+				float starRating = -1;
 
 				//Check if the node exists and get the value if it does
 				if (helper.isNotNull(x.Element("price")))
@@ -154,7 +155,7 @@ namespace GFS_iOS
 				}
 
 				//Create the new product from the xml values and add it to the product map
-				Product p = new Product(imageURL, title, price, description);
+				Product p = new Product(imageURL, title, price, description, starRating);
 				productMap.Add(p.getID(), p); //Uses the ID as a key
 			}
 

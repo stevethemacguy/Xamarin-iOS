@@ -138,7 +138,7 @@ namespace GFS_iOS
 				ProductActionsTableController actions = (ProductActionsTableController)board.InstantiateViewController(
 					"productActionsTable"
 				);
-
+				actions.selectedProduct = product;
 				this.NavigationController.PushViewController(actions, true);
 			};
 

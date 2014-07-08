@@ -19,13 +19,13 @@ namespace GFS_iOS
 		private String price = "";
 		private String segueName = "";
 		private String id = "";
-		private UIImage productImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
+		private float starRating;
 		//The full description of the product
-
 		private String description = "";
+		private UIImage productImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
 
 		//Used only by webservice
-		public Product(String imageFileName, String title, String price, String description)
+		public Product(String imageFileName, String title, String price, String description, float rating)
 	    {
 			//At this potin key should be unique
 			this.id = RandomNumberGenerator.getInstance().getRandomNumber();
@@ -33,6 +33,7 @@ namespace GFS_iOS
 			this.title = title;
 			this.price = price;
 			this.description = description;
+			this.starRating = rating;
 			//If there's an image url, then create the image now so it's already chached.
 			if (imageFileName != "")
 			{
@@ -92,6 +93,10 @@ namespace GFS_iOS
 
 		public String getID() {
 			return id;
+		}
+
+		public float getRating(){
+			return starRating;
 		}
 
 		public String getReadability() {
