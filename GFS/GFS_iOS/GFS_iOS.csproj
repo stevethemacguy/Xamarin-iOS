@@ -304,10 +304,6 @@
     <Compile Include="ProductPageViewController2.designer.cs">
       <DependentUpon>ProductPageViewController2.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherTableViewController.cs" />
-    <Compile Include="OtherTableViewController.designer.cs">
-      <DependentUpon>OtherTableViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="NotesTableController.cs" />
     <Compile Include="NotesTableController.designer.cs">
       <DependentUpon>NotesTableController.cs</DependentUpon>
