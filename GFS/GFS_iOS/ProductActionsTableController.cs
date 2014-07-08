@@ -20,6 +20,11 @@ namespace GFS_iOS
 			actionsTable = this;
 		}
 
+		public ProductActionsTableController ()
+		{
+			actionsTable = this;
+		}
+
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();

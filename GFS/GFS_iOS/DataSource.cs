@@ -19,7 +19,7 @@ namespace GFS_iOS
 		private List<String> manualList; //A list of product names for the manuals view
 		public String savedManual1 = null;
 		public String savedManual2 = null;
-
+		public Boolean alreadyInitialized = false;
 		//Each Saved List has a list of associated products.
 		//A map where Key is the list name, and value is a list of products associated with that list
 		private Dictionary<String, List<Product>> savedListProductMap;
@@ -57,6 +57,9 @@ namespace GFS_iOS
 		//Creates all the products in the database (currently from an XML file)
 		public void initializeDBfromJSON()
 		{
+			//Ensure products are only created once.
+			if (alreadyInitialized)
+				return;
 			//Initialize the webservice.
             WebService webservice = new WebService("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products?query=a&pageSize=40", "json");
 
@@ -72,7 +75,7 @@ namespace GFS_iOS
             {
 				limit++;
 				///////Limit the results FOR TESTING ONLY//////
-				if (limit > 20)
+				if (limit > 1)
 					break;
 				//String prodClass="";
 				//String cap = ""; 
@@ -104,6 +107,7 @@ namespace GFS_iOS
                 productMap.Add(p.getID(), p); //Uses the ID as a key
             }
 
+			alreadyInitialized = true;
 			//Print out all the product information
 			//printAllProducts();
 		}
@@ -111,6 +115,8 @@ namespace GFS_iOS
 		//Establishes a connection with the Webservice and creates all products by parsing the returned XML.
 		public void initializeDBfromXML()
 		{
+			if (alreadyInitialized)
+				return;
 			Helpers helper = new Helpers();
 
 			//Initialize the webservice. Just reads from flat XML file for now
@@ -152,6 +158,7 @@ namespace GFS_iOS
 				productMap.Add(p.getID(), p); //Uses the ID as a key
 			}
 
+			alreadyInitialized = true;
 			printAllProducts();
 
 		} //End initializeDBFromXML

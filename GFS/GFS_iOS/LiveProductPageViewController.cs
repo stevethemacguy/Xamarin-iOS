@@ -59,10 +59,6 @@ namespace GFS_iOS
 			prodImage.Frame = new RectangleF(102, 72, 110, 110); 
 			View.AddSubview(prodImage);
 
-			//Create circle button
-			UIImageView circleButtonView = new UIImageView(UIImage.FromFile("blue-dots.png"));
-			circleButtonView.Frame = new RectangleF(278, 190, 30, 30); //new RectangleF(280, 9, 30, 30);
-			View.AddSubview(circleButtonView);
 			//Create the title label and add it to the main view
 			prodName = new UILabel() { 
 				Font = UIFont.FromName("Arial",12f), 
@@ -130,8 +126,25 @@ namespace GFS_iOS
 			//Add the scroll view
 			View.AddSubview(scrollView);
 
-			//UIImage.FromFile("product-result-background.png"),
-			//UIImage.FromFile("product-devider.png")
+
+			UIButton circleButton = UIButton.FromType(UIButtonType.Custom);
+			circleButton.Frame = new RectangleF(278, 190, 30, 30);
+			circleButton.SetImage(UIImage.FromFile("blue-dots.png"), UIControlState.Normal);
+
+			//Push to the actions view when the circle button is clicked
+			circleButton.TouchUpInside += (sender, e) => 
+			{
+				UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+				ProductActionsTableController actions = (ProductActionsTableController)board.InstantiateViewController(
+					"productActionsTable"
+				);
+
+				this.NavigationController.PushViewController(actions, true);
+			};
+
+			View.Add(circleButton);
+
+		
 		}
 	}
 }
