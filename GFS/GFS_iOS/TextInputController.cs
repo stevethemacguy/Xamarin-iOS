@@ -15,6 +15,10 @@ namespace GFS_iOS
 		MenuSubView menuView;
 		UIBarButtonItem menuButton34;
 
+		//The selected product is passed along from the "details" view
+		//i.e LiveProductPageViewController > ProductActionsTableController > TextInputController
+		public Product selectedProduct;
+
 		public TextInputController (IntPtr handle) : base (handle)
 		{
 		}
@@ -37,49 +41,17 @@ namespace GFS_iOS
 				db.addSavedList(newList);
 
 				//Add the product to the newly created list!
-				Dictionary<String, List<Product>> prodMap = db.getSavedListMap();
+				Dictionary<String, List<Product>> savedListMap = db.getSavedListMap();
 
 				//Since we just created this list, it needs to be added to the map with an empty list
-				//But do not attempt to add if the list already exists
-				if(prodMap.ContainsKey(newList) == false)
+				//But if there is an existing list with the same name, then do not attempt to add a duplicate list
+				if(savedListMap.ContainsKey(newList) == false)
 				{
-					prodMap.Add(newList, new List<Product>());
+					savedListMap.Add(newList, new List<Product>());
 				}
 
-				//if the product1 is selected, add the product to the new list
-				if (db.currentProduct == "product1")
-				{
-					//Add a new product to the selected list
-					prodMap[newList].Add(new Product(
-						"product1.png", 
-						"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
-						"KS Class II,  A201", 
-						"Capacity: 120g", 
-						"Readability: 0.01mg", 
-						"Price: $12,381.00", "Prod1Segue")
-					);
-				}
-				else //the second product was selected, so add the second product to the new list
-				{
-					//Add a new product to the selected list
-					prodMap[newList].Add(new Product(
-						"product2.png", 
-						"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
-						"XPE 105", 
-						"Capacity: 520g", 
-						"Readability: 0.1mg", 
-						"Price: $8,272.03", "Prod2Segue"));
-				}
-
-				//Write out the map values
-//				foreach (var entry in prodMap){
-//					Product[] values = entry.Value.ToArray();
-//					Console.WriteLine("key: {0}", entry.Key); 
-//					foreach(Product st in values)
-//					{
-//						Console.WriteLine(st.ToString());
-//					}
-//				}
+				//Add the product to the saved list
+				savedListMap[newList].Add(selectedProduct);
 			}
 		}
 

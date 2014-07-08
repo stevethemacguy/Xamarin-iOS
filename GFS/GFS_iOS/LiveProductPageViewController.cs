@@ -138,13 +138,12 @@ namespace GFS_iOS
 				ProductActionsTableController actions = (ProductActionsTableController)board.InstantiateViewController(
 					"productActionsTable"
 				);
+				//Send the current product to the actions view so we can save the product to a saved list if the user chooses to do so.
 				actions.selectedProduct = product;
 				this.NavigationController.PushViewController(actions, true);
 			};
 
 			View.Add(circleButton);
-
-		
 		}
 	}
 }

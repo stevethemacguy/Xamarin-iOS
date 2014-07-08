@@ -15,7 +15,7 @@ namespace GFS_iOS
 		MenuSubView menuView;
 		UIBarButtonItem menuB15;
 
-		//THe actions table is always pushed from a LiveProductPageViewController.
+		//The actions table is always pushed from a LiveProductPageViewController.
 		//selectedProduct is the product that the user was viewing when they "clicked" the circle button
 		public Product selectedProduct;
 
@@ -114,7 +114,8 @@ namespace GFS_iOS
 							"textInputController"
 						);
 
-						//inputView.tableController = (NotesTableController) parentController;
+						//Pass along the product that was originally selected 
+						inputView.selectedProduct = selectedProduct;
 
 						//Segue to the text input view
 						actionsTable.NavigationController.PushViewController (inputView, false);
@@ -140,20 +141,7 @@ namespace GFS_iOS
 
 						//Add the selected product to the selected list
 						savedListMap[selectedItem].Add(selectedProduct);
-
-//						//Write out the map values
-//						foreach (var entry in prodMap){
-//							Product[] values = entry.Value.ToArray();
-//							Console.WriteLine("key: {0}", entry.Key); 
-//							foreach(Product st in values)
-//							{
-//								Console.WriteLine(st.ToString());
-//							}
-//						}
-						//Console.WriteLine(selectedItem + " was clicked.");
-						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
 					}
-						
 				};
 			};
 		}
