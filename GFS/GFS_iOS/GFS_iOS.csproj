@@ -313,8 +313,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
-    <Content Include="description-text.png" />
-    <Content Include="description-text2.png" />
     <BundleResource Include="Resources\gallery-icon.png" />
     <BundleResource Include="Resources\homeadd.png" />
     <BundleResource Include="Resources\homeadd%402x.png" />
