@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Linq;
 using Swx.B2B.Ecom.BL.Entities;
 using System.Collections.Generic;
@@ -17,7 +16,9 @@ namespace Swx.B2B.Ecom.DL
 	/// It contains methods for retrieval and persistance as well as db creation, all based on the 
 	/// underlying ORM.
 	/// </summary>
-	public class B2BDB : SQLiteConnection
+	
+    /*
+    public class B2BDB : SQLiteConnection
 	{
 		static object locker = new object ();
 
@@ -75,4 +76,5 @@ namespace Swx.B2B.Ecom.DL
             }
 		}
 	}
+     * */
 }

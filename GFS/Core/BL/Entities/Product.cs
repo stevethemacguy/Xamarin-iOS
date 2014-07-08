@@ -11,11 +11,13 @@ namespace Swx.B2B.Ecom.BL.Entities
     {
         public int Id { get; set; }
 
+        public string Name { get; set; }
         public string Description { get; set; }
         //TODO: other properties
 
-        public List<Price> Prices { get; set; }
+        public string Prices { get; set; }
+        //public List<Price> Prices { get; set; }
         public List<Image> Images { get; set; }
-        public List<Manual> Manuals { get; set; }
+        //public List<Manual> Manuals { get; set; }
     }
 }

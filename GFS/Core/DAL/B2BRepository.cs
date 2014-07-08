@@ -9,6 +9,7 @@ using Swx.B2B.Ecom;
 
 namespace Swx.B2B.Ecom.DAL
 {
+    /*
     public class B2BRepository
     {
         private DL.B2BDB db = null;
@@ -73,5 +74,6 @@ namespace Swx.B2B.Ecom.DAL
             return me.db.GetItem<Product>(id);
         }
     }
+     * */
 }
 

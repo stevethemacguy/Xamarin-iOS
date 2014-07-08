@@ -150,8 +150,8 @@ namespace GFS_iOS
 			//Print out the products using their toString
 			foreach(Product prod in getAllProducts().Values)
 			{
-				Console.WriteLine(prod);
-				Console.WriteLine("\n");
+				//Console.WriteLine(prod);
+				//Console.WriteLine("\n");
 			}
 				
 		}

@@ -10,6 +10,9 @@ namespace Swx.B2B.Ecom.BL.Entities
     public class Image : IEntity
     {
         public int Id { get; set; }
-
+        public string ImageType { get; set; }
+        public string Format { get; set; }
+        public string AltText { get; set; }
+        public string Url { get; set; }
     }
 }
