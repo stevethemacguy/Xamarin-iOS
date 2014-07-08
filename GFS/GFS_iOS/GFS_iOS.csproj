@@ -313,7 +313,6 @@
       <DependentUpon>NotesTableController.cs</DependentUpon>
     </Compile>
     <Compile Include="NotesTableSource.cs" />
-    <Compile Include="SavedListTableSource.cs" />
     <Compile Include="DataSource.cs" />
     <Compile Include="TextInputController.cs" />
     <Compile Include="TextInputController.designer.cs">
@@ -327,6 +326,7 @@
     <Compile Include="LiveResultsViewController.cs" />
     <Compile Include="LiveProductPageViewController.cs" />
     <Compile Include="LoadingOverlay.cs" />
+    <Compile Include="SavedListViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

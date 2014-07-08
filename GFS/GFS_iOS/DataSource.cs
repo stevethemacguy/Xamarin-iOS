@@ -195,7 +195,7 @@ namespace GFS_iOS
 			return manualList;
 		}
 
-		public Dictionary<String, List<Product>> getProductMap(){
+		public Dictionary<String, List<Product>> getSavedListMap(){
 			return savedListProductMap;
 		}
 

@@ -129,17 +129,17 @@ namespace GFS_iOS
 						//Actually Add the product cell to the Saved Lists Table
 						DataSource db = DataSource.getInstance();
 
-						Dictionary<String, List<Product>> prodMap = db.getProductMap();
+						Dictionary<String, List<Product>> savedListMap = db.getSavedListMap();
 						//initialize list if empty
 
 						//If the list doesn't exist in the map yet, then create it
-						if(prodMap.ContainsKey(selectedItem) == false)
+						if(savedListMap.ContainsKey(selectedItem) == false)
 						{
-							prodMap.Add(selectedItem, new List<Product>());
+							savedListMap.Add(selectedItem, new List<Product>());
 						}
 
 						//Add the selected product to the selected list
-						prodMap[selectedItem].Add(selectedProduct);
+						savedListMap[selectedItem].Add(selectedProduct);
 
 //						//Write out the map values
 //						foreach (var entry in prodMap){

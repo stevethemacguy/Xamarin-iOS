@@ -37,7 +37,7 @@ namespace GFS_iOS
 				db.addSavedList(newList);
 
 				//Add the product to the newly created list!
-				Dictionary<String, List<Product>> prodMap = db.getProductMap();
+				Dictionary<String, List<Product>> prodMap = db.getSavedListMap();
 
 				//Since we just created this list, it needs to be added to the map with an empty list
 				//But do not attempt to add if the list already exists
