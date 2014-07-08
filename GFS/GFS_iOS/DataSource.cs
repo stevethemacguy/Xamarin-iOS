@@ -74,9 +74,14 @@ namespace GFS_iOS
             foreach (JsonValue j in products)
             {
 				limit++;
-				///////Limit the results FOR TESTING ONLY//////
-				if (limit > 5)
+				/////FOR DEMO ONLY!//////
+				///Filter out "duplicate" items for the demo so the results are nicer
+				if ((limit >= 3 && limit <= 9) || limit == 11 )
+					continue; //Continue on with the loop, but ignore these 3 results
+				///////Limit the results to 15 (23 minus the 8 we're skipping) FOR TESTING ONLY//////
+				if (limit > 23)
 					break;
+
 				//String prodClass="";
 				//String cap = ""; 
 				//String readability = ""; 
