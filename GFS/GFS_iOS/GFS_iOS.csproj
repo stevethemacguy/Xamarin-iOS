@@ -265,10 +265,6 @@
     <Compile Include="SearchResultsTableController.designer.cs">
       <DependentUpon>SearchResultsTableController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductDetailsTableController.cs" />
-    <Compile Include="ProductDetailsTableController.designer.cs">
-      <DependentUpon>ProductDetailsTableController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProductActionsTableController.cs" />
     <Compile Include="ProductActionsTableController.designer.cs">
       <DependentUpon>ProductActionsTableController.cs</DependentUpon>
