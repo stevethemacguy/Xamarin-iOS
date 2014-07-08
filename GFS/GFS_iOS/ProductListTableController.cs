@@ -85,11 +85,6 @@ namespace GFS_iOS
 			this.parentController = parentController;
 			//A list of products associated with the saved list that was selected in the previous step.
 			tableItems = parentController.selectedSavedList;
-//
-//			foreach (Product p in tableItems)
-//			{
-//				tableItems.Add(p); //Items are the actual products
-//			}
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
@@ -107,11 +102,9 @@ namespace GFS_iOS
 
 			LiveProductPageViewController liveProductPage = new LiveProductPageViewController(selectedProduct);
 
-			//"Pass" along the ibndex of the selected row to the index member variable
+			//"Pass" along the index of the selected row to the index member variable
 			liveProductPage.index = indexPath.Row; 
 			liveProductPage.rowName = selectedProduct.getTitle();
-			//Not needed?
-			//liveProductPage.parentController = (LiveProductPageViewController) parentController;
 
 			//Segue
 			parentController.NavigationController.PushViewController (liveProductPage, true); //yes, animate the segue 
@@ -125,14 +118,12 @@ namespace GFS_iOS
 			//iOS6 way to reuse cells
 			//var cell = (ProductCell) tableView.DequeueReusableCell(cellIdentifier, indexPath);
 
-			//"Old way to reuse cells
+			//"Old" way to reuse cells
 			//request a recycled cell to save memory
 			ProductCell cell = tableView.DequeueReusableCell (cellIdentifier) as ProductCell;
 			// if there are no cells to reuse, create a new one
 			if (cell == null)
 				cell = new ProductCell (cellIdentifier);
-
-
 
 			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
 			//Create (or update) the cell using the Product's title, price, and image url
@@ -144,6 +135,7 @@ namespace GFS_iOS
 				UIImage.FromFile("blue-dots.png"),
 				UIImage.FromFile("product-devider.png")
 			);
+
 			//cell.Opaque
 			///Warning: Setting to clear could cause performance issues
 			//cell.BackgroundColor = UIColor.Clear;

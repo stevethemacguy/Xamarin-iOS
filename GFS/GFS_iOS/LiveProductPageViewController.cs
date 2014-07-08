@@ -145,6 +145,27 @@ namespace GFS_iOS
 
 			View.Add(circleButton);
 		}
+
+		//The unwind segue should be here, but for some reason doesn't work. 
+		//I even tried adding a controller to the storyboard for LiveProductPageViewController, but that doesn't fix the error
+//		//"Unwind Segue". This occurs after a new saved list is saved from the ProductActionsTableController
+//		[Action ("UnwindToLiveProductPageViewController:")]
+//		public void UnwindToLiveProductPageViewController (UIStoryboardSegue segue)
+//		{
+//			//Access member variable of the source TextInputController
+//			TextInputController parentControl = (TextInputController) segue.SourceViewController;
+//			if (parentControl.failed)
+//			{
+//				UIAlertView alert = new UIAlertView ("Failed to Save", "The list could not be created. Please try again.", null, "OK");
+//				alert.Show();
+//				return;
+//			}
+//			else{
+//				string success = "The product was added to: \"" + parentControl.newList +"\"";
+//				UIAlertView alert = new UIAlertView(success, "", null, "OK");
+//				alert.Show();
+//			}
+//		}
 	}
 }
 

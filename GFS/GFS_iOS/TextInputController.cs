@@ -98,29 +98,31 @@ namespace GFS_iOS
 				return true;
 			};
 
-			//WITHOUT UNWIND SEGUE
+			//SAVE WITHOUT UNWIND SEGUE
 			//When the Save button is pressed, create a new list with the text.
-//			CreateListButton.TouchUpInside += (o,s) => {
-//							createList();
-//
-//					//*******NORMAL TRANSITION*****
-//					//Transition back to the product page and display an alert saying that it was saved.
-//					//Get the current storyboard
-//					UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
-//
-//					//Get the TextInputController
-//					ProductPageViewController productView = (ProductPageViewController) board.InstantiateViewController(  
-//						"productPageController"
-//					);
-//
-//					//productView.tableController = (NotesTableController) parentController;
-//
-//					productView.fromActionsPage = true;
-//					//Segue to the text input view
-//					currentController.NavigationController.PushViewController (productView, true);
-//
-//				//*******NORMAL TRANSITION*****
-//				};
+			CreateListButton.TouchUpInside += (o,s) => {
+
+				//Create the list
+				createList();
+
+				//Dismiss the keyboard
+				ListInputField.ResignFirstResponder();
+
+				//Show an error or success method
+				if (failed)
+				{
+					UIAlertView alert = new UIAlertView ("Failed to Save", "The list could not be created. Please try again.", null, "OK");
+					alert.Show();
+					failed = false;  //reset the flag
+					return;
+				}
+				else
+				{
+					string success = "The product was added to: \"" + newList +"\"";
+					UIAlertView alert = new UIAlertView(success, "", null, "OK");
+					alert.Show();
+				}
+			};
 
 			//*****Create a Save BAR BUTTON instead of the text view and use it to save notes*****
 			//Create the Save button and add it to the toolbar
