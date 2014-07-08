@@ -8,18 +8,20 @@ namespace GFS_iOS
 {
 	//NOTE: This is not a table view controller, but we add a TableView with our table source at the bottom. 
 	//If we used a TableViewController, then we would end up with two tables.
-	partial class SavedListViewController : UIViewController
+	partial class ProductListTableController : UIViewController
 	{
 		public UITableView table;
-		SavedListViewController currentController;
+		ProductListTableController currentController;
 		MenuSubView menuView;
 		UIBarButtonItem menuButton102;
 
-		public Product product; //The product represented by the currently selected row
-		//Set up the cell for reuse (iOS6 way)
-		//static NSString cellIdentifier = new NSString ("productCell");
+		//The index of the row selected when seguing from the SavedListsTableController
+		public int selectedRowindex;
 
-		public SavedListViewController()
+		//The list of products the matches the saved list (i.e. row) selected when seguing from the SavedListsTableController
+		public List<Product> selectedSavedList;
+
+		public ProductListTableController()
 		{
 			currentController = this; //Maintain a reference to this controller
 		}
@@ -29,7 +31,7 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
 			//Hide the back button
-			this.NavigationItem.HidesBackButton = true;
+			//this.NavigationItem.HidesBackButton = true;
 
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
@@ -73,19 +75,18 @@ namespace GFS_iOS
 	class SavedListViewTableSource : UITableViewSource
 	{
 		private DataSource dataSource = null;
+
 		protected List<Product> tableItems;
 		NSString cellIdentifier = new NSString("productCell");
-		SavedListViewController parentController;
+		ProductListTableController parentController;
 
-		public SavedListViewTableSource (SavedListViewController parentController)
+		public SavedListViewTableSource (ProductListTableController parentController)
 		{
 			this.parentController = parentController;
-			dataSource = DataSource.getInstance();
-			tableItems = new List<Product>();
-
-			//Get the SavedList/Product pairings from the data base and use the products as the table items
-			Dictionary<String, List<Product>> savedListMap = dataSource.getSavedListMap();
-//			foreach (Product p in savedListMap.Values)
+			//A list of products associated with the saved list that was selected in the previous step.
+			tableItems = parentController.selectedSavedList;
+//
+//			foreach (Product p in tableItems)
 //			{
 //				tableItems.Add(p); //Items are the actual products
 //			}

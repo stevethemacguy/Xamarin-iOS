@@ -326,7 +326,7 @@
     <Compile Include="LiveResultsViewController.cs" />
     <Compile Include="LiveProductPageViewController.cs" />
     <Compile Include="LoadingOverlay.cs" />
-    <Compile Include="SavedListViewController.cs" />
+    <Compile Include="ProductListTableController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

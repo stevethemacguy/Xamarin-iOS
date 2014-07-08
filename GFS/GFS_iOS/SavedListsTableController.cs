@@ -85,20 +85,24 @@ namespace GFS_iOS
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 
-			//Get the current storyboard
-			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
+			ProductListTableController productTable = new ProductListTableController();
+			//"Pass" along the index of the selected row to the ProductListTableController
+			productTable.selectedRowindex = indexPath.Row; 
 
-			ListATableViewController savedListTable = (ListATableViewController) board.InstantiateViewController(  
-				"listATable"
-			);
+			//Get the name of the selected saved list (a String)
+			String selectedSavedList = tableItems[indexPath.Row];
 
-			//"Pass" along the index of the selected row to the index member variable
-			savedListTable.index = indexPath.Row; 
-			savedListTable.rowName = tableItems[indexPath.Row];
-			savedListTable.currentController = (SavedListsTableController) parentController;
+			//Get a list of products associated with the savedlist, send this list to the next view
+			if (dataSource.getSavedListMap().ContainsKey(selectedSavedList))
+			{
+				productTable.selectedSavedList = dataSource.getSavedListMap() [selectedSavedList];
+			}
+			else  //If there are no products associated with the saved list, then just send an empty list
+			{
+				productTable.selectedSavedList = new List<Product>();
+			}
 
-			//Segue to the SavedListTable
-			parentController.NavigationController.PushViewController (savedListTable, true); //yes, animate the segue
+			parentController.NavigationController.PushViewController(productTable, true);
 		}
 
 		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
