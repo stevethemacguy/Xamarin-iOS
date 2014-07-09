@@ -174,7 +174,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="1094" kind="push" id="1130"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="115" reuseIdentifier="searchcell">
@@ -921,127 +920,6 @@
                 <exit id="1774" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="518" y="-475"/>
-        </scene>
-        <scene sceneID="1093">
-            <objects>
-                <tableViewController id="1094" sceneMemberID="viewController" customClass="SavedManualsTableViewController" storyboardIdentifier="savedManualsTable" restorationIdentifier="savedManualsTable" title="Saved Manuals">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1098">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="1094" id="1101"/>
-                            <outlet property="delegate" destination="1094" id="1102"/>
-                        </connections>
-                        <sections>
-                            <tableViewSection id="1103">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1147" reuseIdentifier="manualCell">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1147" id="1150">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="KS Class II,  A201" lineBreakMode="tailTruncation" minimumFontSize="10" id="1160" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="70" width="111" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1175" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
-                                                    <rect key="frame" x="3" y="9" width="76" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1176" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product1.png">
-                                                    <rect key="frame" x="17" y="16" width="49" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1177" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="99" width="320" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets" lineBreakMode="wordWrap" minimumFontSize="10" id="1268" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
-                                                    <rect key="frame" x="86" y="2" width="153" height="67"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="1184" kind="push" id="1212"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1100" reuseIdentifier="manualCell">
-                                        <rect key="frame" x="0.0" y="164" width="320" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1100" id="1117">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XPE 105" lineBreakMode="tailTruncation" minimumFontSize="10" id="1127" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="70" width="111" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1179" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-result-background.png">
-                                                    <rect key="frame" x="3" y="8" width="76" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="1180" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product2.png">
-                                                    <rect key="frame" x="15" y="14" width="54" height="58"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1125" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="product-devider.png">
-                                                    <rect key="frame" x="0.0" y="99" width="320" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets" lineBreakMode="characterWrap" minimumFontSize="10" id="1269" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="4" adjustsLetterSpacingToFitWidth="NO">
-                                                    <rect key="frame" x="88" y="3" width="150" height="67"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
-                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.027450980392156862" green="0.35294117647058826" blue="0.66666666666666663" alpha="1"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="1184" kind="push" id="1249"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <color key="sectionIndexBackgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
-                    </tableView>
-                    <connections>
-                        <outlet property="SavedManualsList" destination="1098" id="name-outlet-1098"/>
-                        <outlet property="manualProdCell2" destination="1100" id="name-outlet-1100"/>
-                        <outlet property="manualProdCell1" destination="1147" id="name-outlet-1147"/>
-                        <outlet property="manProd1Title" destination="1268" id="name-outlet-1268"/>
-                        <outlet property="manProd1Image" destination="1176" id="name-outlet-1176"/>
-                        <outlet property="manProd1Class" destination="1160" id="name-outlet-1160"/>
-                        <outlet property="manProd2Title" destination="1269" id="name-outlet-1269"/>
-                        <outlet property="manProd2Class" destination="1127" id="name-outlet-1127"/>
-                        <outlet property="manProd2Image" destination="1180" id="name-outlet-1180"/>
-                    </connections>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationItem title="Saved Manuals" id="1800" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem">
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1128" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="1831" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="26" y="-1156"/>
         </scene>
         <scene sceneID="1183">
             <objects>
