@@ -8,18 +8,19 @@ namespace GFS_iOS
 	//DataSource follows the singleton pattern
 	public class DataSource
 	{
-		public bool showRow1 = false; //Controls whether the first PDF Manual Row is shown
-		public bool showRow2 = false; //Controls whether the second PDF Manual Row is shown
-
 		private HashSet<string> savedListSet; //Each string in the savedList Set is a name of one saved list. (savedLists is a Set, so no duplicates allowed).
 		private List<string> allNotes; //Each String is the full text of a note.
 		private static DataSource instance; //There can only be one instance of the DataSource.
 		private List<Product> productList;
 		public String currentProduct = "";
-		private List<String> manualList; //A list of product names for the manuals view
-		public String savedManual1 = null;
-		public String savedManual2 = null;
+
+		//If a product is in manualList, then the product will appear as a cell in the manual view and link to a single manual.
+		private List<Product> manualList; 
+		//Since each product can have several downlaoded PDFs, this should actually be a Dictionary where the key is a product ID, 
+		//and the value is either a list of Manuals, or a list of Strings (where the string is a filepath for the manual)
+
 		public Boolean alreadyInitialized = false;
+
 		//Each Saved List has a list of associated products.
 		//A map where Key is the list name, and value is a list of products associated with that list
 		private Dictionary<String, List<Product>> savedListProductMap;
@@ -42,7 +43,7 @@ namespace GFS_iOS
 				allNotes = new List<string>();
 				addNote("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
 				addNote("Another good find");
-				manualList = new List<String>();
+				manualList = new List<Product>();
 			}
 
 			//Create the productList and add the two default products to the list
@@ -79,7 +80,8 @@ namespace GFS_iOS
 				if ((limit >= 3 && limit <= 9) || limit == 11 )
 					continue; //Continue on with the loop, but ignore these 3 results
 				///////Limit the results to 15 (23 minus the 8 we're skipping) FOR TESTING ONLY//////
-				if (limit > 23)
+				// if (limit > 23)
+				if (limit > 3)
 					break;
 
 				//String prodClass="";
@@ -191,12 +193,15 @@ namespace GFS_iOS
 			productMap.Remove(productID);
 		}
 
-		public void addToManualList(String productName)
+		public void addToManualList(Product product)
 		{
-			manualList.Add(productName);
+			if (manualList.Contains(product)) //don't add duplicates
+				return;
+			else
+				manualList.Add(product);
 		}
 
-		public List<String> getManualList() {
+		public List<Product> getManualList() {
 			return manualList;
 		}
 

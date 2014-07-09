@@ -272,10 +272,6 @@
     <Compile Include="SavedListsTableController.designer.cs">
       <DependentUpon>SavedListsTableController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SavedManualsTableViewController.cs" />
-    <Compile Include="SavedManualsTableViewController.designer.cs">
-      <DependentUpon>SavedManualsTableViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="PDFViewController.cs" />
     <Compile Include="PDFViewController.designer.cs">
       <DependentUpon>PDFViewController.cs</DependentUpon>
@@ -307,6 +303,7 @@
     <Compile Include="LiveProductPageViewController.cs" />
     <Compile Include="LoadingOverlay.cs" />
     <Compile Include="ProductListTableController.cs" />
+    <Compile Include="SavedManualsViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

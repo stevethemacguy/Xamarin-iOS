@@ -14,7 +14,6 @@ namespace GFS_iOS
 		LiveResultsViewController currentController;
 		MenuSubView menuView;
 		UIBarButtonItem menuB30;
-		public Product product; //The product represented by the currently selected row
 		//Set up the cell for reuse (iOS6 way)
 		//static NSString cellIdentifier = new NSString ("productCell");
 

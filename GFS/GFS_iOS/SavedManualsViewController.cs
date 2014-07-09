@@ -8,20 +8,14 @@ namespace GFS_iOS
 {
 	//NOTE: This is not a table view controller, but we add a TableView with our table source at the bottom. 
 	//If we used a TableViewController, then we would end up with two tables.
-	partial class ProductListTableController : UIViewController
+	partial class SavedManualsViewController : UIViewController
 	{
 		public UITableView table;
-		ProductListTableController currentController;
+		SavedManualsViewController currentController;
 		MenuSubView menuView;
 		UIBarButtonItem menuButton102;
 
-		//The index of the row selected when seguing from the SavedListsTableController
-		public int selectedRowindex;
-
-		//The list of products the matches the saved list (i.e. row) selected when seguing from the SavedListsTableController
-		public List<Product> selectedSavedList;
-
-		public ProductListTableController()
+		public SavedManualsViewController()
 		{
 			currentController = this; //Maintain a reference to this controller
 		}
@@ -31,7 +25,7 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 
 			//Hide the back button
-			//this.NavigationItem.HidesBackButton = true;
+			this.NavigationItem.HidesBackButton = true;
 
 			//Initialize Flyout Menu
 			menuView = MenuSubView.getInstance();
@@ -61,7 +55,7 @@ namespace GFS_iOS
 
 			table.AutoresizingMask = UIViewAutoresizing.All;
 			//Create the Table rows from the source
-			table.Source = new SavedListViewTableSource(currentController);
+			table.Source = new SavedManualsTableSource(currentController);
 
 			table.SeparatorStyle = UITableViewCellSeparatorStyle.None; //If you don't want seperator lines
 			table.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
@@ -72,17 +66,17 @@ namespace GFS_iOS
 		}
 	} //End SavedListViewController
 
-	class SavedListViewTableSource : UITableViewSource
+	class SavedManualsTableSource : UITableViewSource
 	{
 		protected List<Product> tableItems;
-		NSString cellIdentifier = new NSString("productCell");
-		ProductListTableController parentController;
+		NSString cellIdentifier = new NSString("manualCell");
+		SavedManualsViewController parentController;
 
-		public SavedListViewTableSource (ProductListTableController parentController)
+		public SavedManualsTableSource (SavedManualsViewController parentController)
 		{
 			this.parentController = parentController;
-			//A list of products associated with the saved list that was selected in the previous step.
-			tableItems = parentController.selectedSavedList;
+			//The manualList is a List<Product>. Each product on this list has an associated manual.
+			tableItems = DataSource.getInstance().getManualList();
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
@@ -95,17 +89,17 @@ namespace GFS_iOS
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 
-			//The selected product (i.e. selected row)
-			Product selectedProduct = tableItems[indexPath.Row];
+			//The selected selected row
+			Product theProduct = tableItems[indexPath.Row];
 
-			LiveProductPageViewController liveProductPage = new LiveProductPageViewController(selectedProduct);
+			ManualListTableController manualListView = new ManualListTableController();
 
 			//"Pass" along the index of the selected row to the index member variable
-			liveProductPage.index = indexPath.Row; 
-			liveProductPage.rowName = selectedProduct.getTitle();
+			//manualListView.index = indexPath.Row; 
+			//manualListView.rowName = selectedProduct.getTitle();
 
 			//Segue
-			parentController.NavigationController.PushViewController (liveProductPage, true); //yes, animate the segue 
+			parentController.NavigationController.PushViewController (manualListView, true); //yes, animate the segue 
 		}
 
 		//Create the Cells in the table
