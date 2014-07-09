@@ -3,6 +3,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Drawing;
+using Swx.B2B.Ecom.BL.Managers;
 
 namespace GFS_iOS
 {
@@ -10,6 +11,7 @@ namespace GFS_iOS
 	{
 		SearchViewController currentController;
         MenuSubView menuView;
+        Swx.B2B.Ecom.BL.Managers.ProductManager productSuggestions = new ProductManager();
 
 		UIBarButtonItem menuB2;
 
@@ -70,6 +72,10 @@ namespace GFS_iOS
 				}
 				else
 				{
+				    string[] suggestedTerms = new string[5];
+                    suggestedTerms = productSuggestions.GetProductSearchSuggestions(SearchBar.Text);
+                    HintTable.Source = new TableSource(currentController, suggestedTerms);
+                    /*
 					if(SearchBar.Text == "c")
 					{
 						tempHints = new string[] { "cat", "cool", "chrome", "call", "cake", "cab" };
@@ -105,8 +111,10 @@ namespace GFS_iOS
 						tempHints = new string[] { "cabinet"};
 						HintTable.Source = new TableSource(currentController, tempHints);
 					}
+                     */
                     HintTable.ReloadData();
 					HintTable.Hidden = false;
+                     
 				}
 			};
 			// Perform any additional setup after loading the view, typically from a nib.

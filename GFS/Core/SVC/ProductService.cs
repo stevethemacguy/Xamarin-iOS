@@ -23,6 +23,20 @@ namespace Swx.B2B.Ecom.SVC
             return json;
         }
 
+        public JObject GetJsonProductSearchSuggestion(string term)
+        {
+            WebService webservice = new WebService("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products/suggest?term=" + term + "&max=5", "json");
+            var json = JObject.Parse(webservice.GetFeedReader().ReadToEnd());
+            return json;     
+        }
+
+        public JObject GetJsonProductSearchList(string searchTerm)
+        {
+            WebService webservice = new WebService("http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products?query=freeTextSearch:sort:name:" + searchTerm + ":description:" + searchTerm, "json");
+            var json = JObject.Parse(webservice.GetFeedReader().ReadToEnd());
+            return json;     
+        }
+
         /*
         // Get product information containing image, detail, name, price, etc.
         public String GetProductName(int id)

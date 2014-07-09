@@ -32,12 +32,15 @@ namespace GFS_iOS
             System.Diagnostics.Debug.WriteLine("Testing BLL Fetching Product...");
             Swx.B2B.Ecom.BL.Managers.ProductManager product = new ProductManager();
             Swx.B2B.Ecom.BL.Entities.Product newProduct = product.GetProductByID(107701);
+		    product.GetProductSearchList("sony");
 
+            /*
             System.Diagnostics.Debug.WriteLine(newProduct.Name);
 		    System.Diagnostics.Debug.WriteLine(newProduct.Description);
             System.Diagnostics.Debug.WriteLine(newProduct.Prices);
 
             System.Diagnostics.Debug.WriteLine(newProduct.Images[0].Url);
+            */
 
 			//Create all the products in the database
 			DataSource db = DataSource.getInstance();
