@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.IO;
 using Swx.B2B.Ecom.BL.Entities;
 using Swx.B2B.Ecom;
+using Swx.B2B.Ecom.DL.SQLite;
 
 namespace Swx.B2B.Ecom.DAL
 {
-    /*
+   
     public class B2BRepository
     {
         private DL.B2BDB db = null;
@@ -73,7 +74,26 @@ namespace Swx.B2B.Ecom.DAL
         {
             return me.db.GetItem<Product>(id);
         }
+
+        public static int SaveProduct(Product productItem)
+        {
+            return me.db.SaveItem(productItem);
+        }
+
+        public static int SaveNote(Note noteItem)
+        {
+            return me.db.SaveItem(noteItem);
+        }
+
+        public static Note GetNote(int id)
+        {
+            return me.db.GetItem<Note>(id);
+        }
+
+        public static IEnumerable<Note> GetNotes()
+        {
+            return me.db.GetItems<Note>();
+        }
     }
-     * */
 }
 

@@ -17,7 +17,7 @@ namespace Swx.B2B.Ecom.DL
 	/// underlying ORM.
 	/// </summary>
 	
-    /*
+    
     public class B2BDB : SQLiteConnection
 	{
 		static object locker = new object ();
@@ -33,6 +33,7 @@ namespace Swx.B2B.Ecom.DL
 		{
 			// create the tables
 			CreateTable<Product> ();
+            CreateTable<Note> ();
 		}
 		
 		public IEnumerable<T> GetItems<T> () where T : BL.Contracts.IEntity, new ()
@@ -45,7 +46,7 @@ namespace Swx.B2B.Ecom.DL
 		public T GetItem<T> (int id) where T : BL.Contracts.IEntity, new ()
 		{
             lock (locker) {
-                return Table<T>().FirstOrDefault(x => x.ID == id);
+                return Table<T>().FirstOrDefault(x => x.Id == id);
                 // Following throws NotSupportedException - thanks aliegeni
                 //return (from i in Table<T> ()
                 //        where i.ID == id
@@ -55,14 +56,18 @@ namespace Swx.B2B.Ecom.DL
 
 		public int SaveItem<T> (T item) where T : BL.Contracts.IEntity
 		{
-            lock (locker) {
-                if (item.ID != 0) {
-                    Update (item);
-                    return item.ID;
-                } else {
-                    return Insert (item);
-                }
-            }
+		    lock (locker)
+		    {
+		        if (item.Id != 0)
+		        {
+		            Update(item);
+		            return item.Id;
+		        }
+		        else
+		        {
+		            return Insert(item);
+		        }
+		    }
 		}
 		
 		public int DeleteItem<T>(int id) where T : BL.Contracts.IEntity, new ()
@@ -71,10 +76,10 @@ namespace Swx.B2B.Ecom.DL
 #if NETFX_CORE
                 return Delete(new T() { ID = id });
 #else
-                return Delete<T> (new T () { ID = id });
+                return Delete<T> (new T () { Id = id });
 #endif
             }
 		}
 	}
-     * */
+     
 }

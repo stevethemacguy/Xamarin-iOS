@@ -4,6 +4,7 @@ using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Drawing;
+using Swx.B2B.Ecom.BL.Entities;
 
 namespace GFS_iOS
 {
@@ -24,6 +25,7 @@ namespace GFS_iOS
         NotesViewController myController;
 		DataSource data;
 		UIBarButtonItem menuB33;
+	    Note newNote;
 
 		public NotesViewController  (IntPtr handle) : base (handle)
 		{
@@ -33,6 +35,7 @@ namespace GFS_iOS
 
 		private void SaveNote()
 		{
+            newNote = new Note();
 			noteText = NoteTextView.Text; //get the current text
 			//Don't allow blank notes to be created
 			if(noteText == "")
@@ -44,6 +47,9 @@ namespace GFS_iOS
 			if(addingNote)
 			{
 				data.addNote(noteText);
+			    newNote.Text = noteText;
+
+                Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
 			}
 			else
 			{

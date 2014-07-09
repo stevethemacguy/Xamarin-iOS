@@ -32,7 +32,9 @@ namespace GFS_iOS
             System.Diagnostics.Debug.WriteLine("Testing BLL Fetching Product...");
             Swx.B2B.Ecom.BL.Managers.ProductManager product = new ProductManager();
             Swx.B2B.Ecom.BL.Entities.Product newProduct = product.GetProductByID(107701);
-		    product.GetProductSearchList("sony");
+            List<Swx.B2B.Ecom.BL.Entities.Product> productList = new List<Swx.B2B.Ecom.BL.Entities.Product>();
+		    productList = product.GetProductSearchList("sony");
+            //System.Diagnostics.Debug.WriteLine(productList[0].Name);
 
             /*
             System.Diagnostics.Debug.WriteLine(newProduct.Name);
