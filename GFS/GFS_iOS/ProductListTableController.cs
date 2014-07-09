@@ -12,7 +12,6 @@ namespace GFS_iOS
 	{
 		public UITableView table;
 		ProductListTableController currentController;
-		MenuSubView menuView;
 		UIBarButtonItem menuButton102;
 
 		//The index of the row selected when seguing from the SavedListsTableController
@@ -33,22 +32,8 @@ namespace GFS_iOS
 			//Hide the back button
 			//this.NavigationItem.HidesBackButton = true;
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
-
-			//Create the Menu button
-			menuButton102 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuButton102.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuButton102.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 64);
-				});
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuButton102 = new MainMenuButton().getButton(this, 64);
 
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuButton102, true);

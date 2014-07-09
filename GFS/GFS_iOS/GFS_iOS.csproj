@@ -304,6 +304,7 @@
     <Compile Include="LoadingOverlay.cs" />
     <Compile Include="ProductListTableController.cs" />
     <Compile Include="SavedManualsViewController.cs" />
+    <Compile Include="MainMenuButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

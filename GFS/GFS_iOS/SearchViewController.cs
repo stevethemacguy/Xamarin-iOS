@@ -10,8 +10,8 @@ namespace GFS_iOS
 	partial class SearchViewController : UIViewController
 	{
 		SearchViewController currentController;
-        MenuSubView menuView;
 		UIBarButtonItem menuB2;
+
 		private LoadingOverlay loadingOverlay;
 
 		public SearchViewController (IntPtr handle) : base (handle)
@@ -25,33 +25,16 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
-			//Manually create a menu button and add it to the right side of the menu bar
-//			menuButton31 = UIButton.FromType(UIButtonType.Custom);
-//			menuButton31.SetBackgroundImage(UIImage.FromFile("menuIconShifted.png"), UIControlState.Normal);
-//			menuButton31.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
-//			this.NavigationController.NavigationBar.Add(menuButton31);
-//
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuB2 = new MainMenuButton().getButton(this, 64); 
 
-			//Create the Menu button
-			menuB2 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					//Dismiss the keyboard when the menu button is pressed.
-					SearchBar.ResignFirstResponder();
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuB2.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuB2.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 64);
-				});
+			//Hide the keyboard when the main menu button is clicked.
+			menuB2.Clicked += (sender, e) => {
+				SearchBar.ResignFirstResponder();
+			};
+
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB2, true);
-
 
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));

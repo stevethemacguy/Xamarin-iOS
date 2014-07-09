@@ -12,7 +12,6 @@ namespace GFS_iOS
 	{
 		public UITableView table;
 		SavedManualsViewController currentController;
-		MenuSubView menuView;
 		UIBarButtonItem menuButton102;
 
 		public SavedManualsViewController()
@@ -27,24 +26,11 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
 
-			//Create the Menu button
-			menuButton102 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuButton102.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuButton102.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 64);
-				});
+			//Create the Main Menu button and initialize the Flyout Menu
+			menuButton102 = new MainMenuButton().getButton(this, 64);
 
-			//Add the Menu button to the navigation bar.
+			//Add the Menu button to the navigation bar of the view passed
 			this.NavigationItem.SetRightBarButtonItem(menuButton102, true);
 
 			//Create the table and populate it with  cells

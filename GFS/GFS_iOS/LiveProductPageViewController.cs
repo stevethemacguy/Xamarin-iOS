@@ -6,7 +6,6 @@ namespace GFS_iOS
 {
 	partial class LiveProductPageViewController : UIViewController
 	{
-		MenuSubView menuView;
 		UIBarButtonItem menub101;
 		//LiveProductPageViewController currentController;
 		public Product product; //Passed to this controller when a ProductCell is selected.
@@ -26,22 +25,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menub101 = new MainMenuButton().getButton(this, 64); 
 
-			//Create the Menu button
-			menub101 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menub101.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menub101.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 64);
-				});
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menub101, true);
 

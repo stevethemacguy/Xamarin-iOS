@@ -12,7 +12,6 @@ namespace GFS_iOS
 		//TextInputController currentController;
 		public bool failed = false;
 		public string newList = "";
-		MenuSubView menuView;
 		UIBarButtonItem menuButton34;
 
 		//The selected product is passed along from the "details" view
@@ -68,23 +67,14 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuButton34 = new MainMenuButton().getButton(this, 64);
 
-			//Create the Menu button
-			menuButton34 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuButton34.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuButton34.Image = UIImage.FromFile("XIcon.png");
-					}
-					ListInputField.ResignFirstResponder();
-					menuView.toggleMenu(this, 64);
-				});
+			//Hide the keyboard when the main menu button is clicked.
+			menuButton34.Clicked += (sender, e) => {
+				ListInputField.ResignFirstResponder();
+			};
+
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuButton34, true);
 

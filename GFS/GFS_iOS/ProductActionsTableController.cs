@@ -12,7 +12,6 @@ namespace GFS_iOS
 	{
 		public ProductActionsTableController actionsTable; //The current controller
 		public HashSet<string> actionList;
-		MenuSubView menuView;
 		UIBarButtonItem menuB15;
 
 		//The actions table is always pushed from a LiveProductPageViewController.
@@ -39,22 +38,9 @@ namespace GFS_iOS
 			//actionCell5.BackgroundColor = UIColor.Clear;
 			actionsView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuB15 = new MainMenuButton().getButton(this, 0);
 
-			//Create the Menu button
-			menuB15 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuB15.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuB15.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 0);
-				});
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB15, true);
 

@@ -13,8 +13,8 @@ namespace GFS_iOS
         UIScrollView scrollView;
         UIImageView imageView;
         UIScrollView mainScrollView;
-        MenuSubView menuView;
 		UIBarButtonItem menuB1;
+
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -45,22 +45,9 @@ namespace GFS_iOS
 			test.TextColor = UIColor.White;
 			navBar.SetTitleTextAttributes(test);
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuB1 = new MainMenuButton().getButton(this, 64);
 
-			//Create the Menu button
-			menuB1 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuB1.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuB1.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 64);
-				});
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB1, true);
 

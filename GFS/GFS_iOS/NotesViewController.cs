@@ -15,7 +15,6 @@ namespace GFS_iOS
 		public Boolean addingNote = false; //true if a new note is beeing added.
 		//The NotesViewController is created when a cell row is tapped/clicked. This index is the index of the row that was clicked.
 		public int index; //Value is passed in from NotesTableSource on segue
-		MenuSubView menuView;
 
 		//refrences the table controller. this is passed by NotesTableSource when the table is created and allows us to update the table object
 		public NotesTableController tableController;
@@ -63,24 +62,13 @@ namespace GFS_iOS
 //			menuButton33.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
 //			this.NavigationController.NavigationBar.Add(menuButton33);
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
-			//Create the Menu button
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuB33 = new MainMenuButton().getButton(this, 64);
 
-			menuB33 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuB33.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuB33.Image = UIImage.FromFile("XIcon.png");
-						//Dismiss the keyboard when the menu button is pressed.
-						NoteTextView.ResignFirstResponder();
-					}
-					menuView.toggleMenu(this, 64);
-				});
+			//Hide the keyboard when the main menu button is clicked.
+			menuB33.Clicked += (sender, e) => {
+				NoteTextView.ResignFirstResponder();
+			};
 
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB33, true);

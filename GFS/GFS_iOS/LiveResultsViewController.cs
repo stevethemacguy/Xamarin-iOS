@@ -12,7 +12,6 @@ namespace GFS_iOS
 	{
 		public UITableView table;
 		LiveResultsViewController currentController;
-		MenuSubView menuView;
 		UIBarButtonItem menuB30;
 		//Set up the cell for reuse (iOS6 way)
 		//static NSString cellIdentifier = new NSString ("productCell");
@@ -29,22 +28,8 @@ namespace GFS_iOS
 			//Hide the back button
 			//this.NavigationItem.HidesBackButton = true;
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
-
-			//Create the Menu button
-			menuB30 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuB30.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuB30.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 64);
-				});
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuB30 = new MainMenuButton().getButton(this, 64); 
 
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB30, true);
