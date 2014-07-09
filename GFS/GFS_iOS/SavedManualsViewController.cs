@@ -58,7 +58,9 @@ namespace GFS_iOS
 			table.Source = new SavedManualsTableSource(currentController);
 
 			table.SeparatorStyle = UITableViewCellSeparatorStyle.None; //If you don't want seperator lines
-			table.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
+
+			//Don't use the normal background because it will repeate if there are too many cells (due to scrolling).
+			//table.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
 			//Sets height of each cell (globally for all cells)
 			table.RowHeight = 80; //90 is original row height
@@ -89,14 +91,12 @@ namespace GFS_iOS
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 
-			//The selected selected row
-			Product theProduct = tableItems[indexPath.Row];
-
-			ManualListTableController manualListView = new ManualListTableController();
-
-			//"Pass" along the index of the selected row to the index member variable
-			//manualListView.index = indexPath.Row; 
-			//manualListView.rowName = selectedProduct.getTitle();
+			//Since the ManualListTableController was created on the storyboard, 
+			//get the view from the storyboard before pushing to it (as opposed to instantiated a new ManualListTableController
+			UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null);
+			ManualListTableController manualListView = (ManualListTableController)board.InstantiateViewController(
+				"manualListsTable"
+			);
 
 			//Segue
 			parentController.NavigationController.PushViewController (manualListView, true); //yes, animate the segue 
@@ -130,6 +130,7 @@ namespace GFS_iOS
 
 			//cell.Opaque
 			///Warning: Setting to clear could cause performance issues
+			//Also note that if there are enough cells to scroll, then the thermofischer background image will repeat and look weird.
 			//cell.BackgroundColor = UIColor.Clear;
 			return cell;
 		}

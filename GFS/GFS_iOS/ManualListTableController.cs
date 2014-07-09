@@ -14,11 +14,6 @@ namespace GFS_iOS
 		{
 		}
 
-		public ManualListTableController()
-		{
-
-		}
-
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
