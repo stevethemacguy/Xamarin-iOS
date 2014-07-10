@@ -58,6 +58,7 @@ namespace GFS_iOS
 			//price.Text = prodPrice;
 		}
 
+		//Adds a green background
 		public void highlightCell()
 		{
 			ContentView.BackgroundColor = UIColor.FromRGB(231, 247, 205);

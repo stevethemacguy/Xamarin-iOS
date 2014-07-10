@@ -24,6 +24,9 @@ namespace GFS_iOS
 		private String description = "";
 		private UIImage productImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
 
+		//Whether the product should be highlighted in search results, etc.
+		private Boolean highlighted = false;
+
 		//Used only by webservice
 		public Product(String imageFileName, String title, String price, String description, float rating)
 	    {
@@ -79,6 +82,19 @@ namespace GFS_iOS
 			return title;
 		}
 
+		public Boolean isHighlighted()
+		{
+			return highlighted;
+		}
+
+		public void toggleHighlight()
+		{
+			if (highlighted)
+				highlighted = false;
+			else
+				highlighted = true;
+		}
+
 		public String getProdClass() {
 			return prodClass;
 		}
@@ -122,6 +138,7 @@ namespace GFS_iOS
 			s += "\n Price: " + getPrice();
 			s += "\n Description: " + getDescription();
 			s += "\n ImageURL: " + getImageFileName();
+			s += "\n Currently Highlighted: " + highlighted;
 //			s += getSegueName();
 			return s;
 		}

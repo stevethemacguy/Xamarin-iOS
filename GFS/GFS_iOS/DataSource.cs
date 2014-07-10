@@ -77,12 +77,12 @@ namespace GFS_iOS
 				limit++;
 				/////FOR DEMO ONLY!//////
 				///Filter out "duplicate" items for the demo so the results are nicer
-				if ((limit >= 3 && limit <= 9) || limit == 11 )
-					continue; //Continue on with the loop, but ignore these 3 results
+				//if ((limit >= 3 && limit <= 9) || limit == 11 )
+				//	continue; //Continue on with the loop, but ignore these 3 results
 
 				////Limit the results to 15 (23 minus the 8 we're skipping) FOR TESTING ONLY//////
 				if (limit > 23)
-				//if (limit > 5)
+				//if (limit > 10)
 					break;
 
 				//String prodClass="";
@@ -112,6 +112,11 @@ namespace GFS_iOS
 
                 //Create the new product from the xml values and add it to the product map
 				Product p = new Product(imageURL, title, price, description, starRating);
+
+				//Highlight a couple products for demo purposes only
+				if (limit == 1 || limit == 5)
+					p.toggleHighlight();
+
                 productMap.Add(p.getID(), p); //Uses the ID as a key
             }
 

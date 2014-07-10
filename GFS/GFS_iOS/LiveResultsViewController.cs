@@ -106,7 +106,7 @@ namespace GFS_iOS
 		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 		{
 
-			Product product = tableItems[indexPath.Row]; //The cell's product
+			Product product = tableItems[indexPath.Row]; //Get the cell's product
 
 			//iOS6 way to reuse cells
 			//var cell = (ProductCell) tableView.DequeueReusableCell(cellIdentifier, indexPath);
@@ -114,10 +114,11 @@ namespace GFS_iOS
 			//"Old way to reuse cells
 			//request a recycled cell to save memory
 			ProductCell cell = tableView.DequeueReusableCell (cellIdentifier) as ProductCell;
+
 			// if there are no cells to reuse, create a new one
 			if (cell == null)
 			{
-				//Give each cell a unique identifier so we can target a specific cell later
+				//Give each cell a unique identifier so we can target specifics by their index
 				NSString cellID = new NSString(cellIdentifier + tableItems.IndexOf(product));
 				cell = new ProductCell(cellID);
 			}
@@ -132,6 +133,13 @@ namespace GFS_iOS
 					UIImage.FromFile("blue-dots.png"),
 					UIImage.FromFile("product-devider.png")
 				);
+
+			//If the cell is displaying a highlighted product, than highlight the cell
+			if(product.isHighlighted())
+			{
+				cell.highlightCell();
+			}
+
 			//cell.Opaque
 			///Warning: Setting to clear could cause performance issues
 			//cell.BackgroundColor = UIColor.Clear;
@@ -143,11 +151,13 @@ namespace GFS_iOS
 		//Using the cellID, however, targets specific cells.
 		public override void WillDisplay(UITableView tableView, UITableViewCell cell, NSIndexPath indexPath)
 		{
-			if(cell.ReuseIdentifier == "productCell0" || cell.ReuseIdentifier == "productCell1")
-			{
-				ProductCell theCell = (ProductCell)cell;
-				theCell.highlightCell();
-			}
+			//This highlights the first two cells. This is currently done by checking the product's highlighted flag in getCell(), but
+			//this code is a good example of how to do something to a specific cell at a given index.
+//			if(cell.ReuseIdentifier == "productCell0" || cell.ReuseIdentifier == "productCell1")
+//			{
+//				ProductCell theCell = (ProductCell)cell;
+//				theCell.highlightCell();
+//			}
 		}
 	}
 }
