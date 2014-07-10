@@ -25,8 +25,7 @@ namespace GFS_iOS
 			feedReader = new StreamReader("Hybris_Product_API_Feed.xml");
             return new XMLReader(feedReader);
         }
-
-		//Returns a new XML Reader
+			
         public JSONReader getJSONReader()
         {
             return new JSONReader(feedReader);
