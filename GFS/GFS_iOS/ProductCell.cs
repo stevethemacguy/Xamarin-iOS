@@ -58,6 +58,11 @@ namespace GFS_iOS
 			//price.Text = prodPrice;
 		}
 
+		public void highlightCell()
+		{
+			ContentView.BackgroundColor = UIColor.FromRGB(231, 247, 205);
+		}
+
 		//Position the views in the cell
 		public override void LayoutSubviews()
 		{

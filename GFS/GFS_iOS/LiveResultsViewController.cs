@@ -105,6 +105,7 @@ namespace GFS_iOS
 		//Create the Cells in the table
 		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 		{
+
 			Product product = tableItems[indexPath.Row]; //The cell's product
 
 			//iOS6 way to reuse cells
@@ -115,9 +116,11 @@ namespace GFS_iOS
 			ProductCell cell = tableView.DequeueReusableCell (cellIdentifier) as ProductCell;
 			// if there are no cells to reuse, create a new one
 			if (cell == null)
-				cell = new ProductCell (cellIdentifier);
-
-
+			{
+				//Give each cell a unique identifier so we can target a specific cell later
+				NSString cellID = new NSString(cellIdentifier + tableItems.IndexOf(product));
+				cell = new ProductCell(cellID);
+			}
 
 			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
 			//Create (or update) the cell using the Product's title, price, and image url
@@ -133,6 +136,18 @@ namespace GFS_iOS
 			///Warning: Setting to clear could cause performance issues
 			//cell.BackgroundColor = UIColor.Clear;
 			return cell;
+		}
+
+		//Highlight specific cells based on their ReuseIdentifier. For example, if the first two cells should have a green background,
+		//you could target these cells with (indexPath == 0 || indexPath == 1), but when you scroll, positions 0 and 1 will always be green
+		//Using the cellID, however, targets specific cells.
+		public override void WillDisplay(UITableView tableView, UITableViewCell cell, NSIndexPath indexPath)
+		{
+			if(cell.ReuseIdentifier == "productCell0" || cell.ReuseIdentifier == "productCell1")
+			{
+				ProductCell theCell = (ProductCell)cell;
+				theCell.highlightCell();
+			}
 		}
 	}
 }
