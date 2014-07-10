@@ -8,7 +8,6 @@ namespace GFS_iOS
 {
 	partial class SearchResultsTableController : UITableViewController
 	{
-        MenuSubView menuView;
 		public Boolean fromSegue = false;
 		UIBarButtonItem menuB71;
 
@@ -46,22 +45,9 @@ namespace GFS_iOS
 //			MenuB71.Frame = new RectangleF(new PointF(282,11), new SizeF(new PointF((float) 22.0,(float) 22.0)));
 //			this.NavigationController.NavigationBar.Add(MenuB71);
 //
-//			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuB71 = new MainMenuButton().getButton(this, 0); 
 
-			//Create the Menu button
-			menuB71 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuB71.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuB71.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 0);
-				});
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB71, true);
 		}

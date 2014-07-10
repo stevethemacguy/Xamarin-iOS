@@ -32,6 +32,25 @@ namespace GFS_iOS
 			MenuView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 		}
 
+		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		{
+			//base.RowSelected(tableView, indexPath);
+
+			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
+
+			//The selected row
+			int selectedRow = indexPath.Row;
+
+			//If Saved manuals was pressed, manually push the next view since we're no longer using the storyboard to control segues
+			if (selectedRow == 4)
+			{
+				SavedManualsViewController manualsView = new SavedManualsViewController();
+
+				//Segue
+				this.NavigationController.PushViewController (manualsView, true); //yes, animate the segue 
+			}
+		}
+
 		//When the back button is pressed
 		public override void ViewWillDisappear(bool animated)
 		{

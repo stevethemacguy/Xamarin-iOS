@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
-
+using System.Xml.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -11,26 +13,28 @@ namespace GFS_iOS
         UIScrollView scrollView;
         UIImageView imageView;
         UIScrollView mainScrollView;
-        MenuSubView menuView;
 		UIBarButtonItem menuB1;
+
 		public GFS_iOSViewController(IntPtr handle) : base(handle)
 		{
 		}
 
-		public override void DidReceiveMemoryWarning()
-		{
-			// Releases the view if it doesn't have a superview.
-			base.DidReceiveMemoryWarning();
-			
-			// Release any cached data, images, etc that aren't in use.
-		}
-
 		#region View lifecycle
-
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			////Create all the products in the database	
+
+			//DataSource db = DataSource.getInstance();
+
+			//Initialize using JSON
+			//db.initializeDBfromJSON();
+
+			//Initialize using XML
+			//db.initializeDBfromXML();
+
 			var navBar = this.NavigationController.NavigationBar;
 
 			//Create the NavBar image
@@ -41,22 +45,9 @@ namespace GFS_iOS
 			test.TextColor = UIColor.White;
 			navBar.SetTitleTextAttributes(test);
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuB1 = new MainMenuButton().getButton(this, 64);
 
-			//Create the Menu button
-			menuB1 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuB1.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuB1.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 64);
-				});
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB1, true);
 
@@ -88,7 +79,6 @@ namespace GFS_iOS
 
             //adding sub scroll view into main scroll view
             mainScrollView.AddSubview(scrollView);
-
 		}
 
 		//"Unwind Segue". 

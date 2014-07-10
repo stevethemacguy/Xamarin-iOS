@@ -12,8 +12,11 @@ namespace GFS_iOS
 		//TextInputController currentController;
 		public bool failed = false;
 		public string newList = "";
-		MenuSubView menuView;
 		UIBarButtonItem menuButton34;
+
+		//The selected product is passed along from the "details" view
+		//i.e LiveProductPageViewController > ProductActionsTableController > TextInputController
+		public Product selectedProduct;
 
 		public TextInputController (IntPtr handle) : base (handle)
 		{
@@ -37,49 +40,17 @@ namespace GFS_iOS
 				db.addSavedList(newList);
 
 				//Add the product to the newly created list!
-				Dictionary<String, List<Product>> prodMap = db.getProductMap();
+				Dictionary<String, List<Product>> savedListMap = db.getSavedListMap();
 
 				//Since we just created this list, it needs to be added to the map with an empty list
-				//But do not attempt to add if the list already exists
-				if(prodMap.ContainsKey(newList) == false)
+				//But if there is an existing list with the same name, then do not attempt to add a duplicate list
+				if(savedListMap.ContainsKey(newList) == false)
 				{
-					prodMap.Add(newList, new List<Product>());
+					savedListMap.Add(newList, new List<Product>());
 				}
 
-				//if the product1 is selected, add the product to the new list
-				if (db.currentProduct == "product1")
-				{
-					//Add a new product to the selected list
-					prodMap[newList].Add(new Product(
-						"product1.png", 
-						"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
-						"KS Class II,  A201", 
-						"Capacity: 120g", 
-						"Readability: 0.01mg", 
-						"Price: $12,381.00", "Prod1Segue")
-					);
-				}
-				else //the second product was selected, so add the second product to the new list
-				{
-					//Add a new product to the selected list
-					prodMap[newList].Add(new Product(
-						"product2.png", 
-						"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
-						"XPE 105", 
-						"Capacity: 520g", 
-						"Readability: 0.1mg", 
-						"Price: $8,272.03", "Prod2Segue"));
-				}
-
-				//Write out the map values
-//				foreach (var entry in prodMap){
-//					Product[] values = entry.Value.ToArray();
-//					Console.WriteLine("key: {0}", entry.Key); 
-//					foreach(Product st in values)
-//					{
-//						Console.WriteLine(st.ToString());
-//					}
-//				}
+				//Add the product to the saved list
+				savedListMap[newList].Add(selectedProduct);
 			}
 		}
 
@@ -96,23 +67,14 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuButton34 = new MainMenuButton().getButton(this, 64);
 
-			//Create the Menu button
-			menuButton34 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuButton34.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuButton34.Image = UIImage.FromFile("XIcon.png");
-					}
-					ListInputField.ResignFirstResponder();
-					menuView.toggleMenu(this, 64);
-				});
+			//Hide the keyboard when the main menu button is clicked.
+			menuButton34.Clicked += (sender, e) => {
+				ListInputField.ResignFirstResponder();
+			};
+
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuButton34, true);
 
@@ -126,29 +88,31 @@ namespace GFS_iOS
 				return true;
 			};
 
-			//WITHOUT UNWIND SEGUE
+			//SAVE WITHOUT UNWIND SEGUE
 			//When the Save button is pressed, create a new list with the text.
-//			CreateListButton.TouchUpInside += (o,s) => {
-//							createList();
-//
-//					//*******NORMAL TRANSITION*****
-//					//Transition back to the product page and display an alert saying that it was saved.
-//					//Get the current storyboard
-//					UIStoryboard board = UIStoryboard.FromName("MainStoryboard", null); 
-//
-//					//Get the TextInputController
-//					ProductPageViewController productView = (ProductPageViewController) board.InstantiateViewController(  
-//						"productPageController"
-//					);
-//
-//					//productView.tableController = (NotesTableController) parentController;
-//
-//					productView.fromActionsPage = true;
-//					//Segue to the text input view
-//					currentController.NavigationController.PushViewController (productView, true);
-//
-//				//*******NORMAL TRANSITION*****
-//				};
+			CreateListButton.TouchUpInside += (o,s) => {
+
+				//Create the list
+				createList();
+
+				//Dismiss the keyboard
+				ListInputField.ResignFirstResponder();
+
+				//Show an error or success method
+				if (failed)
+				{
+					UIAlertView alert = new UIAlertView ("Failed to Save", "The list could not be created. Please try again.", null, "OK");
+					alert.Show();
+					failed = false;  //reset the flag
+					return;
+				}
+				else
+				{
+					string success = "The product was added to: \"" + newList +"\"";
+					UIAlertView alert = new UIAlertView(success, "", null, "OK");
+					alert.Show();
+				}
+			};
 
 			//*****Create a Save BAR BUTTON instead of the text view and use it to save notes*****
 			//Create the Save button and add it to the toolbar

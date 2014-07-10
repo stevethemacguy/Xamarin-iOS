@@ -24,7 +24,7 @@ namespace GFS_iOS
 			tableController = this;
 			db = DataSource.getInstance();
 			//prodList = db.getProductList();
-			prodMap = db.getProductMap();
+			prodMap = db.getSavedListMap();
 		}
 
 		public override void ViewDidLoad()

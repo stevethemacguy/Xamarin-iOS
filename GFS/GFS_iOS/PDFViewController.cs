@@ -8,7 +8,6 @@ namespace GFS_iOS
 {
 	partial class PDFViewController : UIViewController
 	{
-        MenuSubView menuView;
 		UIBarButtonItem menub64;
 
 		public PDFViewController (IntPtr handle) : base (handle)
@@ -27,22 +26,9 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menub64 = new MainMenuButton().getButton(this, 64);
 
-			//Create the Menu button
-			menub64 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menub64.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menub64.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 64);
-				});
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menub64, true);
 

@@ -12,10 +12,18 @@ namespace GFS_iOS
 	{
 		public ProductActionsTableController actionsTable; //The current controller
 		public HashSet<string> actionList;
-		MenuSubView menuView;
 		UIBarButtonItem menuB15;
 
+		//The actions table is always pushed from a LiveProductPageViewController.
+		//selectedProduct is the product that the user was viewing when they "clicked" the circle button
+		public Product selectedProduct;
+
 		public ProductActionsTableController (IntPtr handle) : base (handle)
+		{
+			actionsTable = this;
+		}
+
+		public ProductActionsTableController ()
 		{
 			actionsTable = this;
 		}
@@ -30,22 +38,9 @@ namespace GFS_iOS
 			//actionCell5.BackgroundColor = UIColor.Clear;
 			actionsView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background-resized.png"));
 
-			//Initialize Flyout Menu
-			menuView = MenuSubView.getInstance();
+			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
+			menuB15 = new MainMenuButton().getButton(this, 0);
 
-			//Create the Menu button
-			menuB15 = new UIBarButtonItem(UIImage.FromFile("menuIconShifted.png"), UIBarButtonItemStyle.Plain, 
-				//When clicked
-				(sender, args) => {
-					if (menuView.isVisible()) {
-						//Change X image back to the normal menu image
-						menuB15.Image = UIImage.FromFile("menuIconShifted.png");
-					} else {
-						//Make Button show the X image once it's pressed.
-						menuB15.Image = UIImage.FromFile("XIcon.png");
-					}
-					menuView.toggleMenu(this, 0);
-				});
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menuB15, true);
 
@@ -53,26 +48,9 @@ namespace GFS_iOS
 				UIAlertView alert = new UIAlertView ("Download Complete!", "The PDF file was sucessfully saved.", null, "OK");
 					alert.Show();
 				DataSource data = DataSource.getInstance();
-				data.addToManualList(data.currentProduct);
-				if(data.savedManual1 == null){
-					data.savedManual1 = data.currentProduct;
-				}
-				else //manual1 already exists, so create the second manual
-				{
-					data.savedManual2 = data.currentProduct;
-				}
 
-
-				//We have two hardcoded PDFs for this prototype. If the user clicks to download, we just show the first row (with the first PDF)
-				if (data.showRow1 == false)
-				{
-					data.showRow1 = true;
-				}
-				else  //If showRow1 is already showing, then just reveal row 2 now.
-				{
-					data.showRow2 = true;
-				}
-
+				//Add the product ID to the manual list.
+				data.addToManualList(selectedProduct);
 			};
 
 			//Create an action sheet that comes up from the bottom.
@@ -105,7 +83,8 @@ namespace GFS_iOS
 							"textInputController"
 						);
 
-						//inputView.tableController = (NotesTableController) parentController;
+						//Pass along the product that was originally selected 
+						inputView.selectedProduct = selectedProduct;
 
 						//Segue to the text input view
 						actionsTable.NavigationController.PushViewController (inputView, false);
@@ -113,61 +92,36 @@ namespace GFS_iOS
 
 					else //The user selected a saved list
 					{	
-						string success = "The product was added to: \"" + selectedItem +"\"";
-						UIAlertView alert = new UIAlertView(success, "", null, "OK");
-						alert.Show();
-
 						//Actually Add the product cell to the Saved Lists Table
 						DataSource db = DataSource.getInstance();
 
-						Dictionary<String, List<Product>> prodMap = db.getProductMap();
+						Dictionary<String, List<Product>> savedListMap = db.getSavedListMap();
 						//initialize list if empty
 
 						//If the list doesn't exist in the map yet, then create it
-						if(prodMap.ContainsKey(selectedItem) == false)
+						if(savedListMap.ContainsKey(selectedItem) == false)
 						{
-							prodMap.Add(selectedItem, new List<Product>());
+							savedListMap.Add(selectedItem, new List<Product>());
 						}
 
-
-						//if the product selected is A, then add prod A to the selected list
-						if (db.currentProduct == "product1")
+						//Check if the product has alredy been added to the selected list
+						//If the product was previously added, don't add it. We don't want duplicate products in the list
+						List<Product> savedList = savedListMap[selectedItem];
+						if(savedList.Contains(selectedProduct))
 						{
-							//Add a new product to the selected list
-							prodMap[selectedItem].Add(new Product(
-								"product1.png", 
-								"Thermo Scientific™ Herasafe™ KS Class II, Type A2 Biological Safety Cabinets", 
-								"KS Class II,  A201", 
-								"Capacity: 120g", 
-								"Readability: 0.01mg", 
-								"Price: $12,381.00", "Prod1Segue")
-							);
-						}
-						else //the second product was selected, so add the second product to the selected list
-						{
-							//Add a new product to the selected list
-							prodMap[selectedItem].Add(new Product(
-								"product2.png", 
-								"Thermo Scientific™ 1300 Series Class II, Type A2 Biological Safety Cabinets", 
-								"XPE 105", 
-								"Capacity: 520g", 
-								"Readability: 0.1mg", 
-								"Price: $8,272.03", "Prod2Segue"));
+							string duplicate = "The product you selected is already in your list: \n\"" + selectedItem +"\"";
+							UIAlertView alertView = new UIAlertView(duplicate, "", null, "OK");
+							alertView.Show();
+							return;
 						}
 
-						//Write out the map values
-//						foreach (var entry in prodMap){
-//							Product[] values = entry.Value.ToArray();
-//							Console.WriteLine("key: {0}", entry.Key); 
-//							foreach(Product st in values)
-//							{
-//								Console.WriteLine(st.ToString());
-//							}
-//						}
-						//Console.WriteLine(selectedItem + " was clicked.");
-						//Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
+						//Add the selected product to the selected list
+						savedListMap[selectedItem].Add(selectedProduct);
+
+						string success = "The product was added to: \"" + selectedItem +"\"";
+						UIAlertView alert = new UIAlertView(success, "", null, "OK");
+						alert.Show();
 					}
-						
 				};
 			};
 		}
