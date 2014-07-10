@@ -78,6 +78,9 @@ namespace GFS_iOS
 			//Get the name of the selected saved list (a String)
 			String selectedSavedList = tableItems[indexPath.Row];
 
+			//"Pass" along the name of the selected row to the ProductListTableController
+			productTable.selectedRowName = selectedSavedList;
+
 			//Get a list of products associated with the savedlist, send this list to the next view
 			if (dataSource.getSavedListMap().ContainsKey(selectedSavedList))
 			{

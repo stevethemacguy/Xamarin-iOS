@@ -26,6 +26,8 @@ namespace GFS_iOS
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
 
+			//Set the title
+			this.Title = "Saved Manuals";
 
 			//Create the Main Menu button and initialize the Flyout Menu
 			menuButton102 = new MainMenuButton().getButton(this, 64);

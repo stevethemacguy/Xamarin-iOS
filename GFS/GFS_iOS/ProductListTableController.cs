@@ -17,6 +17,9 @@ namespace GFS_iOS
 		//The index of the row selected when seguing from the SavedListsTableController
 		public int selectedRowindex;
 
+		//The name of the selected row when seguing from the SavedListsTableController
+		public string selectedRowName;
+
 		//The list of products the matches the saved list (i.e. row) selected when seguing from the SavedListsTableController
 		public List<Product> selectedSavedList;
 
@@ -31,6 +34,8 @@ namespace GFS_iOS
 
 			//Hide the back button
 			//this.NavigationItem.HidesBackButton = true;
+
+			this.Title = selectedRowName;
 
 			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
 			menuButton102 = new MainMenuButton().getButton(this, 64);

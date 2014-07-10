@@ -28,6 +28,9 @@ namespace GFS_iOS
 			//Hide the back button
 			//this.NavigationItem.HidesBackButton = true;
 
+			//Set the title
+			this.Title = "Results";
+
 			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
 			menuB30 = new MainMenuButton().getButton(this, 64); 
 

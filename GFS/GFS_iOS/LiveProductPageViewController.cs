@@ -31,6 +31,9 @@ namespace GFS_iOS
 			//Add the Menu button to the navigation bar.
 			this.NavigationItem.SetRightBarButtonItem(menub101, true);
 
+			//Set the title
+			this.Title = "Product Details";
+
 			View.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 			//Add image and text views
 
