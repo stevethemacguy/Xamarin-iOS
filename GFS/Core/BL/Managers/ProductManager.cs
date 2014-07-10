@@ -74,7 +74,7 @@ namespace Swx.B2B.Ecom.BL.Managers
             ProductService jsonWS = new ProductService();
             var json = jsonWS.GetJsonProductSearchList(term);
             int index = 0;
-            System.Diagnostics.Debug.WriteLine(json);
+            //System.Diagnostics.Debug.WriteLine(json);
             foreach (Object values in json)
             {
                 Product product = new Product();
