@@ -42,15 +42,14 @@ namespace GFS_iOS
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 
-			string[] hints1 = new string[] {"cabinet", "cabinet door", "cabbage"};
-			HintTable.Source = new TableSource(currentController, hints1);
+			string[] hints = new string[]{""};
+			HintTable.Source = new TableSource(currentController, hints);
 			HintTable.ScrollEnabled = true;
 			HintTable.Hidden = true;
 
 			//this.SearchBar.OnEditingStarted --- EventArgs
 			this.SearchBar.TextChanged += (object sender, UISearchBarTextChangedEventArgs e) =>
 			{
-				string[] tempHints;
 				if (SearchBar.Text == "")
 				{
 					HintTable.Hidden = true;
@@ -61,45 +60,74 @@ namespace GFS_iOS
                     suggestedTerms = productSuggestions.GetProductSearchSuggestions(SearchBar.Text);
                     HintTable.Source = new TableSource(currentController, suggestedTerms);
                     /*
-					if(SearchBar.Text == "c")
+					if(SearchBar.Text == "a")
 					{
-						tempHints = new string[] { "cat", "cool", "chrome", "call", "cake", "cab" };
-						HintTable.Source = new TableSource(currentController, tempHints);
+						hints = new string[] { "apple", "adobe", "adapter", "apature", "addition"};
+						HintTable.Source = new TableSource(currentController, hints);
 					}
-					if (SearchBar.Text == "ca")
+					else{
+						hints = new string[] {""};
+						HintTable.Source = new TableSource(currentController, hints);
+					}
+					if (SearchBar.Text == "ap")
 					{
-						tempHints = new string[] { "cat", "call", "cake", "cab", "cable"};
-						HintTable.Source = new TableSource(currentController, tempHints);
+						hints = new string[] { "apple", "apature" };
+						HintTable.Source = new TableSource(currentController, hints);
 					}
-					if (SearchBar.Text == "cab")
+					if (SearchBar.Text.StartsWith("apa"))
 					{
-						tempHints = new string[] { "cab", "cabin", "cabinet", "cabinetry", "cable"};
-						HintTable.Source = new TableSource(currentController, tempHints);
+						hints = new string[] { "apature" };
+						HintTable.Source = new TableSource(currentController, hints);
 					}
-					if (SearchBar.Text == "cabi")
+					if (SearchBar.Text.StartsWith("app"))
 					{
-						tempHints = new string[] { "cabin", "cabinet"};
-						HintTable.Source = new TableSource(currentController, tempHints);
+						hints = new string[] { "apple" };
+						HintTable.Source = new TableSource(currentController, hints);
 					}
-					if (SearchBar.Text == "cabin")
+					if (SearchBar.Text == "ad")
 					{
-						tempHints = new string[] { "cabin", "cabinet" };
-						HintTable.Source = new TableSource(currentController, tempHints);
+						hints = new string[] { "adobe", "adapter", "addition", "adaptive"};
+						HintTable.Source = new TableSource(currentController, hints);
 					}
-					if (SearchBar.Text == "cabine")
+					if (SearchBar.Text.StartsWith("ado"))
 					{
-						tempHints = new string[] { "cabinet"};
-						HintTable.Source = new TableSource(currentController, tempHints);
+						hints = new string[] { "adobe"};
+						HintTable.Source = new TableSource(currentController, hints);
 					}
-					if (SearchBar.Text == "cabinet")
+					if (SearchBar.Text == "ada")
 					{
-						tempHints = new string[] { "cabinet"};
-						HintTable.Source = new TableSource(currentController, tempHints);
+						hints = new string[] { "adapter", "adaptive"};
+						HintTable.Source = new TableSource(currentController, hints);
 					}
-                     */
+					if (SearchBar.Text.StartsWith("add"))
+					{
+						hints = new string[] { "addition"};
+						HintTable.Source = new TableSource(currentController, hints);
+					}
+					if (SearchBar.Text == "adap")
+					{
+						hints = new string[] { "adapter", "adaptive"};
+						HintTable.Source = new TableSource(currentController, hints);
+					}
+					if (SearchBar.Text == "adapt")
+					{
+						hints = new string[] { "adapter","adaptive"};
+						HintTable.Source = new TableSource(currentController, hints);
+					}
+					if (SearchBar.Text.StartsWith("adapti"))
+					{
+						hints = new string[] { "adaptive"};
+						HintTable.Source = new TableSource(currentController, hints);
+					}
+					if (SearchBar.Text.StartsWith("adapte"))
+					{
+						hints = new string[] { "adapter"};
+						HintTable.Source = new TableSource(currentController, hints);
+					}
+                    */
+
                     HintTable.ReloadData();
 					HintTable.Hidden = false;
-                     
 				}
 			};
 			// Perform any additional setup after loading the view, typically from a nib.
