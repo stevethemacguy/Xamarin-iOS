@@ -5,6 +5,8 @@ using System.CodeDom.Compiler;
 using System.Drawing;
 using System.Threading.Tasks;
 using Swx.B2B.Ecom.BL.Managers;
+using System.Collections.Generic;
+using System.Json;
 
 namespace GFS_iOS
 {
@@ -13,7 +15,7 @@ namespace GFS_iOS
 		SearchViewController currentController;
 		UIBarButtonItem menuB2;
 
-		Swx.B2B.Ecom.BL.Managers.ProductManager productSuggestions = new ProductManager();
+		ProductManager productSuggestions = new ProductManager();
 
 		private LoadingOverlay loadingOverlay;
 
@@ -42,8 +44,6 @@ namespace GFS_iOS
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 
-			string[] hints = new string[]{""};
-			HintTable.Source = new TableSource(currentController, hints);
 			HintTable.ScrollEnabled = true;
 			HintTable.Hidden = true;
 
@@ -56,9 +56,11 @@ namespace GFS_iOS
 				}
 				else
 				{
-				    string[] suggestedTerms = new string[5];
-                    suggestedTerms = productSuggestions.GetProductSearchSuggestions(SearchBar.Text);
-                    HintTable.Source = new TableSource(currentController, suggestedTerms);
+					//Make a call to the Web service to get back suggestions based on the search term
+					WebserviceHelper requester = new WebserviceHelper();
+					List<String> suggestedTerms = requester.getProductSearchSuggestions(SearchBar.Text);
+
+					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
                     /*
 					if(SearchBar.Text == "a")
 					{

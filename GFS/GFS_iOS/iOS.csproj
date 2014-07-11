@@ -377,6 +377,7 @@
     <Compile Include="ProductListTableController.cs" />
     <Compile Include="SavedManualsViewController.cs" />
     <Compile Include="MainMenuButton.cs" />
+    <Compile Include="WebserviceHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

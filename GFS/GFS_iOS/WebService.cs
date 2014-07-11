@@ -8,11 +8,12 @@ namespace GFS_iOS
     {
         private WebRequest request;
         private StreamReader feedReader;
-       
+		private String baseURL = "http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products/";
+
 		//Initialize the WebService using the paramters passed in the constructor
-        public WebService(string url, string contentType)
+        public WebService(string urlOptions, string contentType)
         {
-            request = HttpWebRequest.Create(url);
+			request = HttpWebRequest.Create(baseURL + urlOptions);
             request.ContentType = "application/" + contentType;
             request.Method = "GET";
             feedReader = new StreamReader(((HttpWebResponse)request.GetResponse()).GetResponseStream());
