@@ -73,10 +73,6 @@ namespace GFS_iOS
 			dataSource = DataSource.getInstance();
 			tableItems = new List<Product>();
 
-			WebserviceHelper requester = new WebserviceHelper();
-			//Currently retrieves products AND adds them to the database, but this should be decoupled later.
-			requester.getProductsBySearchTerm(parentController.selectedTerm);
-
 			//Get all of the products from the data base and uses these as the table items
 			Dictionary<String, Product> prodMap = dataSource.getAllProducts(); 
 			foreach (Product p in prodMap.Values)

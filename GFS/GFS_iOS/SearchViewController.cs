@@ -196,13 +196,20 @@ namespace GFS_iOS
 			controller.showOverlay();
 
 
-			//await says to wait until the task is completed before continuing (in this case in initializeDBfromJSON())
-			//Creates all the products in the database using JSON	
+//			//await says to wait until the task is completed before continuing (in this case in initializeDBfromJSON())
 //			await Task.Factory.StartNew (() => {
 //				DataSource db = DataSource.getInstance();
 //				//Initialize using JSON
 //				db.initializeDBfromJSON();
 //			});
+
+			String searchTerm = tableItems[indexPath.Row];
+
+			await Task.Factory.StartNew (() => {
+				WebserviceHelper requester = new WebserviceHelper();
+				//Currently retrieves products AND adds them to the database, but this should be decoupled later.
+				requester.getProductsBySearchTerm(searchTerm);
+			});
 
 			//Once the task finishes, hide the overlay.
 			controller.hideOverlay();
@@ -210,10 +217,9 @@ namespace GFS_iOS
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
 			//Get the selected seach term (i.e. selected row) and pass it along to the LiveResultsViewController
-			String searchTerm = tableItems[indexPath.Row];
 			liveResults.selectedTerm = searchTerm;
 		
-			Console.WriteLine("The search term selected:" + searchTerm);
+			//Console.WriteLine("The search term selected:" + searchTerm);
 
 			//Segue
 			controller.NavigationController.PushViewController (liveResults, true); //yes, animate the segue 
