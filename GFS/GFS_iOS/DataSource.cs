@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace GFS_iOS
 {
-	//DataSource follows the singleton pattern
+	//DataSource is a singleton object that stores temporary products used by the application when displaying various views
 	public class DataSource
 	{
 		private HashSet<string> savedListSet; //Each string in the savedList Set is a name of one saved list. (savedLists is a Set, so no duplicates allowed).
@@ -38,7 +38,7 @@ namespace GFS_iOS
 				savedListSet = new HashSet<string>();
 				savedListProductMap = new Dictionary<string, List<Product>>();
 				//Add the two defaults for now
-				addSavedList("cabinets");
+				addSavedList("cameras");
 				addSavedList("others");
 				allNotes = new List<string>();
 				addNote("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
