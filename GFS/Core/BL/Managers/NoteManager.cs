@@ -19,7 +19,7 @@ namespace Swx.B2B.Ecom.BL.Managers
 
         public static int SaveNote(Note item)
         {
-            Swx.B2B.Ecom.DAL.B2BRepository.SaveNote(item);
+           // Swx.B2B.Ecom.DAL.B2BRepository.SaveNote(item);
             return Swx.B2B.Ecom.DAL.B2BRepository.SaveNote(item);
         }
     }

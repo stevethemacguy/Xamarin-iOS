@@ -48,7 +48,7 @@ namespace GFS_iOS
 				data.addNote(noteText);
 			    newNote.Text = noteText;
 
-                Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
+               // Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
 			}
 			else
 			{
