@@ -55,6 +55,16 @@ namespace GFS_iOS
 			productMap = new Dictionary<String, Product>();
 		}
 
+		//Adds a product to the DB
+		public void addLiveProductToDB(Product p)
+		{
+
+				//Highlight a couple products for demo purposes only
+				//if (index == 1 || i == 2)
+				//	p.toggleHighlight();
+				productMap.Add(p.getID(), p); //Uses the ID as a key
+		}
+
 		//Creates all the products in the database (currently from an XML file)
 		public void initializeDBfromJSON()
 		{

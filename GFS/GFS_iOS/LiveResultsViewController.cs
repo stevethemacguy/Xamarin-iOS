@@ -13,6 +13,10 @@ namespace GFS_iOS
 		public UITableView table;
 		LiveResultsViewController currentController;
 		UIBarButtonItem menuB30;
+
+		//The search term (i.e. row) selected from the SearchViewController when a user taps a row.
+		public string selectedTerm;
+
 		//Set up the cell for reuse (iOS6 way)
 		//static NSString cellIdentifier = new NSString ("productCell");
 
@@ -58,7 +62,7 @@ namespace GFS_iOS
 
 	class LiveResultsTableSource : UITableViewSource
 	{
-		private DataSource dataSource = null;
+		private DataSource dataSource;
 		protected List<Product> tableItems;
 		NSString cellIdentifier = new NSString("productCell");
 		LiveResultsViewController parentController;
@@ -68,6 +72,10 @@ namespace GFS_iOS
 			this.parentController = parentController;
 			dataSource = DataSource.getInstance();
 			tableItems = new List<Product>();
+
+			WebserviceHelper requester = new WebserviceHelper();
+			//Currently retrieves products AND adds them to the database, but this should be decoupled later.
+			requester.getProductsBySearchTerm(parentController.selectedTerm);
 
 			//Get all of the products from the data base and uses these as the table items
 			Dictionary<String, Product> prodMap = dataSource.getAllProducts(); 
