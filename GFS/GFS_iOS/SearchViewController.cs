@@ -15,7 +15,7 @@ namespace GFS_iOS
 		SearchViewController currentController;
 		UIBarButtonItem menuB2;
 
-		ProductManager productSuggestions = new ProductManager();
+		//ProductManager productSuggestions = new ProductManager();
 
 		private LoadingOverlay loadingOverlay;
 
@@ -205,10 +205,11 @@ namespace GFS_iOS
 
 			String searchTerm = tableItems[indexPath.Row];
 
+			List<Product> jsonResults = new List<Product>();
 			await Task.Factory.StartNew (() => {
 				WebserviceHelper requester = new WebserviceHelper();
 				//Currently retrieves products AND adds them to the database, but this should be decoupled later.
-				requester.getProductsBySearchTerm(searchTerm);
+				jsonResults = requester.getProductsBySearchTerm(searchTerm);
 			});
 
 			//Once the task finishes, hide the overlay.
@@ -216,8 +217,8 @@ namespace GFS_iOS
 
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
-			//Get the selected seach term (i.e. selected row) and pass it along to the LiveResultsViewController
-			liveResults.selectedTerm = searchTerm;
+			//Pass along the products matched by the search term to the LiveResultsViewController
+			liveResults.jsonResults = jsonResults;
 		
 			//Console.WriteLine("The search term selected:" + searchTerm);
 

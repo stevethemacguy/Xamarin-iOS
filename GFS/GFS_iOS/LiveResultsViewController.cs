@@ -14,8 +14,8 @@ namespace GFS_iOS
 		LiveResultsViewController currentController;
 		UIBarButtonItem menuB30;
 
-		//The search term (i.e. row) selected from the SearchViewController when a user taps a row.
-		public string selectedTerm;
+		//The list of products matching the search term in the SearchViewController.
+		public List<Product> jsonResults;
 
 		//Set up the cell for reuse (iOS6 way)
 		//static NSString cellIdentifier = new NSString ("productCell");
@@ -62,7 +62,6 @@ namespace GFS_iOS
 
 	class LiveResultsTableSource : UITableViewSource
 	{
-		private DataSource dataSource;
 		protected List<Product> tableItems;
 		NSString cellIdentifier = new NSString("productCell");
 		LiveResultsViewController parentController;
@@ -70,15 +69,7 @@ namespace GFS_iOS
 		public LiveResultsTableSource (LiveResultsViewController parentController)
 		{
 			this.parentController = parentController;
-			dataSource = DataSource.getInstance();
-			tableItems = new List<Product>();
-
-			//Get all of the products from the data base and uses these as the table items
-			Dictionary<String, Product> prodMap = dataSource.getAllProducts(); 
-			foreach (Product p in prodMap.Values)
-			{
-				tableItems.Add(p); //Items are the actual products
-			}
+			tableItems = parentController.jsonResults; //Use the products created from the live results
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)

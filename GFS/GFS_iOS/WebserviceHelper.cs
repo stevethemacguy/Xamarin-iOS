@@ -11,7 +11,7 @@ namespace GFS_iOS
 		}
 
 		//Makes a request to the Webservice to retrieve product search suggestions that match a term entered into the search bar.
-		//Returns a List of search terms
+		//Returns the resulting List of search terms
 		public List<String> getProductSearchSuggestions(string term)
 		{
 			WebService request = new WebService("suggest?term=" + term, "json");
@@ -30,8 +30,9 @@ namespace GFS_iOS
 			return suggestions;
 		}
 
-		//Makes a webservice call using the search term provided. Returns the resulting "products" Json object (i.e. JsonValue) to be parsed later.
-		public void getProductsBySearchTerm(string searchTerm)
+		//Makes a webservice call using the search term provided. Parses the Json object, creating a product for each results, and 
+		//Returns a list of the resulting products.
+		public List<Product> getProductsBySearchTerm(string searchTerm)
 		{
 			WebService request = new WebService("?query=freeTextSearch:sort:name:" + searchTerm + ":description:" + searchTerm, "json");
 			//Initialize the JSON reader
@@ -40,16 +41,12 @@ namespace GFS_iOS
 			//Get the products object
 			JsonValue allProducts = jsonReader.AllObjects ["products"];
 
-			DataSource db = DataSource.getInstance();
+			List<Product> products = new List<Product>();
 
 			int index = 0;
-			//For each JSON product object, get it's values, and add the product to the DB
-			foreach (JsonValue j in allProducts) {
+			//For each JSON product object, create a product using it's values and add the product to the list of products
+			foreach (JsonValue j in allProducts){
 				index++;
-				//String prodClass="";
-				//String cap = ""; 
-				//String readability = ""; 
-				//String segueName = "";
 				float starRating = jsonReader.getNumericValue(j, "averageRating");
 				String price = "";
 				String imageURL = "";
@@ -68,11 +65,13 @@ namespace GFS_iOS
 					JsonValue tempJsonValue = j ["images"] [0]; //first image only
 					imageURL = "http://swx-hybris-ash02.siteworx.com:9001" + (jsonReader.getValue(tempJsonValue, "url")).Replace("\"", ""); //remove quotes from the stirng 
 				}  
-				//Create the new product from the JSON values and add it to the DB
 
+				//Create the new product from the JSON values and add it to the product list
 				Product p = new Product(imageURL, title, price, description, starRating);
-				db.addLiveProductToDB(p);
+				products.Add(p);
 			}
+
+			return products;
 		}
 	}
 }

@@ -58,7 +58,6 @@ namespace GFS_iOS
 		//Adds a product to the DB
 		public void addLiveProductToDB(Product p)
 		{
-
 				//Highlight a couple products for demo purposes only
 				//if (index == 1 || i == 2)
 				//	p.toggleHighlight();
@@ -95,10 +94,6 @@ namespace GFS_iOS
 				//if (limit > 10)
 					break;
 
-				//String prodClass="";
-				//String cap = ""; 
-				//String readability = ""; 
-				//String segueName = "";
 				float starRating = jsonReader.getNumericValue(j, "averageRating");
                 String price = "";
                 String imageURL = "";
