@@ -217,6 +217,10 @@ namespace GFS_iOS
 
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
+			////FOR DEMO ONLY. ALWAYS HIGHLIGHT THE FIRST TWO CELLS/////
+			jsonResults [0].toggleHighlight();
+			jsonResults [1].toggleHighlight();
+
 			//Pass along the products matched by the search term to the LiveResultsViewController
 			liveResults.jsonResults = jsonResults;
 		
