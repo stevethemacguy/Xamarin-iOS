@@ -218,8 +218,12 @@ namespace GFS_iOS
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
 			////FOR DEMO ONLY. ALWAYS HIGHLIGHT THE FIRST TWO CELLS/////
-			jsonResults [0].toggleHighlight();
-			jsonResults [1].toggleHighlight();
+			//Important to check count or you will get an out of bounds error.
+			if(jsonResults.Count >= 2)
+			{
+				jsonResults [0].toggleHighlight();
+				jsonResults [1].toggleHighlight();
+			}	
 
 			//Pass along the products matched by the search term to the LiveResultsViewController
 			liveResults.jsonResults = jsonResults;
