@@ -57,8 +57,6 @@ namespace GFS_iOS
 
 			//Get an instance of the datasource
 			dataSource = DataSource.getInstance();
-			dataSource.addSavedList("cabinets");
-			dataSource.addSavedList("others");
 			tableItems = dataSource.getSavedListSet().ToList();  //Convert the datasource set to a list for convenience
 		}
 
