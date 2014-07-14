@@ -4,6 +4,7 @@ using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Drawing;
 using System.Collections.Generic;
+using Swx.B2B.Ecom.BL.Entities;
 
 namespace GFS_iOS
 {

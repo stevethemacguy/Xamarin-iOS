@@ -29,7 +29,7 @@ namespace Swx.B2B.Ecom.DL
 		public B2BDB (string path) : base (path)
 		{
 			// create the tables
-			CreateTable<Product> ();
+			CreateTable<ProductBernice> ();
             CreateTable<Note> ();
 		}
 		

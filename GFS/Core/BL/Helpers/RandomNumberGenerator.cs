@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace GFS_iOS
+namespace Swx.B2B.Ecom.BL
 {
 	public class RandomNumberGenerator
 	{

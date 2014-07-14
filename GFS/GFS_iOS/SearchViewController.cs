@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Swx.B2B.Ecom.BL.Managers;
 using System.Collections.Generic;
 using System.Json;
+using Swx.B2B.Ecom.BL.Entities;
 
 namespace GFS_iOS
 {

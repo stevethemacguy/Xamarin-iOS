@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoTouch.UIKit;
 using System.Drawing;
-
+using Swx.B2B.Ecom.BL.Entities;
 namespace GFS_iOS
 {
 	partial class LiveProductPageViewController : UIViewController

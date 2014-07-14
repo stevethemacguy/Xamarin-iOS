@@ -18,9 +18,9 @@ namespace Swx.B2B.Ecom.BL.Managers
             
         }
 
-        public Product GetProductByID(int id)
+        public ProductBernice GetProductByID(int id)
         {
-            Product product = new Product();
+            ProductBernice product = new ProductBernice();
             product.Images = new List<Image>();
 
             ProductService jsonWS = new ProductService();
@@ -67,9 +67,9 @@ namespace Swx.B2B.Ecom.BL.Managers
             return suggestedTerms;
         }
 
-        public List<Product> GetProductSearchList(string term)
+        public List<ProductBernice> GetProductSearchList(string term)
         {
-            List<Product> productList = new List<Product>();
+            List<ProductBernice> productList = new List<ProductBernice>();
 
             ProductService jsonWS = new ProductService();
             var json = jsonWS.GetJsonProductSearchList(term);
@@ -77,7 +77,7 @@ namespace Swx.B2B.Ecom.BL.Managers
             //System.Diagnostics.Debug.WriteLine(json);
             foreach (Object values in json)
             {
-                Product product = new Product();
+                ProductBernice product = new ProductBernice();
                 product.Images = new List<Image>();
 
                 product.Id = json["products"][index]["code"].ToObject<int>();

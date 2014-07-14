@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Swx.B2B.Ecom.BL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Json;
 

@@ -70,12 +70,12 @@ namespace Swx.B2B.Ecom.DAL
         
         }
 
-        public static Product GetProduct(int id)
+        public static ProductBernice GetProduct(int id)
         {
-            return me.db.GetItem<Product>(id);
+            return me.db.GetItem<ProductBernice>(id);
         }
 
-        public static int SaveProduct(Product productItem)
+        public static int SaveProduct(ProductBernice productItem)
         {
             return me.db.SaveItem(productItem);
         }

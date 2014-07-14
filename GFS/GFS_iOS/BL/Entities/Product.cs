@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace GFS_iOS
+namespace Swx.B2B.Ecom.BL.Entities
 {
 	//Represents a single product
 	public class Product

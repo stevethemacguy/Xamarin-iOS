@@ -266,9 +266,6 @@
     <Compile Include="..\Core\BL\Entities\Price.cs">
       <Link>BL\Entities\Price.cs</Link>
     </Compile>
-    <Compile Include="..\Core\BL\Entities\Product.cs">
-      <Link>BL\Entities\Product.cs</Link>
-    </Compile>
     <Compile Include="..\Core\BL\Managers\ImageManager.cs">
       <Link>BL\Managers\ImageManager.cs</Link>
     </Compile>
@@ -303,6 +300,9 @@
       <Link>SVC\WebService.cs</Link>
     </Compile>
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="BL\Entities\Product.cs" />
+    <Compile Include="BL\Entities\ProductBernice.cs" />
+    <Compile Include="BL\Helpers\RandomNumberGenerator.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="JSONReader.cs" />
     <Compile Include="XMLReader.cs" />
@@ -366,10 +366,8 @@
     <Compile Include="TextInputController.designer.cs">
       <DependentUpon>TextInputController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs" />
     <Compile Include="WebService.cs" />
     <Compile Include="Helpers.cs" />
-    <Compile Include="RandomNumberGenerator.cs" />
     <Compile Include="ProductCell.cs" />
     <Compile Include="LiveResultsViewController.cs" />
     <Compile Include="LiveProductPageViewController.cs" />
