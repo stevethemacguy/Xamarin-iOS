@@ -311,6 +311,9 @@
     <Compile Include="..\Core\SVC\JSONReader.cs">
       <Link>SVC\JSONReader.cs</Link>
     </Compile>
+    <Compile Include="..\Core\SVC\NewtonJsonReader.cs">
+      <Link>SVC\NewtonJsonReader.cs</Link>
+    </Compile>
     <Compile Include="..\Core\SVC\ProductService.cs">
       <Link>SVC\ProductService.cs</Link>
     </Compile>
