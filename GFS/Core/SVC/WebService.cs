@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.IO;
-using System.Linq;
-using System.Net.Mime;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Net;
-using System.Xml.Linq;
-
-using Swx.B2B.Ecom.SVC;
 
 namespace Swx.B2B.Ecom.SVC
 {
@@ -16,23 +8,28 @@ namespace Swx.B2B.Ecom.SVC
     {
         private WebRequest request;
         private StreamReader feedReader;
+		private String baseURL = "http://swx-hybris-ash02.siteworx.com:9001/rest/v1/electronics/products/";
 
-        //Placeholder for real web service functionality
-        public WebService(string url, string contentType)
+		//Initialize the WebService using the paramters passed in the constructor
+        public WebService(string urlOptions, string contentType)
         {
-            request = HttpWebRequest.Create(url);
+			request = HttpWebRequest.Create(baseURL + urlOptions);
             request.ContentType = "application/" + contentType;
+            request.Method = "GET";
             feedReader = new StreamReader(((HttpWebResponse)request.GetResponse()).GetResponseStream());
         }
 
-        //Read XML from file
-        public WebService()
+        //Returns a new XML Reader
+        public XMLReader getXMLReader()
         {
+			//Currently just reads from a flat file.
+			feedReader = new StreamReader("Hybris_Product_API_Feed.xml");
+            return new XMLReader(feedReader);
         }
-
-        public StreamReader GetFeedReader()
+			
+        public JSONReader getJSONReader()
         {
-            return feedReader;
+            return new JSONReader(feedReader);
         }
     }
 }

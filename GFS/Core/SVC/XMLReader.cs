@@ -7,7 +7,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.IO;
 
-namespace GFS_iOS
+namespace Swx.B2B.Ecom.SVC
 {
 	public class  XMLReader
 	{

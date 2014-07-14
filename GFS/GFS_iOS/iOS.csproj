@@ -266,6 +266,18 @@
     <Compile Include="..\Core\BL\Entities\Price.cs">
       <Link>BL\Entities\Price.cs</Link>
     </Compile>
+    <Compile Include="..\Core\BL\Entities\Product.cs">
+      <Link>BL\Entities\Product.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\ProductBernice.cs">
+      <Link>BL\Entities\ProductBernice.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Helpers\Helpers.cs">
+      <Link>BL\Helpers\Helpers.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Helpers\RandomNumberGenerator.cs">
+      <Link>BL\Helpers\RandomNumberGenerator.cs</Link>
+    </Compile>
     <Compile Include="..\Core\BL\Managers\ImageManager.cs">
       <Link>BL\Managers\ImageManager.cs</Link>
     </Compile>
@@ -293,19 +305,23 @@
     <Compile Include="..\Core\DL\SQLite.cs">
       <Link>DL\SQLite.cs</Link>
     </Compile>
+    <Compile Include="..\Core\SVC\JSONReader.cs">
+      <Link>SVC\JSONReader.cs</Link>
+    </Compile>
     <Compile Include="..\Core\SVC\ProductService.cs">
       <Link>SVC\ProductService.cs</Link>
     </Compile>
     <Compile Include="..\Core\SVC\WebService.cs">
       <Link>SVC\WebService.cs</Link>
     </Compile>
+    <Compile Include="..\Core\SVC\WebServiceBernice.cs">
+      <Link>SVC\WebServiceBernice.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\SVC\XMLReader.cs">
+      <Link>SVC\XMLReader.cs</Link>
+    </Compile>
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="BL\Entities\Product.cs" />
-    <Compile Include="BL\Entities\ProductBernice.cs" />
-    <Compile Include="BL\Helpers\RandomNumberGenerator.cs" />
     <Compile Include="Image.cs" />
-    <Compile Include="JSONReader.cs" />
-    <Compile Include="XMLReader.cs" />
     <Compile Include="GFS_iOSViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="GFS_iOSViewController.designer.cs">
@@ -366,8 +382,6 @@
     <Compile Include="TextInputController.designer.cs">
       <DependentUpon>TextInputController.cs</DependentUpon>
     </Compile>
-    <Compile Include="WebService.cs" />
-    <Compile Include="Helpers.cs" />
     <Compile Include="ProductCell.cs" />
     <Compile Include="LiveResultsViewController.cs" />
     <Compile Include="LiveProductPageViewController.cs" />

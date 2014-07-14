@@ -15,7 +15,6 @@ namespace Swx.B2B.Ecom.BL.Managers
     {
         public ProductManager()
         {
-            
         }
 
         public ProductBernice GetProductByID(int id)

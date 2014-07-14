@@ -1,8 +1,9 @@
+using Swx.B2B.Ecom.BL;
 using System;
 using System.IO; //For Stream Reader
 using System.Json;
 
-namespace GFS_iOS
+namespace Swx.B2B.Ecom.SVC
 {
     class JSONReader
     {
