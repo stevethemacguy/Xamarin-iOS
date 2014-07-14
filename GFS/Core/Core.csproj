@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BL\Contracts\EntityBase.cs" />
     <Compile Include="BL\Contracts\IEntity.cs" />
+    <Compile Include="BL\Entities\DataSource.cs" />
     <Compile Include="BL\Entities\Product.cs" />
     <Compile Include="BL\Helpers\Helpers.cs" />
     <Compile Include="BL\Helpers\RandomNumberGenerator.cs" />

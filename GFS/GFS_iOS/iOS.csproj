@@ -251,6 +251,9 @@
     <Compile Include="..\Core\BL\Contracts\IEntity.cs">
       <Link>BL\Contracts\IEntity.cs</Link>
     </Compile>
+    <Compile Include="..\Core\BL\Entities\DataSource.cs">
+      <Link>BL\Entities\DataSource.cs</Link>
+    </Compile>
     <Compile Include="..\Core\BL\Entities\Image.cs">
       <Link>BL\Entities\Image.cs</Link>
     </Compile>
@@ -376,7 +379,6 @@
       <DependentUpon>NotesTableController.cs</DependentUpon>
     </Compile>
     <Compile Include="NotesTableSource.cs" />
-    <Compile Include="DataSource.cs" />
     <Compile Include="TextInputController.cs" />
     <Compile Include="TextInputController.designer.cs">
       <DependentUpon>TextInputController.cs</DependentUpon>
