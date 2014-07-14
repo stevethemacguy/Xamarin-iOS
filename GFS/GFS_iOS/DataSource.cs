@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Json;
 using System.Xml.Linq;
 
+//DataSource currently maintains all app data while the application is running (i.e. it acts as temporary memory for the IOS App).
+//In the future, DataSource's methods will instead make calls to a real SQL Lite database.
 namespace GFS_iOS
 {
 	//DataSource is a singleton object that stores temporary products used by the application when displaying various views

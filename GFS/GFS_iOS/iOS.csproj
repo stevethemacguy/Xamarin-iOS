@@ -321,7 +321,6 @@
       <Link>SVC\XMLReader.cs</Link>
     </Compile>
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Image.cs" />
     <Compile Include="GFS_iOSViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="GFS_iOSViewController.designer.cs">
