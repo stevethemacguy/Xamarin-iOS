@@ -8,7 +8,7 @@ using Swx.B2B.Ecom.SVC;
 namespace Swx.B2B.Ecom.BL.Managers
 {
     /// <summary>
-    /// Call here from device UI layer to access Products
+	/// ProductManager provides the device UI layer with methods to access entities in the SQL Database
     /// </summary>
     class ProductManager
     {
@@ -16,10 +16,11 @@ namespace Swx.B2B.Ecom.BL.Managers
         {
         }
 
-		//***************** Steve's Methods *********************
+		//***************** Methods Currently Used by the iOS App *********************\\
+		//*****************************************************************************\\
 
-		//Makes a request to the Webservice to retrieve product search suggestions that match a term entered into the search bar.
-		//Returns the resulting List of search terms
+		//Makes a request to the Webservice to retrieve product search suggestions that match the term entered into the search bar.
+		//Returns the resulting List of suggestion words
 		public List<String> getProductSearchSuggestions(string term)
 		{
 			WebService request = new WebService("suggest?term=" + term, "json");
@@ -31,8 +32,8 @@ namespace Swx.B2B.Ecom.BL.Managers
 			return jsonReader.getSuggestedWords();
 		}
 
-		//Makes a webservice call using the search term provided. Parses the returned Json object, creating a Product from each object.
-		//Returns a Dictionary of the Products returned from the JsonReader (key is the product code, value is the Product)
+		//Makes a webservice call to retreive products that match the search term provided.
+		//Returns a Dictionary of the Products returned from the NewtonJsonReader (key is the product code, value is the Product)
 		public List<Product> getProductsBySearchTerm(string searchTerm)
 		{
 			WebService request = new WebService("?query=freeTextSearch:sort:name:" + searchTerm + ":description:" + searchTerm, "json");
@@ -41,24 +42,22 @@ namespace Swx.B2B.Ecom.BL.Managers
 			NewtonJsonReader jsonReader = request.getJsonReader();
 
 			Dictionary<String,Product> results = jsonReader.getProductsFromJson();
+
+			//Now that we have a dictionary of Products, move these products into a basic list
 			List<Product> prodList = new List<Product>();
+
 			foreach (Product p in results.Values)
 			{
 				prodList.Add(p);
 			}
-//				//Create the new product from the JSON values and add it to the product list
-//				Product p = new Product(code,imageURL, title, price, description, starRating);
-//				products.Add(p);
-
-//				
-				
 			return prodList;
 		}
 
 
 
-		//*********Bernice's Methods below this line*************
-        
+		//***************** Bernice's Methods below this line *****************\\
+		//**********************************************************************\\
+
 		public ProductBernice GetProductByID(int id)
         {
             ProductBernice product = new ProductBernice();

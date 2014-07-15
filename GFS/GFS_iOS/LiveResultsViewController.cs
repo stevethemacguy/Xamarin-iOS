@@ -16,7 +16,7 @@ namespace GFS_iOS
 		UIBarButtonItem menuB30;
 
 		//The list of products matching the search term in the SearchViewController.
-		public List<Product> jsonResults;
+		public List<Product> products;
 
 		//Set up the cell for reuse (iOS6 way)
 		//static NSString cellIdentifier = new NSString ("productCell");
@@ -69,7 +69,7 @@ namespace GFS_iOS
 		public LiveResultsTableSource (LiveResultsViewController parentController)
 		{
 			this.parentController = parentController;
-			tableItems = parentController.jsonResults; //Use the products created from the live results
+			tableItems = parentController.products; //Use the products created from the live results
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
@@ -77,7 +77,7 @@ namespace GFS_iOS
 			return tableItems.Count;
 		}
 
-		//When the row is clicked, segue to some controller and pass all  data
+		//When the row is clicked, segue to some controller and pass the selected Product
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
@@ -87,9 +87,10 @@ namespace GFS_iOS
 
 			LiveProductPageViewController liveProductPage = new LiveProductPageViewController(selectedProduct);
 
-			//"Pass" along the ibndex of the selected row to the index member variable
+			//"Pass" along the index of the selected row to the index member variable
 			liveProductPage.index = indexPath.Row; 
 			liveProductPage.rowName = selectedProduct.getTitle();
+
 			//Not needed?
 			//liveProductPage.parentController = (LiveProductPageViewController) parentController;
 
@@ -119,6 +120,7 @@ namespace GFS_iOS
 			}
 
 			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
+
 			//Create (or update) the cell using the Product's title, price, and image url
 			cell.UpdateCell (
 					product.getTitle(), 

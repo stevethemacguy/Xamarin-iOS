@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 
+//Various Helper methods used throughout the project.
 namespace Swx.B2B.Ecom.BL
 {
 	public class Helpers
 	{
 		public Helpers()
 		{
-
 		}
 
 		public static String stripQuotes(String s)

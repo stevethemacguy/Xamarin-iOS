@@ -14,7 +14,6 @@ namespace Swx.B2B.Ecom.BL.Entities
 		private HashSet<string> savedListSet; //Each string in the savedList Set is a name of one saved list. (savedLists is a Set, so no duplicates allowed).
 		private List<string> allNotes; 	//Each String is the full text of a note.
 		private static DataSource instance; //There can only be one instance of the DataSource.
-		private List<Product> productList;
 		public String currentProduct = "";
 
 		//If a product is in manualList, then the product will appear as a cell in the manual view and link to a single manual.
@@ -53,10 +52,6 @@ namespace Swx.B2B.Ecom.BL.Entities
 			productMap = new Dictionary<String, Product>();
 		}
 
-		public List<Product> getProductList() {
-			return productList;
-		}
-
 		//Returns a map of all products from the database, where the key is the product's unique ID and the value is the product
 		public Dictionary<String, Product> getAllProducts()
 		{
@@ -80,7 +75,15 @@ namespace Swx.B2B.Ecom.BL.Entities
 			if (manualList.Contains(product)) //don't add duplicates
 				return;
 			else
+			{
+				//Add the product to the list
 				manualList.Add(product);
+
+				//Also Add the product to the masterList of saved products
+				if(productMap.ContainsKey(product.getCode()) == false) //don't add duplicate products
+					productMap.Add(product.getCode(), product);
+			}
+				
 		}
 
 		public List<Product> getManualList() {

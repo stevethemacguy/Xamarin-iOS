@@ -6,7 +6,7 @@ using System.Json;
 
 //Makes Wervice calls and parses the returned JSON using System.Json, a library that is only avilable to Montouch projects.
 //For this reason, WebserviceHelper must live in the presentation layer. 
-//WebserviceHelper is being replaced by ProductManager, which uses the Newtonsoft.Json library instead. 
+//WebserviceHelper has been replaced by ProductManager, which uses the Newtonsoft.Json library instead. 
 namespace GFS_iOS
 {
 	public class WebserviceHelper

@@ -54,7 +54,7 @@ namespace GFS_iOS
 				if (!savedListMap[newList].Contains(selectedProduct))
 					savedListMap[newList].Add(selectedProduct);
 
-				//Add the product to the masterList of saved products
+				//Also add the product to the masterList of saved products
 				if(db.getAllProducts().ContainsKey(selectedProduct.getCode()) == false) //don't add duplicate products
 					db.getAllProducts().Add(selectedProduct.getCode(), selectedProduct);
 			}

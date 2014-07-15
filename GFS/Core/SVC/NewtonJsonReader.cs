@@ -10,31 +10,31 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 
 //NewtonJsonReader constructs JsonProducts by parsing through the json feed passed in the constructor.
-//It uses the Newtonsoft.Json (i.e. JSON.Net) library.
+//NewtonJsonReader uses the Newtonsoft.Json (i.e. JSON.Net) library.
 namespace Swx.B2B.Ecom.SVC
 {
     class NewtonJsonReader
     {
+		//The JOBject result after parsing the Json Stream
 		JObject jo;
 
 		public NewtonJsonReader(StreamReader feedReader)
 		{
-			//Get full json string
+			//Get the full Json string and create a JObject from the string.
 			String jsonResultString = feedReader.ReadToEnd();
-			//Create a JObject from the json string
-			jo = JObject.Parse(jsonResultString);
+			jo = JObject.Parse(jsonResultString); //
 		}
 
-		//Parses the Json object and returns a List of search terms matching the Json results.
+		//Returns a List of search terms matching the Json results (by parsing the JsonObject created from the feedReader).
 		public List<String> getSuggestedWords()
 		{
 			List<String> results = new List<String>();
 
 			//Deserialize the Json and automatically create JsonSugggestions directly from the return Json Objects
-			//Note: Using SelectToken("suggestions") essentially "Ignores" the root level object. We are concerned only with the contents of "suggestions," but not the object itself.
+			//Note: Using SelectToken("suggestions") essentially "Ignores" the root level object. We are only concerned with the contents of "suggestions," not the object itself.
 			List<JsonSuggestion> suggestedWords = jo.SelectToken("suggestions", false).ToObject<List<JsonSuggestion>>();
 
-			//Add the JsonSuggestion values (each is a String) to the results list
+			//Add the JsonSuggestion values to the results list (each is a String)
 			foreach (JsonSuggestion s in suggestedWords)
 			{
 				results.Add(s.value);
@@ -43,6 +43,8 @@ namespace Swx.B2B.Ecom.SVC
 			return results;
 		}
 
+		//Returns a dictionary of products, where keys are Product codes and values are the Products. 
+		//(The dictionary is created by parsing Json from the feedReader).
 		public Dictionary<string, Product> getProductsFromJson()
 		{
 			//Deserialize the Json and automatically create JsonProducts directly from the Json Object properties.
@@ -50,7 +52,7 @@ namespace Swx.B2B.Ecom.SVC
 			List<Product> jsonProductList = jo.SelectToken("products", false).ToObject<List<Product>>();
 
 			//Continue parsing the Json feed, adding the images to products that have images.
-			//parseImages() returns the resulting map after the images have been added, so returing the result returns this map.
+			//parseImages() returns the resulting map after the images have been added. Returing the result returns the final map of products.
 			return parseImages(jsonProductList);
 		}
 
@@ -88,7 +90,6 @@ namespace Swx.B2B.Ecom.SVC
 					prdMap[prodCode].imageFileName = "http://swx-hybris-ash02.siteworx.com:9001" + imgList[0].Url.Replace("\"", ""); //remove quotes from the stirng 
 				}
 			}
-
 			return prdMap;
 		}
     }

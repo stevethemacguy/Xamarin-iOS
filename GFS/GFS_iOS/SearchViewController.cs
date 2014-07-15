@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Threading.Tasks;
 using Swx.B2B.Ecom.BL.Managers;
 using System.Collections.Generic;
-using System.Json;
 using Swx.B2B.Ecom.BL.Entities;
 
 //Initial Search Screen. Words are entered into the search bar to load search results
@@ -58,10 +57,11 @@ namespace GFS_iOS
 				}
 				else
 				{
-					//Make a call to the Web service to get back suggestions based on the search term
+					//Make a call to the Web service to get back suggestions based on the search term.
 					ProductManager pm = new ProductManager();
 					List<String> suggestedTerms = pm.getProductSearchSuggestions(SearchBar.Text);
 
+					//Update the Table Source to use the returned words.
 					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
                     HintTable.ReloadData();
 					HintTable.Hidden = false;
@@ -128,15 +128,18 @@ namespace GFS_iOS
 
 			//Stores a list of products created from the parsed Json
 			List<Product> jsonResults = new List<Product>();
+
+			//Makes a call to the Webservice and returns the products that match the selected search term.
 			await Task.Factory.StartNew (() => {
 				ProductManager pm = new ProductManager();
-				//Returns a list of products that match the searchTerm
 				jsonResults = pm.getProductsBySearchTerm(searchTerm);
 			});
 
+			//For all of the newly created products
 			foreach (Product p in jsonResults)
 			{
-				//Add the Products image url to the Image cache to be later used by Product Cells.
+				//Add the Product's image url to the Image cache to be later used by Product Cells.
+				//The addImage() method handles empty urls for products without images.
 				ImageCache.getInstance().addImage(p.getCode(), p.getImageFileName());
 			}
 
@@ -145,7 +148,7 @@ namespace GFS_iOS
 
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
-			////FOR DEMO ONLY. ALWAYS HIGHLIGHT THE FIRST TWO CELLS/////
+			//// FOR DEMO ONLY. HIGHLIGHT THE FIRST TWO CELLS ////
 			//Important to check count or you will get an out of bounds error.
 			if(jsonResults.Count >= 2)
 			{
@@ -154,10 +157,8 @@ namespace GFS_iOS
 			}	
 
 			//Pass along the products matched by the search term to the LiveResultsViewController
-			liveResults.jsonResults = jsonResults;
+			liveResults.products = jsonResults;
 		
-			//Console.WriteLine("The search term selected:" + searchTerm);
-
 			//Segue
 			controller.NavigationController.PushViewController (liveResults, true); //yes, animate the segue 
 		}

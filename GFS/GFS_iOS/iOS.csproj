@@ -390,9 +390,6 @@
     <Compile Include="MainMenuButton.cs" />
     <Compile Include="WebserviceHelper.cs" />
     <Compile Include="ImageCache.cs" />
-    <Compile Include="..\Core\BL\Entities\OldProduct.cs">
-      <Link>BL\Entities\OldProduct.cs</Link>
-    </Compile>
     <Compile Include="..\Core\BL\Entities\JsonSuggestion.cs">
       <Link>BL\Entities\JsonSuggestion.cs</Link>
     </Compile>

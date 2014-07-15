@@ -69,7 +69,6 @@
     <Compile Include="SVC\WebServiceBernice.cs" />
     <Compile Include="SVC\XMLReader.cs" />
     <Compile Include="BL\Entities\JsonSuggestion.cs" />
-    <Compile Include="BL\Entities\OldProduct.cs" />
     <Compile Include="BL\Entities\SavedList.cs" />
   </ItemGroup>
   <ItemGroup>
