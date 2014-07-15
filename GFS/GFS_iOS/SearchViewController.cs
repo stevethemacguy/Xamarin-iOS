@@ -50,23 +50,24 @@ namespace GFS_iOS
 			HintTable.Hidden = true;
 
 			//this.SearchBar.OnEditingStarted --- EventArgs
-//			this.SearchBar.TextChanged += (object sender, UISearchBarTextChangedEventArgs e) =>
-//			{
-//				if (SearchBar.Text == "")
-//				{
-//					HintTable.Hidden = true;
-//				}
-//				else
-//				{
-//					//Make a call to the Web service to get back suggestions based on the search term
-//					WebserviceHelper requester = new WebserviceHelper();
-//					List<String> suggestedTerms = requester.getProductSearchSuggestions(SearchBar.Text);
-//
-//					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
-//                    HintTable.ReloadData();
-//					HintTable.Hidden = false;
-//				}
-//			};
+			this.SearchBar.TextChanged += (object sender, UISearchBarTextChangedEventArgs e) =>
+			{
+				if (SearchBar.Text == "")
+				{
+					HintTable.Hidden = true;
+				}
+				else
+				{
+
+					//Make a call to the Web service to get back suggestions based on the search term
+					ProductManager pm = new ProductManager();
+					List<String> suggestedTerms = pm.getProductSearchSuggestions(SearchBar.Text);
+
+					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
+                    HintTable.ReloadData();
+					HintTable.Hidden = false;
+				}
+			};
 		}
 
 		//Show the loading screen.

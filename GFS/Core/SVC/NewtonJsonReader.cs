@@ -21,9 +21,26 @@ namespace Swx.B2B.Ecom.SVC
 		{
 			//Get full json string
 			String jsonResultString = feedReader.ReadToEnd();
-
 			//Create a JObject from the json string
 			jo = JObject.Parse(jsonResultString);
+		}
+
+		//Parses the Json object and returns a List of search terms matching the Json results.
+		public List<String> getSuggestedWords()
+		{
+			List<String> results = new List<String>();
+
+			//Deserialize the Json and automatically create JsonSugggestions directly from the return Json Objects
+			//Note: Using SelectToken("suggestions") essentially "Ignores" the root level object. We are concerned only with the contents of "suggestions," but not the object itself.
+			List<JsonSuggestion> suggestedWords = jo.SelectToken("suggestions", false).ToObject<List<JsonSuggestion>>();
+
+			//Add the JsonSuggestion values (each is a String) to the results list
+			foreach (JsonSuggestion s in suggestedWords)
+			{
+				results.Add(s.value);
+			}
+
+			return results;
 		}
 
 		public Dictionary<string, JsonProduct> getProductsFromJson()

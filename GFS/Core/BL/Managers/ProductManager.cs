@@ -19,25 +19,19 @@ namespace Swx.B2B.Ecom.BL.Managers
 
 		//***************** Steve's Methods *********************
 
-		//Makes a request to the Webservice to retrieve product search suggestions that match a term entered into the search bar.
-		//Returns the resulting List of search terms
-//		public List<String> getProductSearchSuggestions(string term)
-//		{
-//			WebService request = new WebService("suggest?term=" + term, "json");
-//			//Initialize the JSON reader
-//			JSONReader jsonReader = request.getJSONReader();
-//
-//			//Get the suggestions object
-//			JsonValue suggestionsObject = jsonReader.AllObjects ["suggestions"];
-//
-//			List<String> suggestions = new List<String>();
-//			//Parse through the json and add all search suggestion strings to the suggestions list
-//			foreach (JsonValue j in suggestionsObject)
-//			{
-//				suggestions.Add(jsonReader.getValue(j, "value"));
-//			}
-//			return suggestions;
-//		}
+		//	Makes a request to the Webservice to retrieve product search suggestions that match a term entered into the search bar.
+		//	Returns the resulting List of search terms
+		public List<String> getProductSearchSuggestions(string term)
+		{
+			WebService request = new WebService("suggest?term=" + term, "json");
+			Console.WriteLine(request.ToString());
+
+			//Initialize the JSON reader
+			NewtonJsonReader jsonReader = request.getJsonReader();
+
+			//get the words
+			return jsonReader.getSuggestedWords();
+		}
 
 		public void test()
 		{
@@ -142,21 +136,21 @@ namespace Swx.B2B.Ecom.BL.Managers
             return product;
         }
 
-        public string[] GetProductSearchSuggestions(string term)
-        {
-            ProductService jsonWS = new ProductService();
-            string[] suggestedTerms = new string[5];
-            var json = jsonWS.GetJsonProductSearchSuggestion(term);
-            int index = 0;
-            foreach (Object values in json["suggestions"])
-            {
-                //System.Diagnostics.Debug.WriteLine(json["suggestions"][index]["value"].ToObject<string>());
-                suggestedTerms[index] = json["suggestions"][index]["value"].ToObject<string>();
-                index++;
-            }
-
-            return suggestedTerms;
-        }
+//        public string[] GetProductSearchSuggestions(string term)
+//        {
+//            ProductService jsonWS = new ProductService();
+//            string[] suggestedTerms = new string[5];
+//            var json = jsonWS.GetJsonProductSearchSuggestion(term);
+//            int index = 0;
+//            foreach (Object values in json["suggestions"])
+//            {
+//                //System.Diagnostics.Debug.WriteLine(json["suggestions"][index]["value"].ToObject<string>());
+//                suggestedTerms[index] = json["suggestions"][index]["value"].ToObject<string>();
+//                index++;
+//            }
+//
+//            return suggestedTerms;
+//        }
 
         public List<ProductBernice> GetProductSearchList(string term)
         {

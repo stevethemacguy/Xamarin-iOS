@@ -27,9 +27,6 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			ProductManager temp = new ProductManager();
-			temp.test();
-
             //System.Diagnostics.Debug.WriteLine("Testing BLL Fetching Product...");
             //Swx.B2B.Ecom.BL.Managers.ProductManager product = new ProductManager();
             //Swx.B2B.Ecom.BL.Entities.Product newProduct = product.GetProductByID(107701);
