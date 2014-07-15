@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using Swx.B2B.Ecom.BL.Entities;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace Swx.B2B.Ecom.DL
 		public B2BDB (string path) : base (path)
 		{
 			// create the tables
-			CreateTable<ProductBernice> ();
+			//CreateTable<ProductBernice> ();
             CreateTable<Note> ();
 		}
 		
@@ -50,6 +51,19 @@ namespace Swx.B2B.Ecom.DL
                 //        select i).FirstOrDefault ();
             }
 		}
+
+
+        public T GetItemID<T>(string text) where T : BL.Entities.Note, new()
+        {
+            lock (locker)
+            {
+                return Table<T>().FirstOrDefault(x => x.Text == text);
+                // Following throws NotSupportedException - thanks aliegeni
+                //return (from i in Table<T> ()
+                        //where i.Text == text
+                        //select i).FirstOrDefault ();
+            }
+        }
 
 		public int SaveItem<T> (T item) where T : BL.Contracts.IEntity
 		{

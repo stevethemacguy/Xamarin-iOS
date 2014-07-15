@@ -75,10 +75,12 @@ namespace Swx.B2B.Ecom.DAL
             return me.db.GetItem<ProductBernice>(id);
         }
 
+        /*
         public static int SaveProduct(ProductBernice productItem)
         {
             return me.db.SaveItem(productItem);
         }
+         * */
 
         public static int SaveNote(Note noteItem)
         {
@@ -88,6 +90,11 @@ namespace Swx.B2B.Ecom.DAL
         public static Note GetNote(int id)
         {
             return me.db.GetItem<Note>(id);
+        }
+
+        public static Note GetNoteID(string text)
+        {
+            return me.db.GetItemID<Note>(text);
         }
 
         public static IEnumerable<Note> GetNotes()

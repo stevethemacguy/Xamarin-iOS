@@ -4,6 +4,7 @@ using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Drawing;
+using Swx.B2B.Ecom.BL;
 using Swx.B2B.Ecom.BL.Entities;
 
 namespace GFS_iOS
@@ -48,11 +49,16 @@ namespace GFS_iOS
 				data.addNote(noteText);
 			    newNote.Text = noteText;
 
-               // Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
+                Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
 			}
 			else
 			{
 				//This actually modifies the database 
+                newNote.Text = noteText;
+
+			    int noteID = Swx.B2B.Ecom.BL.Managers.NoteManager.GetNoteID(notes[index]).Id;
+			    newNote.Id = noteID;
+                Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
 				notes[index] = noteText; //Overrite the existing note Text of the clicked cell to the new text
 			}
 			tableController.refreshTable(); //"Refresh" the table using our new list of notes.

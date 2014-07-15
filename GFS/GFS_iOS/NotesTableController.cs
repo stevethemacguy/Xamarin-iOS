@@ -39,7 +39,7 @@ namespace GFS_iOS
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
 			//Create the Table rows from the source, passing the full text for all notes (which will also act as row names), and the current ViewController
-			table.Source = new NotesTableSource(currentController, db.getAllNotes());
+            table.Source = new NotesTableSource(currentController, Swx.B2B.Ecom.BL.Managers.NoteManager.GetNotes());
 			Add(table);
 			table.BackgroundColor = UIColor.Clear; //Make the table clear
 
@@ -66,8 +66,10 @@ namespace GFS_iOS
 				notesView.tableController = (NotesTableController) currentController;
 				//Normlly the NotesViewController index is the "selected row," but in the case of the add button, no row is selected, so
 				//the index is the next "empty" row.  (i.e. if there are 2 rows currently (at 0 and 1), then the next free index is 2)
-				notesView.index = (db.getAllNotes().Count); 
-				notesView.notes = db.getAllNotes();
+				//notesView.index = (db.getAllNotes().Count); 
+				//notesView.notes = db.getAllNotes();
+                notesView.index = (Swx.B2B.Ecom.BL.Managers.NoteManager.GetNotes().Count);
+                notesView.notes = Swx.B2B.Ecom.BL.Managers.NoteManager.GetNotes();
 				notesView.addingNote = true; //Let the new view know that we're trying to add a note as opposed to a "normal" segue
 				//Segue to the NotesView
 				currentController.NavigationController.PushViewController (notesView, false);
@@ -80,7 +82,8 @@ namespace GFS_iOS
 			//reacreate the allNotes List, now with our new note
 			table = new UITableView(View.Bounds); // defaults to Plain style
 			table.AutoresizingMask = UIViewAutoresizing.All;
-			table.Source = new NotesTableSource(currentController, db.getAllNotes());
+			//table.Source = new NotesTableSource(currentController, db.getAllNotes());
+            table.Source = new NotesTableSource(currentController, Swx.B2B.Ecom.BL.Managers.NoteManager.GetNotes());
 			table.ReloadData();
 			Add(table);
 
