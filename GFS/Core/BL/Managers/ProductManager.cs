@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Swx.B2B.Ecom.BL.Entities;
 using Swx.B2B.Ecom.SVC;
-
 namespace Swx.B2B.Ecom.BL.Managers
 {
     /// <summary>
@@ -19,38 +18,21 @@ namespace Swx.B2B.Ecom.BL.Managers
 
 		//***************** Steve's Methods *********************
 
-		//	Makes a request to the Webservice to retrieve product search suggestions that match a term entered into the search bar.
-		//	Returns the resulting List of search terms
+		//Makes a request to the Webservice to retrieve product search suggestions that match a term entered into the search bar.
+		//Returns the resulting List of search terms
 		public List<String> getProductSearchSuggestions(string term)
 		{
 			WebService request = new WebService("suggest?term=" + term, "json");
-			Console.WriteLine(request.ToString());
 
 			//Initialize the JSON reader
 			NewtonJsonReader jsonReader = request.getJsonReader();
 
-			//get the words
+			//Get the suggested words and return them
 			return jsonReader.getSuggestedWords();
 		}
 
-		public void test()
-		{
-			WebService request = new WebService("?query=freeTextSearch:sort:name:" + "camera" + ":description:" + "camera", "json");
-			//Initialize the JSON reader
-			NewtonJsonReader jsonReader = request.getJsonReader();
-
-			Dictionary<String, Product> productMap = jsonReader.getProductsFromJson();
-
-			//Print the results
-			foreach (Product p in productMap.Values)
-			{
-				Console.WriteLine(p.ToString());
-			}
-
-		}
-
-		//Makes a webservice call using the search term provided. Parses the Json object, creating a product for each result.
-		//Returns a Dictionary that contains a product (the value), mapped to it's code (the key
+		//Makes a webservice call using the search term provided. Parses the returned Json object, creating a Product from each object.
+		//Returns a Dictionary of the Products returned from the JsonReader (key is the product code, value is the Product)
 		public List<Product> getProductsBySearchTerm(string searchTerm)
 		{
 			WebService request = new WebService("?query=freeTextSearch:sort:name:" + searchTerm + ":description:" + searchTerm, "json");
@@ -67,12 +49,9 @@ namespace Swx.B2B.Ecom.BL.Managers
 //				//Create the new product from the JSON values and add it to the product list
 //				Product p = new Product(code,imageURL, title, price, description, starRating);
 //				products.Add(p);
-//
-//				//Add the Products image url to the Image cache to be later used by Product Cells.
-//				ImageCache.getInstance().addImage(code, imageURL);
 
-			//For testing only
-			//ImageCache.getInstance().printImageCache();
+//				
+				
 			return prodList;
 		}
 

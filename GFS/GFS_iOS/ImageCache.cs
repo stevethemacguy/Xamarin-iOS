@@ -77,10 +77,6 @@ namespace GFS_iOS
 			{
 				ImageMap.Add(saved.Key, saved.Value);
 			}
-
-//			Console.WriteLine("Just Cleared the cache, Here's what's left: \n");
-//			printImageCache();	
-//			Console.WriteLine("********************End**************");
 		}
 
 		//Retreives an image associated with the productCode passed. If the product has no image, just returns a new, empty UIImage

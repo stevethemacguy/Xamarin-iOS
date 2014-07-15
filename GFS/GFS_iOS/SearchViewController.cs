@@ -134,6 +134,12 @@ namespace GFS_iOS
 				jsonResults = pm.getProductsBySearchTerm(searchTerm);
 			});
 
+			foreach (Product p in jsonResults)
+			{
+				//Add the Products image url to the Image cache to be later used by Product Cells.
+				ImageCache.getInstance().addImage(p.getCode(), p.getImageFileName());
+			}
+
 			//Once the task finishes, hide the loading screen.
 			controller.hideOverlay();
 
