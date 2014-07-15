@@ -257,9 +257,6 @@
     <Compile Include="..\Core\BL\Entities\Image.cs">
       <Link>BL\Entities\Image.cs</Link>
     </Compile>
-    <Compile Include="..\Core\BL\Entities\List.cs">
-      <Link>BL\Entities\List.cs</Link>
-    </Compile>
     <Compile Include="..\Core\BL\Entities\Manual.cs">
       <Link>BL\Entities\Manual.cs</Link>
     </Compile>
@@ -398,6 +395,9 @@
     </Compile>
     <Compile Include="..\Core\BL\Entities\JsonSuggestion.cs">
       <Link>BL\Entities\JsonSuggestion.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\SavedList.cs">
+      <Link>BL\Entities\SavedList.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

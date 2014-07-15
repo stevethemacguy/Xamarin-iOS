@@ -58,7 +58,6 @@
     <Compile Include="DL\B2BDB.cs" />
     <Compile Include="DL\SQLite.cs" />
     <Compile Include="BL\Entities\Image.cs" />
-    <Compile Include="BL\Entities\List.cs" />
     <Compile Include="BL\Entities\Manual.cs" />
     <Compile Include="BL\Entities\Note.cs" />
     <Compile Include="BL\Entities\Price.cs" />
@@ -71,6 +70,7 @@
     <Compile Include="SVC\XMLReader.cs" />
     <Compile Include="BL\Entities\JsonSuggestion.cs" />
     <Compile Include="BL\Entities\OldProduct.cs" />
+    <Compile Include="BL\Entities\SavedList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DL\Resources\b2b.db" />
