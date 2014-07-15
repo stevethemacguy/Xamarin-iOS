@@ -29,7 +29,7 @@ namespace GFS_iOS
 
 			WebService request = new WebService("?query=freeTextSearch:sort:name:" + "camera" + ":description:" + "camera", "json");
 			//Initialize the JSON reader
-			NewtonJsonReader jsonReader = request.getNewtonJsonReader();
+			NewtonJsonReader jsonReader = request.getJsonReader();
 
 
             //System.Diagnostics.Debug.WriteLine("Testing BLL Fetching Product...");

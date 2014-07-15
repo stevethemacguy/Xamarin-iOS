@@ -9,8 +9,8 @@ using Swx.B2B.Ecom.BL.Entities;
 using System.IO;
 using Newtonsoft.Json.Linq;
 
-///NewtonJsonReader constructs JsonProducts by parsing through the json feed passed in the constructor.
-///It uses the Newtonsoft.Json (i.e. JSON.Net) library.
+//NewtonJsonReader constructs JsonProducts by parsing through the json feed passed in the constructor.
+//It uses the Newtonsoft.Json (i.e. JSON.Net) library.
 namespace Swx.B2B.Ecom.SVC
 {
     class NewtonJsonReader

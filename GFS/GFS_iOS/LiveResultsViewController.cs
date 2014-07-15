@@ -66,7 +66,6 @@ namespace GFS_iOS
 		protected List<Product> tableItems;
 		NSString cellIdentifier = new NSString("productCell");
 		LiveResultsViewController parentController;
-
 		public LiveResultsTableSource (LiveResultsViewController parentController)
 		{
 			this.parentController = parentController;
@@ -124,7 +123,7 @@ namespace GFS_iOS
 			cell.UpdateCell (
 					product.getTitle(), 
 					product.getPrice(), 
-					product.getProductImage(),
+					ImageCache.getInstance().getImage(product.getCode()), //Use the UIImage previously stored in the imageCache
 					UIImage.FromFile("product-result-background.png"),
 					UIImage.FromFile("blue-dots.png"),
 					UIImage.FromFile("product-devider.png")

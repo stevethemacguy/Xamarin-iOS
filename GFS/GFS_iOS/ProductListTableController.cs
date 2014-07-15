@@ -119,7 +119,7 @@ namespace GFS_iOS
 			cell.UpdateCell (
 				product.getTitle(), 
 				product.getPrice(), 
-				product.getProductImage(),
+				ImageCache.getInstance().getImage(product.getCode()), //Use the UIImage previously stored in the imageCache//Use the UIImage previously stored in the imageCache
 				UIImage.FromFile("product-result-background.png"),
 				UIImage.FromFile("blue-dots.png"),
 				UIImage.FromFile("product-devider.png")
