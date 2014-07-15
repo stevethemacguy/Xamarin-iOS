@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
+using Swx.B2B.Ecom.BL.Entities;
 
 namespace GFS_iOS
 {
@@ -30,6 +31,10 @@ namespace GFS_iOS
 		//Creates a UIImage from the url passed and adds the UIImage to the image cache
 		public void addImage(String productCode, String url)
 		{
+			//Don't create duplicates
+			if (ImageMap.ContainsKey(productCode))
+				return;
+
 			UIImage image = new UIImage();
 			//If there's an image url, then create the image now so it's already chached.
 			if (url != "") {
@@ -42,11 +47,40 @@ namespace GFS_iOS
 			ImageMap.Add(productCode, image);
 		}
 
-		//Deletes all images in the image cache
+		//Removes an image from the cache
+		public void removeImage(String productCode)
+		{
+			if (ImageMap.ContainsKey(productCode))
+				ImageMap.Remove(productCode);
+		}
+
+		//Removes all images in the image cache, EXCEPT for images associated with products that persist in the DataSource
+		//Images for products in the DataSource are NOT removed. (e.g. For products added to a saved list, when manual is saved, etc) 
 		public void clearCache()
 		{
+			//A dictionary to store the Images we want to save. //Keys are product IDs, values are UIImages
+			Dictionary<String, UIImage> savedImages = new Dictionary<String, UIImage>();
+
+			//No images for products in the DataSource should be removed, so save these images
+			foreach (Product p in DataSource.getInstance().getAllProducts().Values)
+			{
+				//Add the product code as the key, add the image from the ImageCache as the value
+				savedImages.Add(p.getCode(), ImageMap[p.getCode()]);
+			}
+
+			//Remove all images from the cache
 			ImageMap = null;
 			ImageMap = new Dictionary<String, UIImage>();
+
+			//Add back in the saved images
+			foreach (KeyValuePair<String, UIImage> saved in savedImages)
+			{
+				ImageMap.Add(saved.Key, saved.Value);
+			}
+
+//			Console.WriteLine("Just Cleared the cache, Here's what's left: \n");
+//			printImageCache();	
+//			Console.WriteLine("********************End**************");
 		}
 
 		//Retreives an image associated with the productCode passed. If the product has no image, just returns a new, empty UIImage
@@ -56,6 +90,13 @@ namespace GFS_iOS
 				return ImageMap[productCode];
 			else
 				return new UIImage();
+		}
+
+		//Prints all images in the image cache
+		public void printImageCache()
+		{
+			foreach (UIImage img in ImageMap.Values)
+				Console.WriteLine(img.ToString());
 		}
 	}
 }

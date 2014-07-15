@@ -28,7 +28,7 @@ namespace Swx.B2B.Ecom.BL.Entities
 		//A map where Key is the list name, and value is a list of products associated with that list
 		private Dictionary<String, List<Product>> savedListProductMap;
 
-		//Stores all products that are loaded from the webservice (via xml or json)
+		//Stores a master list of all products that are "Saved" by the application (i.e. should persist in the database)
 		//A map where Key is product ID, and value is the product with that ID.
 		private Dictionary<String, Product> productMap;
 
@@ -49,22 +49,7 @@ namespace Swx.B2B.Ecom.BL.Entities
 				manualList = new List<Product>();
 			}
 
-			//Create the productList and add the two default products to the list
-			if (productList == null)
-			{
-				productList = new List<Product>();
-			}
-
 			productMap = new Dictionary<String, Product>();
-		}
-
-		//Adds a product to the DB
-		public void addLiveProductToDB(Product p)
-		{
-				//Highlight a couple products for demo purposes only
-				//if (index == 1 || i == 2)
-				//	p.toggleHighlight();
-				productMap.Add(p.getID(), p); //Uses the ID as a key
 		}
 
 		////Used with "old" JSON Reader only
@@ -197,16 +182,16 @@ namespace Swx.B2B.Ecom.BL.Entities
 			return productMap;
 		}
 
-		//Adds a product to the database using the product's unique ID as a key in the map
-		public void addProductToDB(String productID, Product toAdd)
+		//Adds a product to the database using the product's unique code as a key in the map
+		public void addProductToDB(String code, Product toAdd)
 		{
-			productMap.Add(productID, toAdd);
+			productMap.Add(code, toAdd);
 		}
 
-		//Removes product with an id of productID from the database.
-		public void removeProductFromDB(String productID)
+		//Removes product from the database by the product's code
+		public void removeProductFromDB(String code)
 		{
-			productMap.Remove(productID);
+			productMap.Remove(code);
 		}
 
 		public void addToManualList(Product product)

@@ -115,6 +115,9 @@ namespace GFS_iOS
 		//When any row is selected. Async is used so we can stop the code from continuing until the task is complete (see await below).
 		public async override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
+			//We don't want to permanently cache images for previous searches, so clear the image cache.
+			ImageCache.getInstance().clearCache(); 
+
 			////Segue to the new live search results
 
 			//Show the loading screen while we wait for the database to load

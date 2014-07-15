@@ -52,6 +52,10 @@ namespace GFS_iOS
 
 				//Add the product ID to the manual list.
 				data.addToManualList(selectedProduct);
+
+				//Add the product to the masterList of saved products
+				if(data.getAllProducts().ContainsKey(selectedProduct.getCode()) == false) //don't add duplicate products
+					data.getAllProducts().Add(selectedProduct.getCode(), selectedProduct);
 			};
 
 			//Create an action sheet that comes up from the bottom.
@@ -116,8 +120,15 @@ namespace GFS_iOS
 							return;
 						}
 
+						//Otherwise
+
 						//Add the selected product to the selected list
 						savedListMap[selectedItem].Add(selectedProduct);
+
+						//Also add the product to the masterList of saved products
+						if(db.getAllProducts().ContainsKey(selectedProduct.getCode()) == false) //don't add duplicate products
+							db.getAllProducts().Add(selectedProduct.getCode(), selectedProduct);
+
 
 						string success = "The product was added to: \"" + selectedItem +"\"";
 						UIAlertView alert = new UIAlertView(success, "", null, "OK");

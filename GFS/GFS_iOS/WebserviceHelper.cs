@@ -80,6 +80,8 @@ namespace GFS_iOS
 				ImageCache.getInstance().addImage(code, imageURL);
 			}
 
+			//For testing only
+			ImageCache.getInstance().printImageCache();
 			return products;
 		}
 	}
