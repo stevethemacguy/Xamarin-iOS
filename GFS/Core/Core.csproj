@@ -64,7 +64,6 @@
     <Compile Include="BL\Entities\Price.cs" />
     <Compile Include="BL\Entities\ProductBernice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SVC\JSONReader.cs" />
     <Compile Include="SVC\NewtonJsonReader.cs" />
     <Compile Include="SVC\ProductService.cs" />
     <Compile Include="SVC\WebService.cs" />
