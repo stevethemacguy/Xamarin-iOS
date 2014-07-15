@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 
+//"Old" version of Product no longer used.
 namespace Swx.B2B.Ecom.BL.Entities
 {
 	//Represents a single product
@@ -15,12 +14,12 @@ namespace Swx.B2B.Ecom.BL.Entities
 		private float starRating;
 		//The full description of the product
 		private String description = "";
-		private UIImage productImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
+		private String code = "";
 
 		//Whether the product should be highlighted in search results, etc.
 		private Boolean highlighted = false;
 
-		public Product(String imageFileName, String title, String price, String description, float rating)
+		public Product(String code, String imageFileName, String title, String price, String description, float rating)
 	    {
 			//At this potin key should be unique
 			this.id = RandomNumberGenerator.getInstance().getRandomNumber();
@@ -29,23 +28,11 @@ namespace Swx.B2B.Ecom.BL.Entities
 			this.price = price;
 			this.description = description;
 			this.starRating = rating;
-
-			//If there's an image url, then create the image now so it's already chached.
-			if (imageFileName != "")
-			{
-				//Create a url from the string and use it with an NSData object
-				NSData data = NSData.FromUrl(new NSUrl(imageFileName));
-				//Create a UIimage using the url to load the image
-				productImage = UIImage.LoadFromData(data);
-			}
+			this.code = code;
 	    }
 
 		public String getImageFileName() {
 			return imageFileName;
-		}
-
-		public UIImage getProductImage() {
-			return productImage;
 		}
 
 		public String getTitle() {
@@ -81,10 +68,16 @@ namespace Swx.B2B.Ecom.BL.Entities
 			return price;
 		}
 
+		public String getCode()
+		{
+			return code;
+		}
+
 		public override string ToString()
 		{
 			String s = "";
 			s += "\n ID: " + id;
+			s += "\n Code: " + code;
 			s += "\n Title: " + title;
 			s += "\n Price: " + price;
 			s += "\n Description: " + description;
@@ -94,6 +87,4 @@ namespace Swx.B2B.Ecom.BL.Entities
 			return s;
 		}
 	}
-
 }
-

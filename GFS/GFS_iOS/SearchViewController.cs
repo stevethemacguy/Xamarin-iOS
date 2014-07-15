@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Json;
 using Swx.B2B.Ecom.BL.Entities;
 
+//Initial Search Screen. Words are entered into the search bar to load search results
 namespace GFS_iOS
 {
 	partial class SearchViewController : UIViewController
@@ -62,80 +63,13 @@ namespace GFS_iOS
 					List<String> suggestedTerms = requester.getProductSearchSuggestions(SearchBar.Text);
 
 					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
-                    /*
-					if(SearchBar.Text == "a")
-					{
-						hints = new string[] { "apple", "adobe", "adapter", "apature", "addition"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					else{
-						hints = new string[] {""};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "ap")
-					{
-						hints = new string[] { "apple", "apature" };
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("apa"))
-					{
-						hints = new string[] { "apature" };
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("app"))
-					{
-						hints = new string[] { "apple" };
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "ad")
-					{
-						hints = new string[] { "adobe", "adapter", "addition", "adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("ado"))
-					{
-						hints = new string[] { "adobe"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "ada")
-					{
-						hints = new string[] { "adapter", "adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("add"))
-					{
-						hints = new string[] { "addition"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "adap")
-					{
-						hints = new string[] { "adapter", "adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "adapt")
-					{
-						hints = new string[] { "adapter","adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("adapti"))
-					{
-						hints = new string[] { "adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("adapte"))
-					{
-						hints = new string[] { "adapter"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-                    */
-
                     HintTable.ReloadData();
 					HintTable.Hidden = false;
 				}
 			};
-			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
+		//Show the loading screen.
 		public void showOverlay()
 		{
 			//Dismiss the keyboard
@@ -144,6 +78,7 @@ namespace GFS_iOS
 			View.Add(loadingOverlay);
 		}
 
+		//Hide the loading screen.
 		public void hideOverlay()
 		{
 			loadingOverlay.Hide();
@@ -180,40 +115,23 @@ namespace GFS_iOS
 		//When any row is selected. Async is used so we can stop the code from continuing until the task is complete (see await below).
 		public async override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
-			////Segue to the old search results
-//			//Get the current storyboard
-//			UIStoryboard test = UIStoryboard.FromName("MainStoryboard", null); 
-//
-//			//Get the searchResultsController View Controller 
-//			SearchResultsTableController ok = (SearchResultsTableController) test.InstantiateViewController(  
-//				"searchResultsController"
-//			);
-//			//Segue to the new View
-//		    controller.NavigationController.PushViewController(ok, true);
-
 			////Segue to the new live search results
 
 			//Show the loading screen while we wait for the database to load
 			controller.showOverlay();
 
-
-//			//await says to wait until the task is completed before continuing (in this case in initializeDBfromJSON())
-//			await Task.Factory.StartNew (() => {
-//				DataSource db = DataSource.getInstance();
-//				//Initialize using JSON
-//				db.initializeDBfromJSON();
-//			});
-
+			//The selected search term (i.e. selected row)
 			String searchTerm = tableItems[indexPath.Row];
 
+			//Stores a list of products created from the parsed Json
 			List<Product> jsonResults = new List<Product>();
 			await Task.Factory.StartNew (() => {
 				WebserviceHelper requester = new WebserviceHelper();
-				//Currently retrieves products AND adds them to the database, but this should be decoupled later.
+				//Returns a list of products that match the searchTerm
 				jsonResults = requester.getProductsBySearchTerm(searchTerm);
 			});
 
-			//Once the task finishes, hide the overlay.
+			//Once the task finishes, hide the loading screen.
 			controller.hideOverlay();
 
 			LiveResultsViewController liveResults = new LiveResultsViewController();

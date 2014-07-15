@@ -308,9 +308,6 @@
     <Compile Include="..\Core\DL\SQLite.cs">
       <Link>DL\SQLite.cs</Link>
     </Compile>
-    <Compile Include="..\Core\SVC\JSONReader.cs">
-      <Link>SVC\JSONReader.cs</Link>
-    </Compile>
     <Compile Include="..\Core\SVC\NewtonJsonReader.cs">
       <Link>SVC\NewtonJsonReader.cs</Link>
     </Compile>
@@ -396,6 +393,10 @@
     <Compile Include="WebserviceHelper.cs" />
     <Compile Include="..\Core\BL\Entities\JsonProduct.cs">
       <Link>BL\Entities\JsonProduct.cs</Link>
+    </Compile>
+    <Compile Include="ImageCache.cs" />
+    <Compile Include="..\Core\SVC\JSONReader.cs">
+      <Link>SVC\JSONReader.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

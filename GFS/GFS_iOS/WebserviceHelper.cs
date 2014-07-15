@@ -56,6 +56,7 @@ namespace GFS_iOS
 				String price = "";
 				String imageURL = "";
 				String title = jsonReader.getValue(j, "summary");
+				String code = jsonReader.getValue(j, "code");
 				String description = jsonReader.getValue(j, "description");
 
 				if (title == "")
@@ -72,8 +73,11 @@ namespace GFS_iOS
 				}  
 
 				//Create the new product from the JSON values and add it to the product list
-				Product p = new Product(imageURL, title, price, description, starRating);
+				Product p = new Product(code,imageURL, title, price, description, starRating);
 				products.Add(p);
+
+				//Add the Products image url to the Image cache to be later used by Product Cells.
+				ImageCache.getInstance().addImage(code, imageURL);
 			}
 
 			return products;
