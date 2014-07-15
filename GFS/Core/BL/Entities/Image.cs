@@ -14,5 +14,11 @@ namespace Swx.B2B.Ecom.BL.Entities
         public string Format { get; set; }
         public string AltText { get; set; }
         public string Url { get; set; }
+
+		//Default Constructor is used by NewtonJsonReader to create Images for each JsonProduct as the Json results are deserialized.
+		public Image()
+		{
+
+		}
     }
 }

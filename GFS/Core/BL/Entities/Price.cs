@@ -14,6 +14,7 @@ namespace Swx.B2B.Ecom.BL.Entities
 		public double value { get; set; }
 		public string formattedValue { get; set; }
 
+		//Constructor is used by the NewtonJsonReader as the json feed is deserialized.
 		public Price()
 		{
 
@@ -21,7 +22,7 @@ namespace Swx.B2B.Ecom.BL.Entities
 
 		public override string ToString()
 		{
-			return string.Format("[Price: currencyIso={0}, priceType={1}, value={2}, formattedValue={3}]", currencyIso, priceType, value, formattedValue);
+			return formattedValue;
 		}
 	}
 }
