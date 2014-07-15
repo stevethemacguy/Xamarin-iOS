@@ -39,65 +39,42 @@ namespace Swx.B2B.Ecom.BL.Managers
 			//Initialize the JSON reader
 			NewtonJsonReader jsonReader = request.getJsonReader();
 
-			Dictionary<String, JsonProduct> productMap = jsonReader.getProductsFromJson();
+			Dictionary<String, Product> productMap = jsonReader.getProductsFromJson();
 
 			//Print the results
-			foreach (JsonProduct p in productMap.Values)
+			foreach (Product p in productMap.Values)
 			{
 				Console.WriteLine(p.ToString());
 			}
 
 		}
 
-		//Makes a webservice call using the search term provided. Parses the Json object, creating a product for each results, and 
-		//Returns a list of the resulting products.
-//		public List<Product> getProductsBySearchTerm(string searchTerm)
-//		{
-//			WebService request = new WebService("?query=freeTextSearch:sort:name:" + searchTerm + ":description:" + searchTerm, "json");
-//			//Initialize the JSON reader
-//			JSONReader jsonReader = request.getJSONReader();
-//
-//			//Get the products object
-//			JsonValue allProducts = jsonReader.AllObjects ["products"];
-//
-//			List<Product> products = new List<Product>();
-//
-//			int index = 0;
-//			//For each JSON product object, create a product using it's values and add the product to the list of products
-//			foreach (JsonValue j in allProducts){
-//				index++;
-//				float starRating = jsonReader.getNumericValue(j, "averageRating");
-//				String price = "";
-//				String imageURL = "";
-//				String title = jsonReader.getValue(j, "summary");
-//				String code = jsonReader.getValue(j, "code");
-//				String description = jsonReader.getValue(j, "description");
-//
-//				if (title == "")
-//					title = "Unknown Product";
-//
-//				if (j.ContainsKey("price")) {
-//					price = jsonReader.getValue(j ["price"], "formattedValue");
-//				}
-//
-//				//Check if the node exists and get the value if it does
-//				if (j.ContainsKey("images")) {
-//					JsonValue tempJsonValue = j ["images"] [0]; //first image only
-//					imageURL = "http://swx-hybris-ash02.siteworx.com:9001" + (jsonReader.getValue(tempJsonValue, "url")).Replace("\"", ""); //remove quotes from the stirng 
-//				}  
-//
+		//Makes a webservice call using the search term provided. Parses the Json object, creating a product for each result.
+		//Returns a Dictionary that contains a product (the value), mapped to it's code (the key
+		public List<Product> getProductsBySearchTerm(string searchTerm)
+		{
+			WebService request = new WebService("?query=freeTextSearch:sort:name:" + searchTerm + ":description:" + searchTerm, "json");
+
+			//Initialize the JSON reader
+			NewtonJsonReader jsonReader = request.getJsonReader();
+
+			Dictionary<String,Product> results = jsonReader.getProductsFromJson();
+			List<Product> prodList = new List<Product>();
+			foreach (Product p in results.Values)
+			{
+				prodList.Add(p);
+			}
 //				//Create the new product from the JSON values and add it to the product list
 //				Product p = new Product(code,imageURL, title, price, description, starRating);
 //				products.Add(p);
 //
 //				//Add the Products image url to the Image cache to be later used by Product Cells.
 //				ImageCache.getInstance().addImage(code, imageURL);
-//			}
-//
-//			//For testing only
-//			ImageCache.getInstance().printImageCache();
-//			return products;
-//		}
+
+			//For testing only
+			//ImageCache.getInstance().printImageCache();
+			return prodList;
+		}
 
 
 

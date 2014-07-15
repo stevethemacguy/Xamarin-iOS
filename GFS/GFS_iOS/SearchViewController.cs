@@ -58,7 +58,6 @@ namespace GFS_iOS
 				}
 				else
 				{
-
 					//Make a call to the Web service to get back suggestions based on the search term
 					ProductManager pm = new ProductManager();
 					List<String> suggestedTerms = pm.getProductSearchSuggestions(SearchBar.Text);
@@ -130,9 +129,9 @@ namespace GFS_iOS
 			//Stores a list of products created from the parsed Json
 			List<Product> jsonResults = new List<Product>();
 			await Task.Factory.StartNew (() => {
-				WebserviceHelper requester = new WebserviceHelper();
+				ProductManager pm = new ProductManager();
 				//Returns a list of products that match the searchTerm
-				//jsonResults = requester.getProductsBySearchTerm(searchTerm);
+				jsonResults = pm.getProductsBySearchTerm(searchTerm);
 			});
 
 			//Once the task finishes, hide the loading screen.

@@ -69,8 +69,8 @@
     <Compile Include="SVC\WebService.cs" />
     <Compile Include="SVC\WebServiceBernice.cs" />
     <Compile Include="SVC\XMLReader.cs" />
-    <Compile Include="BL\Entities\JsonProduct.cs" />
     <Compile Include="BL\Entities\JsonSuggestion.cs" />
+    <Compile Include="BL\Entities\OldProduct.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DL\Resources\b2b.db" />

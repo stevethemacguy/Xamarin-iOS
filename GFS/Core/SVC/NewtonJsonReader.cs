@@ -43,11 +43,11 @@ namespace Swx.B2B.Ecom.SVC
 			return results;
 		}
 
-		public Dictionary<string, JsonProduct> getProductsFromJson()
+		public Dictionary<string, Product> getProductsFromJson()
 		{
 			//Deserialize the Json and automatically create JsonProducts directly from the Json Object properties.
 			//Note: Using SelectToken("products") essentially "Ignores" the root level object. We are concerned with the contents of "products," but not the object itself.
-			List<JsonProduct> jsonProductList = jo.SelectToken("products", false).ToObject<List<JsonProduct>>();
+			List<Product> jsonProductList = jo.SelectToken("products", false).ToObject<List<Product>>();
 
 			//Continue parsing the Json feed, adding the images to products that have images.
 			//parseImages() returns the resulting map after the images have been added, so returing the result returns this map.
@@ -57,13 +57,13 @@ namespace Swx.B2B.Ecom.SVC
 		//There appears to be a bug in the JSON.Net reader that prevents a List of Images from being instantiated automatically.
 		//parseImages() instaniates these image objects manually, and associates them with the JsonProducts by matchin their IDs.
 		//parseImages() is a helper method called by getProductsFromJson()
-		private Dictionary<string, JsonProduct> parseImages(List<JsonProduct> jsonProductList)
+		private Dictionary<string, Product> parseImages(List<Product> jsonProductList)
 		{
 			//Create a map where the key is the product code and the value is the product itself.
-			Dictionary<string, JsonProduct> prdMap = new Dictionary<string, JsonProduct>();
+			Dictionary<string, Product> prdMap = new Dictionary<string, Product>();
 
-			//Add each (recentantly instantiated) JsonProduct to the map, using the product's code as a key 
-			foreach(JsonProduct j in jsonProductList)
+			//Add each (recentantly instantiated) Product to the map, using the product's code as a key 
+			foreach(Product j in jsonProductList)
 			{
 				prdMap.Add(j.code, j);
 			}
@@ -81,7 +81,7 @@ namespace Swx.B2B.Ecom.SVC
 					//Get the product's ID
 					String prodCode = jo.SelectToken("products["+count+"].code", false).ToObject<String>();
 
-					//Add the image list to the actual JsonProduct
+					//Add the image list to the actual Product
 					prdMap[prodCode].imageList = imgList;
 
 					//Create the product's image url from the first image in the list
