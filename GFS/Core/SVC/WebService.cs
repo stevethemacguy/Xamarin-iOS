@@ -26,13 +26,14 @@ namespace Swx.B2B.Ecom.SVC
 			feedReader = new StreamReader("Hybris_Product_API_Feed.xml");
             return new XMLReader(feedReader);
         }
-			
+
+		//Returns the "Old" Json Reader
         public JSONReader getJSONReader()
         {
             return new JSONReader(feedReader);
         }
 
-		public NewtonJsonReader getNewtonJsonReader()
+		public NewtonJsonReader getJsonReader()
 		{
 			return new NewtonJsonReader(feedReader);
 		}

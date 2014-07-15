@@ -395,6 +395,7 @@
     <Compile Include="..\Core\BL\Entities\JsonProduct.cs">
       <Link>BL\Entities\JsonProduct.cs</Link>
     </Compile>
+    <Compile Include="ImageCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

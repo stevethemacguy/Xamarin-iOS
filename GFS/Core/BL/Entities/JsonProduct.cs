@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
 
 namespace Swx.B2B.Ecom.BL.Entities
 {	
@@ -34,7 +32,7 @@ namespace Swx.B2B.Ecom.BL.Entities
 
 		//The full description of the product
 		public String description { get; set; }
-		public UIImage productImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
+		//public UIImage productImage; //Used by cells in the liveResults tables. This is bad coupling, but creating the images "on the fly" in getCell() causes performance issues.
 
 		//Whether the product should be highlighted in search results, etc.
 		private Boolean highlighted = false;
@@ -48,22 +46,18 @@ namespace Swx.B2B.Ecom.BL.Entities
 		//Creates this products image since it won't work with the contstructor
 		public void createImage()
 		{
-			if (imageList != null && imageList.Count > 0 )
-			{
-				//Create the actual image
-				//Create a url from the string and use it with an NSData object
-				NSData data = NSData.FromUrl(new NSUrl(imageList[0].Url));
-				//Create a UIimage using the url to load the image
-				productImage = UIImage.LoadFromData(data);
-			}
+//			if (imageList != null && imageList.Count > 0 )
+//			{
+//				//Create the actual image
+//				//Create a url from the string and use it with an NSData object
+//				NSData data = NSData.FromUrl(new NSUrl(imageList[0].Url));
+//				//Create a UIimage using the url to load the image
+//				productImage = UIImage.LoadFromData(data);
+//			}
 		}
 			
 		public String getImageFileName() {
 			return imageFileName;
-		}
-
-		public UIImage getProductImage() {
-			return productImage;
 		}
 
 		public String getTitle() {
