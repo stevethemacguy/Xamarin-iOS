@@ -28,10 +28,10 @@ namespace Swx.B2B.Ecom.SVC
         }
 
 		//Returns the "Old" Json Reader
-        public JSONReader getJSONReader()
-        {
-            return new JSONReader(feedReader);
-        }
+//        public JSONReader getJSONReader()
+//        {
+//            return new JSONReader(feedReader);
+//        }
 
 		public NewtonJsonReader getJsonReader()
 		{

@@ -15,26 +15,32 @@ namespace Swx.B2B.Ecom.SVC
 {
     class NewtonJsonReader
     {
+		JObject jo;
+
 		public NewtonJsonReader(StreamReader feedReader)
 		{
 			//Get full json string
 			String jsonResultString = feedReader.ReadToEnd();
 
 			//Create a JObject from the json string
-			JObject jo = JObject.Parse(jsonResultString);
+			jo = JObject.Parse(jsonResultString);
+		}
 
+		public Dictionary<string, JsonProduct> getProductsFromJson()
+		{
 			//Deserialize the Json and automatically create JsonProducts directly from the Json Object properties.
 			//Note: Using SelectToken("products") essentially "Ignores" the root level object. We are concerned with the contents of "products," but not the object itself.
 			List<JsonProduct> jsonProductList = jo.SelectToken("products", false).ToObject<List<JsonProduct>>();
 
 			//Continue parsing the Json feed, adding the images to products that have images.
-			parseImages(jo, jsonProductList);
+			//parseImages() returns the resulting map after the images have been added, so returing the result returns this map.
+			return parseImages(jsonProductList);
 		}
 
 		//There appears to be a bug in the JSON.Net reader that prevents a List of Images from being instantiated automatically.
 		//parseImages() instaniates these image objects manually, and associates them with the JsonProducts by matchin their IDs.
-		//parseImages() is called as part of the parsing process whenever a NewtonJsonReader is instantiated.
-		private void parseImages(JObject jo, List<JsonProduct> jsonProductList)
+		//parseImages() is a helper method called by getProductsFromJson()
+		private Dictionary<string, JsonProduct> parseImages(List<JsonProduct> jsonProductList)
 		{
 			//Create a map where the key is the product code and the value is the product itself.
 			Dictionary<string, JsonProduct> prdMap = new Dictionary<string, JsonProduct>();
@@ -66,11 +72,7 @@ namespace Swx.B2B.Ecom.SVC
 				}
 			}
 
-			//Print the results
-			foreach (JsonProduct p in jsonProductList)
-			{
-				Console.WriteLine(p.ToString());
-			}
+			return prdMap;
 		}
     }
 }
