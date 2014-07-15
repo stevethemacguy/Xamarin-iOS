@@ -394,6 +394,9 @@
     <Compile Include="SavedManualsViewController.cs" />
     <Compile Include="MainMenuButton.cs" />
     <Compile Include="WebserviceHelper.cs" />
+    <Compile Include="..\Core\BL\Entities\JsonProduct.cs">
+      <Link>BL\Entities\JsonProduct.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

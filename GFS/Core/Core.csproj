@@ -70,6 +70,7 @@
     <Compile Include="SVC\WebService.cs" />
     <Compile Include="SVC\WebServiceBernice.cs" />
     <Compile Include="SVC\XMLReader.cs" />
+    <Compile Include="BL\Entities\JsonProduct.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DL\Resources\b2b.db" />

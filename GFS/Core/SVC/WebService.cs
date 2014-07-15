@@ -31,5 +31,10 @@ namespace Swx.B2B.Ecom.SVC
         {
             return new JSONReader(feedReader);
         }
+
+		public NewtonJsonReader getNewtonJsonReader()
+		{
+			return new NewtonJsonReader(feedReader);
+		}
     }
 }
