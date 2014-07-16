@@ -234,6 +234,7 @@
     <BundleResource Include="Resources\XIcon%402x.png" />
     <BundleResource Include="Resources\XIcon%28big%29.png" />
     <BundleResource Include="Resources\XIcon%28big%29%402x.png" />
+    <BundleResource Include="Resources\noImage.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
