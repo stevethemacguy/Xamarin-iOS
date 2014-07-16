@@ -48,6 +48,9 @@ namespace GFS_iOS
 			HintTable.ScrollEnabled = true;
 			HintTable.Hidden = true;
 
+			//Stores the last search terms returned from the Web Service. See below.
+			List<String> cachedSuggestedTerms = new List<String>();
+
 			//this.SearchBar.OnEditingStarted --- EventArgs
 			this.SearchBar.TextChanged += (object sender, UISearchBarTextChangedEventArgs e) =>
 			{
@@ -60,6 +63,18 @@ namespace GFS_iOS
 					//Make a call to the Web service to get back suggestions based on the search term.
 					ProductManager pm = new ProductManager();
 					List<String> suggestedTerms = pm.getProductSearchSuggestions(SearchBar.Text);
+
+					//Web service returns nothing once you type a full word, so when nothing is returned, keeping showing the "previous" suggestions
+					if (suggestedTerms.Count == 0)
+					{
+						//Use the terms from the last search
+						suggestedTerms = cachedSuggestedTerms;
+					}
+					else
+					{
+						//Cache these words so we don't lose them
+						cachedSuggestedTerms = suggestedTerms;
+					}
 
 					//Update the Table Source to use the returned words.
 					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
