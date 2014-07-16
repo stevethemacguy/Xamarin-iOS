@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ namespace Swx.B2B.Ecom.DAL
         {
             get
             {
-                var sqliteFilename = "B2BDB.db3";
+                var sqliteFilename = "B2BDBTest.db3";
 
 #if NETFX_CORE
                 //TODO: Windows Phone DB PATH
@@ -70,11 +71,6 @@ namespace Swx.B2B.Ecom.DAL
         
         }
 
-        public static ProductBernice GetProduct(int id)
-        {
-            return me.db.GetItem<ProductBernice>(id);
-        }
-
         /*
         public static int SaveProduct(ProductBernice productItem)
         {
@@ -100,6 +96,22 @@ namespace Swx.B2B.Ecom.DAL
         public static IEnumerable<Note> GetNotes()
         {
             return me.db.GetItems<Note>();
+        }
+
+        //products
+        public static ProductBernice GetProduct(int id)
+        {
+            return me.db.GetItem<ProductBernice>(id);
+        }
+
+        public static int SaveProduct(ProductBernice productItem)
+        {
+            return me.db.SaveItem(productItem);
+        }
+
+        public static IEnumerable<ProductBernice> GetProducts()
+        {
+            return me.db.GetItems<ProductBernice>();
         }
     }
 }

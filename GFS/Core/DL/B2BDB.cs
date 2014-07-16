@@ -30,8 +30,11 @@ namespace Swx.B2B.Ecom.DL
 		public B2BDB (string path) : base (path)
 		{
 			// create the tables
-			//CreateTable<ProductBernice> ();
-            CreateTable<Note> ();
+		    //DropTable<Note>();
+		    //DropTable<ProductBernice>();
+		    CreateTable<ProductBernice>();
+		    CreateTable<Note>();
+
 		}
 		
 		public IEnumerable<T> GetItems<T> () where T : BL.Contracts.IEntity, new ()

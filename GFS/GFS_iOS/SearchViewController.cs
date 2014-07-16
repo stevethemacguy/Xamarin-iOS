@@ -132,6 +132,21 @@ namespace GFS_iOS
 				WebserviceHelper requester = new WebserviceHelper();
 				//Returns a list of products that match the searchTerm
 				jsonResults = requester.getProductsBySearchTerm(searchTerm);
+
+			    for (int i = 0; i < jsonResults.Count; i++)
+			    {
+			        ProductBernice productBernice = new ProductBernice();
+			        productBernice.Name = jsonResults[i].getTitle();
+			        productBernice.Description = jsonResults[i].getDescription();
+			        productBernice.Prices = jsonResults[i].getPrice();
+			        productBernice.StarRating = jsonResults[i].getRating();
+			        productBernice.Images = jsonResults[i].getImageFileName();
+			        //productBernice.Images.Add(jsonResults[0].getImageFileName());
+			        productBernice.Code = jsonResults[i].getCode();
+
+			        ProductManager storeProducts = new ProductManager();
+			        storeProducts.SaveProduct(productBernice);
+			    }
 			});
 
 			//Once the task finishes, hide the loading screen.

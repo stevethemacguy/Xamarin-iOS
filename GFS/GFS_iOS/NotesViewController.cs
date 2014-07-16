@@ -46,6 +46,7 @@ namespace GFS_iOS
 			}
 			if(addingNote)
 			{
+                // TODO: make reference to ID instead of looking for string of text in SQLite
 				data.addNote(noteText);
 			    newNote.Text = noteText;
 
@@ -54,6 +55,7 @@ namespace GFS_iOS
 			else
 			{
 				//This actually modifies the database 
+                // TODO: make reference to ID instead of looking for string of text in SQLite
                 newNote.Text = noteText;
 
 			    int noteID = Swx.B2B.Ecom.BL.Managers.NoteManager.GetNoteID(notes[index]).Id;

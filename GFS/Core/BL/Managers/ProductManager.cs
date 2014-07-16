@@ -16,7 +16,7 @@ namespace Swx.B2B.Ecom.BL.Managers
         public ProductManager()
         {
         }
-
+        /*
         public ProductBernice GetProductByID(int id)
         {
             ProductBernice product = new ProductBernice();
@@ -106,6 +106,22 @@ namespace Swx.B2B.Ecom.BL.Managers
             }
 
             return productList;
+        }
+        */
+        // Database methods
+        public int SaveProduct(ProductBernice item)
+        {
+            return Swx.B2B.Ecom.DAL.B2BRepository.SaveProduct(item);
+        }
+
+        public static List<ProductBernice> GetProducts()
+        {
+            return new List<ProductBernice>(Swx.B2B.Ecom.DAL.B2BRepository.GetProducts());
+        }
+
+        public static ProductBernice GetProduct(int id)
+        {
+            return Swx.B2B.Ecom.DAL.B2BRepository.GetProduct(id);
         }
     }
 }
