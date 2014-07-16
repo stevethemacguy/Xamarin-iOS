@@ -17,6 +17,10 @@ namespace Swx.B2B.Ecom.BL.Entities
 		//public bool volumePricesFlag { get; set; }
 		//public List<PotentialPromotion> potentialPromotions { get; set; }
 
+		//The name of the saved list to which this product belongs. 
+		//A product can be in more than one list, but this is just used for highlighting a product, so any list name will work
+		private String savedListName = "";
+
 		[JsonProperty("summary")] //The expected Json Value is "summary." This syntax renames the value to title.
 		public String title { get; set; }
 
@@ -43,22 +47,27 @@ namespace Swx.B2B.Ecom.BL.Entities
 			id = RandomNumberGenerator.getInstance().getRandomNumber();
 		}
 
-		//Creates this products image since it won't work with the contstructor
-		public void createImage()
+		//Returns true if this product is in a saved list. Used to highlight products that are in a saved list
+		public Boolean isProductInASavedList()
 		{
-//			if (imageList != null && imageList.Count > 0 )
-//			{
-//				//Create the actual image
-//				//Create a url from the string and use it with an NSData object
-//				NSData data = NSData.FromUrl(new NSUrl(imageList[0].Url));
-//				//Create a UIimage using the url to load the image
-//				productImage = UIImage.LoadFromData(data);
-//			}
+			if (savedListName == "")
+				return false;
+			else
+				return true;
 		}
 
 		public String getCode()
 		{
 			return code;
+		}
+
+		public String getSavedListName() {
+			return savedListName;
+		}
+
+		public void setSavedListName(String listName) 
+		{
+			savedListName = listName;
 		}
 
 		public String getImageFileName() {
@@ -74,12 +83,14 @@ namespace Swx.B2B.Ecom.BL.Entities
 			return highlighted;
 		}
 
-		public void toggleHighlight()
+		public void addHighlight()
 		{
-			if (highlighted)
-				highlighted = false;
-			else
-				highlighted = true;
+			highlighted = true;
+		}
+
+		public void removeHighlight()
+		{
+			highlighted = false;
 		}
 
 		public String getDescription() {

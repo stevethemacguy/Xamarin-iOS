@@ -119,6 +119,9 @@ namespace GFS_iOS
 						//Otherwise, Add the selected product to the selected list
 						savedListMap[selectedItem].Add(selectedProduct);
 
+						//Let the product know it's now in a saved list.
+						selectedProduct.setSavedListName(selectedItem);
+
 						//Also add the product to the masterList of saved products
 						if(db.getAllProducts().ContainsKey(selectedProduct.getCode()) == false) //don't add duplicate products
 							db.getAllProducts().Add(selectedProduct.getCode(), selectedProduct);

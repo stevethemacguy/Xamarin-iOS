@@ -135,12 +135,32 @@ namespace GFS_iOS
 				jsonResults = pm.getProductsBySearchTerm(searchTerm);
 			});
 
-			//For all of the newly created products
+			//Get a map of all products in the DB (see loop below)
+			Dictionary<String, Product> dbProductMap = DataSource.getInstance().getAllProducts();
+
+			// For all of the newly created products:
+			//	- Create the product's image in ImageCache
+			//	- Highlight products if they are in a saved list
 			foreach (Product p in jsonResults)
 			{
 				//Add the Product's image url to the Image cache to be later used by Product Cells.
 				//The addImage() method handles empty urls for products without images.
 				ImageCache.getInstance().addImage(p.getCode(), p.getImageFileName());
+
+				//If the search-result Product is already in the Database
+				if (dbProductMap.ContainsKey(p.getCode()))
+				{
+					//Check if the matching product in the DB is in a saved list
+					if(dbProductMap[p.getCode()].isProductInASavedList())
+					{
+						//If the Product is in a saved list, highlight the Product
+						p.addHighlight();
+					}
+					else{
+						//If the Product is NOT in a saved list, remove any previous highlight.
+						p.removeHighlight();
+					}
+				}
 			}
 
 			//Once the task finishes, hide the loading screen.
@@ -148,14 +168,14 @@ namespace GFS_iOS
 
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
-			//// FOR DEMO ONLY. HIGHLIGHT THE FIRST TWO CELLS ////
+			////HIGHLIGHT THE FIRST CELL FOR DEMO ONLY. ////
 			//Important to check count or you will get an out of bounds error.
-			if(jsonResults.Count >= 6)
-			{
-				jsonResults [0].toggleHighlight();
-				jsonResults [3].toggleHighlight();
-				jsonResults [5].toggleHighlight();
-			}	
+//			if(jsonResults.Count >= 1)
+//			{
+//				jsonResults [0].addHighlight();
+//				//jsonResults [3].addHighlight();
+//				//jsonResults [5].addHighlight();
+//			}	
 
 			//Pass along the products matched by the search term to the LiveResultsViewController
 			liveResults.products = jsonResults;

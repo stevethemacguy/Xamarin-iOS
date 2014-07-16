@@ -21,7 +21,6 @@ namespace Swx.B2B.Ecom.BL.Entities
 		//and the value is either a list of Manuals, or a list of Strings (where the string is a filepath for the manual)
 		private List<Product> manualList; 
 
-
 		public Boolean alreadyInitialized = false;
 
 		//Each Saved List has a list of associated products.
