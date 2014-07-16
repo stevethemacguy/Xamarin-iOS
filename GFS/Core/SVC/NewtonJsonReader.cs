@@ -67,6 +67,11 @@ namespace Swx.B2B.Ecom.SVC
 			//Add each (recentantly instantiated) Product to the map, using the product's code as a key 
 			foreach(Product j in jsonProductList)
 			{
+				//If the product has no title, label it as unknown
+				if (j.title == null || j.title == String.Empty)
+				{
+					j.title = "Unknown Product";
+				}
 				prdMap.Add(j.code, j);
 			}
 
