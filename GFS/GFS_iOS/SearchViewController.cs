@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
@@ -16,6 +17,7 @@ namespace GFS_iOS
 	{
 		SearchViewController currentController;
 		UIBarButtonItem menuB2;
+	    string[] suggestedTerms;
 
 		//ProductManager productSuggestions = new ProductManager();
 
@@ -31,6 +33,8 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
+
+            suggestedTerms = new string[5];
 
 			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
 			menuB2 = new MainMenuButton().getButton(this, 64); 
@@ -58,11 +62,13 @@ namespace GFS_iOS
 				}
 				else
 				{
+                    // TODO: suggested terms using BL
 					//Make a call to the Web service to get back suggestions based on the search term
-					WebserviceHelper requester = new WebserviceHelper();
-					List<String> suggestedTerms = requester.getProductSearchSuggestions(SearchBar.Text);
+                    ProductManager requester = new ProductManager();
+					//WebserviceHelper requester = new WebserviceHelper();
+                    suggestedTerms = requester.GetProductSearchSuggestions(SearchBar.Text);
 
-					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
+				    HintTable.Source = new TableSource(currentController, suggestedTerms);
                     HintTable.ReloadData();
 					HintTable.Hidden = false;
 				}
@@ -133,6 +139,7 @@ namespace GFS_iOS
 				//Returns a list of products that match the searchTerm
 				jsonResults = requester.getProductsBySearchTerm(searchTerm);
 
+                // TODO: change model of product database structure, like images
 			    for (int i = 0; i < jsonResults.Count; i++)
 			    {
 			        ProductBernice productBernice = new ProductBernice();
@@ -141,7 +148,6 @@ namespace GFS_iOS
 			        productBernice.Prices = jsonResults[i].getPrice();
 			        productBernice.StarRating = jsonResults[i].getRating();
 			        productBernice.Images = jsonResults[i].getImageFileName();
-			        //productBernice.Images.Add(jsonResults[0].getImageFileName());
 			        productBernice.Code = jsonResults[i].getCode();
 
 			        ProductManager storeProducts = new ProductManager();

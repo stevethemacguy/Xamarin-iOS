@@ -275,6 +275,9 @@
     <Compile Include="..\Core\BL\Entities\ProductBernice.cs">
       <Link>BL\Entities\ProductBernice.cs</Link>
     </Compile>
+    <Compile Include="..\Core\BL\Entities\SearchKeywords.cs">
+      <Link>BL\Entities\SearchKeywords.cs</Link>
+    </Compile>
     <Compile Include="..\Core\BL\Helpers\Helpers.cs">
       <Link>BL\Helpers\Helpers.cs</Link>
     </Compile>
@@ -335,6 +338,7 @@
     <Compile Include="MenuTableViewController.designer.cs">
       <DependentUpon>MenuTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="BL\Helpers\reachability.cs" />
     <Compile Include="SearchViewController.cs" />
     <Compile Include="SearchViewController.designer.cs">
       <DependentUpon>SearchViewController.cs</DependentUpon>

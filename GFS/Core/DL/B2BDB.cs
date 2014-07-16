@@ -34,6 +34,7 @@ namespace Swx.B2B.Ecom.DL
 		    //DropTable<ProductBernice>();
 		    CreateTable<ProductBernice>();
 		    CreateTable<Note>();
+		    CreateTable<SearchKeywords>();
 
 		}
 		

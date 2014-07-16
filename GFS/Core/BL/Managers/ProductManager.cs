@@ -16,60 +16,85 @@ namespace Swx.B2B.Ecom.BL.Managers
         public ProductManager()
         {
         }
-        /*
+        
         public ProductBernice GetProductByID(int id)
         {
             ProductBernice product = new ProductBernice();
-            product.Images = new List<Image>();
-
-            ProductService jsonWS = new ProductService();
-            var json = jsonWS.GetJSONProductByID(id);
-
-            // Add product information
-            product.Id = id;
-            product.Name = json["name"].ToObject<string>();
-            product.Prices = json["price"]["formattedValue"].ToObject<string>();
-            product.Description = json["description"].ToObject<string>();
-
-            int imgIndex = 0;
-            foreach (Object img in json["images"])
+            if (!Reachability.IsHostReachable("http://google.com"))
             {
-                Image productImage = new Image();
-
-                productImage.Id = id;
-                productImage.ImageType = json["images"][imgIndex]["imageType"].ToObject<string>();
-                productImage.Format = json["images"][imgIndex]["format"].ToObject<string>();
-                productImage.AltText = json["images"][imgIndex]["altText"].ToObject<string>();
-                productImage.Url = json["images"][imgIndex]["url"].ToObject<string>();
-                
-                // Add image to the product
-                product.Images.Add(productImage);
-                imgIndex++;
+                product = GetProduct(id);
             }
+            else
+            {
+                // Put Internet Required Code here
 
+                    /*
+                product.Images = new List<Image>();
+
+                ProductService jsonWS = new ProductService();
+                var json = jsonWS.GetJSONProductByID(id);
+
+                // Add product information
+                product.Id = id;
+                product.Name = json["name"].ToObject<string>();
+                product.Prices = json["price"]["formattedValue"].ToObject<string>();
+                product.Description = json["description"].ToObject<string>();
+
+                int imgIndex = 0;
+                foreach (Object img in json["images"])
+                {
+                    Image productImage = new Image();
+
+                    productImage.Id = id;
+                    productImage.ImageType = json["images"][imgIndex]["imageType"].ToObject<string>();
+                    productImage.Format = json["images"][imgIndex]["format"].ToObject<string>();
+                    productImage.AltText = json["images"][imgIndex]["altText"].ToObject<string>();
+                    productImage.Url = json["images"][imgIndex]["url"].ToObject<string>();
+                
+                    // Add image to the product
+                    product.Images.Add(productImage);
+                    imgIndex++;
+                }
+                */
+            }
             return product;
+                
         }
 
         public string[] GetProductSearchSuggestions(string term)
         {
-            ProductService jsonWS = new ProductService();
             string[] suggestedTerms = new string[5];
-            var json = jsonWS.GetJsonProductSearchSuggestion(term);
-            int index = 0;
-            foreach (Object values in json["suggestions"])
+            //List<String> suggestedTerms = new List<string>();
+
+            // There is no connection
+            if (Reachability.InternetConnectionStatus().ToString() == "NotReachable")
             {
-                //System.Diagnostics.Debug.WriteLine(json["suggestions"][index]["value"].ToObject<string>());
-                suggestedTerms[index] = json["suggestions"][index]["value"].ToObject<string>();
-                index++;
+                //TODO: database stuff
             }
 
+            // Connection is ReachableViaCarrierDataNetwork or ReachableViaWiFiNetwork
+            else
+            {
+                ProductService jsonWS = new ProductService();
+                var json = jsonWS.GetJsonProductSearchSuggestion(term);
+                int index = 0;
+                foreach (Object values in json["suggestions"])
+                {
+                    //System.Diagnostics.Debug.WriteLine(json["suggestions"][index]["value"].ToObject<string>());
+                    suggestedTerms[index] = (json["suggestions"][index]["value"].ToObject<string>());
+                    index++;
+                }
+                
+            }
             return suggestedTerms;
+       
         }
 
         public List<ProductBernice> GetProductSearchList(string term)
         {
+            
             List<ProductBernice> productList = new List<ProductBernice>();
-
+            /*
             ProductService jsonWS = new ProductService();
             var json = jsonWS.GetJsonProductSearchList(term);
             int index = 0;
@@ -104,11 +129,13 @@ namespace Swx.B2B.Ecom.BL.Managers
                 productList.Add(product);
                 index++;
             }
-
+            */
             return productList;
+             
         }
-        */
+        
         // Database methods
+
         public int SaveProduct(ProductBernice item)
         {
             return Swx.B2B.Ecom.DAL.B2BRepository.SaveProduct(item);

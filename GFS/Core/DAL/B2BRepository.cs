@@ -113,6 +113,8 @@ namespace Swx.B2B.Ecom.DAL
         {
             return me.db.GetItems<ProductBernice>();
         }
+
+        //search keywords
     }
 }
 
