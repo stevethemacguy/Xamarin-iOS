@@ -124,11 +124,11 @@ namespace GFS_iOS
 
 			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
 
-			//Create (or update) the cell using the Product's title, price, and image url
+			//Create (or update) the cell using the Product's title, price, and image url.
 			cell.UpdateCell (
 					product.getTitle(), 
 					product.getPrice().ToString(), 
-					ImageCache.getInstance().getImage(product.getCode()), //Use the UIImage previously stored in the imageCache
+					ImageCache.getInstance().getImage(product.getCode()), //Use the UIImage previously stored in the imageCache.
 					UIImage.FromFile("product-result-background.png"),
 					UIImage.FromFile("blue-dots.png"),
 					UIImage.FromFile("product-devider.png")
@@ -137,7 +137,9 @@ namespace GFS_iOS
 			//If the cell is displaying a highlighted product, than highlight the cell
 			if(product.isHighlighted())
 			{
-				cell.highlightCell();
+				//Get the actual Product from the DB so we can use it's list name. Products from the search results (e.g. product) are temporary, so they will never have a saved list name.
+				String listName = DataSource.getInstance().getAllProducts()[product.code].getSavedListName();
+				cell.highlightCell(listName);
 			}
 
 			//cell.Opaque
