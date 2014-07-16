@@ -70,6 +70,55 @@ namespace GFS_iOS
 		{
 			this.parentController = parentController;
 			tableItems = parentController.products; //Use the products created from the live results
+
+			Console.WriteLine("Array at the start:\n");
+			for (int i =0 ;i < tableItems.Count; i++)
+			{
+				Console.WriteLine("["+i+"]" +" Highlighted?: " +tableItems[i].isHighlighted() + " (" + tableItems [i].id + ")");
+			}
+
+			//List<int> highlightedRows = new List<int>();
+
+			//Get the index for all highlighted products and add them to a list
+
+			//Bring highlighted products to the top
+			for (int index = 0; index < tableItems.Count; index++) 
+			{
+				Product temp = tableItems [index]; //get the product at the current index
+				//If the current product is highlighted, move it to the top by finding the first (next) "normal" cell in the array and swapping their positions
+				if (temp.isHighlighted())
+				{
+					int nextUnhighlightedItem = 0;
+
+					//Go through the array until we find the next unhighlighted item (so we can swap it)
+					for (int i = 0; i <tableItems.Count; i++)
+					{
+						if (tableItems[i].isHighlighted() == false)
+						{
+							nextUnhighlightedItem = i; //We found the index of the next "normal" item, so exit the loop
+							break;
+						}
+						else
+						{
+							nextUnhighlightedItem = -1; //No normal product was found
+						}
+					}
+					//Swap the highlighted product with the normal one in the array
+					if(nextUnhighlightedItem != -1) //don't try to swap if there are no remaining products to swap with
+					{
+						Product normalItem = tableItems[nextUnhighlightedItem];
+						tableItems [index] = normalItem; //Put the normal product where the highlighted product was
+						tableItems [nextUnhighlightedItem] = temp;//Put the highlighted product where the normal product was
+					}
+				}
+			}
+
+			Console.WriteLine("****************** The new array after sorting: ******************\n");
+			for (int i =0 ;i < tableItems.Count; i++)
+			{
+				Console.WriteLine("["+i+"]" +" Highlighted?: " +tableItems[i].isHighlighted() + " (" + tableItems [i].id + ")");
+			}
+
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)

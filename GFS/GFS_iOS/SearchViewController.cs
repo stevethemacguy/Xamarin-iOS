@@ -150,10 +150,11 @@ namespace GFS_iOS
 
 			//// FOR DEMO ONLY. HIGHLIGHT THE FIRST TWO CELLS ////
 			//Important to check count or you will get an out of bounds error.
-			if(jsonResults.Count >= 2)
+			if(jsonResults.Count >= 6)
 			{
 				jsonResults [0].toggleHighlight();
-				jsonResults [1].toggleHighlight();
+				jsonResults [3].toggleHighlight();
+				jsonResults [5].toggleHighlight();
 			}	
 
 			//Pass along the products matched by the search term to the LiveResultsViewController
