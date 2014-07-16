@@ -32,6 +32,12 @@ namespace Swx.B2B.Ecom.BL
 		//To ensure fast sorting speeds that are close to linear, limit the number of highlighted items. For example, allow olny 3 items to be highlighted.
 		public static void sortProductArray(List<Product> arrayToSort)
 		{
+			//Don't attempt to sort the array if it is empty or there is only one item
+			if (arrayToSort == null || arrayToSort.Count < 1) 
+			{
+				return;
+			}
+
 			////FOR TESTING ONLY
 //			Console.WriteLine("Array at the start:\n");
 //			for (int i =0 ; i < arrayToSort.Count; i++)
