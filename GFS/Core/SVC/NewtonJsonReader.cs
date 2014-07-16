@@ -85,7 +85,7 @@ namespace Swx.B2B.Ecom.SVC
 					//Get the product's "images" list
 					List<Image> imgList = jo.SelectToken("products["+count+"].images", false).ToObject<List<Image>>();
 
-					//Get the product's ID
+					//Get the product's code
 					String prodCode = jo.SelectToken("products["+count+"].code", false).ToObject<String>();
 
 					//Add the image list to the actual Product

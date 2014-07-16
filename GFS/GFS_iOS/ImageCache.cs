@@ -52,6 +52,10 @@ namespace GFS_iOS
 				image = UIImage.LoadFromData(data);
 
 			}
+			else //If no image is provided, then use the default image
+			{
+				image = UIImage.FromFile("noImage.png");
+			}
 
 			ImageMap.Add(productCode, image);
 		}
