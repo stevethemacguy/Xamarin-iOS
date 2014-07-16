@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3288F340-F8E0-4DC3-B9E1-5FBD0EEFBAED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Swx.B2B.Ecom</RootNamespace>
+    <AssemblyName>Swx.B2B.Ecom.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\Contracts\EntityBase.cs" />
+    <Compile Include="BL\Contracts\IEntity.cs" />
+    <Compile Include="BL\Entities\DataSource.cs" />
+    <Compile Include="BL\Entities\Product.cs" />
+    <Compile Include="BL\Helpers\Helpers.cs" />
+    <Compile Include="BL\Helpers\RandomNumberGenerator.cs" />
+    <Compile Include="BL\Managers\ImageManager.cs" />
+    <Compile Include="BL\Managers\ListManager.cs" />
+    <Compile Include="BL\Managers\ManualManager.cs" />
+    <Compile Include="BL\Managers\NoteManager.cs" />
+    <Compile Include="BL\Managers\PriceManager.cs" />
+    <Compile Include="BL\Managers\ProductManager.cs" />
+    <Compile Include="DAL\B2BRepository.cs" />
+    <Compile Include="DL\B2BDB.cs" />
+    <Compile Include="DL\SQLite.cs" />
+    <Compile Include="BL\Entities\Image.cs" />
+    <Compile Include="BL\Entities\Manual.cs" />
+    <Compile Include="BL\Entities\Note.cs" />
+    <Compile Include="BL\Entities\Price.cs" />
+    <Compile Include="BL\Entities\ProductBernice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SVC\NewtonJsonReader.cs" />
+    <Compile Include="SVC\ProductService.cs" />
+    <Compile Include="SVC\WebService.cs" />
+    <Compile Include="SVC\WebServiceBernice.cs" />
+    <Compile Include="SVC\XMLReader.cs" />
+    <Compile Include="BL\Entities\JsonSuggestion.cs" />
+    <Compile Include="BL\Entities\SavedList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DL\Resources\b2b.db" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DL\Resources\b2b_schema.SQL" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

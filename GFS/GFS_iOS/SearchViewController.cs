@@ -4,13 +4,19 @@ using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Drawing;
 using System.Threading.Tasks;
+using Swx.B2B.Ecom.BL.Managers;
+using System.Collections.Generic;
+using Swx.B2B.Ecom.BL.Entities;
 
+//Initial Search Screen. Words are entered into the search bar to load search results
 namespace GFS_iOS
 {
 	partial class SearchViewController : UIViewController
 	{
 		SearchViewController currentController;
 		UIBarButtonItem menuB2;
+
+		//ProductManager productSuggestions = new ProductManager();
 
 		private LoadingOverlay loadingOverlay;
 
@@ -39,8 +45,6 @@ namespace GFS_iOS
 			//Set Background to an image. NOTE: the Toolbar is transparent and will ajdust to the "same" color as the background for some reason.
 			SearchUIView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("main-background568.png"));
 
-			string[] hints = new string[]{""};
-			HintTable.Source = new TableSource(currentController, hints);
 			HintTable.ScrollEnabled = true;
 			HintTable.Hidden = true;
 
@@ -53,78 +57,19 @@ namespace GFS_iOS
 				}
 				else
 				{
-					if(SearchBar.Text == "a")
-					{
-						hints = new string[] { "apple", "adobe", "adapter", "apature", "addition"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					else{
-						hints = new string[] {""};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "ap")
-					{
-						hints = new string[] { "apple", "apature" };
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("apa"))
-					{
-						hints = new string[] { "apature" };
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("app"))
-					{
-						hints = new string[] { "apple" };
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "ad")
-					{
-						hints = new string[] { "adobe", "adapter", "addition", "adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("ado"))
-					{
-						hints = new string[] { "adobe"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "ada")
-					{
-						hints = new string[] { "adapter", "adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("add"))
-					{
-						hints = new string[] { "addition"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "adap")
-					{
-						hints = new string[] { "adapter", "adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text == "adapt")
-					{
-						hints = new string[] { "adapter","adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("adapti"))
-					{
-						hints = new string[] { "adaptive"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-					if (SearchBar.Text.StartsWith("adapte"))
-					{
-						hints = new string[] { "adapter"};
-						HintTable.Source = new TableSource(currentController, hints);
-					}
-				
+					//Make a call to the Web service to get back suggestions based on the search term.
+					ProductManager pm = new ProductManager();
+					List<String> suggestedTerms = pm.getProductSearchSuggestions(SearchBar.Text);
+
+					//Update the Table Source to use the returned words.
+					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
                     HintTable.ReloadData();
 					HintTable.Hidden = false;
 				}
 			};
-			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
+		//Show the loading screen.
 		public void showOverlay()
 		{
 			//Dismiss the keyboard
@@ -133,6 +78,7 @@ namespace GFS_iOS
 			View.Add(loadingOverlay);
 		}
 
+		//Hide the loading screen.
 		public void hideOverlay()
 		{
 			loadingOverlay.Hide();
@@ -169,36 +115,71 @@ namespace GFS_iOS
 		//When any row is selected. Async is used so we can stop the code from continuing until the task is complete (see await below).
 		public async override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
-			////Segue to the old search results
-//			//Get the current storyboard
-//			UIStoryboard test = UIStoryboard.FromName("MainStoryboard", null); 
-//
-//			//Get the searchResultsController View Controller 
-//			SearchResultsTableController ok = (SearchResultsTableController) test.InstantiateViewController(  
-//				"searchResultsController"
-//			);
-//			//Segue to the new View
-//		    controller.NavigationController.PushViewController(ok, true);
+			//We don't want to permanently cache images for previous searches, so clear the image cache.
+			ImageCache.getInstance().clearCache(); 
 
 			////Segue to the new live search results
 
 			//Show the loading screen while we wait for the database to load
 			controller.showOverlay();
 
-			//await says to wait until the task is completed before continuing (in this case in initializeDBfromJSON())
-			//Creates all the products in the database using JSON	
+			//The selected search term (i.e. selected row)
+			String searchTerm = tableItems[indexPath.Row];
+
+			//Stores a list of products created from the parsed Json
+			List<Product> jsonResults = new List<Product>();
+
+			//Makes a call to the Webservice and returns the products that match the selected search term.
 			await Task.Factory.StartNew (() => {
-				DataSource db = DataSource.getInstance();
-				//Initialize using JSON
-				db.initializeDBfromJSON();
+				ProductManager pm = new ProductManager();
+				jsonResults = pm.getProductsBySearchTerm(searchTerm);
 			});
 
-			//Once the task finishes, hide the overlay.
-			controller.hideOverlay();
+			//Get a map of all products in the DB (see loop below)
+			Dictionary<String, Product> dbProductMap = DataSource.getInstance().getAllProducts();
 
+			// For all of the newly created products:
+			//	- Create the product's image in ImageCache
+			//	- Highlight products if they are in a saved list
+			foreach (Product p in jsonResults)
+			{
+				//Add the Product's image url to the Image cache to be later used by Product Cells.
+				//The addImage() method handles empty urls for products without images.
+				ImageCache.getInstance().addImage(p.getCode(), p.getImageFileName());
+
+				//If the search-result Product is already in the Database
+				if (dbProductMap.ContainsKey(p.getCode()))
+				{
+					//Check if the matching product in the DB is in a saved list
+					if(dbProductMap[p.getCode()].isProductInASavedList())
+					{
+						//If the Product is in a saved list, highlight the Product
+						p.addHighlight();
+					}
+					else{
+						//If the Product is NOT in a saved list, remove any previous highlight.
+						p.removeHighlight();
+					}
+				}
+			}
+
+			//Once the task finishes, hide the loading screen.
+			controller.hideOverlay();
 
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
+			////HIGHLIGHT THE FIRST CELL FOR DEMO ONLY. ////
+			//Important to check count or you will get an out of bounds error.
+//			if(jsonResults.Count >= 1)
+//			{
+//				jsonResults [0].addHighlight();
+//				//jsonResults [3].addHighlight();
+//				//jsonResults [5].addHighlight();
+//			}	
+
+			//Pass along the products matched by the search term to the LiveResultsViewController
+			liveResults.products = jsonResults;
+		
 			//Segue
 			controller.NavigationController.PushViewController (liveResults, true); //yes, animate the segue 
 		}

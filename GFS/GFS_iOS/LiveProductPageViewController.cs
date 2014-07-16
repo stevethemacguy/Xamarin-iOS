@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoTouch.UIKit;
 using System.Drawing;
-
+using Swx.B2B.Ecom.BL.Entities;
 namespace GFS_iOS
 {
 	partial class LiveProductPageViewController : UIViewController
@@ -44,7 +44,7 @@ namespace GFS_iOS
 
 			//Create Product Image view
 			UIImageView prodImage = new UIImageView();
-			prodImage.Image = product.getProductImage();
+			prodImage.Image = ImageCache.getInstance().getImage(product.getCode()); //Use the UIImage previously stored in the imageCache//Use the UIImage previously stored in the imageCache
 			prodImage.Frame = new RectangleF(102, 72, 110, 110); 
 			View.AddSubview(prodImage);
 

@@ -3,6 +3,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using Swx.B2B.Ecom.BL.Entities;
 
 namespace GFS_iOS
 {
@@ -117,8 +118,8 @@ namespace GFS_iOS
 			//Create (or update) the cell using the Product's title, price, and image url
 			cell.UpdateCell (
 				product.getTitle(), 
-				product.getPrice(), 
-				product.getProductImage(),
+				product.getPrice().ToString(), 
+				ImageCache.getInstance().getImage(product.getCode()), //Use the UIImage previously stored in the imageCache//Use the UIImage previously stored in the imageCache
 				UIImage.FromFile("product-result-background.png"),
 				UIImage.FromFile("blue-dots.png"),
 				UIImage.FromFile("product-devider.png")

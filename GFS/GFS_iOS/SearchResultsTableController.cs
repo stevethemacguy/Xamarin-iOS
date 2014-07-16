@@ -11,7 +11,7 @@ namespace GFS_iOS
 		public Boolean fromSegue = false;
 		UIBarButtonItem menuB71;
 
- //Used when seguing from the "search" icon when typing in the NotesViewController
+ 		//Used when seguing from the "search" icon when typing in the NotesViewController
 		
         public SearchResultsTableController (IntPtr handle) : base (handle)
 		{

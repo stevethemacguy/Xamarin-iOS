@@ -3,6 +3,8 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using Swx.B2B.Ecom.BL.Entities;
+using Swx.B2B.Ecom.BL;
 
 namespace GFS_iOS
 {
@@ -13,6 +15,10 @@ namespace GFS_iOS
 		public UITableView table;
 		LiveResultsViewController currentController;
 		UIBarButtonItem menuB30;
+
+		//The list of products matching the search term in the SearchViewController.
+		public List<Product> products;
+
 		//Set up the cell for reuse (iOS6 way)
 		//static NSString cellIdentifier = new NSString ("productCell");
 
@@ -58,23 +64,15 @@ namespace GFS_iOS
 
 	class LiveResultsTableSource : UITableViewSource
 	{
-		private DataSource dataSource = null;
 		protected List<Product> tableItems;
 		NSString cellIdentifier = new NSString("productCell");
 		LiveResultsViewController parentController;
-
 		public LiveResultsTableSource (LiveResultsViewController parentController)
 		{
 			this.parentController = parentController;
-			dataSource = DataSource.getInstance();
-			tableItems = new List<Product>();
-
-			//Get all of the products from the data base and uses these as the table items
-			Dictionary<String, Product> prodMap = dataSource.getAllProducts(); 
-			foreach (Product p in prodMap.Values)
-			{
-				tableItems.Add(p); //Items are the actual products
-			}
+			tableItems = parentController.products; //Use the products created from the live results
+			//Bring all highlighted Items to the top of the array
+			Helpers.sortProductArray(tableItems); 
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
@@ -82,7 +80,7 @@ namespace GFS_iOS
 			return tableItems.Count;
 		}
 
-		//When the row is clicked, segue to some controller and pass all  data
+		//When the row is clicked, segue to some controller and pass the selected Product
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
@@ -92,9 +90,10 @@ namespace GFS_iOS
 
 			LiveProductPageViewController liveProductPage = new LiveProductPageViewController(selectedProduct);
 
-			//"Pass" along the ibndex of the selected row to the index member variable
+			//"Pass" along the index of the selected row to the index member variable
 			liveProductPage.index = indexPath.Row; 
 			liveProductPage.rowName = selectedProduct.getTitle();
+
 			//Not needed?
 			//liveProductPage.parentController = (LiveProductPageViewController) parentController;
 
@@ -124,11 +123,12 @@ namespace GFS_iOS
 			}
 
 			//cell.Accessory = UITableViewCellAccessory.DisclosureIndicator; //Add an Arrow to the cell
+
 			//Create (or update) the cell using the Product's title, price, and image url
 			cell.UpdateCell (
 					product.getTitle(), 
-					product.getPrice(), 
-					product.getProductImage(),
+					product.getPrice().ToString(), 
+					ImageCache.getInstance().getImage(product.getCode()), //Use the UIImage previously stored in the imageCache
 					UIImage.FromFile("product-result-background.png"),
 					UIImage.FromFile("blue-dots.png"),
 					UIImage.FromFile("product-devider.png")
