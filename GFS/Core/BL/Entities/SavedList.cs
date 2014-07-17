@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Swx.B2B.Ecom.BL.Entities
 {
-    public class List
+    public class SavedList
     {
     }
 }

@@ -19,6 +19,12 @@ namespace Swx.B2B.Ecom.SVC
             feedReader = new StreamReader(((HttpWebResponse)request.GetResponse()).GetResponseStream());
         }
 
+		//Returns a NewtonJsonReader using the feed returned in the Webservice response.
+		public NewtonJsonReader getJsonReader()
+		{
+			return new NewtonJsonReader(feedReader);
+		}
+
         //Returns a new XML Reader
         public XMLReader getXMLReader()
         {
@@ -28,14 +34,9 @@ namespace Swx.B2B.Ecom.SVC
         }
 
 		//Returns the "Old" Json Reader
-        public JSONReader getJSONReader()
-        {
-            return new JSONReader(feedReader);
-        }
-
-		public NewtonJsonReader getJsonReader()
-		{
-			return new NewtonJsonReader(feedReader);
-		}
+//        public JSONReader getJSONReader()
+//        {
+//            return new JSONReader(feedReader);
+//        }
     }
 }

@@ -234,6 +234,7 @@
     <BundleResource Include="Resources\XIcon%402x.png" />
     <BundleResource Include="Resources\XIcon%28big%29.png" />
     <BundleResource Include="Resources\XIcon%28big%29%402x.png" />
+    <BundleResource Include="Resources\noImage.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -256,9 +257,6 @@
     </Compile>
     <Compile Include="..\Core\BL\Entities\Image.cs">
       <Link>BL\Entities\Image.cs</Link>
-    </Compile>
-    <Compile Include="..\Core\BL\Entities\List.cs">
-      <Link>BL\Entities\List.cs</Link>
     </Compile>
     <Compile Include="..\Core\BL\Entities\Manual.cs">
       <Link>BL\Entities\Manual.cs</Link>
@@ -396,10 +394,13 @@
     <Compile Include="SavedManualsViewController.cs" />
     <Compile Include="MainMenuButton.cs" />
     <Compile Include="WebserviceHelper.cs" />
-    <Compile Include="..\Core\BL\Entities\JsonProduct.cs">
-      <Link>BL\Entities\JsonProduct.cs</Link>
-    </Compile>
     <Compile Include="ImageCache.cs" />
+    <Compile Include="..\Core\BL\Entities\JsonSuggestion.cs">
+      <Link>BL\Entities\JsonSuggestion.cs</Link>
+    </Compile>
+    <Compile Include="..\Core\BL\Entities\SavedList.cs">
+      <Link>BL\Entities\SavedList.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

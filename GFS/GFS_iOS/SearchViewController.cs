@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
@@ -7,7 +6,6 @@ using System.Drawing;
 using System.Threading.Tasks;
 using Swx.B2B.Ecom.BL.Managers;
 using System.Collections.Generic;
-using System.Json;
 using Swx.B2B.Ecom.BL.Entities;
 
 //Initial Search Screen. Words are entered into the search bar to load search results
@@ -17,7 +15,6 @@ namespace GFS_iOS
 	{
 		SearchViewController currentController;
 		UIBarButtonItem menuB2;
-	    string[] suggestedTerms;
 
 		//ProductManager productSuggestions = new ProductManager();
 
@@ -33,8 +30,6 @@ namespace GFS_iOS
 			base.ViewDidLoad();
 			//Hide the back button
 			this.NavigationItem.HidesBackButton = true;
-
-            suggestedTerms = new string[5];
 
 			//Create the MainMenu UIBarButtonItem and intialize the flyout Main Menu view
 			menuB2 = new MainMenuButton().getButton(this, 64); 
@@ -53,6 +48,9 @@ namespace GFS_iOS
 			HintTable.ScrollEnabled = true;
 			HintTable.Hidden = true;
 
+			//Stores the last search terms returned from the Web Service. See below.
+			List<String> cachedSuggestedTerms = new List<String>();
+
 			//this.SearchBar.OnEditingStarted --- EventArgs
 			this.SearchBar.TextChanged += (object sender, UISearchBarTextChangedEventArgs e) =>
 			{
@@ -62,13 +60,24 @@ namespace GFS_iOS
 				}
 				else
 				{
-                    // TODO: suggested terms using BL
-					//Make a call to the Web service to get back suggestions based on the search term
-                    ProductManager requester = new ProductManager();
-					//WebserviceHelper requester = new WebserviceHelper();
-                    suggestedTerms = requester.GetProductSearchSuggestions(SearchBar.Text);
-                    
-				    HintTable.Source = new TableSource(currentController, suggestedTerms);
+					//Make a call to the Web service to get back suggestions based on the search term.
+					ProductManager pm = new ProductManager();
+					List<String> suggestedTerms = pm.getProductSearchSuggestions(SearchBar.Text);
+
+					//Web service returns nothing once you type a full word, so when nothing is returned, keeping showing the "previous" suggestions
+					if (suggestedTerms.Count == 0)
+					{
+						//Use the terms from the last search
+						suggestedTerms = cachedSuggestedTerms;
+					}
+					else
+					{
+						//Cache these words so we don't lose them
+						cachedSuggestedTerms = suggestedTerms;
+					}
+
+					//Update the Table Source to use the returned words.
+					HintTable.Source = new TableSource(currentController, suggestedTerms.ToArray());
                     HintTable.ReloadData();
 					HintTable.Hidden = false;
 				}
@@ -134,45 +143,58 @@ namespace GFS_iOS
 
 			//Stores a list of products created from the parsed Json
 			List<Product> jsonResults = new List<Product>();
+
+			//Makes a call to the Webservice and returns the products that match the selected search term.
 			await Task.Factory.StartNew (() => {
-				WebserviceHelper requester = new WebserviceHelper();
-				//Returns a list of products that match the searchTerm
-				jsonResults = requester.getProductsBySearchTerm(searchTerm);
-
-                // TODO: change model of product database structure, like images
-			    for (int i = 0; i < jsonResults.Count; i++)
-			    {
-			        ProductBernice productBernice = new ProductBernice();
-			        productBernice.Name = jsonResults[i].getTitle();
-			        productBernice.Description = jsonResults[i].getDescription();
-			        productBernice.Prices = jsonResults[i].getPrice();
-			        productBernice.StarRating = jsonResults[i].getRating();
-			        productBernice.Images = jsonResults[i].getImageFileName();
-			        productBernice.Code = jsonResults[i].getCode();
-
-			        ProductManager storeProducts = new ProductManager();
-			        storeProducts.SaveProduct(productBernice);
-			    }
+				ProductManager pm = new ProductManager();
+				jsonResults = pm.getProductsBySearchTerm(searchTerm);
 			});
+
+			//Get a map of all products in the DB (see loop below)
+			Dictionary<String, Product> dbProductMap = DataSource.getInstance().getAllProducts();
+
+			// For all of the newly created products:
+			//	- Create the product's image in ImageCache
+			//	- Highlight products if they are in a saved list
+			foreach (Product p in jsonResults)
+			{
+				//Add the Product's image url to the Image cache to be later used by Product Cells.
+				//The addImage() method handles empty urls for products without images.
+				ImageCache.getInstance().addImage(p.getCode(), p.getImageFileName());
+
+				//If the search-result Product is already in the Database
+				if (dbProductMap.ContainsKey(p.getCode()))
+				{
+					//Check if the matching product in the DB is in a saved list
+					if(dbProductMap[p.getCode()].isProductInASavedList())
+					{
+						//If the Product is in a saved list, highlight the Product
+						p.addHighlight();
+					}
+					else{
+						//If the Product is NOT in a saved list, remove any previous highlight.
+						p.removeHighlight();
+					}
+				}
+			}
 
 			//Once the task finishes, hide the loading screen.
 			controller.hideOverlay();
 
 			LiveResultsViewController liveResults = new LiveResultsViewController();
 
-			////FOR DEMO ONLY. ALWAYS HIGHLIGHT THE FIRST TWO CELLS/////
+			////HIGHLIGHT THE FIRST CELL FOR DEMO ONLY. ////
 			//Important to check count or you will get an out of bounds error.
-			if(jsonResults.Count >= 2)
-			{
-				jsonResults [0].toggleHighlight();
-				jsonResults [1].toggleHighlight();
-			}	
+//			if(jsonResults.Count >= 1)
+//			{
+//				jsonResults [0].addHighlight();
+//				//jsonResults [3].addHighlight();
+//				//jsonResults [5].addHighlight();
+//			}	
 
 			//Pass along the products matched by the search term to the LiveResultsViewController
-			liveResults.jsonResults = jsonResults;
+			liveResults.products = jsonResults;
 		
-			//Console.WriteLine("The search term selected:" + searchTerm);
-
 			//Segue
 			controller.NavigationController.PushViewController (liveResults, true); //yes, animate the segue 
 		}

@@ -52,9 +52,15 @@ namespace GFS_iOS
 
 				//If the saved list doesn't already contain the product, then Add the product to the saved list
 				if (!savedListMap[newList].Contains(selectedProduct))
+				{
 					savedListMap[newList].Add(selectedProduct);
 
-				//Add the product to the masterList of saved products
+					//Let the product know it's now in a saved list.
+					selectedProduct.setSavedListName(newList);
+				}
+					
+
+				//Also add the product to the masterList of saved products
 				if(db.getAllProducts().ContainsKey(selectedProduct.getCode()) == false) //don't add duplicate products
 					db.getAllProducts().Add(selectedProduct.getCode(), selectedProduct);
 			}
