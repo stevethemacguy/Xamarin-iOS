@@ -115,6 +115,20 @@ namespace Swx.B2B.Ecom.DAL
         }
 
         //search keywords
+        public static SearchKeywords GetKeyword(int id)
+        {
+            return me.db.GetItem<SearchKeywords>(id);
+        }
+
+        public static int SaveSearchKeyword(SearchKeywords keyword)
+        {
+            return me.db.SaveItem(keyword);
+        }
+
+        public static IEnumerable<SearchKeywords> GetSearchKeywords()
+        {
+            return me.db.GetItems<SearchKeywords>();
+        } 
     }
 }
 

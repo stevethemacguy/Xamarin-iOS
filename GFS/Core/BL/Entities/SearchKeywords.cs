@@ -8,7 +8,7 @@ using Swx.B2B.Ecom.DL.SQLite;
 
 namespace Swx.B2B.Ecom.BL.Entities
 {
-    class SearchKeywords : IEntity
+    public class SearchKeywords : IEntity
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

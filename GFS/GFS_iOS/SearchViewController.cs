@@ -68,7 +68,6 @@ namespace GFS_iOS
 					//WebserviceHelper requester = new WebserviceHelper();
                     suggestedTerms = requester.GetProductSearchSuggestions(SearchBar.Text);
                     
-
 				    HintTable.Source = new TableSource(currentController, suggestedTerms);
                     HintTable.ReloadData();
 					HintTable.Hidden = false;
