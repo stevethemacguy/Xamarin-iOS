@@ -56,6 +56,7 @@
     <Compile Include="BL\Managers\NoteManager.cs" />
     <Compile Include="BL\Managers\PriceManager.cs" />
     <Compile Include="BL\Managers\ProductManager.cs" />
+    <Compile Include="BL\Managers\SearchKeywordManager.cs" />
     <Compile Include="DAL\B2BRepository.cs" />
     <Compile Include="DL\B2BDB.cs" />
     <Compile Include="DL\SQLite.cs" />
