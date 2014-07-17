@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GFS_iOS;
 using Swx.B2B.Ecom.BL.Entities;
 
 namespace Swx.B2B.Ecom.BL.Managers
