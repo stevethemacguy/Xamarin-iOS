@@ -401,6 +401,9 @@
     <Compile Include="..\Core\BL\Entities\SavedList.cs">
       <Link>BL\Entities\SavedList.cs</Link>
     </Compile>
+    <Compile Include="..\Core\SVC\reachability.cs">
+      <Link>SVC\reachability.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

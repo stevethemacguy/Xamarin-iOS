@@ -49,7 +49,6 @@
     <Compile Include="BL\Entities\SearchKeywords.cs" />
     <Compile Include="BL\Helpers\Helpers.cs" />
     <Compile Include="BL\Helpers\RandomNumberGenerator.cs" />
-    <Compile Include="BL\Helpers\reachability.cs" />
     <Compile Include="BL\Managers\ImageManager.cs" />
     <Compile Include="BL\Managers\ListManager.cs" />
     <Compile Include="BL\Managers\ManualManager.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="SVC\XMLReader.cs" />
     <Compile Include="BL\Entities\JsonSuggestion.cs" />
     <Compile Include="BL\Entities\SavedList.cs" />
+    <Compile Include="SVC\Reachability.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DL\Resources\b2b.db" />
