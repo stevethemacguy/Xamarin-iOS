@@ -3,6 +3,9 @@ using System;
 using System.IO; //For Stream Reader
 using System.Json;
 
+//Parses a Json feed and returns JsonValues using System.Json. CAUTION: System.Json is a (silverlight) library that can only be used by MonoTouch applications.
+//In other words, JSONReader will only work if it is used by Xamarin iOS code in the "presentation layer." 
+//If you need a more generic JSON Reader to work with any C# project, use a NewtonJsonReader instead, since it uses the JSON.Net library.
 namespace Swx.B2B.Ecom.SVC
 {
     class JSONReader

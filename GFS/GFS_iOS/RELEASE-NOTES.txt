@@ -1,2 +1,15 @@
-Menu Button behavior is more consistant.
-Known issue: Menu button sometimes requires a second tap before it opens.
+Known issue: 
+
+Retrieving search suggestions from the Web Service sometimes takes a while to load. In one instance, the connection timed out.
+
+Change Updates:
+
+Products previously added to a saved list now appear as “highlighted” rows at the top of the list when searching. 
+
+The “highlighted” rows show the name of the saved list associated with the product.
+
+The app now uses Json.Net to parse JSON results from the Webservice (it previously used a Json library that only targetted Mono-touch applications.
+
+Previous bugs related to searching have been resolved.
+
+iOS dependencies in the codebase have been further de-coupled from the project’s data layer to allow for future cross-platform development.

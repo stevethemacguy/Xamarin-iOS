@@ -5,7 +5,7 @@ namespace Swx.B2B.Ecom.BL
 {
 	public class RandomNumberGenerator
 	{
-		private static RandomNumberGenerator instance; //There can only be one instance of the DataSource.
+		private static RandomNumberGenerator instance; //There can only be one instance of RandomNumberGenerator.
 		private readonly Random numGenerator;
 
 		protected RandomNumberGenerator()
@@ -13,7 +13,7 @@ namespace Swx.B2B.Ecom.BL
 			numGenerator = new Random();
 		}
 
-		//Returns the singleton DataSource (or creates and returns it if has not been instantiated).
+		//Returns the singleton RandomNumberGenerator (or creates and returns it if has not been instantiated).
 		public static RandomNumberGenerator getInstance()
 		{
 			//If the DataSource has not been created, then create it once.

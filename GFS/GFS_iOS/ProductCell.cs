@@ -9,6 +9,7 @@ namespace GFS_iOS
 	public class ProductCell : UITableViewCell
 	{
 		UILabel title;
+		UILabel highlightDetails;
 		//UILabel	price;
 		UIImageView productImageView;
 		UIImageView whiteBoxImageView;
@@ -59,9 +60,16 @@ namespace GFS_iOS
 		}
 
 		//Adds a green background
-		public void highlightCell()
+		public void highlightCell(String savedListName)
 		{
+			//Change background to green
 			ContentView.BackgroundColor = UIColor.FromRGB(231, 247, 205);
+
+			//Add a label to the cell to show why the cell is highlighted
+			highlightDetails = new UILabel() { Font = UIFont.FromName("Arial", 9f), TextColor = UIColor.Gray }; //UIColor.FromRGB (7, 90, 170),
+			highlightDetails.Text = "From \"" + savedListName + "\" saved list";
+			ContentView.Add(highlightDetails);
+
 		}
 
 		//Position the views in the cell
@@ -71,7 +79,7 @@ namespace GFS_iOS
 			//X, Y, Width, Height
 			productImageView.Frame = new RectangleF(6, 9, 55, 55);
 			whiteBoxImageView.Frame = new RectangleF(4, 7, 60, 60);
-			title.Frame = new RectangleF(70, 9, 198, 65); //Don't know why I need a negative y value
+			title.Frame = new RectangleF(70, 9, 198, 65); 
 			//Max number of lines
 			title.Lines = 4;
 			title.SizeToFit(); //Shrinks the ImageView to fit the number of text lines (this prevents a single line from appearing centered)
@@ -80,6 +88,11 @@ namespace GFS_iOS
 			circleButtonView.Frame = new RectangleF(280, 9, 30, 30);
 			//price.Frame = new RectangleF(45, 40, 80, 65);
 			cellBorder.Frame = new RectangleF(0, 79, 360, 1);
+
+			if(highlightDetails != null)
+			{
+				highlightDetails.Frame = new RectangleF(72, 60, 198, 20);
+			}
 		}
 	}
 }

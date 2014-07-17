@@ -27,11 +27,6 @@ namespace GFS_iOS
 		{
 			base.ViewDidLoad();
 
-			WebService request = new WebService("?query=freeTextSearch:sort:name:" + "camera" + ":description:" + "camera", "json");
-			//Initialize the JSON reader
-			NewtonJsonReader jsonReader = request.getNewtonJsonReader();
-
-
             //System.Diagnostics.Debug.WriteLine("Testing BLL Fetching Product...");
             //Swx.B2B.Ecom.BL.Managers.ProductManager product = new ProductManager();
             //Swx.B2B.Ecom.BL.Entities.Product newProduct = product.GetProductByID(107701);

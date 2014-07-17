@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using System.IO;
 
 namespace Swx.B2B.Ecom.SVC
