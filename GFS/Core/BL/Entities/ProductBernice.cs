@@ -21,7 +21,7 @@ namespace Swx.B2B.Ecom.BL.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public string Prices { get; set; }
-        public float StarRating { get; set; }
+        public double StarRating { get; set; }
         //public List<Price> Prices { get; set; }
         //public List<Image> Images { get; set; }
         public string Images { get; set; }

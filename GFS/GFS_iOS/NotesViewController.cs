@@ -47,10 +47,10 @@ namespace GFS_iOS
 			if(addingNote)
 			{
                 // TODO: make reference to ID instead of looking for string of text in SQLite
-				data.addNote(noteText);
-			    newNote.Text = noteText;
 
-                Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
+			    newNote.Text = noteText;
+                data.addNote(newNote);
+                //Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
 			}
 			else
 			{
@@ -58,9 +58,10 @@ namespace GFS_iOS
                 // TODO: make reference to ID instead of looking for string of text in SQLite
                 newNote.Text = noteText;
 
-			    int noteID = Swx.B2B.Ecom.BL.Managers.NoteManager.GetNoteID(notes[index]).Id;
+                int noteID = data.getNoteId(notes[index]);
 			    newNote.Id = noteID;
-                Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
+                data.addNote(newNote);
+                //Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(newNote);
 				notes[index] = noteText; //Overrite the existing note Text of the clicked cell to the new text
 			}
 			tableController.refreshTable(); //"Refresh" the table using our new list of notes.

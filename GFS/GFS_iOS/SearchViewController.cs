@@ -148,6 +148,21 @@ namespace GFS_iOS
 			await Task.Factory.StartNew (() => {
 				ProductManager pm = new ProductManager();
 				jsonResults = pm.getProductsBySearchTerm(searchTerm);
+
+                // TODO: change model of product database structure, like images
+                for (int i = 0; i < jsonResults.Count; i++)
+                {
+                    ProductBernice productBernice = new ProductBernice();
+                    productBernice.Name = jsonResults[i].getTitle();
+                    productBernice.Description = jsonResults[i].getDescription();
+                    productBernice.Prices = jsonResults[i].getPrice().formattedValue;
+                    productBernice.StarRating = jsonResults[i].getRating();
+                    productBernice.Images = jsonResults[i].getImageFileName();
+                    productBernice.Code = jsonResults[i].getCode();
+
+                    ProductManager storeProducts = new ProductManager();
+                    storeProducts.SaveProduct(productBernice);
+                }
 			});
 
 			//Get a map of all products in the DB (see loop below)

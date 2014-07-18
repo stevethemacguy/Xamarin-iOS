@@ -58,9 +58,18 @@ namespace Swx.B2B.Ecom.BL.Managers
 		//***************** Bernice's Methods below this line *****************\\
 		//**********************************************************************\\
 
-		public ProductBernice GetProductByID(int id)
+        public ProductBernice GetProductByID(int id)
         {
             ProductBernice product = new ProductBernice();
+            if (!Reachability.IsHostReachable("http://google.com"))
+            {
+                product = GetProduct(id);
+            }
+            else
+            {
+                // Put Internet Required Code here
+
+                /*
             product.Images = new List<Image>();
 
             ProductService jsonWS = new ProductService();
@@ -87,30 +96,46 @@ namespace Swx.B2B.Ecom.BL.Managers
                 product.Images.Add(productImage);
                 imgIndex++;
             }
-
+            */
+            }
             return product;
+
         }
 
-//        public string[] GetProductSearchSuggestions(string term)
-//        {
-//            ProductService jsonWS = new ProductService();
-//            string[] suggestedTerms = new string[5];
-//            var json = jsonWS.GetJsonProductSearchSuggestion(term);
-//            int index = 0;
-//            foreach (Object values in json["suggestions"])
-//            {
-//                //System.Diagnostics.Debug.WriteLine(json["suggestions"][index]["value"].ToObject<string>());
-//                suggestedTerms[index] = json["suggestions"][index]["value"].ToObject<string>();
-//                index++;
-//            }
-//
-//            return suggestedTerms;
-//        }
+        public string[] GetProductSearchSuggestions(string term)
+        {
+            string[] suggestedTerms = new string[5];
+            //List<String> suggestedTerms = new List<string>();
+
+            // There is no connection
+            if (Reachability.InternetConnectionStatus().ToString() == "NotReachable")
+            {
+                //TODO: database stuff
+            }
+
+            // Connection is ReachableViaCarrierDataNetwork or ReachableViaWiFiNetwork
+            else
+            {
+                ProductService jsonWS = new ProductService();
+                var json = jsonWS.GetJsonProductSearchSuggestion(term);
+                int index = 0;
+                foreach (Object values in json["suggestions"])
+                {
+                    //System.Diagnostics.Debug.WriteLine(json["suggestions"][index]["value"].ToObject<string>());
+                    suggestedTerms[index] = (json["suggestions"][index]["value"].ToObject<string>());
+                    index++;
+                }
+
+            }
+            return suggestedTerms;
+
+        }
 
         public List<ProductBernice> GetProductSearchList(string term)
         {
-            List<ProductBernice> productList = new List<ProductBernice>();
 
+            List<ProductBernice> productList = new List<ProductBernice>();
+            /*
             ProductService jsonWS = new ProductService();
             var json = jsonWS.GetJsonProductSearchList(term);
             int index = 0;
@@ -145,8 +170,26 @@ namespace Swx.B2B.Ecom.BL.Managers
                 productList.Add(product);
                 index++;
             }
-
+            */
             return productList;
+
+        }
+
+        // Database methods
+
+        public int SaveProduct(ProductBernice item)
+        {
+            return Swx.B2B.Ecom.DAL.B2BRepository.SaveProduct(item);
+        }
+
+        public static List<ProductBernice> GetProducts()
+        {
+            return new List<ProductBernice>(Swx.B2B.Ecom.DAL.B2BRepository.GetProducts());
+        }
+
+        public static ProductBernice GetProduct(int id)
+        {
+            return Swx.B2B.Ecom.DAL.B2BRepository.GetProduct(id);
         }
     }
 }

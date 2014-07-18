@@ -1,4 +1,5 @@
-﻿using Swx.B2B.Ecom.SVC;
+﻿using Swx.B2B.Ecom.BL.Managers;
+using Swx.B2B.Ecom.SVC;
 using System;
 using System.Collections.Generic;
 //using System.Json; //Only by "Old" JSONReader
@@ -43,8 +44,8 @@ namespace Swx.B2B.Ecom.BL.Entities
 				addSavedList("cameras");
 				addSavedList("others");
 				allNotes = new List<string>();
-				addNote("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
-				addNote("Another good find");
+				//addNote("Found these products last week. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. ");
+				//addNote("Another good find");
 				manualList = new List<Product>();
 			}
 
@@ -109,15 +110,21 @@ namespace Swx.B2B.Ecom.BL.Entities
 			return savedListSet;
 		}
 
-		public void addNote(string tooAdd)
+		public void addNote(Note note)
 		{
-			allNotes.Add(tooAdd);
+            Swx.B2B.Ecom.BL.Managers.NoteManager.SaveNote(note);
+			//allNotes.Add(tooAdd);
 		}
 
 		public void removeNote(string toRemove)
 		{
 			allNotes.Remove(toRemove);
 		}
+
+	    public int getNoteId(string text)
+	    {
+	        return Swx.B2B.Ecom.BL.Managers.NoteManager.GetNoteID(text).Id;
+	    }
 
 		//Returns a set of all saved lists
 		public List<string> getAllNotes()
